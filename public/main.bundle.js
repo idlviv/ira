@@ -32,7 +32,10 @@ var ProfileComponent = (function () {
     ProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.authService.getProfile()
-            .subscribe(function (profile) { return _this.user = profile.user; }, function (error) {
+            .subscribe(function (profile) {
+            console.log('profile.user', profile.user);
+            _this.user = profile.user;
+        }, function (error) {
             _this.flashMessage.show(error, {
                 cssClass: 'alert-danger',
                 timeout: 3000
