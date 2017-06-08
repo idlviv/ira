@@ -6,6 +6,7 @@ let jwt = require('jsonwebtoken');
 let UserModel = require('../models/userModel');
 const config = require('../config');
 
+// реєстрація і повернення результату в фронт
 router.post('/register', function(req, res, next) {
   let newUser = new UserModel({
     name: req.body.name,
@@ -13,7 +14,7 @@ router.post('/register', function(req, res, next) {
     username: req.body.username,
     password: req.body.password,
   });
-
+  // повертає обєкт (success..)
   UserModel.addUser(newUser)
     .then((result) => res.json(result))
     .catch((error) => res.json(error));
@@ -54,10 +55,14 @@ router.post('/authenticate', function(req, res, next) {
   });
 });
 
+// роутер отримує хедер з токеном від auth.service (front)
+// passport.authenticate робить запит до passport -> config/passport
+// на основі токена config/passport витягує юзера і якщо такий є
+// передає його як req.user в колбек, далі віддає його в фронт
+// якщо ні, то далі не пускає - 401 Unauthorized
 router.get(
   '/profile', passport.authenticate('jwt', {session: false}),
   (req, res, next) => {
-    console.log('/profile - req.user', req.user);
     res.json({user: req.user});
   });
 

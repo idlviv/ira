@@ -33,9 +33,6 @@ module.exports.getUserById = function(_id) {
       .catch((err) => reject(err));
   });
 };
-// module.exports.getUserById = function(id, callback) {
-//     UserModel.findById(id, callback);
-// };
 
 module.exports.getUserByUsername = function(username) {
   query = {username: username};
@@ -46,11 +43,6 @@ module.exports.getUserByUsername = function(username) {
   });
 };
 
-// module.exports.getUserByUsername = function(username, callback) {
-//   query = {username: username};
-//   UserModel.findOne(query, callback);
-// };
-
 module.exports.comparePassword = function(candidatePassword, hash) {
   return new Promise(function(resolve, reject) {
     bcrypt.compare(candidatePassword, hash)
@@ -58,18 +50,15 @@ module.exports.comparePassword = function(candidatePassword, hash) {
       .catch((error) => reject(error));
   });
 };
-// module.exports.comparePassword = function(candidatePassword, hash, callback) {
-//   bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
-//     if (err) throw err;
-//     callback(null, isMatch);
-//   });
-// };
+
 
 module.exports.addUser = function(newUser) {
   return new Promise(function(resolve, reject) {
+    // хешує пароль, і записує вже хешований в user.password
     bcrypt.hash(newUser.password, 10)
       .then((hash) => {
           newUser.password = hash;
+          // якшо успішно записано в базу, то повертає в роутер відп обєкт
           newUser.save()
             .then(() => resolve({success: true, msg: 'User registered'}))
             .catch(() => reject({success: false, msg: 'Failed to register user'}));

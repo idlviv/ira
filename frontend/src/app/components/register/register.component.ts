@@ -33,6 +33,7 @@ export class RegisterComponent implements OnInit {
       username: this.username,
       password: this.password
     };
+    // validateService перевіряє валідність даних
     if (!this.validateService.validateRegister(user)) {
       this.flashMessage.show(
         'fill all fields',
@@ -52,6 +53,8 @@ export class RegisterComponent implements OnInit {
         });
       return false;
     }
+
+    // підписка на authService.registerUser для реєстрації
   this.authService.registerUser(user)
     .subscribe(data => {
       if (data.success) {

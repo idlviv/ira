@@ -18,10 +18,11 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+
+    // підписується на юзера з auth.service
     this.authService.getProfile()
       .subscribe(
         (profile) => {
-          console.log('profile.user', profile.user);
           this.user = profile.user},
         (error) => {
           this.flashMessage.show(

@@ -10,6 +10,8 @@ export class AuthService {
 
   constructor(private http: Http) {}
 
+  // register.component підписується на registerUser
+  // юзер з хедером передається на сервер
   registerUser(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -30,11 +32,17 @@ export class AuthService {
       .map(res => res.json());
   }
 
+  // profile.component підписується на getProfile
   getProfile() {
+    // береться токен юзера loadToken() з localStorage
+    // формується запит який містить в хедері токен
+    // якщо токен валідний і є такий юзер то сервер
+    // відповідаю даними юзера (розшифровує токен)
+    // і цей юзер передається в profile.component
     let headers = new Headers();
     this.loadToken();
     headers.append('Authorization', this.authToken);
-    headers.append('Content-Type', 'application/json');
+    // headers.append('Content-Type', 'application/json');
     return this.http.get(
       'api/profile',
       {headers: headers})

@@ -31,9 +31,9 @@ var ProfileComponent = (function () {
     }
     ProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
+        // підписується на юзера з auth.service
         this.authService.getProfile()
             .subscribe(function (profile) {
-            console.log('profile.user', profile.user);
             _this.user = profile.user;
         }, function (error) {
             _this.flashMessage.show(error, {
@@ -101,6 +101,7 @@ var RegisterComponent = (function () {
             username: this.username,
             password: this.password
         };
+        // validateService перевіряє валідність даних
         if (!this.validateService.validateRegister(user)) {
             this.flashMessage.show('fill all fields', {
                 cssClass: 'alert-danger',
@@ -115,6 +116,7 @@ var RegisterComponent = (function () {
             });
             return false;
         }
+        // підписка на authService.registerUser для реєстрації
         this.authService.registerUser(user)
             .subscribe(function (data) {
             if (data.success) {
@@ -373,6 +375,8 @@ var AuthService = (function () {
     function AuthService(http) {
         this.http = http;
     }
+    // register.component підписується на registerUser
+    // юзер з хедером передається на сервер
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
@@ -385,11 +389,17 @@ var AuthService = (function () {
         return this.http.post('api/authenticate', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
+    // profile.component підписується на getProfile
     AuthService.prototype.getProfile = function () {
+        // береться токен юзера loadToken() з localStorage
+        // формується запит який містить в хедері токен
+        // якщо токен валідний і є такий юзер то сервер
+        // відповідаю даними юзера (розшифровує токен)
+        // і цей юзер передається в profile.component
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         this.loadToken();
         headers.append('Authorization', this.authToken);
-        headers.append('Content-Type', 'application/json');
+        // headers.append('Content-Type', 'application/json');
         return this.http.get('api/profile', { headers: headers })
             .map(function (res) { return res.json(); });
     };
