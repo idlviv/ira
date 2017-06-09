@@ -6,6 +6,7 @@ const passport = require('passport');
 const mongoose = require('./server/libs/mongoose');
 const config = require('./server/config');
 const errorhandler = require('errorhandler');
+const HttpError = require('./server/error').HttpError;
 
 const app = express();
 
@@ -19,6 +20,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+app.use(require('./server/middleware/sendHttpError'));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -35,14 +38,24 @@ app.get('*', (req,res) => {
 });
 
 app.use(function(err, req, res, next) {
-
-  if (app.get('env') === 'development') {
-    let errorHandler = errorhandler();
-    console.log('errorhandler catch error');
-    return errorHandler(err, req, res, next);
-  } else {
-    res.send(500, 'Server error 500');
+  if (typeof err === 'number') { //next(404);
+    err = new HttpError(err);
   }
+
+  if (err instanceof HttpError) {
+    res.sendHttpError(err);
+  } else {
+    if (app.get('env') === 'development') {
+      let errorHandler = errorhandler();
+      console.log('errorhandler catch error');
+      errorHandler(err, req, res, next);
+    } else {
+      log.error(err);
+      err = new HttpError(500);
+      res.sendHttpError(err);
+    }
+  }
+
 });
 
 app.listen(process.env.PORT || config.get('port'),
