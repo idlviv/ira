@@ -443,7 +443,7 @@ module.exports = "<h2>Dashboard</h2>\r\n<p>\r\n  Welcome to dashboard!\r\n</p>\r
 /***/ 171:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron text-center\">\r\n  <h1>Autentication</h1>\r\n  <p class=\"lead\">Welcome</p>\r\n  <div>\r\n    <a class=\"btn btn-primary\" [routerLink]=\"['/register']\">Register</a>\r\n    <a class=\"btn btn-primary\" [routerLink]=\"['/login']\">Login</a>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-md-4\">\r\n    <h3>Express Backend</h3>\r\n    <p>Some text</p>\r\n  </div>\r\n  <div class=\"col-md-4\">\r\n    <h3>Angular-cli</h3>\r\n    <p>Some text</p>\r\n  </div>\r\n  <div class=\"col-md-4\">\r\n    <h3>JWT</h3>\r\n    <p>Some text</p>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"jumbotron text-center\">\r\n  <h1>Autentication</h1>\r\n  <p class=\"lead\">Welcome</p>\r\n  <div>\r\n    <a class=\"btn btn-primary\" [routerLink]=\"['/register']\">Register</a>\r\n    <a class=\"btn btn-primary\" [routerLink]=\"['/login']\">Login</a>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-4 col-xs-6\">\r\n    <h3>Express Backend</h3>\r\n    <p>Some text</p>\r\n    <app-item></app-item>\r\n  </div>\r\n  <div class=\"col-sm-4 col-xs-6\">\r\n    <h3>Angular-cli</h3>\r\n    <p>Some text</p>\r\n    <app-item></app-item>\r\n  </div>\r\n  <div class=\"col-sm-4 col-xs-6\">\r\n    <h3>JWT</h3>\r\n    <p>Some text</p>\r\n    <app-item></app-item>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -480,6 +480,67 @@ module.exports = "<h2 class=\"page-header\">Register</h2>\r\n<form (submit)=\"on
 
 module.exports = __webpack_require__(88);
 
+
+/***/ }),
+
+/***/ 215:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ItemComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ItemComponent = (function () {
+    function ItemComponent() {
+    }
+    ItemComponent.prototype.ngOnInit = function () {
+    };
+    return ItemComponent;
+}());
+ItemComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-item',
+        template: __webpack_require__(217),
+        styles: [__webpack_require__(216)]
+    }),
+    __metadata("design:paramtypes", [])
+], ItemComponent);
+
+//# sourceMappingURL=item.component.js.map
+
+/***/ }),
+
+/***/ 216:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(10)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 217:
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n  <h2>Заголовок</h2>\n  <!--<img src=\"http://via.placeholder.com/200x300\">-->\n  <img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">\n  <p>Some text Some text Some text Some text Some text Some text Some text Some text </p>\n</div>\n"
 
 /***/ }),
 
@@ -615,6 +676,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_item_item_component__ = __webpack_require__(215);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -622,6 +684,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -659,7 +722,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */],
             __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */],
             __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */]
+            __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__components_item_item_component__["a" /* ItemComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
