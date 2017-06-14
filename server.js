@@ -11,6 +11,7 @@ const HttpError = require('./server/error').HttpError;
 const app = express();
 
 const users = require('./server/routes/users');
+const products = require('./server/routes/products');
 
 app.use(cors());
 
@@ -28,10 +29,11 @@ app.use(passport.session());
 require('./server/config/passport')(passport);
 
 app.use('/api', users);
+app.use('/api', products);
 
-app.get('/', function(req, res) {
-  res.send('node');
-});
+// app.get('/', function(req, res) {
+//   res.send('node');
+// });
 
 app.get('*', (req,res) => {
   res.sendFile(path.join(__dirname, '/public'));
