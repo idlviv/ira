@@ -18,6 +18,7 @@ import{ProductService} from './services/product.service';
 import{FlashMessagesModule} from 'angular2-flash-messages';
 import{AuthGuard} from './guards/auth.guard';
 import { ItemComponent } from './components/item/item.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
-    ItemComponent
+    ItemComponent,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,

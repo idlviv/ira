@@ -17,4 +17,18 @@ router.get(
       });
   });
 
+router.post(
+  '/addProduct', (req, res, next) => {
+  let newProduct = new ProductModel({
+    itemNumber: req.body.itemNumber,
+    name: req.body.name,
+    price: req.body.price,
+    mainImgSrc: req.body.mainImgSrc,
+  });
+  // повертає обєкт (success..)
+  ProductModel.addProduct(newProduct)
+    .then((result) => res.json(result))
+    .catch((error) => res.json(error));
+});
+
 module.exports = router;

@@ -30,7 +30,6 @@ module.exports = function(passport) {
       .then((user) => {
         if (user) {
           done(null, user);
-          console.log('done', done(null, user));
         } else {
           done(null, false);
         }

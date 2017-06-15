@@ -66,6 +66,7 @@ router.get(
     res.json({user: req.user});
   });
 
+
 router.get('/validate', function(req, res, next) {
   res.json({user: req.user});
 });

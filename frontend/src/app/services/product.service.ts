@@ -8,9 +8,18 @@ export class ProductService {
   constructor(private http: Http) { }
 
   getProducts() {
-
     return this.http.get(
       'api/getProducts')
+      .map(res => res.json());
+  }
+
+  addProduct(product) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(
+      'api/addProduct',
+      product,
+      {headers: headers})
       .map(res => res.json());
   }
 }

@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {ProductService} from '../../services/product.service';
-import {FlashMessagesService} from 'angular2-flash-messages';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-item',
@@ -8,30 +6,11 @@ import {FlashMessagesService} from 'angular2-flash-messages';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
-  product: Object;
-  product1: string;
+  @Input() product: Object;
 
-  constructor(private productService: ProductService,
-              private flashMessage: FlashMessagesService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.productService.getProducts()
-      .subscribe(
-        (product) => {
-          this.product = product;
-          this.product1 = this.product[0].name;
-          // this.product1= this.product[0];
-
-        },
-        (error) => {
-          this.flashMessage.show(
-            error,
-            {
-              cssClass: 'alert-danger',
-              timeout: 3000
-            });
-          return false;
-        })
   }
 
 }
