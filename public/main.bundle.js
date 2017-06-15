@@ -443,7 +443,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, ".item-div {\r\n    display: inline;\r\n}", ""]);
+exports.push([module.i, ".item-div {\r\n    display: inline;\r\n    /*height: 450px;*/\r\n}", ""]);
 
 // exports
 
@@ -635,7 +635,7 @@ module.exports = "<!--<div class=\"jumbotron text-center\">-->\r\n  <!--<h1>Aute
 /***/ 176:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"item-div\">\n  <h2>{{product.name}}</h2>\n  <p>Item number: {{product.itemNumber}}</p>\n  <!--<img src=\"http://via.placeholder.com/200x300\">-->\n  <img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">\n  <p>{{product.price}} грн</p>\n</div>\n"
+module.exports = "<div class=\"item-div\">\n  <h2>{{product.name}}</h2>\n  <p>{{product.itemNumber}}</p>\n  <!--<img src=\"http://via.placeholder.com/200x300\">-->\n  <img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">\n  <p>{{product.price}} грн</p>\n</div>\n"
 
 /***/ }),
 
