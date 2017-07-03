@@ -31,10 +31,6 @@ require('./server/config/passport')(passport);
 app.use('/api', users);
 app.use('/api', products);
 
-// app.get('/', function(req, res) {
-//   res.send('node');
-// });
-
 app.get('*', (req,res) => {
   res.sendFile(path.join(__dirname, '/public'));
 });
@@ -61,4 +57,4 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(process.env.PORT || config.get('port'),
-  () => console.log('Server on port ' + process.env.PORT || config.get('port')));
+  () => console.log('Server on port ' + config.get('port') || process.env.PORT));

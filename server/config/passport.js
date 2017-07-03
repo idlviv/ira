@@ -6,7 +6,7 @@ const config = require('./');
 
   //Виконується при ініціалізації паспорта
 module.exports = function(passport) {
-  console.log('config/passport');
+  console.log('config/passport - initialization');
   let opts = {};
 
   // Реквест в хедері передає JWT token,
