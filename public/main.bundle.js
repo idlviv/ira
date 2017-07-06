@@ -807,7 +807,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/products-management.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-add-product></app-add-product>\n\n"
+module.exports = "<!--<md-tab-group>-->\n  <!--<md-tab label=\"One\">-->\n    <!--<h1>Some tab content</h1>-->\n    <!--<p>...</p>-->\n  <!--</md-tab>-->\n  <!--<md-tab label=\"Two\">-->\n    <!--<h1>Some more tab content</h1>-->\n    <!--<p>...</p>-->\n  <!--</md-tab>-->\n<!--</md-tab-group>-->\n\n<app-add-product></app-add-product>\n"
 
 /***/ }),
 
