@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
-// import {MdButtonModule, MdCheckboxModule} from '@angular/material';
-// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MdTabsModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -56,7 +56,8 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule,
-    // MdButtonModule, MdCheckboxModule, BrowserAnimationsModule
+    MdTabsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ValidateService,
