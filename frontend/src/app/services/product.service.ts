@@ -22,4 +22,5 @@ export class ProductService {
       {headers: headers})
       .map(res => res.json());
   }
+
 }

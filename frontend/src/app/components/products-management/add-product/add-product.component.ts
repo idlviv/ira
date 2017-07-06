@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {ValidateService} from '../../services/validate.service';
-import {ProductService} from '../../services/product.service';
+import {ValidateService} from '../../../services/validate.service';
+import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {Router} from '@angular/router';
+import {AuthService} from '../../../services/auth.service';
+
 
 
 @Component({
   selector: 'app-add-product',
-  templateUrl: './add-product.component.html',
-  styleUrls: ['./add-product.component.css']
+  templateUrl: 'add-product.component.html',
+  styleUrls: ['add-product.component.css']
 })
 
 export class AddProductComponent implements OnInit {
@@ -18,6 +20,7 @@ export class AddProductComponent implements OnInit {
   mainImgSrc: String;
 
   constructor(
+    private authService: AuthService,
     private validateService: ValidateService,
     private productService: ProductService,
     private flashMessage: FlashMessagesService,
@@ -28,7 +31,8 @@ export class AddProductComponent implements OnInit {
   }
 
   onAddProductSubmit() {
-    const product = {
+
+      const product = {
       itemNumber: this.itemNumber,
       name: this.name,
       price: this.price,
@@ -43,7 +47,7 @@ export class AddProductComponent implements OnInit {
               cssClass: 'alert-success',
               timeout: 3000
             });
-          this.router.navigate(['/profile']);
+          // this.router.navigate(['/profile']);
         } else {
           this.flashMessage.show(
             'Adding failed',
@@ -51,7 +55,7 @@ export class AddProductComponent implements OnInit {
               cssClass: 'alert-danger',
               timeout: 3000
             });
-          this.router.navigate(['/profile']);
+          // this.router.navigate(['/profile']);
         }
       })
   }

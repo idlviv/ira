@@ -31,11 +31,16 @@ require('./server/config/passport')(passport);
 app.use('/api', users);
 app.use('/api', products);
 
-app.get('*', (req,res) => {
+app.get('/', (req,res) => {
   res.sendFile(path.join(__dirname, '/public'));
 });
 
+app.get('*', function(req, res) {
+  res.redirect('/');
+});
+
 app.use(function(err, req, res, next) {
+  console.log('id express catch error ' + err);
   if (typeof err === 'number') { //next(404);
     err = new HttpError(err);
   }

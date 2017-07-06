@@ -57,8 +57,7 @@ export class AuthService {
   }
 
   loadToken() {
-      const token = localStorage.getItem('token');
-      this.authToken = token;
+      this.authToken = localStorage.getItem('token');
   }
 
   loggedIn() {

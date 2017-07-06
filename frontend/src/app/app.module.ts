@@ -18,14 +18,19 @@ import{ProductService} from './services/product.service';
 import{FlashMessagesModule} from 'angular2-flash-messages';
 import{AuthGuard} from './guards/auth.guard';
 import { ItemComponent } from './components/item/item.component';
-import { AddProductComponent } from './components/add-product/add-product.component';
+import { AddProductComponent } from './components/products-management/add-product/add-product.component';
+import { ProductsManagementComponent } from './components/products-management/products-management.component';
+import { Page404Component } from './components/page404/page404.component';
+import { EditProductComponent } from './components/products-management/edit-product/edit-product.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
+  {path: 'product-management', component: ProductsManagementComponent, canActivate:[AuthGuard]},
   {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]},
+  {path: '**', component: Page404Component},
 ];
 
 @NgModule({
@@ -39,6 +44,9 @@ const appRoutes: Routes = [
     ProfileComponent,
     ItemComponent,
     AddProductComponent,
+    ProductsManagementComponent,
+    Page404Component,
+    EditProductComponent,
   ],
   imports: [
     BrowserModule,

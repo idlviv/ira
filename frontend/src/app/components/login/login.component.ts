@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
               cssClass: 'alert-danger',
               timeout: 5000
             });
-          // this.router.navigate(['/login']);
+          this.router.navigate(['/login']);
         }
 
       });
