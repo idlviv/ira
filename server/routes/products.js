@@ -16,12 +16,12 @@ router.get(
         console.log(error);
       });
   });
-// '/addProduct', passport.authenticate('jwt', {session: false}),
-router.post(
 
-  '/addProduct',
+router.post(
+'/addProduct', passport.authenticate('jwt', {session: false}),
   (req, res, next) => {
-    let newProduct = new ProductModel({
+    console.log('Server - ProductModel - authenticated');
+  let newProduct = new ProductModel({
       itemNumber: req.body.itemNumber,
       name: req.body.name,
       price: req.body.price,

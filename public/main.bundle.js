@@ -342,7 +342,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/item/item.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"item-div\">\n  <h2>{{product.name}}</h2>\n  <p>{{product.itemNumber}}</p>\n  <!--<img src=\"http://via.placeholder.com/200x300\">-->\n  <img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">\n  <p>{{product.price}} грн</p>\n</div>\n"
+module.exports = "<div class=\"item-div\">\r\n  <h2>{{product.name}}</h2>\r\n  <p>{{product.itemNumber}}</p>\r\n  <!--<img src=\"http://via.placeholder.com/200x300\">-->\r\n  <img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">\r\n  <p>{{product.price}} грн</p>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -504,7 +504,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\r\n  <div class=\"container\">\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand\" href=\"#\">Brand</a>\r\n    </div>\r\n    <div id=\"navbar\" class=\"collapse navbar-collapse\">\r\n      <ul class=\"nav navbar-nav navbar-left\">\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"><a [routerLink]=\"['/']\">Home</a></li>\r\n      </ul>\r\n\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/product-management']\">Product Management</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/profile']\">Profile</a></li>\r\n\r\n        <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/login']\">Login</a></li>\r\n        <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/register']\">Register</a></li>\r\n      </ul>\r\n    </div><!--/.nav-collapse -->\r\n  </div>\r\n</nav>"
+module.exports = "<nav class=\"navbar navbar-default\">\r\n  <div class=\"container\">\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand\" href=\"#\">Brand</a>\r\n    </div>\r\n    <div id=\"navbar\" class=\"collapse navbar-collapse\">\r\n      <ul class=\"nav navbar-nav navbar-left\">\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"><a [routerLink]=\"['/']\">Home</a></li>\r\n      </ul>\r\n\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/product-management']\">Product Management</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/profile']\">Profile</a></li>\r\n\r\n        <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/login']\">Login</a></li>\r\n        <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/register']\">Register</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\r\n      </ul>\r\n    </div><!--/.nav-collapse -->\r\n  </div>\r\n</nav>"
 
 /***/ }),
 
@@ -646,7 +646,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/add-product/add-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Add product</h2>\n<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>\n  <div class=\"form-group\">\n    <label for=\"itemNumber\">Item number</label>\n    <input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"name\">Name</label>\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"price\">Price</label>\n    <input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"mainImgSrc\">Image source</label>\n    <input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\n</form>\n"
+module.exports = "<h2 class=\"page-header\">Add product</h2>\r\n<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>\r\n  <div class=\"form-group\">\r\n    <label for=\"itemNumber\">Item number</label>\r\n    <input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"name\">Name</label>\r\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"price\">Price</label>\r\n    <input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mainImgSrc\">Image source</label>\r\n    <input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\r\n  </div>\r\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\r\n</form>\r\n"
 
 /***/ }),
 
@@ -750,7 +750,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/edit-product/edit-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  edit-product works!\n</p>\n"
+module.exports = "<p>\r\n  edit-product works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1189,8 +1189,9 @@ var _a;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1204,9 +1205,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ProductService = (function () {
-    function ProductService(http) {
+    function ProductService(http, authService) {
         this.http = http;
+        this.authService = authService;
     }
     ProductService.prototype.getProducts = function () {
         return this.http.get('api/getProducts')
@@ -1214,6 +1217,8 @@ var ProductService = (function () {
     };
     ProductService.prototype.addProduct = function (product) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.authService.loadToken();
+        headers.append('Authorization', this.authService.authToken);
         headers.append('Content-Type', 'application/json');
         return this.http.post('api/addProduct', product, { headers: headers })
             .map(function (res) { return res.json(); });
@@ -1222,10 +1227,10 @@ var ProductService = (function () {
 }());
 ProductService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _b || Object])
 ], ProductService);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=product.service.js.map
 
 /***/ }),
