@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
-import {MdTabsModule} from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// import {MdTabsModule} from '@angular/material';
+// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -30,7 +30,7 @@ const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
-  {path: 'product-management', component: ProductsManagementComponent, canActivate:[AuthGuard]},
+  {path: 'product-management', component: ProductsManagementComponent},
   {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]},
   {path: '**', component: Page404Component},
 ];
@@ -56,8 +56,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule,
-    MdTabsModule,
-    BrowserAnimationsModule
+
   ],
   providers: [
     ValidateService,
@@ -68,3 +67,5 @@ const appRoutes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+// MdTabsModule,
+// BrowserAnimationsModule
