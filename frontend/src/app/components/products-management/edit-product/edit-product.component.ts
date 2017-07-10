@@ -35,7 +35,8 @@ export class EditProductComponent implements OnInit {
         })
   }
   onClickEditBtn(e) {
-    console.log(e);
+    let p = e.srcElement.parentElement.parentElement;
+    console.log( p);
     this.isActive = !this.isActive;
     console.log(this.isActive);
   }

@@ -1,34 +1,56 @@
+<!--<h2 class="page-header">Add product</h2>-->
+  <!--<table class="table">-->
+
+
+          <!--<form *ngFor="let product of products" (submit)="onEditProductSubmit(product._id)" #editProductForm="ngForm">-->
+            <!--<thead>-->
+              <!--<tr *ngIf="product === products[0]">-->
+                <!--<th>Item Number</th>-->
+                <!--<th>Name</th>-->
+                <!--<th>Price</th>-->
+                <!--<th>Img source</th>-->
+                <!--<th>Btn</th>-->
+              <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+              <!--<tr class="active">-->
+                <!--<td><input type="text" [disabled]="!isActive" [(ngModel)]="product.itemNumber" name="itemNumber" class="form-control"></td>-->
+                <!--<td><input type="text" [(ngModel)]="product.name" name="name" #name="ngModel" class="form-control">-->
+                  <!--&lt;!&ndash;<div [hidden]="name.untouched" class="alert alert-danger">&ndash;&gt;-->
+                  <!--&lt;!&ndash;Untouched&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--</td>-->
+                <!--<td><input type="text" [(ngModel)]="product.price" name="price" class="form-control"></td>-->
+                <!--<td><input type="text" [(ngModel)]="product.mainImgSrc" name="mainImgSrc" class="form-control"></td>-->
+                <!--<td><input type="button" class="btn" value="Edit" (click)="onClickEditBtn($event)"></td>-->
+                <!--<td><input type="submit" class="btn btn-primary" value="Save"></td>-->
+              <!--</tr>-->
+            <!--</tbody>-->
+          <!--</form>-->
+
+  <!--</table>-->
+
 <h2 class="page-header">Add product</h2>
-  <table class="table">
-
-
-          <form *ngFor="let product of products" (submit)="onEditProductSubmit(product._id)" #editProductForm="ngForm">
-            <thead>
-              <tr *ngIf="product === products[0]">
-                <th>Item Number</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Img source</th>
-                <th>Btn</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="active">
-                <td><input type="text" [disabled]="!isActive" [(ngModel)]="product.itemNumber" name="itemNumber" class="form-control"></td>
-                <td><input type="text" [(ngModel)]="product.name" name="name" #name="ngModel" class="form-control">
-                  <!--<div [hidden]="name.untouched" class="alert alert-danger">-->
-                  <!--Untouched-->
-                <!--</div>-->
-                </td>
-                <td><input type="text" [(ngModel)]="product.price" name="price" class="form-control"></td>
-                <td><input type="text" [(ngModel)]="product.mainImgSrc" name="mainImgSrc" class="form-control"></td>
-                <td><input type="button" class="btn" value="Edit" (click)="onClickEditBtn($event)"></td>
-                <td><input type="submit" class="btn btn-primary" value="Save"></td>
-              </tr>
-            </tbody>
-          </form>
-
-  </table>
+    <table class="table">
+    <thead>
+    <tr>
+      <th>Item Number</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Img source</th>
+      <th>Btn</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{product.itemNumber}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.mainImgSrc}}</td>
+      <td><button (click)="onClickEditBtn($event)"></button></td>
+    </tr>
+    </tbody>
+    </table>
 
 
 
