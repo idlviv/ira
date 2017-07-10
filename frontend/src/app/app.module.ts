@@ -26,11 +26,11 @@ import { Page404Component } from './components/page404/page404.component';
 import { EditProductComponent } from './components/products-management/edit-product/edit-product.component';
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: ProductsManagementComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
-  {path: 'product-management', component: ProductsManagementComponent},
+  {path: 'product-management', component: HomeComponent},
   {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]},
   {path: '**', component: Page404Component},
 ];

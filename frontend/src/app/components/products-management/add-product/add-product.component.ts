@@ -32,32 +32,48 @@ export class AddProductComponent implements OnInit {
 
   onAddProductSubmit() {
 
-      const product = {
+    const product = {
       itemNumber: this.itemNumber,
       name: this.name,
       price: this.price,
       mainImgSrc: this.mainImgSrc,
     };
+
     this.productService.addProduct(product)
-      .subscribe(data => {
-        if (data.success) {
-          this.flashMessage.show(
-            'Added successfuly',
-            {
-              cssClass: 'alert-success',
-              timeout: 3000
-            });
-          // this.router.navigate(['/profile']);
-        } else {
-          this.flashMessage.show(
-            'Adding failed',
-            {
-              cssClass: 'alert-danger',
-              timeout: 3000
-            });
-          // this.router.navigate(['/profile']);
+      .subscribe(
+        data => {
+          if (data.success) {
+            console.log('success');
+            this.flashMessage.show(
+              'Added successfuly',
+              {
+                cssClass: 'alert-success',
+                timeout: 3000
+              });
+            // this.router.navigate(['/profile']);
+          } else {
+            console.log('fail');
+            this.flashMessage.show(
+              'Adding failed',
+              {
+                cssClass: 'alert-danger',
+                timeout: 3000
+              });
+            // this.router.navigate(['/profile']);
+          }
+        },
+        error => {
+          if (error.status === 401) {
+            this.flashMessage.show(
+              'Please login',
+              {
+                cssClass: 'alert-danger',
+                timeout: 3000
+              });
+            this.router.navigate(['/login']);
+          }
         }
-      })
+      );
   }
 
 }

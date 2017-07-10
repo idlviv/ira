@@ -1,3 +1,54 @@
-<p>
-  edit-product works!
-</p>
+<h2 class="page-header">Add product</h2>
+  <table class="table">
+
+
+          <form *ngFor="let product of products" (submit)="onEditProductSubmit(product._id)" #editProductForm="ngForm">
+            <thead>
+              <tr *ngIf="product === products[0]">
+                <th>Item Number</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Img source</th>
+                <th>Btn</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="active">
+                <td><input type="text" [disabled]="!isActive" [(ngModel)]="product.itemNumber" name="itemNumber" class="form-control"></td>
+                <td><input type="text" [(ngModel)]="product.name" name="name" #name="ngModel" class="form-control">
+                  <!--<div [hidden]="name.untouched" class="alert alert-danger">-->
+                  <!--Untouched-->
+                <!--</div>-->
+                </td>
+                <td><input type="text" [(ngModel)]="product.price" name="price" class="form-control"></td>
+                <td><input type="text" [(ngModel)]="product.mainImgSrc" name="mainImgSrc" class="form-control"></td>
+                <td><input type="button" class="btn" value="Edit" (click)="onClickEditBtn($event)"></td>
+                <td><input type="submit" class="btn btn-primary" value="Save"></td>
+              </tr>
+            </tbody>
+          </form>
+
+  </table>
+
+
+
+<!--<form class="form-inline" (submit)="onEditProductSubmit(); editProductForm.reset()" #editProductForm>-->
+  <!--<div class="form-group">-->
+    <!--<label for="itemNumber">Item number</label>-->
+    <!--<input type="text" [(ngModel)]="itemNumber" name="itemNumber" class="form-control" id="itemNumber">-->
+  <!--</div>-->
+  <!--<div class="form-group">-->
+    <!--<label for="name">Name</label>-->
+    <!--<input type="text" [(ngModel)]="name" name="name" class="form-control" id="name">-->
+  <!--</div>-->
+  <!--<div class="form-group">-->
+    <!--<label for="price">Price</label>-->
+    <!--<input type="text" [(ngModel)]="price" name="price" class="form-control" id="price">-->
+  <!--</div>-->
+  <!--<div class="form-group">-->
+    <!--<label for="mainImgSrc">Image source</label>-->
+    <!--<input type="text" [(ngModel)]="mainImgSrc" name="mainImgSrc" class="form-control" id="mainImgSrc">-->
+  <!--</div>-->
+  <!--<input type="submit" class="btn btn-primary" value="Add">-->
+<!--</form>-->
+

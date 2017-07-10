@@ -128,11 +128,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 var appRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */] },
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_19__components_products_management_products_management_component__["a" /* ProductsManagementComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__["a" /* LoginComponent */] },
     { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'product-management', component: __WEBPACK_IMPORTED_MODULE_19__components_products_management_products_management_component__["a" /* ProductsManagementComponent */] },
+    { path: 'product-management', component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: '**', component: __WEBPACK_IMPORTED_MODULE_20__components_page404_page404_component__["a" /* Page404Component */] },
 ];
@@ -342,7 +342,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/item/item.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"item-div\">\r\n  <h2>{{product.name}}</h2>\r\n  <p>{{product.itemNumber}}</p>\r\n  <!--<img src=\"http://via.placeholder.com/200x300\">-->\r\n  <img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">\r\n  <p>{{product.price}} грн</p>\r\n</div>\r\n"
+module.exports = "<div class=\"item-div\">\n  <h2>{{product.name}}</h2>\n  <p>{{product.itemNumber}}</p>\n  <!--<img src=\"http://via.placeholder.com/200x300\">-->\n  <img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">\n  <p>{{product.price}} грн</p>\n</div>\n"
 
 /***/ }),
 
@@ -646,7 +646,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/add-product/add-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Add product</h2>\r\n<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>\r\n  <div class=\"form-group\">\r\n    <label for=\"itemNumber\">Item number</label>\r\n    <input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"name\">Name</label>\r\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"price\">Price</label>\r\n    <input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mainImgSrc\">Image source</label>\r\n    <input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\r\n  </div>\r\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\r\n</form>\r\n"
+module.exports = "<h2 class=\"page-header\">Add product</h2>\n<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>\n  <div class=\"form-group\">\n    <label for=\"itemNumber\">Item number</label>\n    <input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"name\">Name</label>\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"price\">Price</label>\n    <input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"mainImgSrc\">Image source</label>\n    <input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\n</form>\n"
 
 /***/ }),
 
@@ -698,6 +698,7 @@ var AddProductComponent = (function () {
         this.productService.addProduct(product)
             .subscribe(function (data) {
             if (data.success) {
+                console.log('success');
                 _this.flashMessage.show('Added successfuly', {
                     cssClass: 'alert-success',
                     timeout: 3000
@@ -705,11 +706,20 @@ var AddProductComponent = (function () {
                 // this.router.navigate(['/profile']);
             }
             else {
+                console.log('fail');
                 _this.flashMessage.show('Adding failed', {
                     cssClass: 'alert-danger',
                     timeout: 3000
                 });
                 // this.router.navigate(['/profile']);
+            }
+        }, function (error) {
+            if (error.status === 401) {
+                _this.flashMessage.show('Please login', {
+                    cssClass: 'alert-danger',
+                    timeout: 3000
+                });
+                _this.router.navigate(['/login']);
             }
         });
     };
@@ -750,7 +760,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/edit-product/edit-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  edit-product works!\r\n</p>\r\n"
+module.exports = "<h2 class=\"page-header\">Add product</h2>\n  <table class=\"table\">\n\n\n          <form *ngFor=\"let product of products\" (submit)=\"onEditProductSubmit(product._id)\" #editProductForm=\"ngForm\">\n            <thead>\n              <tr *ngIf=\"product === products[0]\">\n                <th>Item Number</th>\n                <th>Name</th>\n                <th>Price</th>\n                <th>Img source</th>\n                <th>Btn</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr class=\"active\">\n                <td><input type=\"text\" [disabled]=\"!isActive\" [(ngModel)]=\"product.itemNumber\" name=\"itemNumber\" class=\"form-control\"></td>\n                <td><input type=\"text\" [(ngModel)]=\"product.name\" name=\"name\" #name=\"ngModel\" class=\"form-control\">\n                  <!--<div [hidden]=\"name.untouched\" class=\"alert alert-danger\">-->\n                  <!--Untouched-->\n                <!--</div>-->\n                </td>\n                <td><input type=\"text\" [(ngModel)]=\"product.price\" name=\"price\" class=\"form-control\"></td>\n                <td><input type=\"text\" [(ngModel)]=\"product.mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\"></td>\n                <td><input type=\"button\" class=\"btn\" value=\"Edit\" (click)=\"onClickEditBtn($event)\"></td>\n                <td><input type=\"submit\" class=\"btn btn-primary\" value=\"Save\"></td>\n              </tr>\n            </tbody>\n          </form>\n\n  </table>\n\n\n\n<!--<form class=\"form-inline\" (submit)=\"onEditProductSubmit(); editProductForm.reset()\" #editProductForm>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"itemNumber\">Item number</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"name\">Name</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"price\">Price</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"mainImgSrc\">Image source</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">-->\n  <!--</div>-->\n  <!--<input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">-->\n<!--</form>-->\n\n"
 
 /***/ }),
 
@@ -759,6 +769,9 @@ module.exports = "<p>\r\n  edit-product works!\r\n</p>\r\n"
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditProductComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -770,10 +783,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var EditProductComponent = (function () {
-    function EditProductComponent() {
+    function EditProductComponent(productService, flashMessage) {
+        this.productService = productService;
+        this.flashMessage = flashMessage;
+        this.isActive = false;
     }
     EditProductComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.productService.getProducts()
+            .subscribe(function (products) {
+            _this.products = products;
+        }, function (error) {
+            _this.flashMessage.show(error, {
+                cssClass: 'alert-danger',
+                timeout: 3000
+            });
+            return false;
+        });
+    };
+    EditProductComponent.prototype.onClickEditBtn = function (e) {
+        console.log(e);
+        this.isActive = !this.isActive;
+        console.log(this.isActive);
+    };
+    EditProductComponent.prototype.onEditProductSubmit = function (_id) {
+        // this.flashMessage.show(
+        //   this.products
+        //   {
+        //     cssClass: 'alert-danger',
+        //     timeout: 1000
+        //   });
+        console.log(_id);
     };
     return EditProductComponent;
 }());
@@ -783,9 +826,10 @@ EditProductComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object])
 ], EditProductComponent);
 
+var _a, _b;
 //# sourceMappingURL=edit-product.component.js.map
 
 /***/ }),
@@ -811,7 +855,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/products-management.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<md-tab-group>-->\r\n  <!--<md-tab>-->\r\n    <!--<ng-template md-tab-label>-->\r\n      <!--The <em>best</em> pasta-->\r\n    <!--</ng-template>-->\r\n    <!--<h1>Best pasta restaurants</h1>-->\r\n    <!--<p>...</p>-->\r\n  <!--</md-tab>-->\r\n  <!--<md-tab>-->\r\n    <!--<ng-template md-tab-label>-->\r\n      <!--<md-icon>thumb_down</md-icon> The worst sushi-->\r\n    <!--</ng-template>-->\r\n    <!--<h1>Terrible sushi restaurants</h1>-->\r\n    <!--<p>...</p>-->\r\n  <!--</md-tab>-->\r\n<!--</md-tab-group>-->\r\n\r\n<app-add-product></app-add-product>\r\n"
+module.exports = "<!--<md-tab-group>-->\r\n  <!--<md-tab>-->\r\n    <!--<ng-template md-tab-label>-->\r\n      <!--The <em>best</em> pasta-->\r\n    <!--</ng-template>-->\r\n    <!--<h1>Best pasta restaurants</h1>-->\r\n    <!--<p>...</p>-->\r\n  <!--</md-tab>-->\r\n  <!--<md-tab>-->\r\n    <!--<ng-template md-tab-label>-->\r\n      <!--<md-icon>thumb_down</md-icon> The worst sushi-->\r\n    <!--</ng-template>-->\r\n    <!--<h1>Terrible sushi restaurants</h1>-->\r\n    <!--<p>...</p>-->\r\n  <!--</md-tab>-->\r\n<!--</md-tab-group>-->\r\n\r\n<app-edit-product></app-edit-product>\r\n<app-add-product></app-add-product>\r\n"
 
 /***/ }),
 
