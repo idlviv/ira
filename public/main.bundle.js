@@ -78,24 +78,27 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_item_item_component__ = __webpack_require__("../../../../../src/app/components/item/item.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_products_management_add_product_add_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_products_management_products_management_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_page404_page404_component__ = __webpack_require__("../../../../../src/app/components/page404/page404.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_products_management_edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_item_item_component__ = __webpack_require__("../../../../../src/app/components/item/item.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_products_management_add_product_add_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_products_management_products_management_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_page404_page404_component__ = __webpack_require__("../../../../../src/app/components/page404/page404.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_products_management_edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_products_management_add_product_modal_add_product_modal_component__ = __webpack_require__("../../../../../src/app/components/products-management/add-product-modal/add-product-modal.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -108,8 +111,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-// import {MdTabsModule} from '@angular/material';
-// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+
+
 
 
 
@@ -128,13 +132,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 var appRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_19__components_products_management_products_management_component__["a" /* ProductsManagementComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__["a" /* LoginComponent */] },
-    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'product-management', component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: '**', component: __WEBPACK_IMPORTED_MODULE_20__components_page404_page404_component__["a" /* Page404Component */] },
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_21__components_products_management_products_management_component__["a" /* ProductsManagementComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_10__components_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_9__components_login_login_component__["a" /* LoginComponent */] },
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_12__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'product-management', component: __WEBPACK_IMPORTED_MODULE_11__components_home_home_component__["a" /* HomeComponent */] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: '**', component: __WEBPACK_IMPORTED_MODULE_22__components_page404_page404_component__["a" /* Page404Component */] },
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -144,33 +148,37 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__components_navbar_navbar_component__["a" /* NavbarComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__components_item_item_component__["a" /* ItemComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__components_products_management_add_product_add_product_component__["a" /* AddProductComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__components_products_management_products_management_component__["a" /* ProductsManagementComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__components_page404_page404_component__["a" /* Page404Component */],
-            __WEBPACK_IMPORTED_MODULE_21__components_products_management_edit_product_edit_product_component__["a" /* EditProductComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__components_navbar_navbar_component__["a" /* NavbarComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__components_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__components_register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components_home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__["a" /* ProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__components_item_item_component__["a" /* ItemComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_products_management_add_product_add_product_component__["a" /* AddProductComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__components_products_management_products_management_component__["a" /* ProductsManagementComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__components_page404_page404_component__["a" /* Page404Component */],
+            __WEBPACK_IMPORTED_MODULE_23__components_products_management_edit_product_edit_product_component__["a" /* EditProductComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__components_products_management_add_product_modal_add_product_modal_component__["a" /* AddProductModalComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(appRoutes),
-            __WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages__["FlashMessagesModule"],
+            __WEBPACK_IMPORTED_MODULE_17_angular2_flash_messages__["FlashMessagesModule"],
+            __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_material__["a" /* MdDialogModule */],
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_12__services_validate_service__["a" /* ValidateService */],
-            __WEBPACK_IMPORTED_MODULE_13__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */],
-            __WEBPACK_IMPORTED_MODULE_14__services_product_service__["a" /* ProductService */]
+            __WEBPACK_IMPORTED_MODULE_14__services_validate_service__["a" /* ValidateService */],
+            __WEBPACK_IMPORTED_MODULE_15__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */],
+            __WEBPACK_IMPORTED_MODULE_16__services_product_service__["a" /* ProductService */]
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
+        entryComponents: [__WEBPACK_IMPORTED_MODULE_24__components_products_management_add_product_modal_add_product_modal_component__["a" /* AddProductModalComponent */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -342,7 +350,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/item/item.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"item-div\">\n  <h2>{{product.name}}</h2>\n  <p>{{product.itemNumber}}</p>\n  <!--<img src=\"http://via.placeholder.com/200x300\">-->\n  <img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">\n  <p>{{product.price}} грн</p>\n</div>\n"
+module.exports = "<div class=\"item-div\">\r\n  <h2>{{product.name}}</h2>\r\n  <p>{{product.itemNumber}}</p>\r\n  <!--<img src=\"http://via.placeholder.com/200x300\">-->\r\n  <img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">\r\n  <p>{{product.price}} грн</p>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -625,6 +633,71 @@ Page404Component = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/products-management/add-product-modal/add-product-modal.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products-management/add-product-modal/add-product-modal.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  add-product-modal works!\n</p>\n<button md-raised-button (click)=\"dialogRef.close()\">Close dialog</button>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products-management/add-product-modal/add-product-modal.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddProductModalComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AddProductModalComponent = (function () {
+    function AddProductModalComponent(dialogRef) {
+        this.dialogRef = dialogRef;
+    }
+    AddProductModalComponent.prototype.ngOnInit = function () {
+    };
+    return AddProductModalComponent;
+}());
+AddProductModalComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-add-product-modal',
+        template: __webpack_require__("../../../../../src/app/components/products-management/add-product-modal/add-product-modal.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/products-management/add-product-modal/add-product-modal.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["b" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["b" /* MdDialogRef */]) === "function" && _a || Object])
+], AddProductModalComponent);
+
+var _a;
+//# sourceMappingURL=add-product-modal.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/products-management/add-product/add-product.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -646,7 +719,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/add-product/add-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Add product</h2>\n<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>\n  <div class=\"form-group\">\n    <label for=\"itemNumber\">Item number</label>\n    <input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"name\">Name</label>\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"price\">Price</label>\n    <input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"mainImgSrc\">Image source</label>\n    <input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\n</form>\n"
+module.exports = "<h2 class=\"page-header\">Add product</h2>\r\n<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>\r\n  <div class=\"form-group\">\r\n    <label for=\"itemNumber\">Item number</label>\r\n    <input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"name\">Name</label>\r\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"price\">Price</label>\r\n    <input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mainImgSrc\">Image source</label>\r\n    <input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\r\n  </div>\r\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\r\n</form>\r\n"
 
 /***/ }),
 
@@ -760,7 +833,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/edit-product/edit-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<h2 class=\"page-header\">Add product</h2>-->\n  <!--<table class=\"table\">-->\n\n\n          <!--<form *ngFor=\"let product of products\" (submit)=\"onEditProductSubmit(product._id)\" #editProductForm=\"ngForm\">-->\n            <!--<thead>-->\n              <!--<tr *ngIf=\"product === products[0]\">-->\n                <!--<th>Item Number</th>-->\n                <!--<th>Name</th>-->\n                <!--<th>Price</th>-->\n                <!--<th>Img source</th>-->\n                <!--<th>Btn</th>-->\n              <!--</tr>-->\n            <!--</thead>-->\n            <!--<tbody>-->\n              <!--<tr class=\"active\">-->\n                <!--<td><input type=\"text\" [disabled]=\"!isActive\" [(ngModel)]=\"product.itemNumber\" name=\"itemNumber\" class=\"form-control\"></td>-->\n                <!--<td><input type=\"text\" [(ngModel)]=\"product.name\" name=\"name\" #name=\"ngModel\" class=\"form-control\">-->\n                  <!--&lt;!&ndash;<div [hidden]=\"name.untouched\" class=\"alert alert-danger\">&ndash;&gt;-->\n                  <!--&lt;!&ndash;Untouched&ndash;&gt;-->\n                <!--&lt;!&ndash;</div>&ndash;&gt;-->\n                <!--</td>-->\n                <!--<td><input type=\"text\" [(ngModel)]=\"product.price\" name=\"price\" class=\"form-control\"></td>-->\n                <!--<td><input type=\"text\" [(ngModel)]=\"product.mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\"></td>-->\n                <!--<td><input type=\"button\" class=\"btn\" value=\"Edit\" (click)=\"onClickEditBtn($event)\"></td>-->\n                <!--<td><input type=\"submit\" class=\"btn btn-primary\" value=\"Save\"></td>-->\n              <!--</tr>-->\n            <!--</tbody>-->\n          <!--</form>-->\n\n  <!--</table>-->\n\n<h2 class=\"page-header\">Add product</h2>\n    <table class=\"table\">\n    <thead>\n    <tr>\n      <th>Item Number</th>\n      <th>Name</th>\n      <th>Price</th>\n      <th>Img source</th>\n      <th>Btn</th>\n    </tr>\n    </thead>\n    <tbody>\n    <tr *ngFor=\"let product of products\">\n      <td>{{product.itemNumber}}</td>\n      <td>{{product.name}}</td>\n      <td>{{product.price}}</td>\n      <td>{{product.mainImgSrc}}</td>\n      <td><button (click)=\"onClickEditBtn($event)\"></button></td>\n    </tr>\n    </tbody>\n    </table>\n\n\n\n<!--<form class=\"form-inline\" (submit)=\"onEditProductSubmit(); editProductForm.reset()\" #editProductForm>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"itemNumber\">Item number</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"name\">Name</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"price\">Price</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"mainImgSrc\">Image source</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">-->\n  <!--</div>-->\n  <!--<input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">-->\n<!--</form>-->\n\n"
+module.exports = "<!--<h2 class=\"page-header\">Add product</h2>-->\r\n  <!--<table class=\"table\">-->\r\n\r\n\r\n          <!--<form *ngFor=\"let product of products\" (submit)=\"onEditProductSubmit(product._id)\" #editProductForm=\"ngForm\">-->\r\n            <!--<thead>-->\r\n              <!--<tr *ngIf=\"product === products[0]\">-->\r\n                <!--<th>Item Number</th>-->\r\n                <!--<th>Name</th>-->\r\n                <!--<th>Price</th>-->\r\n                <!--<th>Img source</th>-->\r\n                <!--<th>Btn</th>-->\r\n              <!--</tr>-->\r\n            <!--</thead>-->\r\n            <!--<tbody>-->\r\n              <!--<tr class=\"active\">-->\r\n                <!--<td><input type=\"text\" [disabled]=\"!isActive\" [(ngModel)]=\"product.itemNumber\" name=\"itemNumber\" class=\"form-control\"></td>-->\r\n                <!--<td><input type=\"text\" [(ngModel)]=\"product.name\" name=\"name\" #name=\"ngModel\" class=\"form-control\">-->\r\n                  <!--&lt;!&ndash;<div [hidden]=\"name.untouched\" class=\"alert alert-danger\">&ndash;&gt;-->\r\n                  <!--&lt;!&ndash;Untouched&ndash;&gt;-->\r\n                <!--&lt;!&ndash;</div>&ndash;&gt;-->\r\n                <!--</td>-->\r\n                <!--<td><input type=\"text\" [(ngModel)]=\"product.price\" name=\"price\" class=\"form-control\"></td>-->\r\n                <!--<td><input type=\"text\" [(ngModel)]=\"product.mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\"></td>-->\r\n                <!--<td><input type=\"button\" class=\"btn\" value=\"Edit\" (click)=\"onClickEditBtn($event)\"></td>-->\r\n                <!--<td><input type=\"submit\" class=\"btn btn-primary\" value=\"Save\"></td>-->\r\n              <!--</tr>-->\r\n            <!--</tbody>-->\r\n          <!--</form>-->\r\n\r\n  <!--</table>-->\r\n\r\n<h2 class=\"page-header\">Add product</h2>\r\n    <table class=\"table\">\r\n    <thead>\r\n    <tr>\r\n      <th>Item Number</th>\r\n      <th>Name</th>\r\n      <th>Price</th>\r\n      <th>Img source</th>\r\n      <th>Btn</th>\r\n    </tr>\r\n    </thead>\r\n    <tbody>\r\n    <tr *ngFor=\"let product of products\">\r\n      <td>\r\n        <span (click)=\"onClickEditBtn($event, product._id)\" class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\r\n        &nbsp;&nbsp;{{product.itemNumber}}</td>\r\n      <td>{{product.name}}</td>\r\n      <td>{{product.price}}</td>\r\n      <td>{{product.mainImgSrc}}\r\n      </td>\r\n      <td>\r\n\r\n      </td>\r\n    </tr>\r\n    </tbody>\r\n    </table>\r\n\r\n\r\n\r\n<!--<form class=\"form-inline\" (submit)=\"onEditProductSubmit(); editProductForm.reset()\" #editProductForm>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"itemNumber\">Item number</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"name\">Name</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"price\">Price</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"mainImgSrc\">Image source</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">-->\r\n  <!--</div>-->\r\n  <!--<input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">-->\r\n<!--</form>-->\r\n\r\n"
 
 /***/ }),
 
@@ -772,6 +845,8 @@ module.exports = "<!--<h2 class=\"page-header\">Add product</h2>-->\n  <!--<tabl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__add_product_modal_add_product_modal_component__ = __webpack_require__("../../../../../src/app/components/products-management/add-product-modal/add-product-modal.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditProductComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -785,8 +860,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var EditProductComponent = (function () {
-    function EditProductComponent(productService, flashMessage) {
+    function EditProductComponent(dialog, productService, flashMessage) {
+        this.dialog = dialog;
         this.productService = productService;
         this.flashMessage = flashMessage;
         this.isActive = false;
@@ -804,11 +882,17 @@ var EditProductComponent = (function () {
             return false;
         });
     };
-    EditProductComponent.prototype.onClickEditBtn = function (e) {
-        var p = e.srcElement.parentElement.parentElement;
-        console.log(p);
-        this.isActive = !this.isActive;
-        console.log(this.isActive);
+    EditProductComponent.prototype.onClickEditBtn = function (e, _id) {
+        // let p = e.srcElement.parentElement.parentElement;
+        // console.log( p);
+        // this.isActive = !this.isActive;
+        // console.log(this.isActive);
+        var _this = this;
+        // this.dialog.open(AddProductModalComponent);
+        this.dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_4__add_product_modal_add_product_modal_component__["a" /* AddProductModalComponent */]);
+        this.dialogRef.afterClosed().subscribe(function (result) {
+            _this.dialogRef = null;
+        });
     };
     EditProductComponent.prototype.onEditProductSubmit = function (_id) {
         // this.flashMessage.show(
@@ -827,10 +911,10 @@ EditProductComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["c" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["c" /* MdDialog */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
 ], EditProductComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=edit-product.component.js.map
 
 /***/ }),

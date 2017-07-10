@@ -27,7 +27,7 @@ export class ProductService {
       'api/addProduct',
       product,
       {headers: headers})
-      .map(res => res.json());
+      .map(res => res.json())
   }
 
 }

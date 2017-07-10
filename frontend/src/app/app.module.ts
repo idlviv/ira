@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
-// import {MdTabsModule} from '@angular/material';
-// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import {MdDialogModule,} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -24,6 +25,7 @@ import { AddProductComponent } from './components/products-management/add-produc
 import { ProductsManagementComponent } from './components/products-management/products-management.component';
 import { Page404Component } from './components/page404/page404.component';
 import { EditProductComponent } from './components/products-management/edit-product/edit-product.component';
+import { AddProductModalComponent } from './components/products-management/add-product-modal/add-product-modal.component';
 
 const appRoutes: Routes = [
   {path: '', component: ProductsManagementComponent},
@@ -49,6 +51,7 @@ const appRoutes: Routes = [
     ProductsManagementComponent,
     Page404Component,
     EditProductComponent,
+    AddProductModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule,
-
+    BrowserAnimationsModule,
+    MdDialogModule,
   ],
   providers: [
     ValidateService,
@@ -64,6 +68,7 @@ const appRoutes: Routes = [
     AuthGuard,
     ProductService
   ],
+  entryComponents: [AddProductModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
