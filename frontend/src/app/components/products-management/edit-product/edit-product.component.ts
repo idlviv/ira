@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {MdDialog, MdDialogRef} from '@angular/material';
-import {AddProductModalComponent} from "../add-product-modal/add-product-modal.component";
+import {EditProductModalComponent} from "../edit-product-modal/edit-product-modal.component";
 
 
 @Component({
@@ -46,7 +46,7 @@ export class EditProductComponent implements OnInit {
     // console.log(this.isActive);
 
     // this.dialog.open(AddProductModalComponent);
-    this.dialogRef = this.dialog.open(AddProductModalComponent);
+    this.dialogRef = this.dialog.open(EditProductModalComponent);
 
     this.dialogRef.afterClosed().subscribe(result => {
       this.dialogRef = null;

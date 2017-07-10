@@ -26,6 +26,7 @@ import { ProductsManagementComponent } from './components/products-management/pr
 import { Page404Component } from './components/page404/page404.component';
 import { EditProductComponent } from './components/products-management/edit-product/edit-product.component';
 import { AddProductModalComponent } from './components/products-management/add-product-modal/add-product-modal.component';
+import { EditProductModalComponent } from './components/products-management/edit-product-modal/edit-product-modal.component';
 
 const appRoutes: Routes = [
   {path: '', component: ProductsManagementComponent},
@@ -51,7 +52,7 @@ const appRoutes: Routes = [
     ProductsManagementComponent,
     Page404Component,
     EditProductComponent,
-    AddProductModalComponent,
+    EditProductModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,7 +69,7 @@ const appRoutes: Routes = [
     AuthGuard,
     ProductService
   ],
-  entryComponents: [AddProductModalComponent],
+  entryComponents: [EditProductModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

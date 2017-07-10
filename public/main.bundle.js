@@ -98,7 +98,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_products_management_products_management_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_page404_page404_component__ = __webpack_require__("../../../../../src/app/components/page404/page404.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_products_management_edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_products_management_add_product_modal_add_product_modal_component__ = __webpack_require__("../../../../../src/app/components/products-management/add-product-modal/add-product-modal.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_products_management_edit_product_modal_edit_product_modal_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product-modal/edit-product-modal.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -160,7 +160,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_21__components_products_management_products_management_component__["a" /* ProductsManagementComponent */],
             __WEBPACK_IMPORTED_MODULE_22__components_page404_page404_component__["a" /* Page404Component */],
             __WEBPACK_IMPORTED_MODULE_23__components_products_management_edit_product_edit_product_component__["a" /* EditProductComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__components_products_management_add_product_modal_add_product_modal_component__["a" /* AddProductModalComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__components_products_management_edit_product_modal_edit_product_modal_component__["a" /* EditProductModalComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -177,7 +177,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */],
             __WEBPACK_IMPORTED_MODULE_16__services_product_service__["a" /* ProductService */]
         ],
-        entryComponents: [__WEBPACK_IMPORTED_MODULE_24__components_products_management_add_product_modal_add_product_modal_component__["a" /* AddProductModalComponent */]],
+        entryComponents: [__WEBPACK_IMPORTED_MODULE_24__components_products_management_edit_product_modal_edit_product_modal_component__["a" /* EditProductModalComponent */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -633,71 +633,6 @@ Page404Component = __decorate([
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/products-management/add-product-modal/add-product-modal.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/products-management/add-product-modal/add-product-modal.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  add-product-modal works!\n</p>\n<button md-raised-button (click)=\"dialogRef.close()\">Close dialog</button>"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/products-management/add-product-modal/add-product-modal.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddProductModalComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var AddProductModalComponent = (function () {
-    function AddProductModalComponent(dialogRef) {
-        this.dialogRef = dialogRef;
-    }
-    AddProductModalComponent.prototype.ngOnInit = function () {
-    };
-    return AddProductModalComponent;
-}());
-AddProductModalComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-add-product-modal',
-        template: __webpack_require__("../../../../../src/app/components/products-management/add-product-modal/add-product-modal.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/products-management/add-product-modal/add-product-modal.component.css")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["b" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["b" /* MdDialogRef */]) === "function" && _a || Object])
-], AddProductModalComponent);
-
-var _a;
-//# sourceMappingURL=add-product-modal.component.js.map
-
-/***/ }),
-
 /***/ "../../../../../src/app/components/products-management/add-product/add-product.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -812,6 +747,71 @@ var _a, _b, _c, _d, _e;
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/products-management/edit-product-modal/edit-product-modal.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products-management/edit-product-modal/edit-product-modal.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  edit-product-modal works!\n</p>\n<button md-raised-button (click)=\"dialogRef.close()\">Close dialog</button>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products-management/edit-product-modal/edit-product-modal.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditProductModalComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var EditProductModalComponent = (function () {
+    function EditProductModalComponent(dialogRef) {
+        this.dialogRef = dialogRef;
+    }
+    EditProductModalComponent.prototype.ngOnInit = function () {
+    };
+    return EditProductModalComponent;
+}());
+EditProductModalComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-edit-product-modal',
+        template: __webpack_require__("../../../../../src/app/components/products-management/edit-product-modal/edit-product-modal.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/products-management/edit-product-modal/edit-product-modal.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["b" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["b" /* MdDialogRef */]) === "function" && _a || Object])
+], EditProductModalComponent);
+
+var _a;
+//# sourceMappingURL=edit-product-modal.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/products-management/edit-product/edit-product.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -846,7 +846,7 @@ module.exports = "<!--<h2 class=\"page-header\">Add product</h2>-->\r\n  <!--<ta
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__add_product_modal_add_product_modal_component__ = __webpack_require__("../../../../../src/app/components/products-management/add-product-modal/add-product-modal.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__edit_product_modal_edit_product_modal_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product-modal/edit-product-modal.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditProductComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -889,7 +889,7 @@ var EditProductComponent = (function () {
         // console.log(this.isActive);
         var _this = this;
         // this.dialog.open(AddProductModalComponent);
-        this.dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_4__add_product_modal_add_product_modal_component__["a" /* AddProductModalComponent */]);
+        this.dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_4__edit_product_modal_edit_product_modal_component__["a" /* EditProductModalComponent */]);
         this.dialogRef.afterClosed().subscribe(function (result) {
             _this.dialogRef = null;
         });
