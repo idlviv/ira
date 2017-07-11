@@ -30,4 +30,18 @@ export class ProductService {
       .map(res => res.json())
   }
 
+  editProduct(product) {
+
+    let headers = new Headers();
+    this.authService.loadToken();
+    headers.append('Authorization', this.authService.authToken);
+
+    headers.append('Content-Type', 'application/json');
+    return this.http.put(
+      'api/editProduct',
+      product,
+      {headers: headers})
+      .map(res => res.json())
+  }
+
 }

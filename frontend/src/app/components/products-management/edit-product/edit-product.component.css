@@ -2,3 +2,8 @@ tr.active td {
     background-color:#123456;
     color: white;
 }
+
+.buttonCell {
+    width: 50px;
+    text-align: center;
+}

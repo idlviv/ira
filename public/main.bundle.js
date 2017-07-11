@@ -743,7 +743,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "tr.active td {\r\n    background-color:#123456;\r\n    color: white;\r\n}", ""]);
+exports.push([module.i, "tr.active td {\r\n    background-color:#123456;\r\n    color: white;\r\n}\r\n\r\n.buttonCell {\r\n    width: 50px;\r\n    text-align: center;\r\n}", ""]);
 
 // exports
 
@@ -756,7 +756,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/edit-product/edit-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<h2 class=\"page-header\">Add product</h2>-->\r\n  <!--<table class=\"table\">-->\r\n\r\n\r\n          <!--<form *ngFor=\"let product of products\" (submit)=\"onEditProductSubmit(product._id)\" #editProductForm=\"ngForm\">-->\r\n            <!--<thead>-->\r\n              <!--<tr *ngIf=\"product === products[0]\">-->\r\n                <!--<th>Item Number</th>-->\r\n                <!--<th>Name</th>-->\r\n                <!--<th>Price</th>-->\r\n                <!--<th>Img source</th>-->\r\n                <!--<th>Btn</th>-->\r\n              <!--</tr>-->\r\n            <!--</thead>-->\r\n            <!--<tbody>-->\r\n              <!--<tr class=\"active\">-->\r\n                <!--<td><input type=\"text\" [disabled]=\"!isActive\" [(ngModel)]=\"product.itemNumber\" name=\"itemNumber\" class=\"form-control\"></td>-->\r\n                <!--<td><input type=\"text\" [(ngModel)]=\"product.name\" name=\"name\" #name=\"ngModel\" class=\"form-control\">-->\r\n                  <!--&lt;!&ndash;<div [hidden]=\"name.untouched\" class=\"alert alert-danger\">&ndash;&gt;-->\r\n                  <!--&lt;!&ndash;Untouched&ndash;&gt;-->\r\n                <!--&lt;!&ndash;</div>&ndash;&gt;-->\r\n                <!--</td>-->\r\n                <!--<td><input type=\"text\" [(ngModel)]=\"product.price\" name=\"price\" class=\"form-control\"></td>-->\r\n                <!--<td><input type=\"text\" [(ngModel)]=\"product.mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\"></td>-->\r\n                <!--<td><input type=\"button\" class=\"btn\" value=\"Edit\" (click)=\"onClickEditBtn($event)\"></td>-->\r\n                <!--<td><input type=\"submit\" class=\"btn btn-primary\" value=\"Save\"></td>-->\r\n              <!--</tr>-->\r\n            <!--</tbody>-->\r\n          <!--</form>-->\r\n\r\n  <!--</table>-->\r\n<!--<input type=\"text\" [(ngModel)]=\"x\" name=\"x\">-->\r\n\r\n\r\n\r\n<h2 class=\"page-header\">Edit product</h2>\r\n<table class=\"table\" id=\"editProductsTable\">\r\n  <thead>\r\n    <tr>\r\n      <th></th>\r\n      <th>Item Number</th>\r\n      <th>Name</th>\r\n      <th>Price</th>\r\n      <th>Img source</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let product of products; let i = index\" [class.active]=\"i === selectedRow\">\r\n      <td>\r\n        <span (click)=\"onClickEditBtn(i, product._id)\" class=\"glyphicon glyphicon-pencil\"\r\n              [class.hidden]=\"!isEditBtnShowOnStart\" aria-hidden=\"true\"></span>\r\n\r\n        <span (click)=\"onClickSaveBtn(i, product._id)\" class=\"glyphicon glyphicon-ok\"\r\n              [class.hidden]=\"!(i === selectedRow)\" aria-hidden=\"true\"></span>\r\n    &nbsp; </td>\r\n      <td>\r\n        <input type=\"text\" [(ngModel)]=\"product.itemNumber\" [disabled]=\"!(i===selectedRow)\"\r\n               name=\"name\" #name=\"ngModel\" class=\"form-control\">\r\n      </td>\r\n      <td>\r\n        <input type=\"text\" [(ngModel)]=\"product.name\" [disabled]=\"!(i===selectedRow)\"\r\n               name=\"name\" #name=\"ngModel\" class=\"form-control\">\r\n      </td>\r\n      <td>\r\n        <input type=\"text\" [(ngModel)]=\"product.price\" [disabled]=\"!(i===selectedRow)\"\r\n               name=\"name\" #name=\"ngModel\" class=\"form-control\">\r\n      </td>\r\n      <td>\r\n        <input type=\"text\" [(ngModel)]=\"product.mainImgSrc\" [disabled]=\"!(i===selectedRow)\"\r\n               name=\"name\" #name=\"ngModel\" class=\"form-control\">\r\n      </td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n\r\n<!--<h2 class=\"page-header\">Add product</h2>-->\r\n    <!--<table class=\"table\" id=\"editProductsTable\">-->\r\n      <!--<thead>-->\r\n        <!--<tr>-->\r\n          <!--<th></th>-->\r\n          <!--<th>Item Number</th>-->\r\n          <!--<th>Name</th>-->\r\n          <!--<th>Price</th>-->\r\n          <!--<th>Img source</th>-->\r\n        <!--</tr>-->\r\n      <!--</thead>-->\r\n      <!--<tbody>-->\r\n        <!--<tr *ngFor=\"let product of products; let i = index\" [class.active]=\"i === selectedRow\">-->\r\n          <!--<td>-->\r\n            <!--<span (click)=\"onClickEditBtn(i, product._id)\" class=\"glyphicon glyphicon-pencil\"-->\r\n                  <!--[class.hidden]=\"!isEditBtnShowOnStart\" aria-hidden=\"true\"></span>-->\r\n\r\n            <!--<span (click)=\"onClickSaveBtn(i, product._id)\" class=\"glyphicon glyphicon-ok\"-->\r\n                  <!--[class.hidden]=\"!(i === selectedRow)\" aria-hidden=\"true\"></span>-->\r\n        <!--&nbsp; </td>-->\r\n          <!--<td>-->\r\n            <!--<input type=\"text\" [(ngModel)]=\"product.itemNumber\" [disabled]=\"!(i===selectedRow)\"-->\r\n                   <!--name=\"name\" #name=\"ngModel\" class=\"form-control\">-->\r\n          <!--</td>-->\r\n          <!--<td>-->\r\n            <!--<input type=\"text\" [(ngModel)]=\"product.name\" [disabled]=\"!(i===selectedRow)\"-->\r\n                   <!--name=\"name\" #name=\"ngModel\" class=\"form-control\">-->\r\n          <!--</td>-->\r\n          <!--<td>-->\r\n            <!--<input type=\"text\" [(ngModel)]=\"product.price\" [disabled]=\"!(i===selectedRow)\"-->\r\n                   <!--name=\"name\" #name=\"ngModel\" class=\"form-control\">-->\r\n          <!--</td>-->\r\n          <!--<td>-->\r\n            <!--<input type=\"text\" [(ngModel)]=\"product.mainImgSrc\" [disabled]=\"!(i===selectedRow)\"-->\r\n                   <!--name=\"name\" #name=\"ngModel\" class=\"form-control\">-->\r\n          <!--</td>-->\r\n        <!--</tr>-->\r\n      <!--</tbody>-->\r\n    <!--</table>-->\r\n"
+module.exports = "<!--<h2 class=\"page-header\">Add product</h2>-->\r\n  <!--<table class=\"table\">-->\r\n\r\n\r\n          <!--<form *ngFor=\"let product of products\" (submit)=\"onEditProductSubmit(product._id)\" #editProductForm=\"ngForm\">-->\r\n            <!--<thead>-->\r\n              <!--<tr *ngIf=\"product === products[0]\">-->\r\n                <!--<th>Item Number</th>-->\r\n                <!--<th>Name</th>-->\r\n                <!--<th>Price</th>-->\r\n                <!--<th>Img source</th>-->\r\n                <!--<th>Btn</th>-->\r\n              <!--</tr>-->\r\n            <!--</thead>-->\r\n            <!--<tbody>-->\r\n              <!--<tr class=\"active\">-->\r\n                <!--<td><input type=\"text\" [disabled]=\"!isActive\" [(ngModel)]=\"product.itemNumber\" name=\"itemNumber\" class=\"form-control\"></td>-->\r\n                <!--<td><input type=\"text\" [(ngModel)]=\"product.name\" name=\"name\" #name=\"ngModel\" class=\"form-control\">-->\r\n                  <!--&lt;!&ndash;<div [hidden]=\"name.untouched\" class=\"alert alert-danger\">&ndash;&gt;-->\r\n                  <!--&lt;!&ndash;Untouched&ndash;&gt;-->\r\n                <!--&lt;!&ndash;</div>&ndash;&gt;-->\r\n                <!--</td>-->\r\n                <!--<td><input type=\"text\" [(ngModel)]=\"product.price\" name=\"price\" class=\"form-control\"></td>-->\r\n                <!--<td><input type=\"text\" [(ngModel)]=\"product.mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\"></td>-->\r\n                <!--<td><input type=\"button\" class=\"btn\" value=\"Edit\" (click)=\"onClickEditBtn($event)\"></td>-->\r\n                <!--<td><input type=\"submit\" class=\"btn btn-primary\" value=\"Save\"></td>-->\r\n              <!--</tr>-->\r\n            <!--</tbody>-->\r\n          <!--</form>-->\r\n\r\n  <!--</table>-->\r\n<!--<input type=\"text\" [(ngModel)]=\"x\" name=\"x\">-->\r\n\r\n\r\n\r\n<h2 class=\"page-header\">Edit product</h2>\r\n<table class=\"table\">\r\n  <form *ngFor=\"let product of products; let i = index\" (submit)=\"onEditProductSubmit(product, i)\" #editProductForm=\"ngForm\">\r\n    <thead *ngIf=\"product === products[0]\">\r\n      <tr>\r\n        <th></th>\r\n        <th>Item Number</th>\r\n        <th>Name</th>\r\n        <th>Price</th>\r\n        <th>Img source</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr [class.active]=\"i === selectedRow\">\r\n        <td class=\"buttonCell\">\r\n          <!--<span (click)=\"onClickEditBtn(i, product._id)\" class=\"glyphicon glyphicon-pencil\"-->\r\n                <!--[class.hidden]=\"!isEditBtnShowOnStart\" aria-hidden=\"true\"></span>-->\r\n\r\n          <button type=\"button\" (click)=\"onClickEditBtn(i, product._id)\" class=\"btn btn-default btn-xs\"\r\n                  [class.hidden]=\"!isEditBtnShowOnStart\">\r\n             <span  class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\r\n          </button>\r\n\r\n          <!--<span (click)=\"onClickSaveBtn(i, product._id)\"  class=\"glyphicon glyphicon-ok\"-->\r\n          <!--[class.hidden]=\"!(i === selectedRow)\" aria-hidden=\"true\"></span>-->\r\n\r\n\r\n          <button type=\"submit\" class=\"btn btn-default btn-xs\" [class.hidden]=\"!(i === selectedRow)\">\r\n            <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>\r\n          </button>\r\n          <!--<span (click)=\"onClickSaveBtn(i, product._id)\" type=\"submit\" class=\"glyphicon glyphicon-ok\"-->\r\n          <!--[class.hidden]=\"!(i === selectedRow)\" aria-hidden=\"true\"></span>-->\r\n        </td>\r\n        <td>\r\n          <input type=\"text\" [(ngModel)]=\"product.itemNumber\" [disabled]=\"!(i===selectedRow)\"\r\n                 name=\"itemNumber\" #itemNumber=\"ngModel\" class=\"form-control\">\r\n        </td>\r\n        <td>\r\n          <input type=\"text\" [(ngModel)]=\"product.name\" [disabled]=\"!(i===selectedRow)\"\r\n                 name=\"name\" #name=\"ngModel\" class=\"form-control\">\r\n        </td>\r\n        <td>\r\n          <input type=\"text\" [(ngModel)]=\"product.price\" [disabled]=\"!(i===selectedRow)\"\r\n                 name=\"price\" #price=\"ngModel\" class=\"form-control\">\r\n        </td>\r\n        <td>\r\n          <input type=\"text\" [(ngModel)]=\"product.mainImgSrc\" [disabled]=\"!(i===selectedRow)\"\r\n                 name=\"mainImgSrc\" #mainImgSrc=\"ngModel\" class=\"form-control\">\r\n        </td>\r\n      </tr>\r\n    </tbody>\r\n  </form>\r\n</table>\r\n\r\n<!--<h2 class=\"page-header\">Add product</h2>-->\r\n    <!--<table class=\"table\" id=\"editProductsTable\">-->\r\n      <!--<thead>-->\r\n        <!--<tr>-->\r\n          <!--<th></th>-->\r\n          <!--<th>Item Number</th>-->\r\n          <!--<th>Name</th>-->\r\n          <!--<th>Price</th>-->\r\n          <!--<th>Img source</th>-->\r\n        <!--</tr>-->\r\n      <!--</thead>-->\r\n      <!--<tbody>-->\r\n        <!--<tr *ngFor=\"let product of products; let i = index\" [class.active]=\"i === selectedRow\">-->\r\n          <!--<td>-->\r\n            <!--<span (click)=\"onClickEditBtn(i, product._id)\" class=\"glyphicon glyphicon-pencil\"-->\r\n                  <!--[class.hidden]=\"!isEditBtnShowOnStart\" aria-hidden=\"true\"></span>-->\r\n\r\n            <!--<span (click)=\"onClickSaveBtn(i, product._id)\" class=\"glyphicon glyphicon-ok\"-->\r\n                  <!--[class.hidden]=\"!(i === selectedRow)\" aria-hidden=\"true\"></span>-->\r\n        <!--&nbsp; </td>-->\r\n          <!--<td>-->\r\n            <!--<input type=\"text\" [(ngModel)]=\"product.itemNumber\" [disabled]=\"!(i===selectedRow)\"-->\r\n                   <!--name=\"name\" #name=\"ngModel\" class=\"form-control\">-->\r\n          <!--</td>-->\r\n          <!--<td>-->\r\n            <!--<input type=\"text\" [(ngModel)]=\"product.name\" [disabled]=\"!(i===selectedRow)\"-->\r\n                   <!--name=\"name\" #name=\"ngModel\" class=\"form-control\">-->\r\n          <!--</td>-->\r\n          <!--<td>-->\r\n            <!--<input type=\"text\" [(ngModel)]=\"product.price\" [disabled]=\"!(i===selectedRow)\"-->\r\n                   <!--name=\"name\" #name=\"ngModel\" class=\"form-control\">-->\r\n          <!--</td>-->\r\n          <!--<td>-->\r\n            <!--<input type=\"text\" [(ngModel)]=\"product.mainImgSrc\" [disabled]=\"!(i===selectedRow)\"-->\r\n                   <!--name=\"name\" #name=\"ngModel\" class=\"form-control\">-->\r\n          <!--</td>-->\r\n        <!--</tr>-->\r\n      <!--</tbody>-->\r\n    <!--</table>-->\r\n"
 
 /***/ }),
 
@@ -768,6 +768,7 @@ module.exports = "<!--<h2 class=\"page-header\">Add product</h2>-->\r\n  <!--<ta
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditProductComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -781,10 +782,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var EditProductComponent = (function () {
-    function EditProductComponent(productService, flashMessage) {
+    function EditProductComponent(productService, flashMessage, router) {
         this.productService = productService;
         this.flashMessage = flashMessage;
+        this.router = router;
         this.isActive = false;
         this.isEditBtnShowOnStart = true;
     }
@@ -822,14 +825,37 @@ var EditProductComponent = (function () {
         // this.isActive = !this.isActive;
         // console.log(this.isActive);
     };
-    EditProductComponent.prototype.onEditProductSubmit = function (_id) {
-        // this.flashMessage.show(
-        //   this.products
-        //   {
-        //     cssClass: 'alert-danger',
-        //     timeout: 1000
-        //   });
-        console.log(_id);
+    EditProductComponent.prototype.onEditProductSubmit = function (product, i) {
+        var _this = this;
+        this.selectedRow = null;
+        this.isEditBtnShowOnStart = true;
+        console.log(product);
+        this.productService.editProduct(product)
+            .subscribe(function (data) {
+            if (data.success) {
+                console.log('success');
+                _this.flashMessage.show('Edited successfuly', {
+                    cssClass: 'alert-success',
+                    timeout: 3000
+                });
+                // this.router.navigate(['/profile']);
+            }
+            else {
+                _this.flashMessage.show('Adding failed', {
+                    cssClass: 'alert-danger',
+                    timeout: 3000
+                });
+                // this.router.navigate(['/profile']);
+            }
+        }, function (error) {
+            if (error.status === 401) {
+                _this.flashMessage.show('Please login', {
+                    cssClass: 'alert-danger',
+                    timeout: 3000
+                });
+                _this.router.navigate(['/login']);
+            }
+        });
     };
     return EditProductComponent;
 }());
@@ -839,10 +865,10 @@ EditProductComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object])
 ], EditProductComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=edit-product.component.js.map
 
 /***/ }),
@@ -1278,6 +1304,14 @@ var ProductService = (function () {
         headers.append('Authorization', this.authService.authToken);
         headers.append('Content-Type', 'application/json');
         return this.http.post('api/addProduct', product, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    ProductService.prototype.editProduct = function (product) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.authService.loadToken();
+        headers.append('Authorization', this.authService.authToken);
+        headers.append('Content-Type', 'application/json');
+        return this.http.put('api/editProduct', product, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     return ProductService;

@@ -37,3 +37,12 @@ module.exports.addProduct = function(newProduct) {
       })
       .catch((error) => {throw error;});
 };
+
+module.exports.editProduct = function(editedProduct, _id) {
+  return new Promise(function(resolve, reject) {
+        ProductModel.update({_id: _id}, editedProduct)
+          .then(() => resolve({success: true, msg: 'Product added'}))
+          .catch(() => reject({success: false, msg: 'Failed to add product'}));
+      })
+      .catch((error) => {throw error;});
+};

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-edit-product',
@@ -17,7 +18,8 @@ export class EditProductComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private flashMessage: FlashMessagesService
+    private flashMessage: FlashMessagesService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -65,14 +67,49 @@ export class EditProductComponent implements OnInit {
     // console.log(this.isActive);
   }
 
-  onEditProductSubmit(_id) {
-    // this.flashMessage.show(
-    //   this.products
-    //   {
-    //     cssClass: 'alert-danger',
-    //     timeout: 1000
-    //   });
-    console.log(_id);
+  onEditProductSubmit(product, i) {
+    this.selectedRow = null;
+    this.isEditBtnShowOnStart = true;
+    console.log(product);
+
+    this.productService.editProduct(product)
+      .subscribe(
+        data => {
+          if (data.success) {
+            console.log('success');
+            this.flashMessage.show(
+              'Edited successfuly',
+              {
+                cssClass: 'alert-success',
+                timeout: 3000
+              });
+            // this.router.navigate(['/profile']);
+          } else {
+            this.flashMessage.show(
+              'Adding failed',
+              {
+                cssClass: 'alert-danger',
+                timeout: 3000
+              });
+            // this.router.navigate(['/profile']);
+          }
+        },
+        error => {
+          if (error.status === 401) {
+            this.flashMessage.show(
+              'Please login',
+              {
+                cssClass: 'alert-danger',
+                timeout: 3000
+              });
+            this.router.navigate(['/login']);
+          }
+        }
+      );
+
+
   }
+
+
 
 }
