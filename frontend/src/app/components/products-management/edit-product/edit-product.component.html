@@ -29,53 +29,86 @@
           <!--</form>-->
 
   <!--</table>-->
+<!--<input type="text" [(ngModel)]="x" name="x">-->
 
-<h2 class="page-header">Add product</h2>
-    <table class="table">
-    <thead>
+
+
+<h2 class="page-header">Edit product</h2>
+<table class="table" id="editProductsTable">
+  <thead>
     <tr>
+      <th></th>
       <th>Item Number</th>
       <th>Name</th>
       <th>Price</th>
       <th>Img source</th>
-      <th>Btn</th>
     </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let product of products">
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products; let i = index" [class.active]="i === selectedRow">
       <td>
-        <span (click)="onClickEditBtn($event, product._id)" class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-        &nbsp;&nbsp;{{product.itemNumber}}</td>
-      <td>{{product.name}}</td>
-      <td>{{product.price}}</td>
-      <td>{{product.mainImgSrc}}
+        <span (click)="onClickEditBtn(i, product._id)" class="glyphicon glyphicon-pencil"
+              [class.hidden]="!isEditBtnShowOnStart" aria-hidden="true"></span>
+
+        <span (click)="onClickSaveBtn(i, product._id)" class="glyphicon glyphicon-ok"
+              [class.hidden]="!(i === selectedRow)" aria-hidden="true"></span>
+    &nbsp; </td>
+      <td>
+        <input type="text" [(ngModel)]="product.itemNumber" [disabled]="!(i===selectedRow)"
+               name="name" #name="ngModel" class="form-control">
       </td>
       <td>
-
+        <input type="text" [(ngModel)]="product.name" [disabled]="!(i===selectedRow)"
+               name="name" #name="ngModel" class="form-control">
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="product.price" [disabled]="!(i===selectedRow)"
+               name="name" #name="ngModel" class="form-control">
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="product.mainImgSrc" [disabled]="!(i===selectedRow)"
+               name="name" #name="ngModel" class="form-control">
       </td>
     </tr>
-    </tbody>
-    </table>
+  </tbody>
+</table>
 
+<!--<h2 class="page-header">Add product</h2>-->
+    <!--<table class="table" id="editProductsTable">-->
+      <!--<thead>-->
+        <!--<tr>-->
+          <!--<th></th>-->
+          <!--<th>Item Number</th>-->
+          <!--<th>Name</th>-->
+          <!--<th>Price</th>-->
+          <!--<th>Img source</th>-->
+        <!--</tr>-->
+      <!--</thead>-->
+      <!--<tbody>-->
+        <!--<tr *ngFor="let product of products; let i = index" [class.active]="i === selectedRow">-->
+          <!--<td>-->
+            <!--<span (click)="onClickEditBtn(i, product._id)" class="glyphicon glyphicon-pencil"-->
+                  <!--[class.hidden]="!isEditBtnShowOnStart" aria-hidden="true"></span>-->
 
-
-<!--<form class="form-inline" (submit)="onEditProductSubmit(); editProductForm.reset()" #editProductForm>-->
-  <!--<div class="form-group">-->
-    <!--<label for="itemNumber">Item number</label>-->
-    <!--<input type="text" [(ngModel)]="itemNumber" name="itemNumber" class="form-control" id="itemNumber">-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-    <!--<label for="name">Name</label>-->
-    <!--<input type="text" [(ngModel)]="name" name="name" class="form-control" id="name">-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-    <!--<label for="price">Price</label>-->
-    <!--<input type="text" [(ngModel)]="price" name="price" class="form-control" id="price">-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-    <!--<label for="mainImgSrc">Image source</label>-->
-    <!--<input type="text" [(ngModel)]="mainImgSrc" name="mainImgSrc" class="form-control" id="mainImgSrc">-->
-  <!--</div>-->
-  <!--<input type="submit" class="btn btn-primary" value="Add">-->
-<!--</form>-->
-
+            <!--<span (click)="onClickSaveBtn(i, product._id)" class="glyphicon glyphicon-ok"-->
+                  <!--[class.hidden]="!(i === selectedRow)" aria-hidden="true"></span>-->
+        <!--&nbsp; </td>-->
+          <!--<td>-->
+            <!--<input type="text" [(ngModel)]="product.itemNumber" [disabled]="!(i===selectedRow)"-->
+                   <!--name="name" #name="ngModel" class="form-control">-->
+          <!--</td>-->
+          <!--<td>-->
+            <!--<input type="text" [(ngModel)]="product.name" [disabled]="!(i===selectedRow)"-->
+                   <!--name="name" #name="ngModel" class="form-control">-->
+          <!--</td>-->
+          <!--<td>-->
+            <!--<input type="text" [(ngModel)]="product.price" [disabled]="!(i===selectedRow)"-->
+                   <!--name="name" #name="ngModel" class="form-control">-->
+          <!--</td>-->
+          <!--<td>-->
+            <!--<input type="text" [(ngModel)]="product.mainImgSrc" [disabled]="!(i===selectedRow)"-->
+                   <!--name="name" #name="ngModel" class="form-control">-->
+          <!--</td>-->
+        <!--</tr>-->
+      <!--</tbody>-->
+    <!--</table>-->

@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
-import {MdDialog, MdDialogRef} from '@angular/material';
-import {EditProductModalComponent} from "../edit-product-modal/edit-product-modal.component";
-
 
 @Component({
   selector: 'app-edit-product',
@@ -15,10 +12,10 @@ export class EditProductComponent implements OnInit {
 
   products: Object;
   isActive: Boolean = false;
-  dialogRef: MdDialogRef<any>;
+  selectedRow : Number;
+  isEditBtnShowOnStart: Boolean = true;
 
   constructor(
-    public dialog: MdDialog,
     private productService: ProductService,
     private flashMessage: FlashMessagesService
   ) { }
@@ -39,18 +36,33 @@ export class EditProductComponent implements OnInit {
           return false;
         })
   }
-  onClickEditBtn(e, _id) {
+
+  onClickEditBtn(i, _id) {
+    this.selectedRow = i;
+
+    this.isEditBtnShowOnStart = false;
+
+    // let editProductsTable = document.querySelectorAll('#editProductsTable');
+    // console.log(editProductsTable);
     // let p = e.srcElement.parentElement.parentElement;
-    // console.log( p);
+    // console.log(e.target.parentElement);
     // this.isActive = !this.isActive;
     // console.log(this.isActive);
+  }
 
-    // this.dialog.open(AddProductModalComponent);
-    this.dialogRef = this.dialog.open(EditProductModalComponent);
+  onClickSaveBtn(i, _id) {
+    this.selectedRow = null;
+    this.isEditBtnShowOnStart = true;
 
-    this.dialogRef.afterClosed().subscribe(result => {
-      this.dialogRef = null;
-    });
+
+    // this.isEditBtnShowOnStart = false;
+
+    // let editProductsTable = document.querySelectorAll('#editProductsTable');
+    // console.log(editProductsTable);
+    // let p = e.srcElement.parentElement.parentElement;
+    // console.log(e.target.parentElement);
+    // this.isActive = !this.isActive;
+    // console.log(this.isActive);
   }
 
   onEditProductSubmit(_id) {
@@ -62,6 +74,5 @@ export class EditProductComponent implements OnInit {
     //   });
     console.log(_id);
   }
-
 
 }
