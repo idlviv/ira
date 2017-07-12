@@ -44,6 +44,11 @@ export class EditProductComponent implements OnInit {
     this.isEditBtnShowOnStart = false;
   }
 
+  onClickCancelBtn(i, _id) {
+    this.selectedRow = null;
+    this.isEditBtnShowOnStart = true;
+  }
+
   onEditProductSubmit(product, i) {
     this.selectedRow = null;
     this.isEditBtnShowOnStart = true;
