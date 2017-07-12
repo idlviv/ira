@@ -41,8 +41,8 @@ module.exports.addProduct = function(newProduct) {
 module.exports.editProduct = function(editedProduct) {
   return new Promise(function(resolve, reject) {
         ProductModel.update({_id: editedProduct._id}, editedProduct)
-          .then(() => resolve({success: true, msg: 'Product added'}))
-          .catch(() => reject({success: false, msg: 'Failed to add product'}));
+          .then(() => resolve({success: true, msg: 'Product edited'}))
+          .catch(() => reject({success: false, msg: 'Failed to edit product'}));
       })
       .catch((error) => {throw error;});
 };

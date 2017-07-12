@@ -17,24 +17,28 @@ router.get(
       });
   });
 
+router.use(passport.authenticate('jwt', {session: false}));
+
 router.post(
-  '/addProduct', passport.authenticate('jwt', {session: false}),
+  '/addProduct',
+  // '/addProduct', passport.authenticate('jwt', {session: false}),
     (req, res, next) => {
       console.log('Server - ProductModel - authenticated');
-    let newProduct = new ProductModel({
+      let newProduct = new ProductModel({
         itemNumber: req.body.itemNumber,
         name: req.body.name,
         price: req.body.price,
         mainImgSrc: req.body.mainImgSrc,
       });
       // повертає обєкт (success..)
-     ProductModel.addProduct(newProduct)
-      .then((result) => res.json(result))
-      .catch((error) => res.json(error));
+      ProductModel.addProduct(newProduct)
+        .then((result) => res.json(result))
+        .catch((error) => res.json(error));
     });
 
 router.put(
-  '/editProduct', passport.authenticate('jwt', {session: false}),
+  // '/editProduct', passport.authenticate('jwt', {session: false}),
+  '/editProduct',
   (req, res, next) => {
     console.log('Server - ProductModel - authenticated');
 

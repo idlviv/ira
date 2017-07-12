@@ -41,30 +41,7 @@ export class EditProductComponent implements OnInit {
 
   onClickEditBtn(i, _id) {
     this.selectedRow = i;
-
     this.isEditBtnShowOnStart = false;
-
-    // let editProductsTable = document.querySelectorAll('#editProductsTable');
-    // console.log(editProductsTable);
-    // let p = e.srcElement.parentElement.parentElement;
-    // console.log(e.target.parentElement);
-    // this.isActive = !this.isActive;
-    // console.log(this.isActive);
-  }
-
-  onClickSaveBtn(i, _id) {
-    this.selectedRow = null;
-    this.isEditBtnShowOnStart = true;
-
-
-    // this.isEditBtnShowOnStart = false;
-
-    // let editProductsTable = document.querySelectorAll('#editProductsTable');
-    // console.log(editProductsTable);
-    // let p = e.srcElement.parentElement.parentElement;
-    // console.log(e.target.parentElement);
-    // this.isActive = !this.isActive;
-    // console.log(this.isActive);
   }
 
   onEditProductSubmit(product, i) {
