@@ -76,7 +76,6 @@ export class EditProductComponent implements OnInit {
       .subscribe(
         data => {
           if (data.success) {
-            console.log('success');
             this.flashMessage.show(
               'Edited successfuly',
               {

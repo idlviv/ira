@@ -833,7 +833,6 @@ var EditProductComponent = (function () {
         this.productService.editProduct(product)
             .subscribe(function (data) {
             if (data.success) {
-                console.log('success');
                 _this.flashMessage.show('Edited successfuly', {
                     cssClass: 'alert-success',
                     timeout: 3000

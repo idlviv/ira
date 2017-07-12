@@ -38,15 +38,9 @@ router.put(
   (req, res, next) => {
     console.log('Server - ProductModel - authenticated');
 
-    let editedProduct = {};
-    editedProduct.itemNumber = req.body.itemNumber;
-    editedProduct.name = req.body.name;
-    editedProduct.price = req.body.price;
-    editedProduct.mainImgSrc = req.body.mainImgSrc;
-
-    // повертає обєкт (success..)
-    console.log('edited product' + editedProduct);
-    ProductModel.editProduct(req.body._id, editedProduct)
+    let editedProduct = req.body;
+    console.log('edited product' + JSON.stringify(editedProduct, null, 4));
+    ProductModel.editProduct(editedProduct)
       .then((result) => res.json(result))
       .catch((error) => res.json(error));
   });
