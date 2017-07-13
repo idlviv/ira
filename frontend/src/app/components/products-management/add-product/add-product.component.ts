@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {ValidateService} from '../../../services/validate.service';
+// import {EditProductComponent} from '../edit-product/edit-product.component';
 import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../services/auth.service';
 
-
-
 @Component({
+  moduleId: module.id,
   selector: 'app-add-product',
   templateUrl: 'add-product.component.html',
   styleUrls: ['add-product.component.css']
@@ -18,11 +18,13 @@ export class AddProductComponent implements OnInit {
   name: String;
   price: Number;
   mainImgSrc: String;
+  @Output() updateProducts = new EventEmitter();
 
   constructor(
     private authService: AuthService,
     private validateService: ValidateService,
     private productService: ProductService,
+    // private editProduct: EditProductComponent,
     private flashMessage: FlashMessagesService,
     private router: Router,
   ) { }
@@ -43,16 +45,15 @@ export class AddProductComponent implements OnInit {
       .subscribe(
         data => {
           if (data.success) {
-            console.log('success');
             this.flashMessage.show(
-              'Added successfuly',
+              'Added successfully',
               {
                 cssClass: 'alert-success',
                 timeout: 3000
               });
+            this.updateProducts.emit();
             // this.router.navigate(['/profile']);
           } else {
-            console.log('fail');
             this.flashMessage.show(
               'Adding failed',
               {

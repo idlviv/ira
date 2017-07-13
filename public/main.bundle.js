@@ -669,17 +669,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+// import {EditProductComponent} from '../edit-product/edit-product.component';
 
 
 
 
 var AddProductComponent = (function () {
-    function AddProductComponent(authService, validateService, productService, flashMessage, router) {
+    function AddProductComponent(authService, validateService, productService, 
+        // private editProduct: EditProductComponent,
+        flashMessage, router) {
         this.authService = authService;
         this.validateService = validateService;
         this.productService = productService;
         this.flashMessage = flashMessage;
         this.router = router;
+        this.updateProducts = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
     }
     AddProductComponent.prototype.ngOnInit = function () {
     };
@@ -694,15 +698,14 @@ var AddProductComponent = (function () {
         this.productService.addProduct(product)
             .subscribe(function (data) {
             if (data.success) {
-                console.log('success');
-                _this.flashMessage.show('Added successfuly', {
+                _this.flashMessage.show('Added successfully', {
                     cssClass: 'alert-success',
                     timeout: 3000
                 });
+                _this.updateProducts.emit();
                 // this.router.navigate(['/profile']);
             }
             else {
-                console.log('fail');
                 _this.flashMessage.show('Adding failed', {
                     cssClass: 'alert-danger',
                     timeout: 3000
@@ -721,6 +724,10 @@ var AddProductComponent = (function () {
     };
     return AddProductComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", Object)
+], AddProductComponent.prototype, "updateProducts", void 0);
 AddProductComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-add-product',
@@ -743,7 +750,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "tr.active td {\r\n    background-color: rgba(18, 52, 86, 0.5);\r\n    color: white;\r\n}\r\n\r\n.edit-product-table-first-cell {\r\n    width: 50px;\r\n    text-align: center;\r\n}\r\n\r\n.edit-product-table-last-cell {\r\n    width: 30px;\r\n    text-align: center;\r\n}\r\n\r\n.edit-product-table-cells {\r\n    /*width: 90%;*/\r\n    /*height: 90%;*/\r\n    padding: 3px;\r\n}", ""]);
+exports.push([module.i, ".active {\r\n    background-color: rgba(18, 52, 86, 0.5);\r\n    color: white;\r\n}\r\n\r\n.edit-product-table-first-cell {\r\n    width: 50px;\r\n    text-align: center;\r\n}\r\n\r\n.edit-product-table-last-cell {\r\n    width: 30px;\r\n    text-align: center;\r\n}\r\n\r\n.edit-product-table-cells {\r\n    /*width: 90%;*/\r\n    /*height: 90%;*/\r\n    padding: 3px;\r\n}", ""]);
 
 // exports
 
@@ -756,7 +763,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/edit-product/edit-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Edit product</h2>\r\n<table class=\"table table-hover\">\r\n  <form *ngFor=\"let product of products; let i = index\" (submit)=\"onEditProductSubmit(product, i)\" #editProductForm=\"ngForm\">\r\n    <thead *ngIf=\"product === products[0]\">\r\n      <tr>\r\n        <th></th>\r\n        <th>Item Number</th>\r\n        <th>Name</th>\r\n        <th>Price</th>\r\n        <th>Img source</th>\r\n        <th></th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr [class.active]=\"i === selectedRow\" >\r\n        <td class=\"edit-product-table-first-cell\">\r\n          <!--<span (click)=\"onClickEditBtn(i, product._id)\" class=\"glyphicon glyphicon-pencil\"-->\r\n                <!--[class.hidden]=\"!isEditBtnShowOnStart\" aria-hidden=\"true\"></span>-->\r\n\r\n          <button type=\"button\" (click)=\"onClickEditBtn(i, product._id)\" class=\"btn btn-default btn-xs\"\r\n                  [class.hidden]=\"!isEditBtnShow\">\r\n             <span  class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\r\n          </button>\r\n\r\n          <!--<span (click)=\"onClickSaveBtn(i, product._id)\"  class=\"glyphicon glyphicon-ok\"-->\r\n          <!--[class.hidden]=\"!(i === selectedRow)\" aria-hidden=\"true\"></span>-->\r\n\r\n\r\n          <button type=\"submit\" class=\"btn btn-default btn-xs\" [class.hidden]=\"!(i === selectedRow)\">\r\n            <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>\r\n          </button>\r\n\r\n          <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"onClickCancelBtn(i, product._id)\"\r\n                  [class.hidden]=\"!(i === selectedRow)\">\r\n            <span class=\"glyphicon glyphicon-ban-circle\" aria-hidden=\"true\"></span>\r\n          </button>\r\n          <!--<span (click)=\"onClickSaveBtn(i, product._id)\" type=\"submit\" class=\"glyphicon glyphicon-ok\"-->\r\n          <!--[class.hidden]=\"!(i === selectedRow)\" aria-hidden=\"true\"></span>-->\r\n        </td>\r\n        <td class=\"edit-product-table-cells\">\r\n          <input type=\"text\" [(ngModel)]=\"product.itemNumber\" [disabled]=\"!(i===selectedRow)\"\r\n                 name=\"itemNumber\" #itemNumber=\"ngModel\" class=\"form-control input-sm\">\r\n        </td>\r\n        <td class=\"edit-product-table-cells\">\r\n          <input type=\"text\" [(ngModel)]=\"product.name\" [disabled]=\"!(i===selectedRow)\"\r\n                 name=\"name\" #name=\"ngModel\" class=\"form-control input-sm\">\r\n        </td>\r\n        <td class=\"edit-product-table-cells\">\r\n          <input type=\"text\" [(ngModel)]=\"product.price\" [disabled]=\"!(i===selectedRow)\"\r\n                 name=\"price\" #price=\"ngModel\" class=\"form-control input-sm\">\r\n        </td>\r\n        <td class=\"edit-product-table-cells\">\r\n          <input type=\"text\" [(ngModel)]=\"product.mainImgSrc\" [disabled]=\"!(i===selectedRow)\"\r\n                 name=\"mainImgSrc\" #mainImgSrc=\"ngModel\" class=\"form-control input-sm\">\r\n        </td>\r\n        <td class=\"edit-product-table-last-cell\">\r\n\r\n          <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"onClickDelBtn(i, product._id)\"\r\n                  [class.hidden]=\"!(i === selectedRow)\">\r\n            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\r\n          </button>\r\n\r\n        </td>\r\n      </tr>\r\n    </tbody>\r\n  </form>\r\n</table>"
+module.exports = "<h2 class=\"page-header\">Edit product</h2>\r\n<table class=\"table table-hover\">\r\n  <form *ngFor=\"let product of products; let i = index\" (submit)=\"onEditProductSubmit(product, i)\" #editProductForm=\"ngForm\">\r\n    <thead *ngIf=\"product === products[0]\">\r\n      <tr>\r\n        <th class=\"edit-product-table-first-cell\">\r\n          <!--<button *ngIf=\"!addProduct\" button type=\"button\" (click)=\"addProductBtn(i, product._id)\"-->\r\n                  <!--class=\"btn btn-default btn-xs\">-->\r\n          <!--<span  class=\"glyphicon glyphicon-plus\" aria-hidden=\"true\"></span>-->\r\n          <!--</button>-->\r\n        </th>\r\n        <th>Item Number</th>\r\n        <th>Name</th>\r\n        <th>Price</th>\r\n        <th>Img source</th>\r\n        <th></th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <!--<tr *ngIf=\"addProduct\" [class.active]=\"i === selectedRow\" >-->\r\n        <!--<td class=\"edit-product-table-first-cell\">-->\r\n\r\n          <!--<button type=\"submit\" class=\"btn btn-default btn-xs\">-->\r\n            <!--<span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>-->\r\n          <!--</button>-->\r\n\r\n          <!--<button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"onClickCancelAddBtn(i, product._id)\">-->\r\n            <!--<span class=\"glyphicon glyphicon-ban-circle\" aria-hidden=\"true\"></span>-->\r\n          <!--</button>-->\r\n\r\n        <!--</td>-->\r\n        <!--<td class=\"edit-product-table-cells\">-->\r\n          <!--<input type=\"text\" [(ngModel)]=\"product.itemNumber\"-->\r\n                 <!--name=\"itemNumber\" #itemNumber=\"ngModel\" class=\"form-control input-sm\">-->\r\n        <!--</td>-->\r\n        <!--<td class=\"edit-product-table-cells\">-->\r\n          <!--<input type=\"text\" [(ngModel)]=\"product.name\"-->\r\n                 <!--name=\"name\" #name=\"ngModel\" class=\"form-control input-sm\">-->\r\n        <!--</td>-->\r\n        <!--<td class=\"edit-product-table-cells\">-->\r\n          <!--<input type=\"text\" [(ngModel)]=\"product.price\"-->\r\n                 <!--name=\"price\" #price=\"ngModel\" class=\"form-control input-sm\">-->\r\n        <!--</td>-->\r\n        <!--<td class=\"edit-product-table-cells\">-->\r\n          <!--<input type=\"text\" [(ngModel)]=\"product.mainImgSrc\"-->\r\n                 <!--name=\"mainImgSrc\" #mainImgSrc=\"ngModel\" class=\"form-control input-sm\">-->\r\n        <!--</td>-->\r\n        <!--<td class=\"edit-product-table-last-cell\">-->\r\n        <!--</td>-->\r\n      <!--</tr>-->\r\n\r\n      <tr [class.active]=\"i === selectedRow\" >\r\n          <td class=\"edit-product-table-first-cell\">\r\n\r\n            <button type=\"button\" (click)=\"onClickEditBtn(i, product._id)\" class=\"btn btn-default btn-xs\"\r\n                    [class.hidden]=\"!isEditBtnShow\">\r\n               <span  class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\r\n            </button>\r\n\r\n            <button type=\"submit\" class=\"btn btn-default btn-xs\" [class.hidden]=\"!(i === selectedRow)\">\r\n              <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>\r\n            </button>\r\n\r\n            <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"onClickCancelEditBtn(i, product._id)\"\r\n                    [class.hidden]=\"!(i === selectedRow)\">\r\n              <span class=\"glyphicon glyphicon-ban-circle\" aria-hidden=\"true\"></span>\r\n            </button>\r\n\r\n          </td>\r\n          <td class=\"edit-product-table-cells\">\r\n            <input type=\"text\" [(ngModel)]=\"product.itemNumber\" [disabled]=\"!(i===selectedRow)\"\r\n                   name=\"itemNumber\" #itemNumber=\"ngModel\" class=\"form-control input-sm\">\r\n          </td>\r\n          <td class=\"edit-product-table-cells\">\r\n            <input type=\"text\" [(ngModel)]=\"product.name\" [disabled]=\"!(i===selectedRow)\"\r\n                   name=\"name\" #name=\"ngModel\" class=\"form-control input-sm\">\r\n          </td>\r\n          <td class=\"edit-product-table-cells\">\r\n            <input type=\"text\" [(ngModel)]=\"product.price\" [disabled]=\"!(i===selectedRow)\"\r\n                   name=\"price\" #price=\"ngModel\" class=\"form-control input-sm\">\r\n          </td>\r\n          <td class=\"edit-product-table-cells\">\r\n            <input type=\"text\" [(ngModel)]=\"product.mainImgSrc\" [disabled]=\"!(i===selectedRow)\"\r\n                   name=\"mainImgSrc\" #mainImgSrc=\"ngModel\" class=\"form-control input-sm\">\r\n          </td>\r\n          <td class=\"edit-product-table-last-cell\">\r\n\r\n            <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"onClickDelBtn(i, product._id)\"\r\n                    [class.hidden]=\"!(i === selectedRow)\">\r\n              <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\r\n            </button>\r\n\r\n          </td>\r\n        </tr>\r\n    </tbody>\r\n  </form>\r\n</table>"
 
 /***/ }),
 
@@ -784,6 +791,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var EditProductComponent = (function () {
+    // showAddProduct: Boolean = false;
     function EditProductComponent(productService, flashMessage, router) {
         this.productService = productService;
         this.flashMessage = flashMessage;
@@ -792,6 +800,12 @@ var EditProductComponent = (function () {
         this.isEditBtnShow = true;
     }
     EditProductComponent.prototype.ngOnInit = function () {
+        this.getProducts();
+    };
+    EditProductComponent.prototype.onUpdateProducts1 = function () {
+        console.log('update');
+    };
+    EditProductComponent.prototype.getProducts = function () {
         var _this = this;
         this.productService.getProducts()
             .subscribe(function (products) {
@@ -804,27 +818,38 @@ var EditProductComponent = (function () {
             return false;
         });
     };
+    // addProductBtn() {
+    //   this.addProduct = true;
+    // }
+    //
+    // onClickCancelAddBtn(i, _id) {
+    //   this.addProduct = false;
+    //   // this.selectedRow = null;
+    //   // this.isEditBtnShow = true;
+    //   // this.getProducts();
+    // }
     EditProductComponent.prototype.onClickEditBtn = function (i, _id) {
         this.selectedRow = i;
         this.isEditBtnShow = false;
+        // this.addProduct = false;
     };
-    EditProductComponent.prototype.onClickCancelBtn = function (i, _id) {
+    EditProductComponent.prototype.onClickCancelEditBtn = function (i, _id) {
         this.selectedRow = null;
         this.isEditBtnShow = true;
+        this.getProducts();
     };
     EditProductComponent.prototype.onClickDelBtn = function (i, _id) {
         var _this = this;
         this.selectedRow = null;
         this.isEditBtnShow = true;
-        console.log(_id);
         this.productService.deleteProduct(_id)
             .subscribe(function (data) {
-            console.log(data);
             if (data.success) {
-                _this.flashMessage.show('Delete successfully, Number Of Deleted Elements ' + data.numberOfDeletedElements, {
+                _this.flashMessage.show('Delete successfully, Number Of Deleted Elements ' + data.numberOfDeletedElements.n, {
                     cssClass: 'alert-success',
                     timeout: 3000
                 });
+                _this.getProducts();
                 // this.router.navigate(['/profile']);
             }
             else {
@@ -848,7 +873,6 @@ var EditProductComponent = (function () {
         var _this = this;
         this.selectedRow = null;
         this.isEditBtnShow = true;
-        console.log(product);
         this.productService.editProduct(product)
             .subscribe(function (data) {
             if (data.success) {
@@ -912,7 +936,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/products-management.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<md-tab-group>-->\r\n  <!--<md-tab>-->\r\n    <!--<ng-template md-tab-label>-->\r\n      <!--The <em>best</em> pasta-->\r\n    <!--</ng-template>-->\r\n    <!--<h1>Best pasta restaurants</h1>-->\r\n    <!--<p>...</p>-->\r\n  <!--</md-tab>-->\r\n  <!--<md-tab>-->\r\n    <!--<ng-template md-tab-label>-->\r\n      <!--<md-icon>thumb_down</md-icon> The worst sushi-->\r\n    <!--</ng-template>-->\r\n    <!--<h1>Terrible sushi restaurants</h1>-->\r\n    <!--<p>...</p>-->\r\n  <!--</md-tab>-->\r\n<!--</md-tab-group>-->\r\n\r\n<app-edit-product></app-edit-product>\r\n<app-add-product></app-add-product>\r\n"
+module.exports = "<app-edit-product (AddProductComponent.updateProducts)=\"onUpdateProducts1()\"></app-edit-product>\r\n<!--<app-edit-product (updateProducts)=\"onUpdateProducts()\"></app-edit-product>-->\r\n<app-add-product (updateProducts)=\"onUpdateProducts()\"></app-add-product>\r\n"
 
 /***/ }),
 
@@ -934,11 +958,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ProductsManagementComponent = (function () {
     function ProductsManagementComponent() {
+        // showAddProduct: Boolean = false;
+        this.eventerManagementUpdateProducts = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
     }
     ProductsManagementComponent.prototype.ngOnInit = function () {
     };
+    ProductsManagementComponent.prototype.onUpdateProducts = function () {
+        this.eventerManagementUpdateProducts.emit();
+        console.log('management - emit');
+    };
     return ProductsManagementComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", Object)
+], ProductsManagementComponent.prototype, "eventerManagementUpdateProducts", void 0);
 ProductsManagementComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-products-management',

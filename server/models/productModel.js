@@ -51,7 +51,7 @@ module.exports.deleteProduct = function(deleteProduct_id) {
   return new Promise(function(resolve, reject) {
         ProductModel.remove({_id: deleteProduct_id})
           .then((writeResult) => resolve({success: true, msg: 'Product deleted',
-            numberOfDeletedElements: JSON.parse(writeResult).n}))
+            numberOfDeletedElements: writeResult}))
           .catch(() => reject({success: false, msg: 'Failed to delete product'}));
       })
       .catch((error) => {throw error;});

@@ -1,4 +1,4 @@
-tr.active td {
+.active {
     background-color: rgba(18, 52, 86, 0.5);
     color: white;
 }

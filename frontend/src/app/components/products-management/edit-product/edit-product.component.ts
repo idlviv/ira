@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {Router} from '@angular/router';
 
 @Component({
+  moduleId: module.id,
   selector: 'app-edit-product',
   templateUrl: './edit-product.component.html',
   styleUrls: ['./edit-product.component.css']
@@ -15,6 +16,7 @@ export class EditProductComponent implements OnInit {
   isActive: Boolean = false;
   selectedRow : Number;
   isEditBtnShow: Boolean = true;
+  // showAddProduct: Boolean = false;
 
   constructor(
     private productService: ProductService,
@@ -23,6 +25,14 @@ export class EditProductComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getProducts();
+  }
+
+  onUpdateProducts1() {
+    console.log('update');
+  }
+
+  getProducts() {
     this.productService.getProducts()
       .subscribe(
         (products) => {
@@ -39,33 +49,46 @@ export class EditProductComponent implements OnInit {
         })
   }
 
+  // addProductBtn() {
+  //   this.addProduct = true;
+  // }
+  //
+  // onClickCancelAddBtn(i, _id) {
+  //   this.addProduct = false;
+  //   // this.selectedRow = null;
+  //   // this.isEditBtnShow = true;
+  //   // this.getProducts();
+  // }
+
   onClickEditBtn(i, _id) {
     this.selectedRow = i;
     this.isEditBtnShow = false;
+    // this.addProduct = false;
   }
 
-  onClickCancelBtn(i, _id) {
+  onClickCancelEditBtn(i, _id) {
     this.selectedRow = null;
     this.isEditBtnShow = true;
+    this.getProducts();
   }
 
   onClickDelBtn(i, _id) {
     this.selectedRow = null;
     this.isEditBtnShow = true;
-    console.log(_id);
 
     this.productService.deleteProduct(_id)
       .subscribe(
         data => {
-          console.log(data);
           if (data.success) {
           this.flashMessage.show(
-            'Delete successfully, Number Of Deleted Elements ' + data.numberOfDeletedElements,
+            'Delete successfully, Number Of Deleted Elements ' + data.numberOfDeletedElements.n,
             {
               cssClass: 'alert-success',
               timeout: 3000
             });
-          // this.router.navigate(['/profile']);
+            this.getProducts();
+
+            // this.router.navigate(['/profile']);
         } else {
           this.flashMessage.show(
             'Delete failed',
@@ -93,7 +116,6 @@ export class EditProductComponent implements OnInit {
   onEditProductSubmit(product, i) {
     this.selectedRow = null;
     this.isEditBtnShow = true;
-    console.log(product);
 
     this.productService.editProduct(product)
       .subscribe(
