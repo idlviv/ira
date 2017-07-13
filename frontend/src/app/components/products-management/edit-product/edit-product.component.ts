@@ -14,7 +14,7 @@ export class EditProductComponent implements OnInit {
   products: Object;
   isActive: Boolean = false;
   selectedRow : Number;
-  isEditBtnShowOnStart: Boolean = true;
+  isEditBtnShow: Boolean = true;
 
   constructor(
     private productService: ProductService,
@@ -41,17 +41,58 @@ export class EditProductComponent implements OnInit {
 
   onClickEditBtn(i, _id) {
     this.selectedRow = i;
-    this.isEditBtnShowOnStart = false;
+    this.isEditBtnShow = false;
   }
 
   onClickCancelBtn(i, _id) {
     this.selectedRow = null;
-    this.isEditBtnShowOnStart = true;
+    this.isEditBtnShow = true;
+  }
+
+  onClickDelBtn(i, _id) {
+    this.selectedRow = null;
+    this.isEditBtnShow = true;
+    console.log(_id);
+
+    this.productService.deleteProduct(_id)
+      .subscribe(
+        data => {
+          console.log(data);
+          if (data.success) {
+          this.flashMessage.show(
+            'Delete successfully, Number Of Deleted Elements ' + data.numberOfDeletedElements,
+            {
+              cssClass: 'alert-success',
+              timeout: 3000
+            });
+          // this.router.navigate(['/profile']);
+        } else {
+          this.flashMessage.show(
+            'Delete failed',
+            {
+              cssClass: 'alert-danger',
+              timeout: 3000
+            });
+          // this.router.navigate(['/profile']);
+        }
+      },
+        error => {
+          if (error.status === 401) {
+            this.flashMessage.show(
+              'Please login',
+              {
+                cssClass: 'alert-danger',
+                timeout: 3000
+              });
+            this.router.navigate(['/login']);
+          }
+        }
+    );
   }
 
   onEditProductSubmit(product, i) {
     this.selectedRow = null;
-    this.isEditBtnShowOnStart = true;
+    this.isEditBtnShow = true;
     console.log(product);
 
     this.productService.editProduct(product)
@@ -59,7 +100,7 @@ export class EditProductComponent implements OnInit {
         data => {
           if (data.success) {
             this.flashMessage.show(
-              'Edited successfuly',
+              'Edited successfully',
               {
                 cssClass: 'alert-success',
                 timeout: 3000
@@ -87,10 +128,5 @@ export class EditProductComponent implements OnInit {
           }
         }
       );
-
-
   }
-
-
-
 }

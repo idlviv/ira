@@ -3,7 +3,18 @@ tr.active td {
     color: white;
 }
 
-.buttonCell {
+.edit-product-table-first-cell {
     width: 50px;
     text-align: center;
+}
+
+.edit-product-table-last-cell {
+    width: 30px;
+    text-align: center;
+}
+
+.edit-product-table-cells {
+    /*width: 90%;*/
+    /*height: 90%;*/
+    padding: 3px;
 }
