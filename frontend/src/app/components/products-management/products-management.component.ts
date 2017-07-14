@@ -1,4 +1,6 @@
-import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { Component, ViewChild, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import {EditProductComponent} from './edit-product/edit-product.component';
+
 
 @Component({
   moduleId: module.id,
@@ -7,9 +9,9 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
   styleUrls: ['./products-management.component.css']
 })
 export class ProductsManagementComponent implements OnInit {
-  // showAddProduct: Boolean = false;
-  @Output() eventerManagementUpdateProducts = new EventEmitter();
 
+  @ViewChild(EditProductComponent)
+  private editProductComponent: EditProductComponent;
 
   constructor() { }
 
@@ -17,7 +19,7 @@ export class ProductsManagementComponent implements OnInit {
   }
 
   onUpdateProducts() {
-    this.eventerManagementUpdateProducts.emit();
-    console.log('management - emit');
+    this.editProductComponent.onUpdateProducts();
+
   }
 }

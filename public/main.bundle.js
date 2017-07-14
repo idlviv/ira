@@ -802,8 +802,8 @@ var EditProductComponent = (function () {
     EditProductComponent.prototype.ngOnInit = function () {
         this.getProducts();
     };
-    EditProductComponent.prototype.onUpdateProducts1 = function () {
-        console.log('update');
+    EditProductComponent.prototype.onUpdateProducts = function () {
+        this.getProducts();
     };
     EditProductComponent.prototype.getProducts = function () {
         var _this = this;
@@ -905,6 +905,7 @@ EditProductComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-edit-product',
         template: __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.html"),
+        providers: [__WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]],
         styles: [__webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.css")]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object])
@@ -936,7 +937,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/products-management.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-edit-product (AddProductComponent.updateProducts)=\"onUpdateProducts1()\"></app-edit-product>\r\n<!--<app-edit-product (updateProducts)=\"onUpdateProducts()\"></app-edit-product>-->\r\n<app-add-product (updateProducts)=\"onUpdateProducts()\"></app-add-product>\r\n"
+module.exports = "<app-edit-product></app-edit-product>\r\n<!--<app-edit-product (updateProducts)=\"onUpdateProducts()\"></app-edit-product>-->\r\n<app-add-product (updateProducts)=\"onUpdateProducts()\"></app-add-product>\r\n"
 
 /***/ }),
 
@@ -945,6 +946,7 @@ module.exports = "<app-edit-product (AddProductComponent.updateProducts)=\"onUpd
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsManagementComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -956,23 +958,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var ProductsManagementComponent = (function () {
     function ProductsManagementComponent() {
-        // showAddProduct: Boolean = false;
-        this.eventerManagementUpdateProducts = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
     }
     ProductsManagementComponent.prototype.ngOnInit = function () {
     };
     ProductsManagementComponent.prototype.onUpdateProducts = function () {
-        this.eventerManagementUpdateProducts.emit();
-        console.log('management - emit');
+        this.editProductComponent.onUpdateProducts();
     };
     return ProductsManagementComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
-    __metadata("design:type", Object)
-], ProductsManagementComponent.prototype, "eventerManagementUpdateProducts", void 0);
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1__edit_product_edit_product_component__["a" /* EditProductComponent */]),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__edit_product_edit_product_component__["a" /* EditProductComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__edit_product_edit_product_component__["a" /* EditProductComponent */]) === "function" && _a || Object)
+], ProductsManagementComponent.prototype, "editProductComponent", void 0);
 ProductsManagementComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-products-management',
@@ -982,6 +982,7 @@ ProductsManagementComponent = __decorate([
     __metadata("design:paramtypes", [])
 ], ProductsManagementComponent);
 
+var _a;
 //# sourceMappingURL=products-management.component.js.map
 
 /***/ }),

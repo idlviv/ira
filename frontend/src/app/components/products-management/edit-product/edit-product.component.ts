@@ -7,6 +7,7 @@ import {Router} from '@angular/router';
   moduleId: module.id,
   selector: 'app-edit-product',
   templateUrl: './edit-product.component.html',
+  providers: [ProductService],
   styleUrls: ['./edit-product.component.css']
 })
 
@@ -28,8 +29,8 @@ export class EditProductComponent implements OnInit {
     this.getProducts();
   }
 
-  onUpdateProducts1() {
-    console.log('update');
+  onUpdateProducts() {
+    this.getProducts();
   }
 
   getProducts() {
