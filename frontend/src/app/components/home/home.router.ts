@@ -23,6 +23,10 @@ const homeRoutes: Routes = [
         outlet: 'sidemenu',
         component: SideMenuComponent
       },
+      // {
+      //   path: ':id',
+      //   component: CoursesCategoryComponent
+      // },
       {
         path: 'solodko',
         component: SolodkoComponent
