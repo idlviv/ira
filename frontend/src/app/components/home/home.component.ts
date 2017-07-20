@@ -8,28 +8,28 @@ import {FlashMessagesService} from 'angular2-flash-messages';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  products: Object;
-
-  constructor(
-    private productService: ProductService,
-    private flashMessage: FlashMessagesService
-  ) { }
-
+  // products: Object;
+  //
+  // constructor(
+  //   private productService: ProductService,
+  //   private flashMessage: FlashMessagesService
+  // ) { }
+  //
   ngOnInit() {
-    this.productService.getProducts()
-      .subscribe(
-        (products) => {
-          this.products = products;
-        },
-        (error) => {
-          this.flashMessage.show(
-            error,
-            {
-              cssClass: 'alert-danger',
-              timeout: 3000
-            });
-          return false;
-        })
+  //   this.productService.getProducts()
+  //     .subscribe(
+  //       (products) => {
+  //         this.products = products;
+  //       },
+  //       (error) => {
+  //         this.flashMessage.show(
+  //           error,
+  //           {
+  //             cssClass: 'alert-danger',
+  //             timeout: 3000
+  //           });
+  //         return false;
+  //       })
   }
 
 }

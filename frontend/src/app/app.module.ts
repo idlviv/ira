@@ -21,7 +21,7 @@ import {AuthService} from './services/auth.service';
 import {ProductService} from './services/product.service';
 import {AuthGuard} from './guards/auth.guard';
 import { routing } from './app.router';
-// import { homeRouting } from './components/home/home.router';
+import { HomeRouter } from './components/home/home.router';
 
 import{FlashMessagesModule} from 'angular2-flash-messages';
 import { SideMenuComponent } from './components/menu/side-menu/side-menu.component';
@@ -53,7 +53,7 @@ import { HomeSectionComponent } from './components/home/home-section/home-sectio
     FormsModule,
     HttpModule,
     routing,
-    // homeRouting,
+    HomeRouter,
     FlashMessagesModule,
   ],
   providers: [

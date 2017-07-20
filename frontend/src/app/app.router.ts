@@ -13,31 +13,29 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { Page404Component } from './components/page404/page404.component';
 import { SideMenuComponent } from './components/menu/side-menu/side-menu.component';
 
-import {AuthGuard} from './guards/auth.guard';
 
+import {AuthGuard} from './guards/auth.guard';
 
 const routes: Routes = [
   {path: 'home',
-    component: HomeComponent,
-      children: [
-        {
-          path: '',
-          component: HomeSectionComponent
-        },
-        {
-          path: '',
-          outlet: 'sidemenu',
-          component: SideMenuComponent
-        },
-        {
-          path: 'solodko',
-          // outlet: 'sidemenu',
-          component: SolodkoComponent
-        }]
+    loadChildren: './components/home/home.router#HomeRouter'
+      // children: [
+      //   {
+      //     path: '',
+      //     component: HomeSectionComponent
+      //   },
+      //   {
+      //     path: '',
+      //     outlet: 'sidemenu',
+      //     component: SideMenuComponent
+      //   },
+      //   {
+      //     path: 'solodko',
+      //     // outlet: 'sidemenu',
+      //     component: SolodkoComponent
+      //   }]
 
   },
-  // {path: 'solodko', component: SolodkoComponent},
-  // {path: 'toys', component: ToysComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
