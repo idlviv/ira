@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+
 app.use(require('./server/middleware/sendHttpError'));
 
 app.use(passport.initialize());

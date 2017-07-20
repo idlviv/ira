@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {RouterModule, Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -11,27 +10,24 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
-
-import{ValidateService} from './services/validate.service';
-import{AuthService} from './services/auth.service';
-import{ProductService} from './services/product.service';
-import{FlashMessagesModule} from 'angular2-flash-messages';
-import{AuthGuard} from './guards/auth.guard';
 import { ItemComponent } from './components/item/item.component';
 import { AddProductComponent } from './components/products-management/add-product/add-product.component';
 import { ProductsManagementComponent } from './components/products-management/products-management.component';
 import { Page404Component } from './components/page404/page404.component';
 import { EditProductComponent } from './components/products-management/edit-product/edit-product.component';
 
-const appRoutes: Routes = [
-  {path: '', component: ProductsManagementComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
-  {path: 'product-management', component: HomeComponent},
-  {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]},
-  {path: '**', component: Page404Component},
-];
+import {ValidateService} from './services/validate.service';
+import {AuthService} from './services/auth.service';
+import {ProductService} from './services/product.service';
+import {AuthGuard} from './guards/auth.guard';
+import { routing } from './app.router';
+// import { homeRouting } from './components/home/home.router';
+
+import{FlashMessagesModule} from 'angular2-flash-messages';
+import { SideMenuComponent } from './components/menu/side-menu/side-menu.component';
+import { SolodkoComponent } from './components/categories/solodko/solodko.component';
+import { ToysComponent } from './components/categories/toys/toys.component';
+import { HomeSectionComponent } from './components/home/home-section/home-section.component';
 
 @NgModule({
   declarations: [
@@ -47,12 +43,17 @@ const appRoutes: Routes = [
     ProductsManagementComponent,
     Page404Component,
     EditProductComponent,
+    SideMenuComponent,
+    SolodkoComponent,
+    ToysComponent,
+    HomeSectionComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes),
+    routing,
+    // homeRouting,
     FlashMessagesModule,
   ],
   providers: [

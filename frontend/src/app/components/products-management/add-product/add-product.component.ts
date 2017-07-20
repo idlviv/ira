@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {ValidateService} from '../../../services/validate.service';
-// import {EditProductComponent} from '../edit-product/edit-product.component';
 import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {Router} from '@angular/router';
@@ -24,7 +23,6 @@ export class AddProductComponent implements OnInit {
     private authService: AuthService,
     private validateService: ValidateService,
     private productService: ProductService,
-    // private editProduct: EditProductComponent,
     private flashMessage: FlashMessagesService,
     private router: Router,
   ) { }
