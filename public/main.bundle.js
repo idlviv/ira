@@ -298,6 +298,7 @@ module.exports = "<p>\n  solodko works!\n</p>\n"
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SolodkoComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -309,8 +310,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var SolodkoComponent = (function () {
-    function SolodkoComponent() {
+    function SolodkoComponent(route) {
+        route.params.subscribe(function (params) { return console.log("solodko id parameter", params['id']); });
     }
     SolodkoComponent.prototype.ngOnInit = function () {
     };
@@ -322,9 +325,10 @@ SolodkoComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/categories/solodko/solodko.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/categories/solodko/solodko.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object])
 ], SolodkoComponent);
 
+var _a;
 //# sourceMappingURL=solodko.component.js.map
 
 /***/ }),
@@ -458,10 +462,9 @@ DashboardComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categories_solodko_solodko_component__ = __webpack_require__("../../../../../src/app/components/categories/solodko/solodko.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__categories_toys_toys_component__ = __webpack_require__("../../../../../src/app/components/categories/toys/toys.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_section_home_section_component__ = __webpack_require__("../../../../../src/app/components/home/home-section/home-section.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__menu_side_menu_side_menu_component__ = __webpack_require__("../../../../../src/app/components/menu/side-menu/side-menu.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_section_home_section_component__ = __webpack_require__("../../../../../src/app/components/home/home-section/home-section.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__menu_side_menu_side_menu_component__ = __webpack_require__("../../../../../src/app/components/menu/side-menu/side-menu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -475,32 +478,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
 var homeRoutes = [
     {
         path: 'home',
-        component: __WEBPACK_IMPORTED_MODULE_6__home_component__["a" /* HomeComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_5__home_component__["a" /* HomeComponent */],
         children: [
             {
                 path: '',
-                component: __WEBPACK_IMPORTED_MODULE_4__home_section_home_section_component__["a" /* HomeSectionComponent */]
+                component: __WEBPACK_IMPORTED_MODULE_3__home_section_home_section_component__["a" /* HomeSectionComponent */]
             },
+            {
+                path: ':id',
+                component: __WEBPACK_IMPORTED_MODULE_2__categories_solodko_solodko_component__["a" /* SolodkoComponent */]
+            },
+            // {
+            //   path: 'solodko',
+            //   component: SolodkoComponent
+            // },
+            // {
+            //   path: 'toys',
+            //   component: ToysComponent
+            // },
             {
                 path: '',
                 outlet: 'sidemenu',
-                component: __WEBPACK_IMPORTED_MODULE_5__menu_side_menu_side_menu_component__["a" /* SideMenuComponent */]
-            },
-            // {
-            //   path: ':id',
-            //   component: CoursesCategoryComponent
-            // },
-            {
-                path: 'solodko',
-                component: __WEBPACK_IMPORTED_MODULE_2__categories_solodko_solodko_component__["a" /* SolodkoComponent */]
+                component: __WEBPACK_IMPORTED_MODULE_4__menu_side_menu_side_menu_component__["a" /* SideMenuComponent */]
             },
             {
-                path: 'toys',
-                component: __WEBPACK_IMPORTED_MODULE_3__categories_toys_toys_component__["a" /* ToysComponent */]
+                path: ':id',
+                outlet: 'sidemenu',
+                component: __WEBPACK_IMPORTED_MODULE_4__menu_side_menu_side_menu_component__["a" /* SideMenuComponent */]
             }
         ]
     }

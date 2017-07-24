@@ -18,22 +18,28 @@ const homeRoutes: Routes = [
         path: '',
         component: HomeSectionComponent
       },
+
+      {
+        path: ':id',
+        component: SolodkoComponent
+      },
+      // {
+      //   path: 'solodko',
+      //   component: SolodkoComponent
+      // },
+      // {
+      //   path: 'toys',
+      //   component: ToysComponent
+      // },
       {
         path: '',
         outlet: 'sidemenu',
         component: SideMenuComponent
       },
-      // {
-      //   path: ':id',
-      //   component: CoursesCategoryComponent
-      // },
       {
-        path: 'solodko',
-        component: SolodkoComponent
-      },
-      {
-        path: 'toys',
-        component: ToysComponent
+        path: ':id',
+        outlet: 'sidemenu',
+        component: SideMenuComponent
       }]
   }
 ];
