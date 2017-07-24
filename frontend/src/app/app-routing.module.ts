@@ -1,24 +1,25 @@
-import { ModuleWithProviders } from '@angular/core';
+// import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
 
 import { ProductsManagementComponent } from './components/products-management/products-management.component';
-import { SolodkoComponent } from './components/categories/solodko/solodko.component';
-import { ToysComponent } from './components/categories/toys/toys.component';
+// import { SolodkoComponent } from '../components/categories/solodko/solodko.component';
+// import { ToysComponent } from '../components/categories/toys/toys.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { HomeComponent } from './components/home/home.component';
-import { HomeSectionComponent } from './components/home/home-section/home-section.component';
+// import { HomeComponent } from '../components/home/home.component';
+// import { HomeSectionComponent } from '../components/home/home-section/home-section.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { Page404Component } from './components/page404/page404.component';
-import { SideMenuComponent } from './components/menu/side-menu/side-menu.component';
+// import { SideMenuComponent } from '../components/menu/side-menu/side-menu.component';
 
 
 import {AuthGuard} from './guards/auth.guard';
 
-const routes: Routes = [
+const appRoutes: Routes = [
   {path: 'home',
-    loadChildren: './components/home/home.router#HomeRouter'
+    loadChildren: './home/home-routing.module#HomeRoutingModule'
       // children: [
       //   {
       //     path: '',
@@ -45,4 +46,14 @@ const routes: Routes = [
   { path: '**', component: Page404Component },
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+@NgModule({
+  imports: [
+    RouterModule.forRoot(
+      appRoutes,
+    )
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class AppRoutingModule {}
