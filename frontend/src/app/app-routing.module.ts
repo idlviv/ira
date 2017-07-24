@@ -14,7 +14,6 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { Page404Component } from './components/page404/page404.component';
 // import { SideMenuComponent } from '../components/menu/side-menu/side-menu.component';
 
-
 import {AuthGuard} from './guards/auth.guard';
 
 const appRoutes: Routes = [
