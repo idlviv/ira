@@ -1,12 +1,11 @@
 import { Component, ViewChild, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import {EditProductComponent} from './edit-product/edit-product.component';
 
-
 @Component({
   moduleId: module.id,
   selector: 'app-products-management',
   templateUrl: './products-management.component.html',
-  styleUrls: ['./products-management.component.css']
+  styleUrls: ['./products-management.component.css'],
 })
 export class ProductsManagementComponent implements OnInit {
 
@@ -20,6 +19,5 @@ export class ProductsManagementComponent implements OnInit {
 
   onUpdateProducts() {
     this.editProductComponent.onUpdateProducts();
-
   }
 }

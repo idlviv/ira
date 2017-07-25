@@ -18,7 +18,7 @@ import {AuthGuard} from './guards/auth.guard';
 
 const appRoutes: Routes = [
   {path: 'home',
-    loadChildren: './home/home-routing.module#HomeRoutingModule'
+    loadChildren: './components/home/home-routing.module#HomeRoutingModule'
       // children: [
       //   {
       //     path: '',
