@@ -1,4 +1,4 @@
-webpackJsonp([1],{
+webpackJsonp([2],{
 
 /***/ "../../../../../src async recursive":
 /***/ (function(module, exports, __webpack_require__) {
@@ -6,6 +6,12 @@ webpackJsonp([1],{
 var map = {
 	"./components/home/home-routing.module": [
 		"../../../../../src/app/components/home/home-routing.module.ts"
+	],
+	"./components/products/products-routing.module": [
+		"../../../../../src/app/components/products/products-routing.module.ts"
+	],
+	"./components/products/products.module": [
+		"../../../../../src/app/components/products/products.module.ts"
 	]
 };
 function webpackAsyncContext(req) {
@@ -57,7 +63,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 // import { HomeSectionComponent } from '../components/home/home-section/home-section.component';
 
 
-// import { SideMenuComponent } from '../components/menu/side-menu/side-menu.component';
 
 var appRoutes = [
     { path: 'home',
@@ -77,6 +82,10 @@ var appRoutes = [
         //     // outlet: 'sidemenu',
         //     component: SolodkoComponent
         //   }]
+    },
+    { path: 'products',
+        loadChildren: './components/products/products.module#ProductsModule'
+        // component: ProductsComponent
     },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_3__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_4__components_login_login_component__["a" /* LoginComponent */] },
@@ -198,6 +207,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_categories_solodko_solodko_component__ = __webpack_require__("../../../../../src/app/components/categories/solodko/solodko.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_categories_toys_toys_component__ = __webpack_require__("../../../../../src/app/components/categories/toys/toys.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_home_home_section_home_section_component__ = __webpack_require__("../../../../../src/app/components/home/home-section/home-section.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_products_products_module__ = __webpack_require__("../../../../../src/app/components/products/products.module.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -232,6 +242,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+// import { ProductsComponent } from './components/products/products.component';
+
+// import { ProductsSectionComponent } from './components/products-section/products-section.component';
 var AppModule = (function () {
     function AppModule() {
     }
@@ -261,6 +274,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
+            __WEBPACK_IMPORTED_MODULE_27__components_products_products_module__["ProductsModule"],
             __WEBPACK_IMPORTED_MODULE_21__components_home_home_routing_module__["HomeRoutingModule"],
             __WEBPACK_IMPORTED_MODULE_20__app_routing_module__["a" /* AppRoutingModule */],
             __WEBPACK_IMPORTED_MODULE_22_angular2_flash_messages__["FlashMessagesModule"],
@@ -503,14 +517,6 @@ var homeRoutes = [
                 path: ':id',
                 component: __WEBPACK_IMPORTED_MODULE_2__categories_solodko_solodko_component__["a" /* SolodkoComponent */]
             },
-            // {
-            //   path: 'solodko',
-            //   component: SolodkoComponent
-            // },
-            // {
-            //   path: 'toys',
-            //   component: ToysComponent
-            // },
             {
                 path: '',
                 outlet: 'sidemenu',
@@ -518,6 +524,11 @@ var homeRoutes = [
             },
             {
                 path: ':id',
+                outlet: 'sidemenu',
+                component: __WEBPACK_IMPORTED_MODULE_4__menu_side_menu_side_menu_component__["a" /* SideMenuComponent */]
+            },
+            {
+                path: ':**',
                 outlet: 'sidemenu',
                 component: __WEBPACK_IMPORTED_MODULE_4__menu_side_menu_side_menu_component__["a" /* SideMenuComponent */]
             }
@@ -883,7 +894,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/menu/side-menu/side-menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  side-menu works!\n</p>\n\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n  <a [routerLink]=\"['']\">Home</a>\n\n</li><li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n  <a [routerLink]=\"['solodko']\">Solodko</a></li>\n\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n  <a [routerLink]=\"['toys']\">Toys</a></li>"
+module.exports = "<p>\n  side-menu works!\n</p>\n\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n  <a [routerLink]=\"['']\">Home</a>\n\n<!--</li><li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\n  <!--<a (click)=\"navigate('solodko')\">Solodko</a></li>-->\n<p><a class=\"btn btn-primary\" (click)=\"navigate('solodko')\"  role=\"button\">Solodko</a></p>\n\n\n\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n  <a (click)=\"navigate('toys')\">Toys</a></li>"
 
 /***/ }),
 
@@ -905,10 +916,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var SideMenuComponent = (function () {
-    function SideMenuComponent(route) {
+    function SideMenuComponent(router, route) {
+        this.router = router;
+        this.route = route;
         route.params.subscribe(function (params) { return console.log("side menu id parameter", params['id']); });
     }
+    SideMenuComponent.prototype.navigate = function (path) {
+        console.log('path', path);
+        console.log('this route ', this.route);
+        this.router.navigate([{ outlets: { primary: path, sidemenu: path } }], { relativeTo: this.route });
+    };
     SideMenuComponent.prototype.ngOnInit = function () {
     };
     return SideMenuComponent;
@@ -919,10 +938,10 @@ SideMenuComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/menu/side-menu/side-menu.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/menu/side-menu/side-menu.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object])
 ], SideMenuComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=side-menu.component.js.map
 
 /***/ }),
@@ -948,7 +967,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\r\n  <div class=\"container\">\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\"\r\n              aria-expanded=\"false\" aria-controls=\"navbar\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand\" href=\"#\">Brand</a>\r\n    </div>\r\n    <div id=\"navbar\" class=\"collapse navbar-collapse\">\r\n      <ul class=\"nav navbar-nav navbar-left\">\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"><a [routerLink]=\"['/']\">Home</a></li>\r\n      </ul>\r\n\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n\r\n\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/product-management']\">Product Management</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/profile']\">Profile</a></li>\r\n\r\n        <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/login']\">Login</a></li>\r\n        <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/register']\">Register</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\r\n      </ul>\r\n    </div><!--/.nav-collapse -->\r\n  </div>\r\n</nav>"
+module.exports = "<nav class=\"navbar navbar-default\">\r\n<!--<nav class=\"navbar navbar-default navbar-fixed-top\">-->\r\n  <div class=\"container\">\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\"\r\n              aria-expanded=\"false\" aria-controls=\"navbar\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand\" href=\"#\">Brand</a>\r\n    </div>\r\n    <div id=\"navbar\" class=\"collapse navbar-collapse\">\r\n      <ul class=\"nav navbar-nav navbar-left\">\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/']\">Home</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/products']\">Products</a></li>\r\n      </ul>\r\n\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n\r\n\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/product-management']\">Product Management</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/profile']\">Profile</a></li>\r\n\r\n        <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/login']\">Login</a></li>\r\n        <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/register']\">Register</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\r\n      </ul>\r\n    </div><!--/.nav-collapse -->\r\n  </div>\r\n</nav>"
 
 /***/ }),
 
@@ -1429,6 +1448,307 @@ ProductsManagementComponent = __decorate([
 
 var _a;
 //# sourceMappingURL=products-management.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products/products-routing.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__products_component__ = __webpack_require__("../../../../../src/app/components/products/products.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__products_section_products_section_component__ = __webpack_require__("../../../../../src/app/components/products/products-section/products-section.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__products_side_menu_products_side_menu_component__ = __webpack_require__("../../../../../src/app/components/products/products-side-menu/products-side-menu.component.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductsRoutingModule", function() { return ProductsRoutingModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var productsRoutes = [
+    {
+        path: 'products',
+        component: __WEBPACK_IMPORTED_MODULE_2__products_component__["a" /* ProductsComponent */],
+        children: [
+            {
+                path: '',
+                component: __WEBPACK_IMPORTED_MODULE_3__products_section_products_section_component__["a" /* ProductsSectionComponent */]
+            },
+            {
+                path: ':id',
+                component: __WEBPACK_IMPORTED_MODULE_3__products_section_products_section_component__["a" /* ProductsSectionComponent */]
+            },
+            {
+                path: '',
+                outlet: 'productsSideMenu',
+                component: __WEBPACK_IMPORTED_MODULE_4__products_side_menu_products_side_menu_component__["a" /* ProductsSideMenuComponent */]
+            },
+            {
+                path: ':id',
+                outlet: 'productsSideMenu',
+                component: __WEBPACK_IMPORTED_MODULE_4__products_side_menu_products_side_menu_component__["a" /* ProductsSideMenuComponent */]
+            },
+            {
+                path: ':**',
+                outlet: 'productsSideMenu',
+                component: __WEBPACK_IMPORTED_MODULE_4__products_side_menu_products_side_menu_component__["a" /* ProductsSideMenuComponent */]
+            }
+        ]
+    }
+];
+var ProductsRoutingModule = (function () {
+    function ProductsRoutingModule() {
+    }
+    return ProductsRoutingModule;
+}());
+ProductsRoutingModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forChild(productsRoutes)
+        ],
+        exports: [__WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */]]
+    })
+], ProductsRoutingModule);
+
+//# sourceMappingURL=products-routing.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products/products-section/products-section.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products/products-section/products-section.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  products-section works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products/products-section/products-section.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsSectionComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ProductsSectionComponent = (function () {
+    function ProductsSectionComponent() {
+    }
+    ProductsSectionComponent.prototype.ngOnInit = function () {
+    };
+    return ProductsSectionComponent;
+}());
+ProductsSectionComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-products-section',
+        template: __webpack_require__("../../../../../src/app/components/products/products-section/products-section.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/products/products-section/products-section.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ProductsSectionComponent);
+
+//# sourceMappingURL=products-section.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products/products-side-menu/products-side-menu.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products/products-side-menu/products-side-menu.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  products-side-menu works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products/products-side-menu/products-side-menu.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsSideMenuComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ProductsSideMenuComponent = (function () {
+    function ProductsSideMenuComponent() {
+    }
+    ProductsSideMenuComponent.prototype.ngOnInit = function () {
+    };
+    return ProductsSideMenuComponent;
+}());
+ProductsSideMenuComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-products-side-menu',
+        template: __webpack_require__("../../../../../src/app/components/products/products-side-menu/products-side-menu.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/products/products-side-menu/products-side-menu.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ProductsSideMenuComponent);
+
+//# sourceMappingURL=products-side-menu.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products/products.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products/products.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\">\n  <div class=\"col-sm-3\">\n    <h2>Side menu</h2>\n    <router-outlet name=\"productsSideMenu\"></router-outlet>\n  </div>\n  <div class=\"col-sm-9\">\n    <h2>Main</h2>\n    <router-outlet></router-outlet>\n\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products/products.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ProductsComponent = (function () {
+    function ProductsComponent() {
+    }
+    ProductsComponent.prototype.ngOnInit = function () {
+    };
+    return ProductsComponent;
+}());
+ProductsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-products',
+        template: __webpack_require__("../../../../../src/app/components/products/products.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/products/products.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ProductsComponent);
+
+//# sourceMappingURL=products.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products/products.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__products_component__ = __webpack_require__("../../../../../src/app/components/products/products.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__products_routing_module__ = __webpack_require__("../../../../../src/app/components/products/products-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__products_section_products_section_component__ = __webpack_require__("../../../../../src/app/components/products/products-section/products-section.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__products_side_menu_products_side_menu_component__ = __webpack_require__("../../../../../src/app/components/products/products-side-menu/products-side-menu.component.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductsModule", function() { return ProductsModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var ProductsModule = (function () {
+    function ProductsModule() {
+    }
+    return ProductsModule;
+}());
+ProductsModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
+            __WEBPACK_IMPORTED_MODULE_3__products_routing_module__["ProductsRoutingModule"]
+        ],
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__products_component__["a" /* ProductsComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__products_section_products_section_component__["a" /* ProductsSectionComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__products_side_menu_products_side_menu_component__["a" /* ProductsSideMenuComponent */],
+        ]
+    })
+], ProductsModule);
+
+//# sourceMappingURL=products.module.js.map
 
 /***/ }),
 

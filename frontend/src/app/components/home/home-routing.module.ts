@@ -23,14 +23,6 @@ const homeRoutes: Routes = [
         path: ':id',
         component: SolodkoComponent
       },
-      // {
-      //   path: 'solodko',
-      //   component: SolodkoComponent
-      // },
-      // {
-      //   path: 'toys',
-      //   component: ToysComponent
-      // },
       {
         path: '',
         outlet: 'sidemenu',
@@ -38,6 +30,11 @@ const homeRoutes: Routes = [
       },
       {
         path: ':id',
+        outlet: 'sidemenu',
+        component: SideMenuComponent
+      },
+      {
+        path: ':**',
         outlet: 'sidemenu',
         component: SideMenuComponent
       }]

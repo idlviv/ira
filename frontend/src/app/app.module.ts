@@ -28,6 +28,9 @@ import { SideMenuComponent } from './components/menu/side-menu/side-menu.compone
 import { SolodkoComponent } from './components/categories/solodko/solodko.component';
 import { ToysComponent } from './components/categories/toys/toys.component';
 import { HomeSectionComponent } from './components/home/home-section/home-section.component';
+// import { ProductsComponent } from './components/products/products.component';
+import {ProductsModule} from "./components/products/products.module";
+// import { ProductsSectionComponent } from './components/products-section/products-section.component';
 
 @NgModule({
   declarations: [
@@ -47,11 +50,14 @@ import { HomeSectionComponent } from './components/home/home-section/home-sectio
     SolodkoComponent,
     ToysComponent,
     HomeSectionComponent,
+    // ProductsSectionComponent,
+    // ProductsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ProductsModule,
     HomeRoutingModule,
     AppRoutingModule,
     FlashMessagesModule,

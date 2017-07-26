@@ -13,6 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { Page404Component } from './components/page404/page404.component';
 // import { SideMenuComponent } from '../components/menu/side-menu/side-menu.component';
+import {ProductsComponent} from "./components/products/products.component";
 
 import {AuthGuard} from './guards/auth.guard';
 
@@ -35,6 +36,10 @@ const appRoutes: Routes = [
       //     component: SolodkoComponent
       //   }]
 
+  },
+  {path: 'products',
+    loadChildren: './components/products/products.module#ProductsModule'
+    // component: ProductsComponent
   },
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},

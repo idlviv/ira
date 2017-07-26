@@ -5,8 +5,11 @@
 <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
   <a [routerLink]="['']">Home</a>
 
-</li><li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-  <a [routerLink]="['solodko']">Solodko</a></li>
+<!--</li><li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">-->
+  <!--<a (click)="navigate('solodko')">Solodko</a></li>-->
+<p><a class="btn btn-primary" (click)="navigate('solodko')"  role="button">Solodko</a></p>
+
+
 
 <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-  <a [routerLink]="['toys']">Toys</a></li>
+  <a (click)="navigate('toys')">Toys</a></li>
