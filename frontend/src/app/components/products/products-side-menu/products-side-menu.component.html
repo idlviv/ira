@@ -1,3 +1,16 @@
 <p>
   products-side-menu works!
 </p>
+
+<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+  <a [routerLink]="['']">Home</a>
+
+  <!--</li><li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">-->
+  <!--<a (click)="navigate('solodko')">Solodko</a></li>-->
+  <p><a class="btn btn-primary" (click)="navigate('List')"  role="button">list</a></p>
+  <p><a class="btn btn-primary" (click)="navigate('detail')"  role="button">detail</a></p>
+
+
+
+<!--<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">-->
+  <!--<a (click)="navigate('toys')">Toys</a></li>-->

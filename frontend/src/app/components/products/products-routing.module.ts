@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import {ProductsComponent} from "./products.component";
 import {ProductsSectionComponent} from "./products-section/products-section.component";
 import {ProductsSideMenuComponent} from "./products-side-menu/products-side-menu.component";
+import {ProductsListComponent} from "./products-list/products-list.component";
 
 const productsRoutes: Routes = [
   {
@@ -14,10 +15,9 @@ const productsRoutes: Routes = [
         path: '',
         component: ProductsSectionComponent
       },
-
       {
         path: ':id',
-        component: ProductsSectionComponent
+        component: ProductsListComponent
       },
       {
         path: '',
@@ -29,11 +29,7 @@ const productsRoutes: Routes = [
         outlet: 'productsSideMenu',
         component: ProductsSideMenuComponent
       },
-      {
-        path: ':**',
-        outlet: 'productsSideMenu',
-        component: ProductsSideMenuComponent
-      }]
+    ]
   }
 ];
 
