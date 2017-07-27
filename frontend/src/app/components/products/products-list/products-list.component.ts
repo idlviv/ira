@@ -11,7 +11,7 @@ export class ProductsListComponent implements OnInit {
   constructor( private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => console.log("list id parameter",params['id']));
+    this.route.params.subscribe(params => console.log("list id parameter",params['cat'],' ',params['subCat']));
   }
 
 }

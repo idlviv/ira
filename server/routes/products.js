@@ -7,8 +7,21 @@ let ProductModel = require('../models/productModel');
 const config = require('../config');
 
 router.get(
-  '/getProducts', (req, res, next) => {
+  '/getProducts/', (req, res, next) => {
     ProductModel.getProducts()
+      .then((products) => {
+        res.json(products);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
+
+router.get(
+  '/getQueriedProducts/', (req, res, next) => {
+    console.log('searchQuery router', req.query);
+    let searchQuery = req.query;
+    ProductModel.getQueriedProducts(searchQuery)
       .then((products) => {
         res.json(products);
       })

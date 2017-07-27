@@ -729,7 +729,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/item/item.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <h2>{{product.name}}</h2>\n  <p>{{product.itemNumber}}</p>\n  <!--<img src=\"http://via.placeholder.com/200x300\">-->\n  <img src={{product.mainImgSrc}} class=\"img-responsive img-thumbnail img200x300\">\n  <!--<img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">-->\n  <p>{{product.price}} грн</p>\n</div>\n"
+module.exports = "<div>\n  <h2>{{product.category}} / {{product.subCategory}}</h2>\n  <h3>{{product.name}}</h3>\n  <p>{{product.itemNumber}}</p>\n  <!--<img src=\"http://via.placeholder.com/200x300\">-->\n  <img src={{product.mainImgSrc}} class=\"img-responsive img-thumbnail img200x300\">\n  <!--<img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">-->\n  <p>{{product.price}} грн</p>\n</div>\n"
 
 /***/ }),
 
@@ -738,6 +738,8 @@ module.exports = "<div>\n  <h2>{{product.name}}</h2>\n  <p>{{product.itemNumber}
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__interfaces_i_product__ = __webpack_require__("../../../../../src/app/interfaces/i-product.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__interfaces_i_product___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__interfaces_i_product__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ItemComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -749,6 +751,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var ItemComponent = (function () {
     function ItemComponent() {
     }
@@ -758,7 +761,7 @@ var ItemComponent = (function () {
 }());
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", Object)
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__interfaces_i_product__["IProduct"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__interfaces_i_product__["IProduct"]) === "function" && _a || Object)
 ], ItemComponent.prototype, "product", void 0);
 ItemComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -769,6 +772,7 @@ ItemComponent = __decorate([
     __metadata("design:paramtypes", [])
 ], ItemComponent);
 
+var _a;
 //# sourceMappingURL=item.component.js.map
 
 /***/ }),
@@ -1106,7 +1110,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/add-product/add-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Add product</h2>\n<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>\n  <div class=\"form-group\">\n    <label for=\"itemNumber\">Item number</label>\n    <input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"name\">Name</label>\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"price\">Price</label>\n    <input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"mainImgSrc\">Image source</label>\n    <input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\n</form>\n"
+module.exports = "<h2 class=\"page-header\">Add product</h2>\n<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>\n  <div class=\"form-group\">\n    <label for=\"category\">Category</label>\n    <input type=\"text\" [(ngModel)]=\"category\" name=\"category\" class=\"form-control\" id=\"category\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"subCategory\">Sub Category</label>\n    <input type=\"text\" [(ngModel)]=\"subCategory\" name=\"subCategory\" class=\"form-control\" id=\"subCategory\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"itemNumber\">Item number</label>\n    <input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"name\">Name</label>\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"price\">Price</label>\n    <input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"mainImgSrc\">Image source</label>\n    <input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\n</form>\n"
 
 /***/ }),
 
@@ -1144,6 +1148,10 @@ var AddProductComponent = (function () {
         this.productService = productService;
         this.flashMessage = flashMessage;
         this.router = router;
+        // itemNumber: String;
+        // name: String;
+        // price: Number;
+        // mainImgSrc: String;
         this.updateProducts = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
     }
     AddProductComponent.prototype.ngOnInit = function () {
@@ -1151,10 +1159,12 @@ var AddProductComponent = (function () {
     AddProductComponent.prototype.onAddProductSubmit = function () {
         var _this = this;
         var product = {
-            itemNumber: this.itemNumber,
-            name: this.name,
-            price: this.price,
-            mainImgSrc: this.mainImgSrc,
+            category: this.product.category,
+            subCategory: this.product.subCategory,
+            itemNumber: this.product.itemNumber,
+            name: this.product.name,
+            price: this.product.price,
+            mainImgSrc: this.product.mainImgSrc,
         };
         this.productService.addProduct(product)
             .subscribe(function (data) {
@@ -1224,7 +1234,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/edit-product/edit-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Edit product</h2>\r\n<table class=\"table table-hover\">\r\n  <form *ngFor=\"let product of products; let i = index\" (submit)=\"onEditProductSubmit(product, i)\" #editProductForm=\"ngForm\">\r\n    <thead *ngIf=\"product === products[0]\">\r\n      <tr>\r\n        <th class=\"edit-product-table-first-cell\">\r\n          <!--<button *ngIf=\"!addProduct\" button type=\"button\" (click)=\"addProductBtn(i, product._id)\"-->\r\n                  <!--class=\"btn btn-default btn-xs\">-->\r\n          <!--<span  class=\"glyphicon glyphicon-plus\" aria-hidden=\"true\"></span>-->\r\n          <!--</button>-->\r\n        </th>\r\n        <th>Item Number</th>\r\n        <th>Name</th>\r\n        <th>Price</th>\r\n        <th>Img source</th>\r\n        <th></th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <!--<tr *ngIf=\"addProduct\" [class.active]=\"i === selectedRow\" >-->\r\n        <!--<td class=\"edit-product-table-first-cell\">-->\r\n\r\n          <!--<button type=\"submit\" class=\"btn btn-default btn-xs\">-->\r\n            <!--<span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>-->\r\n          <!--</button>-->\r\n\r\n          <!--<button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"onClickCancelAddBtn(i, product._id)\">-->\r\n            <!--<span class=\"glyphicon glyphicon-ban-circle\" aria-hidden=\"true\"></span>-->\r\n          <!--</button>-->\r\n\r\n        <!--</td>-->\r\n        <!--<td class=\"edit-product-table-cells\">-->\r\n          <!--<input type=\"text\" [(ngModel)]=\"product.itemNumber\"-->\r\n                 <!--name=\"itemNumber\" #itemNumber=\"ngModel\" class=\"form-control input-sm\">-->\r\n        <!--</td>-->\r\n        <!--<td class=\"edit-product-table-cells\">-->\r\n          <!--<input type=\"text\" [(ngModel)]=\"product.name\"-->\r\n                 <!--name=\"name\" #name=\"ngModel\" class=\"form-control input-sm\">-->\r\n        <!--</td>-->\r\n        <!--<td class=\"edit-product-table-cells\">-->\r\n          <!--<input type=\"text\" [(ngModel)]=\"product.price\"-->\r\n                 <!--name=\"price\" #price=\"ngModel\" class=\"form-control input-sm\">-->\r\n        <!--</td>-->\r\n        <!--<td class=\"edit-product-table-cells\">-->\r\n          <!--<input type=\"text\" [(ngModel)]=\"product.mainImgSrc\"-->\r\n                 <!--name=\"mainImgSrc\" #mainImgSrc=\"ngModel\" class=\"form-control input-sm\">-->\r\n        <!--</td>-->\r\n        <!--<td class=\"edit-product-table-last-cell\">-->\r\n        <!--</td>-->\r\n      <!--</tr>-->\r\n\r\n      <tr [class.active]=\"i === selectedRow\" >\r\n          <td class=\"edit-product-table-first-cell\">\r\n\r\n            <button type=\"button\" (click)=\"onClickEditBtn(i, product._id)\" class=\"btn btn-default btn-xs\"\r\n                    [class.hidden]=\"!isEditBtnShow\">\r\n               <span  class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\r\n            </button>\r\n\r\n            <button type=\"submit\" class=\"btn btn-default btn-xs\" [class.hidden]=\"!(i === selectedRow)\">\r\n              <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>\r\n            </button>\r\n\r\n            <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"onClickCancelEditBtn(i, product._id)\"\r\n                    [class.hidden]=\"!(i === selectedRow)\">\r\n              <span class=\"glyphicon glyphicon-ban-circle\" aria-hidden=\"true\"></span>\r\n            </button>\r\n\r\n          </td>\r\n          <td class=\"edit-product-table-cells\">\r\n            <input type=\"text\" [(ngModel)]=\"product.itemNumber\" [disabled]=\"!(i===selectedRow)\"\r\n                   name=\"itemNumber\" #itemNumber=\"ngModel\" class=\"form-control input-sm\">\r\n          </td>\r\n          <td class=\"edit-product-table-cells\">\r\n            <input type=\"text\" [(ngModel)]=\"product.name\" [disabled]=\"!(i===selectedRow)\"\r\n                   name=\"name\" #name=\"ngModel\" class=\"form-control input-sm\">\r\n          </td>\r\n          <td class=\"edit-product-table-cells\">\r\n            <input type=\"text\" [(ngModel)]=\"product.price\" [disabled]=\"!(i===selectedRow)\"\r\n                   name=\"price\" #price=\"ngModel\" class=\"form-control input-sm\">\r\n          </td>\r\n          <td class=\"edit-product-table-cells\">\r\n            <input type=\"text\" [(ngModel)]=\"product.mainImgSrc\" [disabled]=\"!(i===selectedRow)\"\r\n                   name=\"mainImgSrc\" #mainImgSrc=\"ngModel\" class=\"form-control input-sm\">\r\n          </td>\r\n          <td class=\"edit-product-table-last-cell\">\r\n\r\n            <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"onClickDelBtn(i, product._id)\"\r\n                    [class.hidden]=\"!(i === selectedRow)\">\r\n              <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\r\n            </button>\r\n\r\n          </td>\r\n        </tr>\r\n    </tbody>\r\n  </form>\r\n</table>"
+module.exports = "<h2 class=\"page-header\">Edit product</h2>\r\n<table class=\"table table-hover\">\r\n  <form *ngFor=\"let product of products; let i = index\" (submit)=\"onEditProductSubmit(product, i)\" #editProductForm=\"ngForm\">\r\n    <thead *ngIf=\"product === products[0]\">\r\n      <tr>\r\n        <th class=\"edit-product-table-first-cell\">\r\n          <!--<button *ngIf=\"!addProduct\" button type=\"button\" (click)=\"addProductBtn(i, product._id)\"-->\r\n                  <!--class=\"btn btn-default btn-xs\">-->\r\n          <!--<span  class=\"glyphicon glyphicon-plus\" aria-hidden=\"true\"></span>-->\r\n          <!--</button>-->\r\n        </th>\r\n        <th>Category</th>\r\n        <th>Sub Category</th>\r\n        <th>Item Number</th>\r\n        <th>Name</th>\r\n        <th>Price</th>\r\n        <th>Img source</th>\r\n        <th></th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <!--<tr *ngIf=\"addProduct\" [class.active]=\"i === selectedRow\" >-->\r\n        <!--<td class=\"edit-product-table-first-cell\">-->\r\n\r\n          <!--<button type=\"submit\" class=\"btn btn-default btn-xs\">-->\r\n            <!--<span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>-->\r\n          <!--</button>-->\r\n\r\n          <!--<button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"onClickCancelAddBtn(i, product._id)\">-->\r\n            <!--<span class=\"glyphicon glyphicon-ban-circle\" aria-hidden=\"true\"></span>-->\r\n          <!--</button>-->\r\n\r\n        <!--</td>-->\r\n        <!--<td class=\"edit-product-table-cells\">-->\r\n          <!--<input type=\"text\" [(ngModel)]=\"product.itemNumber\"-->\r\n                 <!--name=\"itemNumber\" #itemNumber=\"ngModel\" class=\"form-control input-sm\">-->\r\n        <!--</td>-->\r\n        <!--<td class=\"edit-product-table-cells\">-->\r\n          <!--<input type=\"text\" [(ngModel)]=\"product.name\"-->\r\n                 <!--name=\"name\" #name=\"ngModel\" class=\"form-control input-sm\">-->\r\n        <!--</td>-->\r\n        <!--<td class=\"edit-product-table-cells\">-->\r\n          <!--<input type=\"text\" [(ngModel)]=\"product.price\"-->\r\n                 <!--name=\"price\" #price=\"ngModel\" class=\"form-control input-sm\">-->\r\n        <!--</td>-->\r\n        <!--<td class=\"edit-product-table-cells\">-->\r\n          <!--<input type=\"text\" [(ngModel)]=\"product.mainImgSrc\"-->\r\n                 <!--name=\"mainImgSrc\" #mainImgSrc=\"ngModel\" class=\"form-control input-sm\">-->\r\n        <!--</td>-->\r\n        <!--<td class=\"edit-product-table-last-cell\">-->\r\n        <!--</td>-->\r\n      <!--</tr>-->\r\n\r\n      <tr [class.active]=\"i === selectedRow\" >\r\n          <td class=\"edit-product-table-first-cell\">\r\n\r\n            <button type=\"button\" (click)=\"onClickEditBtn(i, product._id)\" class=\"btn btn-default btn-xs\"\r\n                    [class.hidden]=\"!isEditBtnShow\">\r\n               <span  class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>\r\n            </button>\r\n\r\n            <button type=\"submit\" class=\"btn btn-default btn-xs\" [class.hidden]=\"!(i === selectedRow)\">\r\n              <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>\r\n            </button>\r\n\r\n            <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"onClickCancelEditBtn(i, product._id)\"\r\n                    [class.hidden]=\"!(i === selectedRow)\">\r\n              <span class=\"glyphicon glyphicon-ban-circle\" aria-hidden=\"true\"></span>\r\n            </button>\r\n\r\n          </td>\r\n          <td class=\"edit-product-table-cells\">\r\n            <input type=\"text\" [(ngModel)]=\"product.category\" [disabled]=\"!(i===selectedRow)\"\r\n                   name=\"category\" #category=\"ngModel\" class=\"form-control input-sm\">\r\n          </td>\r\n          <td class=\"edit-product-table-cells\">\r\n            <input type=\"text\" [(ngModel)]=\"product.subCategory\" [disabled]=\"!(i===selectedRow)\"\r\n                   name=\"subCategory\" #subCategory=\"ngModel\" class=\"form-control input-sm\">\r\n          </td>\r\n          <td class=\"edit-product-table-cells\">\r\n            <input type=\"text\" [(ngModel)]=\"product.itemNumber\" [disabled]=\"!(i===selectedRow)\"\r\n                   name=\"itemNumber\" #itemNumber=\"ngModel\" class=\"form-control input-sm\">\r\n          </td>\r\n          <td class=\"edit-product-table-cells\">\r\n            <input type=\"text\" [(ngModel)]=\"product.name\" [disabled]=\"!(i===selectedRow)\"\r\n                   name=\"name\" #name=\"ngModel\" class=\"form-control input-sm\">\r\n          </td>\r\n          <td class=\"edit-product-table-cells\">\r\n            <input type=\"text\" [(ngModel)]=\"product.price\" [disabled]=\"!(i===selectedRow)\"\r\n                   name=\"price\" #price=\"ngModel\" class=\"form-control input-sm\">\r\n          </td>\r\n          <td class=\"edit-product-table-cells\">\r\n            <input type=\"text\" [(ngModel)]=\"product.mainImgSrc\" [disabled]=\"!(i===selectedRow)\"\r\n                   name=\"mainImgSrc\" #mainImgSrc=\"ngModel\" class=\"form-control input-sm\">\r\n          </td>\r\n          <td class=\"edit-product-table-last-cell\">\r\n\r\n            <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"onClickDelBtn(i, product._id)\"\r\n                    [class.hidden]=\"!(i === selectedRow)\">\r\n              <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\r\n            </button>\r\n\r\n          </td>\r\n        </tr>\r\n    </tbody>\r\n  </form>\r\n</table>"
 
 /***/ }),
 
@@ -1557,7 +1567,7 @@ var ProductsListComponent = (function () {
         this.route = route;
     }
     ProductsListComponent.prototype.ngOnInit = function () {
-        this.route.params.subscribe(function (params) { return console.log("list id parameter", params['id']); });
+        this.route.params.subscribe(function (params) { return console.log("list id parameter", params['cat'], ' ', params['subCat']); });
     };
     return ProductsListComponent;
 }());
@@ -1608,7 +1618,7 @@ var productsRoutes = [
                 component: __WEBPACK_IMPORTED_MODULE_3__products_section_products_section_component__["a" /* ProductsSectionComponent */]
             },
             {
-                path: ':id',
+                path: ':cat/:subCat',
                 component: __WEBPACK_IMPORTED_MODULE_5__products_list_products_list_component__["a" /* ProductsListComponent */]
             },
             {
@@ -1617,7 +1627,7 @@ var productsRoutes = [
                 component: __WEBPACK_IMPORTED_MODULE_4__products_side_menu_products_side_menu_component__["a" /* ProductsSideMenuComponent */]
             },
             {
-                path: ':id',
+                path: ':cat/:subCat',
                 outlet: 'productsSideMenu',
                 component: __WEBPACK_IMPORTED_MODULE_4__products_side_menu_products_side_menu_component__["a" /* ProductsSideMenuComponent */]
             },
@@ -1673,6 +1683,9 @@ module.exports = "<p>\n  products-section works!\n</p>\n"
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsSectionComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1685,12 +1698,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var ProductsSectionComponent = (function () {
-    function ProductsSectionComponent(route) {
+    function ProductsSectionComponent(route, productService, flashMessage) {
         this.route = route;
+        this.productService = productService;
+        this.flashMessage = flashMessage;
     }
     ProductsSectionComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.route.paramMap.subscribe(function (params) { return console.log("section id parameter", params['id']); });
+        var searchQuery = {
+            params: {
+                'category': 'Toys'
+            }
+        };
+        this.productService.getQueriedProducts(searchQuery)
+            .subscribe(function (products) {
+            _this.products = products;
+        }, function (error) {
+            _this.flashMessage.show(error, {
+                cssClass: 'alert-danger',
+                timeout: 3000
+            });
+            return false;
+        });
     };
     return ProductsSectionComponent;
 }());
@@ -1700,10 +1733,10 @@ ProductsSectionComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/products/products-section/products-section.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/products/products-section/products-section.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
 ], ProductsSectionComponent);
 
-var _a;
+var _a, _b, _c;
 //# sourceMappingURL=products-section.component.js.map
 
 /***/ }),
@@ -1729,7 +1762,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-side-menu/products-side-menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-side-menu works!\n</p>\n\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n  <a [routerLink]=\"['']\">Home</a>\n\n  <!--</li><li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\n  <!--<a (click)=\"navigate('solodko')\">Solodko</a></li>-->\n  <p><a class=\"btn btn-primary\" (click)=\"navigate('List')\"  role=\"button\">list</a></p>\n  <p><a class=\"btn btn-primary\" (click)=\"navigate('detail')\"  role=\"button\">detail</a></p>\n\n\n\n<!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\n  <!--<a (click)=\"navigate('toys')\">Toys</a></li>-->"
+module.exports = "<p>\n  products-side-menu works!\n</p>\n\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n  <a [routerLink]=\"['']\">Home</a>\n\n  <!--</li><li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\n  <!--<a (click)=\"navigate('solodko')\">Solodko</a></li>-->\n  <p><a class=\"btn btn-primary\" (click)=\"navigate('list/1')\"  role=\"button\">list</a></p>\n  <p><a class=\"btn btn-primary\" (click)=\"navigate('detail/1')\"  role=\"button\">detail</a></p>\n\n\n\n<!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\n  <!--<a (click)=\"navigate('toys')\">Toys</a></li>-->"
 
 /***/ }),
 
@@ -1765,7 +1798,7 @@ var ProductsSideMenuComponent = (function () {
         var _this = this;
         this.route.paramMap.subscribe(function (params) {
             _this.urlSnapShot = _this.route;
-            console.log("products side menu id parameter", params['id']);
+            console.log("products side menu id parameter", params['cat'], ' ', params['subCat']);
         });
     };
     return ProductsSideMenuComponent;
@@ -1781,6 +1814,67 @@ ProductsSideMenuComponent = __decorate([
 
 var _a, _b;
 //# sourceMappingURL=products-side-menu.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products/products-side-sub-menu/products-side-sub-menu.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products/products-side-sub-menu/products-side-sub-menu.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  products-side-sub-menu works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products/products-side-sub-menu/products-side-sub-menu.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsSideSubMenuComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ProductsSideSubMenuComponent = (function () {
+    function ProductsSideSubMenuComponent() {
+    }
+    ProductsSideSubMenuComponent.prototype.ngOnInit = function () {
+    };
+    return ProductsSideSubMenuComponent;
+}());
+ProductsSideSubMenuComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-products-side-sub-menu',
+        template: __webpack_require__("../../../../../src/app/components/products/products-side-sub-menu/products-side-sub-menu.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/products/products-side-sub-menu/products-side-sub-menu.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ProductsSideSubMenuComponent);
+
+//# sourceMappingURL=products-side-sub-menu.component.js.map
 
 /***/ }),
 
@@ -1858,6 +1952,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__products_side_menu_products_side_menu_component__ = __webpack_require__("../../../../../src/app/components/products/products-side-menu/products-side-menu.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__products_list_products_list_component__ = __webpack_require__("../../../../../src/app/components/products/products-list/products-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__products_detail_products_detail_component__ = __webpack_require__("../../../../../src/app/components/products/products-detail/products-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__products_side_sub_menu_products_side_sub_menu_component__ = __webpack_require__("../../../../../src/app/components/products/products-side-sub-menu/products-side-sub-menu.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductsModule", function() { return ProductsModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1865,6 +1960,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1890,6 +1986,7 @@ ProductsModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5__products_side_menu_products_side_menu_component__["a" /* ProductsSideMenuComponent */],
             __WEBPACK_IMPORTED_MODULE_6__products_list_products_list_component__["a" /* ProductsListComponent */],
             __WEBPACK_IMPORTED_MODULE_7__products_detail_products_detail_component__["a" /* ProductsDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__products_side_sub_menu_products_side_sub_menu_component__["a" /* ProductsSideSubMenuComponent */],
         ]
     })
 ], ProductsModule);
@@ -2145,6 +2242,13 @@ var _a, _b;
 
 /***/ }),
 
+/***/ "../../../../../src/app/interfaces/i-product.ts":
+/***/ (function(module, exports) {
+
+//# sourceMappingURL=i-product.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/services/auth.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2236,9 +2340,9 @@ var _a;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2253,6 +2357,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ProductService = (function () {
     function ProductService(http, authService) {
         this.http = http;
@@ -2260,6 +2365,15 @@ var ProductService = (function () {
     }
     ProductService.prototype.getProducts = function () {
         return this.http.get('api/getProducts')
+            .map(function (res) { return res.json(); });
+    };
+    ProductService.prototype.getQueriedProducts = function (searchQuery) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.set('Content-Type', 'application/json');
+        var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["URLSearchParams"]();
+        params.set('category', 'Toys');
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["RequestOptions"]({ headers: headers, params: params });
+        return this.http.get('api/getQueriedProducts', options)
             .map(function (res) { return res.json(); });
     };
     ProductService.prototype.addProduct = function (product) {
@@ -2291,7 +2405,7 @@ var ProductService = (function () {
 }());
 ProductService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__auth_service__["a" /* AuthService */]) === "function" && _b || Object])
 ], ProductService);
 
 var _a, _b;

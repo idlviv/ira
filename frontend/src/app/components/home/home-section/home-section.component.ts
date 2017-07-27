@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
+import {IProduct} from "../../../interfaces/i-product";
 
 @Component({
   selector: 'app-home-section',
@@ -9,7 +10,7 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 })
 export class HomeSectionComponent implements OnInit {
 
-  products: Object;
+  products: IProduct[];
 
   constructor(
     private productService: ProductService,
@@ -17,6 +18,7 @@ export class HomeSectionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
     this.productService.getProducts()
       .subscribe(
         (products) => {

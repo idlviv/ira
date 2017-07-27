@@ -25,7 +25,7 @@ export class ProductsSideMenuComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.urlSnapShot = this.route;
-      console.log("products side menu id parameter",params['id'])
+      console.log("products side menu id parameter",params['cat'],' ',params['subCat']);
     });
   }
 

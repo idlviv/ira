@@ -1,6 +1,12 @@
 const mongoose = require('../libs/mongoose');
 
 const ProductSchema = mongoose.Schema({
+  category: {
+    type: String
+  },
+  subCategory: {
+    type: String
+  },
   itemNumber: {
     type: String,
     unique: true,
@@ -22,8 +28,18 @@ let ProductModel = mongoose.model('products', ProductSchema);
 module.exports = ProductModel;
 
 module.exports.getProducts = function() {
+
+      return new Promise((resolve, reject) => {
+        ProductModel.find()
+          .then((products) => resolve(products))
+          .catch((err) => reject(err));
+  });
+};
+
+module.exports.getQueriedProducts = function(searchQuery) {
+  console.log('searchQuery - model', JSON.stringify(searchQuery));
   return new Promise((resolve, reject) => {
-    ProductModel.find()
+    ProductModel.find(searchQuery)
       .then((products) => resolve(products))
       .catch((err) => reject(err));
   });
@@ -31,11 +47,11 @@ module.exports.getProducts = function() {
 
 module.exports.addProduct = function(newProduct) {
   return new Promise(function(resolve, reject) {
-        newProduct.save()
-          .then(() => resolve({success: true, msg: 'Product added'}))
-          .catch(() => reject({success: false, msg: 'Failed to add product'}));
-      })
-      .catch((error) => {throw error;});
+    newProduct.save()
+      .then(() => resolve({success: true, msg: 'Product added'}))
+      .catch(() => reject({success: false, msg: 'Failed to add product'}));
+    })
+    .catch((error) => {throw error;});
 };
 
 module.exports.editProduct = function(editedProduct) {

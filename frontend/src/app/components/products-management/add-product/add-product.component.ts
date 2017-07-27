@@ -4,6 +4,7 @@ import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../services/auth.service';
+import {IProduct} from "../../../interfaces/i-product";
 
 @Component({
   moduleId: module.id,
@@ -13,10 +14,11 @@ import {AuthService} from '../../../services/auth.service';
 })
 
 export class AddProductComponent implements OnInit {
-  itemNumber: String;
-  name: String;
-  price: Number;
-  mainImgSrc: String;
+  product: IProduct;
+  // itemNumber: String;
+  // name: String;
+  // price: Number;
+  // mainImgSrc: String;
   @Output() updateProducts = new EventEmitter();
 
   constructor(
@@ -33,10 +35,12 @@ export class AddProductComponent implements OnInit {
   onAddProductSubmit() {
 
     const product = {
-      itemNumber: this.itemNumber,
-      name: this.name,
-      price: this.price,
-      mainImgSrc: this.mainImgSrc,
+      category: this.product.category,
+      subCategory: this.product.subCategory,
+      itemNumber: this.product.itemNumber,
+      name: this.product.name,
+      price: this.product.price,
+      mainImgSrc: this.product.mainImgSrc,
     };
 
     this.productService.addProduct(product)

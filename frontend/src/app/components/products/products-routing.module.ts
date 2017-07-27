@@ -16,7 +16,7 @@ const productsRoutes: Routes = [
         component: ProductsSectionComponent
       },
       {
-        path: ':id',
+        path: ':cat/:subCat',
         component: ProductsListComponent
       },
       {
@@ -25,7 +25,7 @@ const productsRoutes: Routes = [
         component: ProductsSideMenuComponent
       },
       {
-        path: ':id',
+        path: ':cat/:subCat',
         outlet: 'productsSideMenu',
         component: ProductsSideMenuComponent
       },

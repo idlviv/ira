@@ -1,8 +1,14 @@
 import { Injectable } from '@angular/core';
 import {Http, Headers} from '@angular/http';
+import { URLSearchParams, RequestOptions } from '@angular/http';
+
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/map';
+
 import {AuthService} from './auth.service';
 
-import 'rxjs/add/operator/map';
+
+import {IProduct} from '../interfaces/i-product';
 
 @Injectable()
 export class ProductService {
@@ -11,9 +17,24 @@ export class ProductService {
               private authService: AuthService) { }
 
   getProducts() {
-    return this.http.get(
-      'api/getProducts')
-      .map(res => res.json());
+
+      return this.http.get(
+        'api/getProducts')
+        .map(res => res.json());
+  }
+
+  getQueriedProducts(searchQuery) {
+    let headers = new Headers();
+    headers.set('Content-Type', 'application/json');
+
+    let params = new URLSearchParams();
+    params.set('category', 'Toys');
+
+    let options = new RequestOptions({ headers: headers, params: params });
+      return this.http.get(
+        'api/getQueriedProducts',
+        options)
+        .map(res => res.json());
   }
 
   addProduct(product) {
