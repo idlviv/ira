@@ -14,4 +14,4 @@ import {ItemComponent} from "../item/item.component";
     ItemComponent
   ]
 })
-export class HomeModule { }
+export class HomeModule {}
