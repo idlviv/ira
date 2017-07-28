@@ -10,7 +10,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { ItemComponent } from './components/item/item.component';
+// import { ItemComponent } from './components/item/item.component';
 import { AddProductComponent } from './components/products-management/add-product/add-product.component';
 import { ProductsManagementComponent } from './components/products-management/products-management.component';
 import { Page404Component } from './components/page404/page404.component';
@@ -30,6 +30,7 @@ import { ToysComponent } from './components/categories/toys/toys.component';
 import { HomeSectionComponent } from './components/home/home-section/home-section.component';
 // import { ProductsComponent } from './components/products/products.component';
 import {ProductsModule} from "./components/products/products.module";
+import {HomeModule} from "./components/home/home.module";
 // import { ProductsSectionComponent } from './components/products-section/products-section.component';
 
 @NgModule({
@@ -41,7 +42,7 @@ import {ProductsModule} from "./components/products/products.module";
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
-    ItemComponent,
+    // ItemComponent,
     AddProductComponent,
     ProductsManagementComponent,
     Page404Component,
@@ -59,8 +60,13 @@ import {ProductsModule} from "./components/products/products.module";
     HttpModule,
     ProductsModule,
     HomeRoutingModule,
+    HomeModule,
     AppRoutingModule,
     FlashMessagesModule,
+  ],
+  exports:[
+    HomeModule,
+    // ProductsModule,
   ],
   providers: [
     ValidateService,

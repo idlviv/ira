@@ -8,11 +8,13 @@ import { ProductsSideMenuComponent } from './products-side-menu/products-side-me
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductsDetailComponent } from './products-detail/products-detail.component';
 import { ProductsSideSubMenuComponent } from './products-side-sub-menu/products-side-sub-menu.component';
+import {HomeModule} from "../home/home.module";
 
 @NgModule({
   imports: [
     CommonModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    HomeModule
   ],
   declarations: [
     ProductsComponent,

@@ -187,24 +187,24 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_item_item_component__ = __webpack_require__("../../../../../src/app/components/item/item.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_products_management_add_product_add_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_products_management_products_management_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_page404_page404_component__ = __webpack_require__("../../../../../src/app/components/page404/page404.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_products_management_edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_home_home_routing_module__ = __webpack_require__("../../../../../src/app/components/home/home-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_menu_side_menu_side_menu_component__ = __webpack_require__("../../../../../src/app/components/menu/side-menu/side-menu.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_categories_solodko_solodko_component__ = __webpack_require__("../../../../../src/app/components/categories/solodko/solodko.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_categories_toys_toys_component__ = __webpack_require__("../../../../../src/app/components/categories/toys/toys.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_home_home_section_home_section_component__ = __webpack_require__("../../../../../src/app/components/home/home-section/home-section.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_products_products_module__ = __webpack_require__("../../../../../src/app/components/products/products.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_products_management_add_product_add_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_products_management_products_management_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_page404_page404_component__ = __webpack_require__("../../../../../src/app/components/page404/page404.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_products_management_edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_home_home_routing_module__ = __webpack_require__("../../../../../src/app/components/home/home-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_menu_side_menu_side_menu_component__ = __webpack_require__("../../../../../src/app/components/menu/side-menu/side-menu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_categories_solodko_solodko_component__ = __webpack_require__("../../../../../src/app/components/categories/solodko/solodko.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_categories_toys_toys_component__ = __webpack_require__("../../../../../src/app/components/categories/toys/toys.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_home_home_section_home_section_component__ = __webpack_require__("../../../../../src/app/components/home/home-section/home-section.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_products_products_module__ = __webpack_require__("../../../../../src/app/components/products/products.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_home_home_module__ = __webpack_require__("../../../../../src/app/components/home/home.module.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -223,7 +223,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
+// import { ItemComponent } from './components/item/item.component';
 
 
 
@@ -241,6 +241,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 // import { ProductsComponent } from './components/products/products.component';
 
+
 // import { ProductsSectionComponent } from './components/products-section/products-section.component';
 var AppModule = (function () {
     function AppModule() {
@@ -257,30 +258,34 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__["a" /* HomeComponent */],
             __WEBPACK_IMPORTED_MODULE_9__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
             __WEBPACK_IMPORTED_MODULE_10__components_profile_profile_component__["a" /* ProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_item_item_component__["a" /* ItemComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__components_products_management_add_product_add_product_component__["a" /* AddProductComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_products_management_products_management_component__["a" /* ProductsManagementComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__components_page404_page404_component__["a" /* Page404Component */],
-            __WEBPACK_IMPORTED_MODULE_15__components_products_management_edit_product_edit_product_component__["a" /* EditProductComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__components_menu_side_menu_side_menu_component__["a" /* SideMenuComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__components_categories_solodko_solodko_component__["a" /* SolodkoComponent */],
-            __WEBPACK_IMPORTED_MODULE_25__components_categories_toys_toys_component__["a" /* ToysComponent */],
-            __WEBPACK_IMPORTED_MODULE_26__components_home_home_section_home_section_component__["a" /* HomeSectionComponent */],
+            // ItemComponent,
+            __WEBPACK_IMPORTED_MODULE_11__components_products_management_add_product_add_product_component__["a" /* AddProductComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_products_management_products_management_component__["a" /* ProductsManagementComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_page404_page404_component__["a" /* Page404Component */],
+            __WEBPACK_IMPORTED_MODULE_14__components_products_management_edit_product_edit_product_component__["a" /* EditProductComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__components_menu_side_menu_side_menu_component__["a" /* SideMenuComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__components_categories_solodko_solodko_component__["a" /* SolodkoComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__components_categories_toys_toys_component__["a" /* ToysComponent */],
+            __WEBPACK_IMPORTED_MODULE_25__components_home_home_section_home_section_component__["a" /* HomeSectionComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
-            __WEBPACK_IMPORTED_MODULE_27__components_products_products_module__["ProductsModule"],
-            __WEBPACK_IMPORTED_MODULE_21__components_home_home_routing_module__["HomeRoutingModule"],
-            __WEBPACK_IMPORTED_MODULE_20__app_routing_module__["a" /* AppRoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_22_angular2_flash_messages__["FlashMessagesModule"],
+            __WEBPACK_IMPORTED_MODULE_26__components_products_products_module__["ProductsModule"],
+            __WEBPACK_IMPORTED_MODULE_20__components_home_home_routing_module__["HomeRoutingModule"],
+            __WEBPACK_IMPORTED_MODULE_27__components_home_home_module__["a" /* HomeModule */],
+            __WEBPACK_IMPORTED_MODULE_19__app_routing_module__["a" /* AppRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_21_angular2_flash_messages__["FlashMessagesModule"],
+        ],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_27__components_home_home_module__["a" /* HomeModule */],
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_16__services_validate_service__["a" /* ValidateService */],
-            __WEBPACK_IMPORTED_MODULE_17__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_19__guards_auth_guard__["a" /* AuthGuard */],
-            __WEBPACK_IMPORTED_MODULE_18__services_product_service__["a" /* ProductService */]
+            __WEBPACK_IMPORTED_MODULE_15__services_validate_service__["a" /* ValidateService */],
+            __WEBPACK_IMPORTED_MODULE_16__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */],
+            __WEBPACK_IMPORTED_MODULE_17__services_product_service__["a" /* ProductService */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
     })
@@ -705,6 +710,46 @@ HomeComponent = __decorate([
 ], HomeComponent);
 
 //# sourceMappingURL=home.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/home/home.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_item_component__ = __webpack_require__("../../../../../src/app/components/item/item.component.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var HomeModule = (function () {
+    function HomeModule() {
+    }
+    return HomeModule;
+}());
+HomeModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__item_item_component__["a" /* ItemComponent */]
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
+        ],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_2__item_item_component__["a" /* ItemComponent */]
+        ]
+    })
+], HomeModule);
+
+//# sourceMappingURL=home.module.js.map
 
 /***/ }),
 
@@ -1673,7 +1718,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-section/products-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-section works!\n</p>\n"
+module.exports = "<p>\n  products-section works!\n</p>\n<div *ngFor=\"let product of products\" class=\"col-sm-4 col-xs-6\">\n  <app-item [product]=\"product\"></app-item>\n</div>"
 
 /***/ }),
 
@@ -1953,6 +1998,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__products_list_products_list_component__ = __webpack_require__("../../../../../src/app/components/products/products-list/products-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__products_detail_products_detail_component__ = __webpack_require__("../../../../../src/app/components/products/products-detail/products-detail.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__products_side_sub_menu_products_side_sub_menu_component__ = __webpack_require__("../../../../../src/app/components/products/products-side-sub-menu/products-side-sub-menu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__home_home_module__ = __webpack_require__("../../../../../src/app/components/home/home.module.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductsModule", function() { return ProductsModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1960,6 +2006,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1978,7 +2025,8 @@ ProductsModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
-            __WEBPACK_IMPORTED_MODULE_3__products_routing_module__["a" /* ProductsRoutingModule */]
+            __WEBPACK_IMPORTED_MODULE_3__products_routing_module__["a" /* ProductsRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_9__home_home_module__["a" /* HomeModule */]
         ],
         declarations: [
             __WEBPACK_IMPORTED_MODULE_2__products_component__["a" /* ProductsComponent */],
