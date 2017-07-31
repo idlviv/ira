@@ -5,6 +5,7 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../services/auth.service';
 import {IProduct} from "../../../interfaces/i-product";
+import {NgForm} from '@angular/forms';
 
 @Component({
   moduleId: module.id,
@@ -32,18 +33,19 @@ export class AddProductComponent implements OnInit {
   ngOnInit() {
   }
 
-  onAddProductSubmit() {
+  onAddProductSubmit(form: NgForm) {
 
     const product = {
       catalog: {
-          category0: this.product.catalog.category0,
-          category1: this.product.catalog.category1
+          category0: form.value.category0,
+          category1: form.value.category1
         },
-      itemNumber: this.product.itemNumber,
-      name: this.product.name,
-      price: this.product.price,
-      mainImgSrc: this.product.mainImgSrc,
+      itemNumber: form.value.itemNumber,
+      name: form.value.name,
+      price: form.value.price,
+      mainImgSrc: form.value.mainImgSrc,
     };
+    console.log(form.value);
     console.log(product);
     this.productService.addProduct(product)
       .subscribe(

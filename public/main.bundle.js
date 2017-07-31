@@ -1155,7 +1155,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/add-product/add-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Add product</h2>\n<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>\n  <div class=\"form-group\">\n    <label for=\"category0\">Category</label>\n    <input type=\"text\" name=\"catalog.category0\" class=\"form-control\" id=\"category0\"\n           ngModel>\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"category1\">SubCategory</label>\n    <input type=\"text\" name=\"catalog.category1\" class=\"form-control\" id=\"category1\"\n           ngModel>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"itemNumber\">Item number</label>\n    <input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"name\">Name</label>\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"price\">Price</label>\n    <input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"mainImgSrc\">Image source</label>\n    <input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\n</form>\n"
+module.exports = "<!--<h2 class=\"page-header\">Add product</h2>-->\n<!--<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"category\">Category</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"category\" name=\"category\" class=\"form-control\" id=\"category\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"subCategory\">Sub Category</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"subCategory\" name=\"subCategory\" class=\"form-control\" id=\"subCategory\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"itemNumber\">Item number</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"name\">Name</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"price\">Price</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"mainImgSrc\">Image source</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">-->\n  <!--</div>-->\n  <!--<input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">-->\n<!--</form>-->\n\n\n<h2 class=\"page-header\">Add product</h2>\n<form (ngSubmit)=\"onAddProductSubmit(addProductForm); addProductForm.reset()\" #addProductForm=\"ngForm\">\n\n  <div class=\"form-group\">\n    <label for=\"category0\">Category</label>\n    <input name=\"category0\" ngModel #category0=\"ngModel\" class=\"form-control\" id=\"category0\">\n  </div>\n    <div class=\"form-group\">\n    <label for=\"category1\">SubCategory</label>\n    <input name=\"category1\" ngModel #category1=\"ngModel\" class=\"form-control\" id=\"category1\">\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"itemNumber\">Item number</label>\n    <input type=\"text\" ngModel name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"name\">Name</label>\n    <input type=\"text\" ngModel name=\"name\" class=\"form-control\" id=\"name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"price\">Price</label>\n    <input type=\"text\" ngModel name=\"price\" class=\"form-control\" id=\"price\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"mainImgSrc\">Image source</label>\n    <input type=\"text\" ngModel name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\n</form>"
 
 /***/ }),
 
@@ -1201,18 +1201,19 @@ var AddProductComponent = (function () {
     }
     AddProductComponent.prototype.ngOnInit = function () {
     };
-    AddProductComponent.prototype.onAddProductSubmit = function () {
+    AddProductComponent.prototype.onAddProductSubmit = function (form) {
         var _this = this;
         var product = {
             catalog: {
-                category0: this.product.catalog.category0,
-                category1: this.product.catalog.category1
+                category0: form.value.category0,
+                category1: form.value.category1
             },
-            itemNumber: this.product.itemNumber,
-            name: this.product.name,
-            price: this.product.price,
-            mainImgSrc: this.product.mainImgSrc,
+            itemNumber: form.value.itemNumber,
+            name: form.value.name,
+            price: form.value.price,
+            mainImgSrc: form.value.mainImgSrc,
         };
+        console.log(form.value);
         console.log(product);
         this.productService.addProduct(product)
             .subscribe(function (data) {
