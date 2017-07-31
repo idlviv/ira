@@ -1,6 +1,9 @@
 export interface IProduct {
-  category: string,
-  subCategory: string,
+  catalog:
+    {
+      category0: string,
+      category1: string,
+    },
   itemNumber: string,
   name: string,
   price: number,

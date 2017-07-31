@@ -1,11 +1,13 @@
 const mongoose = require('../libs/mongoose');
 
 const ProductSchema = mongoose.Schema({
-  category: {
-    type: String
-  },
-  subCategory: {
-    type: String
+  catalog: {
+    category0: {
+      type: String
+    },
+    category1: {
+      type: String
+    }
   },
   itemNumber: {
     type: String,
@@ -28,28 +30,36 @@ let ProductModel = mongoose.model('products', ProductSchema);
 module.exports = ProductModel;
 
 module.exports.getProducts = function() {
-
       return new Promise((resolve, reject) => {
         ProductModel.find()
           .then((products) => resolve(products))
           .catch((err) => reject(err));
-  });
-};
+      });
+    };
+
+module.exports.getDistinctProducts = function(searchQuery) {
+      console.log('distinctQuery - model', searchQuery);
+      return new Promise((resolve, reject) => {
+        ProductModel.distinct(searchQuery)
+          .then((products) => resolve(products))
+          .catch((err) => reject(err));
+      });
+    };
 
 module.exports.getQueriedProducts = function(searchQuery) {
-  console.log('searchQuery - model', JSON.stringify(searchQuery));
-  return new Promise((resolve, reject) => {
-    ProductModel.find(searchQuery)
-      .then((products) => resolve(products))
-      .catch((err) => reject(err));
-  });
-};
+      console.log('searchQuery - model', JSON.stringify(searchQuery));
+      return new Promise((resolve, reject) => {
+            ProductModel.find(searchQuery)
+              .then((products) => resolve(products))
+              .catch((err) => reject(err));
+          });
+    };
 
 module.exports.addProduct = function(newProduct) {
   return new Promise(function(resolve, reject) {
-    newProduct.save()
-      .then(() => resolve({success: true, msg: 'Product added'}))
-      .catch(() => reject({success: false, msg: 'Failed to add product'}));
+      newProduct.save()
+        .then(() => resolve({success: true, msg: 'Product added'}))
+        .catch(() => reject({success: false, msg: 'Failed to add product'}));
     })
     .catch((error) => {throw error;});
 };

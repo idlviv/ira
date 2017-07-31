@@ -23,12 +23,27 @@ export class ProductService {
         .map(res => res.json());
   }
 
+  getDistinctProducts(searchQuery) {
+    let headers = new Headers();
+    headers.set('Content-Type', 'application/json');
+
+    let params = new URLSearchParams();
+    params.set('str', searchQuery);
+
+    let options = new RequestOptions({ headers: headers, params: params });
+      return this.http.get(
+        'api/getDistinctProducts',
+        options)
+        .map(res => res.json());
+  }
+
   getQueriedProducts(searchQuery) {
     let headers = new Headers();
     headers.set('Content-Type', 'application/json');
 
     let params = new URLSearchParams();
-    params.set('category', 'Toys');
+    // params.set('category', 'Toys');
+    params.set('obj', JSON.stringify(searchQuery));
 
     let options = new RequestOptions({ headers: headers, params: params });
       return this.http.get(

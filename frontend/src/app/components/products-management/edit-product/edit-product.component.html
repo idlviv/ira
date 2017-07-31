@@ -1,13 +1,10 @@
 <h2 class="page-header">Edit product</h2>
-<table class="table table-hover">
-  <form *ngFor="let product of products; let i = index" (submit)="onEditProductSubmit(product, i)" #editProductForm="ngForm">
+<table *ngIf="products"  class="table table-hover">
+  <form *ngFor="let product of products; let i = index" (submit)="onEditProductSubmit(product, i)"
+        #editProductForm="ngForm">
     <thead *ngIf="product === products[0]">
       <tr>
         <th class="edit-product-table-first-cell">
-          <!--<button *ngIf="!addProduct" button type="button" (click)="addProductBtn(i, product._id)"-->
-                  <!--class="btn btn-default btn-xs">-->
-          <!--<span  class="glyphicon glyphicon-plus" aria-hidden="true"></span>-->
-          <!--</button>-->
         </th>
         <th>Category</th>
         <th>Sub Category</th>
@@ -19,38 +16,6 @@
       </tr>
     </thead>
     <tbody>
-      <!--<tr *ngIf="addProduct" [class.active]="i === selectedRow" >-->
-        <!--<td class="edit-product-table-first-cell">-->
-
-          <!--<button type="submit" class="btn btn-default btn-xs">-->
-            <!--<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>-->
-          <!--</button>-->
-
-          <!--<button type="button" class="btn btn-default btn-xs" (click)="onClickCancelAddBtn(i, product._id)">-->
-            <!--<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>-->
-          <!--</button>-->
-
-        <!--</td>-->
-        <!--<td class="edit-product-table-cells">-->
-          <!--<input type="text" [(ngModel)]="product.itemNumber"-->
-                 <!--name="itemNumber" #itemNumber="ngModel" class="form-control input-sm">-->
-        <!--</td>-->
-        <!--<td class="edit-product-table-cells">-->
-          <!--<input type="text" [(ngModel)]="product.name"-->
-                 <!--name="name" #name="ngModel" class="form-control input-sm">-->
-        <!--</td>-->
-        <!--<td class="edit-product-table-cells">-->
-          <!--<input type="text" [(ngModel)]="product.price"-->
-                 <!--name="price" #price="ngModel" class="form-control input-sm">-->
-        <!--</td>-->
-        <!--<td class="edit-product-table-cells">-->
-          <!--<input type="text" [(ngModel)]="product.mainImgSrc"-->
-                 <!--name="mainImgSrc" #mainImgSrc="ngModel" class="form-control input-sm">-->
-        <!--</td>-->
-        <!--<td class="edit-product-table-last-cell">-->
-        <!--</td>-->
-      <!--</tr>-->
-
       <tr [class.active]="i === selectedRow" >
           <td class="edit-product-table-first-cell">
 
@@ -70,12 +35,12 @@
 
           </td>
           <td class="edit-product-table-cells">
-            <input type="text" [(ngModel)]="product.category" [disabled]="!(i===selectedRow)"
-                   name="category" #category="ngModel" class="form-control input-sm">
+            <input type="text" [(ngModel)]="product.catalog.category0" [disabled]="!(i===selectedRow)"
+                   name="category0" #category0="ngModel" class="form-control input-sm">
           </td>
           <td class="edit-product-table-cells">
-            <input type="text" [(ngModel)]="product.subCategory" [disabled]="!(i===selectedRow)"
-                   name="subCategory" #subCategory="ngModel" class="form-control input-sm">
+            <input type="text" [(ngModel)]="product.catalog.category1" [disabled]="!(i===selectedRow)"
+                   name="category1" #category1="ngModel" class="form-control input-sm">
           </td>
           <td class="edit-product-table-cells">
             <input type="text" [(ngModel)]="product.itemNumber" [disabled]="!(i===selectedRow)"

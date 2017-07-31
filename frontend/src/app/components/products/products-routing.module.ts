@@ -16,19 +16,28 @@ const productsRoutes: Routes = [
         component: ProductsSectionComponent
       },
       {
-        path: ':cat/:subCat',
-        component: ProductsListComponent
+        path: ':category',
+        component: ProductsSectionComponent
       },
+      // {
+      //   path: ':cat/:subCat',
+      //   component: ProductsListComponent
+      // },
       {
         path: '',
         outlet: 'productsSideMenu',
         component: ProductsSideMenuComponent
       },
       {
-        path: ':cat/:subCat',
+        path: ':category',
         outlet: 'productsSideMenu',
         component: ProductsSideMenuComponent
       },
+      // {
+      //   path: ':cat/:subCat',
+      //   outlet: 'productsSideMenu',
+      //   component: ProductsSideMenuComponent
+      // },
     ]
   }
 ];

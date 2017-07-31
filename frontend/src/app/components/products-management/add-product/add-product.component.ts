@@ -35,14 +35,16 @@ export class AddProductComponent implements OnInit {
   onAddProductSubmit() {
 
     const product = {
-      category: this.product.category,
-      subCategory: this.product.subCategory,
+      catalog: {
+          category0: this.product.catalog.category0,
+          category1: this.product.catalog.category1
+        },
       itemNumber: this.product.itemNumber,
       name: this.product.name,
       price: this.product.price,
       mainImgSrc: this.product.mainImgSrc,
     };
-
+    console.log(product);
     this.productService.addProduct(product)
       .subscribe(
         data => {

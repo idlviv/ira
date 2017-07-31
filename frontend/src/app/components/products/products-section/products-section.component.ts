@@ -11,6 +11,7 @@ import {FlashMessagesService} from "angular2-flash-messages";
 })
 export class ProductsSectionComponent implements OnInit {
   products: IProduct[];
+  searchQuery: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,14 +20,22 @@ export class ProductsSectionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => console.log("section id parameter",params['id']));
-
-    let searchQuery = {
-      params: {
-        'category': 'Toys'
-      }
+    this.searchQuery = {
+      'category': 'Toys'
     };
+    this.onChangeRoute(this.searchQuery);
 
+    this.route.params.subscribe(params => {
+      // console.log("products side menu id parameter",params['cat'],' ',params['subCat']);
+      console.log("section id parameter",params['category']);
+      this.searchQuery = {
+        'category': params['category']
+      };
+      this.onChangeRoute(this.searchQuery)
+    });
+  }
+
+  onChangeRoute(searchQuery) {
     this.productService.getQueriedProducts(searchQuery)
       .subscribe(
         (products) => {
@@ -40,6 +49,7 @@ export class ProductsSectionComponent implements OnInit {
               timeout: 3000
             });
           return false;
-        })
+        });
   }
+
 }
