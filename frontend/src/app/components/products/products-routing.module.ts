@@ -16,28 +16,28 @@ const productsRoutes: Routes = [
         component: ProductsSectionComponent
       },
       {
-        path: ':category',
+        path: ':category0/:category1',
+        component: ProductsListComponent
+      },
+      {
+        path: ':category0',
         component: ProductsSectionComponent
       },
-      // {
-      //   path: ':cat/:subCat',
-      //   component: ProductsListComponent
-      // },
       {
         path: '',
         outlet: 'productsSideMenu',
         component: ProductsSideMenuComponent
       },
       {
-        path: ':category',
+        path: ':category0/:category1',
         outlet: 'productsSideMenu',
         component: ProductsSideMenuComponent
       },
-      // {
-      //   path: ':cat/:subCat',
-      //   outlet: 'productsSideMenu',
-      //   component: ProductsSideMenuComponent
-      // },
+      {
+        path: ':category0',
+        outlet: 'productsSideMenu',
+        component: ProductsSideMenuComponent
+      },
     ]
   }
 ];

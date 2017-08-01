@@ -4,25 +4,22 @@
 
 <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
   <a [routerLink]="['']">Home</a>
-
-  <!--</li><li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">-->
-  <!--<a (click)="navigate('solodko')">Solodko</a></li>-->
-  <!--<p><a class="btn btn-primary" (click)="navigate('list/1')"  role="button">list</a></p>-->
-  <!--<p><a class="btn btn-primary" (click)="navigate('detail/1')"  role="button">detail</a></p>-->
+</li>
 
 
 
-<!--<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">-->
-  <!--<a (click)="navigate('toys')">Toys</a></li>-->
+<ul *ngIf="showMain">
+<li *ngFor="let cat of categories">
+  <a class="btn btn-primary" (click)="navigateMain(cat)"  role="button">{{cat}}</a>
 
-<p *ngFor="let category of categories">
-  <a class="btn btn-primary" (click)="navigate(category, null)"  role="button">{{category}}</a>
+</li>
+</ul>
 
-  <!--<p *ngIf="category.subCategories" *ngFor="let subCategory of SubCategories">-->
-    <!--<a class="btn btn-primary" (click)="navigate(category, subCategory)"  role="button">{{category}}_{{subCategory}}</a>-->
+<ul *ngIf="!showMain">
 
-  <!--</p>-->
-</p>
-
-<!--<li *ngFor="let category of categories" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">-->
-  <!--<a [routerLink]="[category]">{{category}}</a>-->
+  <li>{{mainCategory}}</li>
+  <li  *ngFor="let cat of categories">
+    <a class="btn btn-primary" (click)="navigateSub(cat)"  role="button">{{cat}}</a>
+  </li>
+  <li><a class="btn btn-primary" role="button">Back</a></li>
+</ul>

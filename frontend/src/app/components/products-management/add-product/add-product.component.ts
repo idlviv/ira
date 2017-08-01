@@ -45,7 +45,7 @@ export class AddProductComponent implements OnInit {
       price: form.value.price,
       mainImgSrc: form.value.mainImgSrc,
     };
-    console.log(form.value);
+
     console.log(product);
     this.productService.addProduct(product)
       .subscribe(

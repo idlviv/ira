@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from "@angular/router";
 import {IProduct} from "../../../interfaces/i-product";
+import {ICatalog} from "../../../interfaces/i-catalog";
 import {ProductService} from "../../../services/product.service";
 import {FlashMessagesService} from "angular2-flash-messages";
+import {catalog} from '../../../data/catalog';
 
 @Component({
   selector: 'app-products-side-menu',
@@ -12,22 +14,44 @@ import {FlashMessagesService} from "angular2-flash-messages";
 
 export class ProductsSideMenuComponent implements OnInit {
   urlSnapShot: any;
+  showMain: Boolean = true;
+  mainCategory: String;
   products: IProduct[];
+  categories0: Array<String>;
   categories: Array<String>;
-  SubCategories: Array<String>;
+  categories0Products: IProduct[];
+  categories1: Array<String>;
   level: Number;
 
-  constructor(private router: Router,
-              private route: ActivatedRoute,
-              private productService: ProductService,
-              private flashMessage: FlashMessagesService) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private productService: ProductService,
+    private flashMessage: FlashMessagesService,
+      ) {
   }
 
-  navigate(path_category) {
-    console.log('path_category', path_category);
-    this.router.navigate([{outlets: {primary: path_category, productsSideMenu: path_category}}],
+  navigateMain(category) {
+    console.log('this.route', this.route);
+    // console.log('path_category main', category);
+    this.router.navigate([{outlets: {primary: category, productsSideMenu: category}}],
       {relativeTo: this.route}
     );
+    this.mainCategory = category;
+    this.showMain = !this.showMain;
+    console.log('this.showMain', this.showMain);
+  }
+
+  navigateSub(category) {
+    console.log('path_category sub', category);
+    this.router.navigate([{outlets: {primary: category,
+        productsSideMenu: category}}],
+      {relativeTo: this.route}
+    );
+    // this.router.navigate([{outlets: {primary: this.mainCategory + '/' + category,
+    //     productsSideMenu: this.mainCategory + '/' + category}}],
+    //   {relativeTo: this.route}
+    // );
   }
 
   // navigate(path_category, path_subCategory) {
@@ -39,23 +63,36 @@ export class ProductsSideMenuComponent implements OnInit {
   // }
 
   ngOnInit() {
-    this.level = 0;
-    let searchQuery = 'category';
-
+    this.getRootCategory();
 
     this.route.params.subscribe(params => {
-      console.log("products side menu id parameter",params['category'], ' ', params['subCategory']);
+      if (params['category0']) {
+        catalog.map((cat) => {
+          if (cat.category0 === params['category0'])
+          return this.categories = cat.category1;
+        })
+      } else {
+        this.getRootCategory();
+      }
+      // console.log(this.categories);
+      console.log("products side menu id parameter",params['category0'], ' ', params['category1']);
     });
 
-    this.onChangeRoute(searchQuery);
+    // this.onChangeRoute(searchQuery);
+
+  }
+
+  getRootCategory() {
+    this.categories = catalog.map((cat) => cat.category0 );
 
   }
 
   onChangeRoute(searchQuery) {
-    this.productService.getDistinctProducts(searchQuery)
+/* ---- for mongo
+  this.productService.getDistinctCategories(searchQuery[0])
       .subscribe(
         (categories) => {
-          this.categories = categories;
+          this.categories0 = categories;
         },
         (error) => {
           this.flashMessage.show(
@@ -65,7 +102,8 @@ export class ProductsSideMenuComponent implements OnInit {
               timeout: 3000
             });
           return false;
-        });
+        });*/
+
   }
 
 }

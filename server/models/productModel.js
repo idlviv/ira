@@ -37,8 +37,17 @@ module.exports.getProducts = function() {
       });
     };
 
+module.exports.getDistinctCategories = function(searchQuery) {
+      console.log('distinctCategories - model', searchQuery);
+      return new Promise((resolve, reject) => {
+        ProductModel.distinct(searchQuery)
+          .then((products) => resolve(products))
+          .catch((err) => reject(err));
+      });
+    };
+
 module.exports.getDistinctProducts = function(searchQuery) {
-      console.log('distinctQuery - model', searchQuery);
+      console.log('distinctProducts - model', searchQuery);
       return new Promise((resolve, reject) => {
         ProductModel.distinct(searchQuery)
           .then((products) => resolve(products))

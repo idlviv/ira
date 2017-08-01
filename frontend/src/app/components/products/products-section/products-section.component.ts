@@ -21,15 +21,15 @@ export class ProductsSectionComponent implements OnInit {
 
   ngOnInit() {
     this.searchQuery = {
-      'category': 'Toys'
+      'catalog.category0': 'toys'
     };
     this.onChangeRoute(this.searchQuery);
 
     this.route.params.subscribe(params => {
       // console.log("products side menu id parameter",params['cat'],' ',params['subCat']);
-      console.log("section id parameter",params['category']);
+      // console.log("section id parameter",params['category0']);
       this.searchQuery = {
-        'category': params['category']
+        'catalog.category0': params['category0']
       };
       this.onChangeRoute(this.searchQuery)
     });
