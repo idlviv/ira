@@ -1826,7 +1826,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-side-menu/products-side-menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-side-menu works!\n</p>\n\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n  <a [routerLink]=\"['']\">Home</a>\n</li>\n\n\n\n<ul>\n  <!--<ul *ngIf=\"showMain\">-->\n  <li *ngFor=\"let categories of catalog; let i = index\">\n    <a *ngIf=\"sub === 0\"\n       class=\"btn btn-primary\" (click)=\"navigate(categories.category0, null, 1, i)\"  role=\"button\">\n      {{categories.category0}}</a>\n\n    <ul>{{main}}-{{categories.category0}}-{{selectedCat}}-{{i}}</ul>\n    <ul *ngIf=\"selectedCat === i && sub === 1\">\n      <li *ngFor=\"let category1 of categories.category1\">\n\n        <a class=\"btn btn-primary\" (click)=\"navigate(categories.category0, category1, 1, i)\"  role=\"button\">\n          {{categories.category0}}-{{category1}}</a>\n      </li>\n      <li>\n        <a class=\"btn btn-primary\" (click)=\"navigate(categories.category0, null, 0, i)\"  role=\"button\">\n          back</a>\n      </li>\n    </ul>\n\n</ul>\n\n\n<ul>\n  <li *ngFor=\"let categories of catalog\" (click)=\"select(categories.category0, null);\"\n    [ngClass]=\"{active: isActive(categories.category0)}\"><span>{{categories.category0}}</span>\n    <ul style=\"display:none;\">\n      <li *ngFor=\"let category1 of categories.category1\">{{category1}}</li>\n\n    </ul>\n  </li>\n</ul>\n"
+module.exports = "<p>\n  products-side-menu works!\n</p>\n\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n  <a [routerLink]=\"['']\">Home</a>\n</li>\n\n<ul>\n  <!--<ul *ngIf=\"showMain\">-->\n  <li *ngFor=\"let categories of catalog; let i = index\">\n    <a *ngIf=\"sub === 0\"\n       class=\"btn btn-primary\" (click)=\"navigate(categories.category0, null, 1, i)\"  role=\"button\">\n      {{categories.category0}}</a>\n\n    <ul>{{main}}-{{categories.category0}}-{{selectedCat}}-{{i}}</ul>\n    <ul *ngIf=\"selectedCat === i && sub === 1\">\n      <li *ngFor=\"let category1 of categories.category1\">\n\n        <a class=\"btn btn-primary\" (click)=\"navigate(categories.category0, category1, 1, i)\"  role=\"button\">\n          {{categories.category0}}-{{category1}}</a>\n      </li>\n      <li>\n        <a class=\"btn btn-primary\" (click)=\"navigate(categories.category0, null, 0, i)\"  role=\"button\">\n          back</a>\n      </li>\n    </ul>\n\n</ul>\n\n<ul>\n  <li *ngFor=\"let menuItem of menuList\" (click)=\"navigateMenu(menuItem)\">{{menuItem}}</li>\n</ul>\n<!--<ul>-->\n  <!--<li *ngFor=\"let categories of catalog\" (click)=\"select(categories.category0, null);\"-->\n    <!--[ngClass]=\"{active: isActive(categories.category0)}\"><span>{{categories.category0}}</span>-->\n    <!--<ul style=\"display:none;\">-->\n      <!--<li *ngFor=\"let category1 of categories.category1\">{{category1}}</li>-->\n\n    <!--</ul>-->\n  <!--</li>-->\n<!--</ul>-->\n\n"
 
 /***/ }),
 
@@ -1863,6 +1863,9 @@ var ProductsSideMenuComponent = (function () {
         this.flashMessage = flashMessage;
         this.showSub = true;
         this.sub = 0;
+        this.menuList = [];
+        this.mainMenuList = [];
+        this.subMenuList = [];
     }
     ProductsSideMenuComponent.prototype.navigate = function (category0, category1, sub, i) {
         this.main = category0;
@@ -1901,11 +1904,26 @@ var ProductsSideMenuComponent = (function () {
     //     {relativeTo: this.route}
     //   );
     // }
+    ProductsSideMenuComponent.prototype.navigateMenu = function (item) {
+        console.log(item);
+    };
     ProductsSideMenuComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.getCategory();
-        // this.main = this.catalog[0].category0;
-        // console.log(this.main);
+        this.menuList = this.mainMenuList;
         this.route.params.subscribe(function (params) {
+            if (params.category1) {
+                _this.catalog.forEach(function (value, index) {
+                    if (value.category0 === params.category0) {
+                        _this.menuList = value.category1;
+                    }
+                });
+                console.log('menulistS', _this.menuList);
+            }
+            else {
+                _this.menuList = _this.mainMenuList;
+                console.log('menulistM', _this.menuList);
+            }
             // if (params['category0']) {
             //   catalog.map((cat) => {
             //     if (cat.category0 === params['category0'])
@@ -1926,8 +1944,12 @@ var ProductsSideMenuComponent = (function () {
         return this.selected === item;
     };
     ProductsSideMenuComponent.prototype.getCategory = function () {
+        var _this = this;
         // this.categories = catalog.map((cat) => cat.category0 );
         this.catalog = __WEBPACK_IMPORTED_MODULE_4__data_catalog__["a" /* catalog */];
+        this.catalog.forEach(function (value) {
+            _this.mainMenuList.push(value.category0);
+        });
     };
     ProductsSideMenuComponent.prototype.onChangeRoute = function (searchQuery) {
         /* ---- for mongo

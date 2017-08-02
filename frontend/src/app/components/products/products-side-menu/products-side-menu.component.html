@@ -6,8 +6,6 @@
   <a [routerLink]="['']">Home</a>
 </li>
 
-
-
 <ul>
   <!--<ul *ngIf="showMain">-->
   <li *ngFor="let categories of catalog; let i = index">
@@ -30,13 +28,16 @@
 
 </ul>
 
-
 <ul>
-  <li *ngFor="let categories of catalog" (click)="select(categories.category0, null);"
-    [ngClass]="{active: isActive(categories.category0)}"><span>{{categories.category0}}</span>
-    <ul style="display:none;">
-      <li *ngFor="let category1 of categories.category1">{{category1}}</li>
-
-    </ul>
-  </li>
+  <li *ngFor="let menuItem of menuList" (click)="navigateMenu(menuItem)">{{menuItem}}</li>
 </ul>
+<!--<ul>-->
+  <!--<li *ngFor="let categories of catalog" (click)="select(categories.category0, null);"-->
+    <!--[ngClass]="{active: isActive(categories.category0)}"><span>{{categories.category0}}</span>-->
+    <!--<ul style="display:none;">-->
+      <!--<li *ngFor="let category1 of categories.category1">{{category1}}</li>-->
+
+    <!--</ul>-->
+  <!--</li>-->
+<!--</ul>-->
+

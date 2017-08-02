@@ -25,7 +25,12 @@ export class ProductsSideMenuComponent implements OnInit {
   main: any;
   sub: any = 0;
   selectedCat: any;
-  selected:any;
+  selected: any;
+
+
+  menuList: string[] = [];
+  mainMenuList: string[] = [];
+  subMenuList: string[] = [];
 
   constructor(
     private router: Router,
@@ -76,11 +81,30 @@ export class ProductsSideMenuComponent implements OnInit {
   //   );
   // }
 
+  navigateMenu(item) {
+    console.log(item);
+  }
+
   ngOnInit() {
     this.getCategory();
-    // this.main = this.catalog[0].category0;
-    // console.log(this.main);
+
+    this.menuList = this.mainMenuList;
+
     this.route.params.subscribe(params => {
+
+      if (params.category1) {
+        this.catalog.forEach((value, index) => {
+          if (value.category0 === params.category0) {
+            this.menuList = value.category1;
+          }
+        });
+        console.log('menulistS', this.menuList)
+      } else {
+        this.menuList = this.mainMenuList;
+        console.log('menulistM', this.menuList)
+      }
+
+
       // if (params['category0']) {
       //   catalog.map((cat) => {
       //     if (cat.category0 === params['category0'])
@@ -108,6 +132,10 @@ export class ProductsSideMenuComponent implements OnInit {
   getCategory() {
     // this.categories = catalog.map((cat) => cat.category0 );
     this.catalog = catalog;
+
+    this.catalog.forEach((value) => {
+      this.mainMenuList.push(value.category0);
+    })
 
   }
 
