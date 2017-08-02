@@ -1642,7 +1642,6 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__products_component__ = __webpack_require__("../../../../../src/app/components/products/products.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__products_section_products_section_component__ = __webpack_require__("../../../../../src/app/components/products/products-section/products-section.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__products_side_menu_products_side_menu_component__ = __webpack_require__("../../../../../src/app/components/products/products-side-menu/products-side-menu.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__products_list_products_list_component__ = __webpack_require__("../../../../../src/app/components/products/products-list/products-list.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1650,7 +1649,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -1667,7 +1665,7 @@ var productsRoutes = [
             },
             {
                 path: ':category0/:category1',
-                component: __WEBPACK_IMPORTED_MODULE_5__products_list_products_list_component__["a" /* ProductsListComponent */]
+                component: __WEBPACK_IMPORTED_MODULE_3__products_section_products_section_component__["a" /* ProductsSectionComponent */]
             },
             {
                 path: ':category0',
@@ -1815,7 +1813,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "ul li{cursor:pointer;}\r\n.active{\r\n    color:blue;\r\n}\r\n.active ul{\r\n    display:block !important;\r\n}", ""]);
 
 // exports
 
@@ -1828,7 +1826,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-side-menu/products-side-menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-side-menu works!\n</p>\n\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n  <a [routerLink]=\"['']\">Home</a>\n</li>\n\n\n\n<ul *ngIf=\"showMain\">\n<li *ngFor=\"let cat of categories\">\n  <a class=\"btn btn-primary\" (click)=\"navigateMain(cat)\"  role=\"button\">{{cat}}</a>\n\n</li>\n</ul>\n\n<ul *ngIf=\"!showMain\">\n\n  <li>{{mainCategory}}</li>\n  <li  *ngFor=\"let cat of categories\">\n    <a class=\"btn btn-primary\" (click)=\"navigateSub(cat)\"  role=\"button\">{{cat}}</a>\n  </li>\n  <li><a class=\"btn btn-primary\" role=\"button\">Back</a></li>\n</ul>"
+module.exports = "<p>\n  products-side-menu works!\n</p>\n\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n  <a [routerLink]=\"['']\">Home</a>\n</li>\n\n\n\n<ul>\n  <!--<ul *ngIf=\"showMain\">-->\n  <li *ngFor=\"let categories of catalog; let i = index\">\n    <a *ngIf=\"sub === 0\"\n       class=\"btn btn-primary\" (click)=\"navigate(categories.category0, null, 1, i)\"  role=\"button\">\n      {{categories.category0}}</a>\n\n    <ul>{{main}}-{{categories.category0}}-{{selectedCat}}-{{i}}</ul>\n    <ul *ngIf=\"selectedCat === i && sub === 1\">\n      <li *ngFor=\"let category1 of categories.category1\">\n\n        <a class=\"btn btn-primary\" (click)=\"navigate(categories.category0, category1, 1, i)\"  role=\"button\">\n          {{categories.category0}}-{{category1}}</a>\n      </li>\n      <li>\n        <a class=\"btn btn-primary\" (click)=\"navigate(categories.category0, null, 0, i)\"  role=\"button\">\n          back</a>\n      </li>\n    </ul>\n\n</ul>\n\n\n<ul>\n  <li *ngFor=\"let categories of catalog\" (click)=\"select(categories.category0, null);\"\n    [ngClass]=\"{active: isActive(categories.category0)}\"><span>{{categories.category0}}</span>\n    <ul style=\"display:none;\">\n      <li *ngFor=\"let category1 of categories.category1\">{{category1}}</li>\n\n    </ul>\n  </li>\n</ul>\n\n\n<!--<div>-->\n  <!--<h4>{{title}}</h4>-->\n  <!--<ul>-->\n    <!--<li *ngFor=\"let n of menuList\" (click)=\"select(n.name);\"-->\n        <!--[ngClass]=\"{active: isActive(n.name)}\"><span>{{n.name}}</span>-->\n      <!--<ul style=\"display:none;\">-->\n        <!--<li *ngFor=\"let child of n.subMenu\">{{child}}</li>-->\n      <!--</ul>-->\n    <!--</li>-->\n  <!--</ul>-->\n<!--</div>-->"
 
 /***/ }),
 
@@ -1863,25 +1861,39 @@ var ProductsSideMenuComponent = (function () {
         this.route = route;
         this.productService = productService;
         this.flashMessage = flashMessage;
-        this.showMain = true;
+        this.showSub = true;
+        this.sub = 0;
     }
-    ProductsSideMenuComponent.prototype.navigateMain = function (category) {
-        console.log('this.route', this.route);
+    ProductsSideMenuComponent.prototype.navigate = function (category0, category1, sub, i) {
+        this.main = category0;
+        this.selectedCat = i;
+        this.sub = sub;
+        console.log('category0', category0);
+        console.log('category1', category1);
         // console.log('path_category main', category);
-        this.router.navigate([{ outlets: { primary: category, productsSideMenu: category } }], { relativeTo: this.route });
-        this.mainCategory = category;
-        this.showMain = !this.showMain;
-        console.log('this.showMain', this.showMain);
-    };
-    ProductsSideMenuComponent.prototype.navigateSub = function (category) {
-        console.log('path_category sub', category);
-        this.router.navigate([{ outlets: { primary: category,
-                    productsSideMenu: category } }], { relativeTo: this.route });
-        // this.router.navigate([{outlets: {primary: this.mainCategory + '/' + category,
-        //     productsSideMenu: this.mainCategory + '/' + category}}],
+        // this.router.navigate(['/products/('+ category +'//productsSideMenu: '+ category +')']);
+        //
+        this.router.navigate(['/products', { outlets: { primary: category0 + '/' + category1,
+                    productsSideMenu: category0 + '/' + category1 } }]);
+        // this.router.navigate([{outlets: {primary: category, productsSideMenu: category}}],
         //   {relativeTo: this.route}
         // );
+        // this.mainCategory = category;
+        // this.showMain = !this.showMain;
+        // console.log('this.showMain', this.showMain);
     };
+    //
+    // navigateSub(category) {
+    //   console.log('path_category sub', category);
+    //   this.router.navigate(['/products', {outlets: {primary: category,
+    //       productsSideMenu: category}}],
+    //     {relativeTo: this.route}
+    //   );
+    //   // this.router.navigate([{outlets: {primary: this.mainCategory + '/' + category,
+    //   //     productsSideMenu: this.mainCategory + '/' + category}}],
+    //   //   {relativeTo: this.route}
+    //   // );
+    // }
     // navigate(path_category, path_subCategory) {
     //   console.log('path_category', path_category, 'path_subCategory', path_subCategory);
     //   this.router.navigate([{outlets: {primary: path_category + '/' + path_subCategory,
@@ -1890,25 +1902,32 @@ var ProductsSideMenuComponent = (function () {
     //   );
     // }
     ProductsSideMenuComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.getRootCategory();
+        this.getCategory();
+        // this.main = this.catalog[0].category0;
+        // console.log(this.main);
         this.route.params.subscribe(function (params) {
-            if (params['category0']) {
-                __WEBPACK_IMPORTED_MODULE_4__data_catalog__["a" /* catalog */].map(function (cat) {
-                    if (cat.category0 === params['category0'])
-                        return _this.categories = cat.category1;
-                });
-            }
-            else {
-                _this.getRootCategory();
-            }
+            // if (params['category0']) {
+            //   catalog.map((cat) => {
+            //     if (cat.category0 === params['category0'])
+            //     return this.categories = cat.category1;
+            //   })
+            // } else {
+            //   this.getRootCategory();
+            // }
             // console.log(this.categories);
             console.log("products side menu id parameter", params['category0'], ' ', params['category1']);
         });
         // this.onChangeRoute(searchQuery);
     };
-    ProductsSideMenuComponent.prototype.getRootCategory = function () {
-        this.categories = __WEBPACK_IMPORTED_MODULE_4__data_catalog__["a" /* catalog */].map(function (cat) { return cat.category0; });
+    ProductsSideMenuComponent.prototype.select = function (item, item1) {
+        this.selected = (this.selected === item ? null : item);
+    };
+    ProductsSideMenuComponent.prototype.isActive = function (item) {
+        return this.selected === item;
+    };
+    ProductsSideMenuComponent.prototype.getCategory = function () {
+        // this.categories = catalog.map((cat) => cat.category0 );
+        this.catalog = __WEBPACK_IMPORTED_MODULE_4__data_catalog__["a" /* catalog */];
     };
     ProductsSideMenuComponent.prototype.onChangeRoute = function (searchQuery) {
         /* ---- for mongo

@@ -8,18 +8,48 @@
 
 
 
-<ul *ngIf="showMain">
-<li *ngFor="let cat of categories">
-  <a class="btn btn-primary" (click)="navigateMain(cat)"  role="button">{{cat}}</a>
+<ul>
+  <!--<ul *ngIf="showMain">-->
+  <li *ngFor="let categories of catalog; let i = index">
+    <a *ngIf="sub === 0"
+       class="btn btn-primary" (click)="navigate(categories.category0, null, 1, i)"  role="button">
+      {{categories.category0}}</a>
 
-</li>
+    <ul>{{main}}-{{categories.category0}}-{{selectedCat}}-{{i}}</ul>
+    <ul *ngIf="selectedCat === i && sub === 1">
+      <li *ngFor="let category1 of categories.category1">
+
+        <a class="btn btn-primary" (click)="navigate(categories.category0, category1, 1, i)"  role="button">
+          {{categories.category0}}-{{category1}}</a>
+      </li>
+      <li>
+        <a class="btn btn-primary" (click)="navigate(categories.category0, null, 0, i)"  role="button">
+          back</a>
+      </li>
+    </ul>
+
 </ul>
 
-<ul *ngIf="!showMain">
 
-  <li>{{mainCategory}}</li>
-  <li  *ngFor="let cat of categories">
-    <a class="btn btn-primary" (click)="navigateSub(cat)"  role="button">{{cat}}</a>
+<ul>
+  <li *ngFor="let categories of catalog" (click)="select(categories.category0, null);"
+    [ngClass]="{active: isActive(categories.category0)}"><span>{{categories.category0}}</span>
+    <ul style="display:none;">
+      <li *ngFor="let category1 of categories.category1">{{category1}}</li>
+
+    </ul>
   </li>
-  <li><a class="btn btn-primary" role="button">Back</a></li>
 </ul>
+
+
+<!--<div>-->
+  <!--<h4>{{title}}</h4>-->
+  <!--<ul>-->
+    <!--<li *ngFor="let n of menuList" (click)="select(n.name);"-->
+        <!--[ngClass]="{active: isActive(n.name)}"><span>{{n.name}}</span>-->
+      <!--<ul style="display:none;">-->
+        <!--<li *ngFor="let child of n.subMenu">{{child}}</li>-->
+      <!--</ul>-->
+    <!--</li>-->
+  <!--</ul>-->
+<!--</div>-->
