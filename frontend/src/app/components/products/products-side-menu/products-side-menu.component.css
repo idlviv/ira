@@ -1,7 +1,13 @@
-ul li{cursor:pointer;}
-.active{
-    color:blue;
+ul li {
+    cursor: pointer;
 }
-.active ul{
-    display:block !important;
+
+.active {
+    color: blue;
+}
+
+.active ul {
+    color: red;
+
+    display: block !important;
 }
