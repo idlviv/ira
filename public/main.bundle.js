@@ -1826,7 +1826,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-side-menu/products-side-menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-side-menu works!\n</p>\n\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n  <a [routerLink]=\"['']\">Home</a>\n</li>\n\n<ul>\n  <!--<ul *ngIf=\"showMain\">-->\n  <li *ngFor=\"let categories of catalog; let i = index\">\n    <a *ngIf=\"sub === 0\"\n       class=\"btn btn-primary\" (click)=\"navigate(categories.category0, null, 1, i)\"  role=\"button\">\n      {{categories.category0}}</a>\n\n    <ul>{{main}}-{{categories.category0}}-{{selectedCat}}-{{i}}</ul>\n    <ul *ngIf=\"selectedCat === i && sub === 1\">\n      <li *ngFor=\"let category1 of categories.category1\">\n\n        <a class=\"btn btn-primary\" (click)=\"navigate(categories.category0, category1, 1, i)\"  role=\"button\">\n          {{categories.category0}}-{{category1}}</a>\n      </li>\n      <li>\n        <a class=\"btn btn-primary\" (click)=\"navigate(categories.category0, null, 0, i)\"  role=\"button\">\n          back</a>\n      </li>\n    </ul>\n\n</ul>\n\n<ul>\n  <li *ngFor=\"let menuItem of menuList\" (click)=\"navigateMenu(menuItem)\">{{menuItem}}</li>\n</ul>\n<!--<ul>-->\n  <!--<li *ngFor=\"let categories of catalog\" (click)=\"select(categories.category0, null);\"-->\n    <!--[ngClass]=\"{active: isActive(categories.category0)}\"><span>{{categories.category0}}</span>-->\n    <!--<ul style=\"display:none;\">-->\n      <!--<li *ngFor=\"let category1 of categories.category1\">{{category1}}</li>-->\n\n    <!--</ul>-->\n  <!--</li>-->\n<!--</ul>-->\n\n"
+module.exports = "<p>\n  products-side-menu works!\n</p>\n\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n  <a [routerLink]=\"['']\">Home</a>\n</li>\n\n<ul>\n  <!--<ul *ngIf=\"showMain\">-->\n  <li *ngFor=\"let categories of catalog; let i = index\">\n    <a *ngIf=\"sub === 0\"\n       class=\"btn btn-primary\" (click)=\"navigate(categories.category0, null, 1, i)\"  role=\"button\">\n      {{categories.category0}}</a>\n\n    <ul>{{main}}-{{categories.category0}}-{{selectedCat}}-{{i}}</ul>\n    <ul *ngIf=\"selectedCat === i && sub === 1\">\n      <li *ngFor=\"let category1 of categories.category1\">\n\n        <a class=\"btn btn-primary\" (click)=\"navigate(categories.category0, category1, 1, i)\"  role=\"button\">\n          {{categories.category0}}-{{category1}}</a>\n      </li>\n      <li>\n        <a class=\"btn btn-primary\" (click)=\"navigate(categories.category0, null, 0, i)\"  role=\"button\">\n          back</a>\n      </li>\n    </ul>\n\n</ul>\n\n\n  <div *ngFor=\"let menuItem of menuList.items\">\n    <ul>\n    <li>\n      <a class=\"btn btn-primary\"  (click)=\"navigateMenu(menuList.parent, menuItem)\" role=\"button\">\n        {{menuList.parent}}-{{menuItem}} </a>\n      <a class=\"btn btn-primary\" (click)=\"navigateMenu(menuList.parent, 'goBack')\"  role=\"button\">Back</a>\n    </li>\n    </ul>\n  </div>\n\n\n<!--<ul>-->\n  <!--<li *ngFor=\"let categories of catalog\" (click)=\"select(categories.category0, null);\"-->\n    <!--[ngClass]=\"{active: isActive(categories.category0)}\"><span>{{categories.category0}}</span>-->\n    <!--<ul style=\"display:none;\">-->\n      <!--<li *ngFor=\"let category1 of categories.category1\">{{category1}}</li>-->\n\n    <!--</ul>-->\n  <!--</li>-->\n<!--</ul>-->\n\n"
 
 /***/ }),
 
@@ -1840,6 +1840,7 @@ module.exports = "<p>\n  products-side-menu works!\n</p>\n\n<li [routerLinkActiv
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__data_catalog__ = __webpack_require__("../../../../../src/app/data/catalog.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__interfaces_submenu__ = __webpack_require__("../../../../../src/app/interfaces/submenu.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsSideMenuComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1855,6 +1856,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ProductsSideMenuComponent = (function () {
     function ProductsSideMenuComponent(router, route, productService, flashMessage) {
         this.router = router;
@@ -1863,9 +1865,8 @@ var ProductsSideMenuComponent = (function () {
         this.flashMessage = flashMessage;
         this.showSub = true;
         this.sub = 0;
-        this.menuList = [];
-        this.mainMenuList = [];
-        this.subMenuList = [];
+        this.menuList = new __WEBPACK_IMPORTED_MODULE_5__interfaces_submenu__["a" /* SubMenu */]('', []);
+        this.mainMenuList = { parent: '', items: [] };
     }
     ProductsSideMenuComponent.prototype.navigate = function (category0, category1, sub, i) {
         this.main = category0;
@@ -1904,25 +1905,42 @@ var ProductsSideMenuComponent = (function () {
     //     {relativeTo: this.route}
     //   );
     // }
-    ProductsSideMenuComponent.prototype.navigateMenu = function (item) {
-        console.log(item);
+    ProductsSideMenuComponent.prototype.navigateMenu = function (category0, category1) {
+        console.log(category0, category1);
+        this.router.navigate(['/products', { outlets: { primary: category0 + '/' + category1,
+                    productsSideMenu: category0 + '/' + category1 } }]);
     };
     ProductsSideMenuComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.getCategory();
-        this.menuList = this.mainMenuList;
+        this.menuList.parent = null; //this.mainMenuList.parent;
+        this.menuList.items = this.mainMenuList.items;
         this.route.params.subscribe(function (params) {
-            if (params.category1) {
-                _this.catalog.forEach(function (value, index) {
-                    if (value.category0 === params.category0) {
-                        _this.menuList = value.category1;
-                    }
-                });
-                console.log('menulistS', _this.menuList);
+            console.log('menulist', _this.menuList);
+            if (params.category1 === 'goBack') {
+                _this.menuList.parent = null;
+                _this.menuList.items = _this.mainMenuList.items;
+                console.log('back menulist', _this.mainMenuList);
             }
             else {
-                _this.menuList = _this.mainMenuList;
-                console.log('menulistM', _this.menuList);
+                if (params.category0 === null) {
+                    console.log('if', params.category0);
+                    _this.catalog.forEach(function (value, index) {
+                        if (value.category0 === params.category0) {
+                            _this.menuList.items = value.category1;
+                            _this.menuList.parent = value.category0;
+                        }
+                    });
+                }
+                else {
+                    console.log('else');
+                    _this.catalog.forEach(function (value, index) {
+                        if (value.category0 === params.category1) {
+                            _this.menuList.items = value.category1;
+                            _this.menuList.parent = params.category1;
+                        }
+                    });
+                }
             }
             // if (params['category0']) {
             //   catalog.map((cat) => {
@@ -1947,8 +1965,9 @@ var ProductsSideMenuComponent = (function () {
         var _this = this;
         // this.categories = catalog.map((cat) => cat.category0 );
         this.catalog = __WEBPACK_IMPORTED_MODULE_4__data_catalog__["a" /* catalog */];
+        this.mainMenuList.parent = null; //this.catalog[0].category0;
         this.catalog.forEach(function (value) {
-            _this.mainMenuList.push(value.category0);
+            _this.mainMenuList.items.push(value.category0);
         });
     };
     ProductsSideMenuComponent.prototype.onChangeRoute = function (searchQuery) {
@@ -2435,6 +2454,23 @@ var _a, _b;
 /***/ (function(module, exports) {
 
 //# sourceMappingURL=i-product.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/interfaces/submenu.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SubMenu; });
+var SubMenu = (function () {
+    function SubMenu(parent, items) {
+        this.parent = parent;
+        this.items = items;
+    }
+    return SubMenu;
+}());
+
+//# sourceMappingURL=submenu.js.map
 
 /***/ }),
 

@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from "@angular/router";
 import {IProduct} from "../../../interfaces/i-product";
 import {ICatalog} from "../../../interfaces/i-catalog";
+import {ISubMenu} from "../../../interfaces/i-submenu";
 import {ProductService} from "../../../services/product.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {catalog} from '../../../data/catalog';
+import {SubMenu} from "../../../interfaces/submenu";
 
 @Component({
   selector: 'app-products-side-menu',
@@ -28,9 +30,9 @@ export class ProductsSideMenuComponent implements OnInit {
   selected: any;
 
 
-  menuList: string[] = [];
-  mainMenuList: string[] = [];
-  subMenuList: string[] = [];
+  menuList: SubMenu = new SubMenu('', []);
+  mainMenuList: any = {parent: '', items: []};
+  subMenuList: ISubMenu;
 
   constructor(
     private router: Router,
@@ -81,28 +83,46 @@ export class ProductsSideMenuComponent implements OnInit {
   //   );
   // }
 
-  navigateMenu(item) {
-    console.log(item);
+  navigateMenu(category0, category1) {
+    console.log(category0, category1);
+
+    this.router.navigate(['/products', {outlets: {primary: category0 + '/' + category1,
+      productsSideMenu:  category0 + '/' + category1}}]);
   }
 
   ngOnInit() {
     this.getCategory();
 
-    this.menuList = this.mainMenuList;
+    this.menuList.parent = null;//this.mainMenuList.parent;
+    this.menuList.items = this.mainMenuList.items;
 
     this.route.params.subscribe(params => {
-
-      if (params.category1) {
-        this.catalog.forEach((value, index) => {
-          if (value.category0 === params.category0) {
-            this.menuList = value.category1;
+      console.log('menulist', this.menuList);
+        if (params.category1 === 'goBack') {
+          this.menuList.parent = null;
+          this.menuList.items = this.mainMenuList.items;
+          console.log('back menulist', this.mainMenuList);
+        } else {
+          if (params.category0 === null){
+            console.log('if', params.category0);
+            this.catalog.forEach((value, index) => {
+              if (value.category0 === params.category0) {
+                this.menuList.items = value.category1;
+                this.menuList.parent = value.category0;
+              }
+            });
+          } else {
+            console.log('else');
+            this.catalog.forEach((value, index) => {
+              if (value.category0 === params.category1) {
+                this.menuList.items = value.category1;
+                this.menuList.parent = params.category1;
+              }
+            });
           }
-        });
-        console.log('menulistS', this.menuList)
-      } else {
-        this.menuList = this.mainMenuList;
-        console.log('menulistM', this.menuList)
-      }
+
+        }
+
 
 
       // if (params['category0']) {
@@ -118,7 +138,6 @@ export class ProductsSideMenuComponent implements OnInit {
     });
 
     // this.onChangeRoute(searchQuery);
-
   }
 
   select(item, item1){
@@ -133,8 +152,9 @@ export class ProductsSideMenuComponent implements OnInit {
     // this.categories = catalog.map((cat) => cat.category0 );
     this.catalog = catalog;
 
+    this.mainMenuList.parent = null;//this.catalog[0].category0;
     this.catalog.forEach((value) => {
-      this.mainMenuList.push(value.category0);
+      this.mainMenuList.items.push(value.category0);
     })
 
   }

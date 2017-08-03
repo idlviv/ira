@@ -28,9 +28,18 @@
 
 </ul>
 
-<ul>
-  <li *ngFor="let menuItem of menuList" (click)="navigateMenu(menuItem)">{{menuItem}}</li>
-</ul>
+
+  <div *ngFor="let menuItem of menuList.items">
+    <ul>
+    <li>
+      <a class="btn btn-primary"  (click)="navigateMenu(menuList.parent, menuItem)" role="button">
+        {{menuList.parent}}-{{menuItem}} </a>
+      <a class="btn btn-primary" (click)="navigateMenu(menuList.parent, 'goBack')"  role="button">Back</a>
+    </li>
+    </ul>
+  </div>
+
+
 <!--<ul>-->
   <!--<li *ngFor="let categories of catalog" (click)="select(categories.category0, null);"-->
     <!--[ngClass]="{active: isActive(categories.category0)}"><span>{{categories.category0}}</span>-->
