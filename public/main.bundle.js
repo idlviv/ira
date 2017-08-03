@@ -1668,21 +1668,12 @@ var productsRoutes = [
                 component: __WEBPACK_IMPORTED_MODULE_3__products_section_products_section_component__["a" /* ProductsSectionComponent */]
             },
             {
-                path: ':category0',
-                component: __WEBPACK_IMPORTED_MODULE_3__products_section_products_section_component__["a" /* ProductsSectionComponent */]
-            },
-            {
                 path: '',
                 outlet: 'productsSideMenu',
                 component: __WEBPACK_IMPORTED_MODULE_4__products_side_menu_products_side_menu_component__["a" /* ProductsSideMenuComponent */]
             },
             {
                 path: ':category0/:category1',
-                outlet: 'productsSideMenu',
-                component: __WEBPACK_IMPORTED_MODULE_4__products_side_menu_products_side_menu_component__["a" /* ProductsSideMenuComponent */]
-            },
-            {
-                path: ':category0',
                 outlet: 'productsSideMenu',
                 component: __WEBPACK_IMPORTED_MODULE_4__products_side_menu_products_side_menu_component__["a" /* ProductsSideMenuComponent */]
             },
@@ -1768,11 +1759,27 @@ var ProductsSectionComponent = (function () {
         };
         this.onChangeRoute(this.searchQuery);
         this.route.params.subscribe(function (params) {
-            // console.log("products side menu id parameter",params['cat'],' ',params['subCat']);
-            // console.log("section id parameter",params['category0']);
-            _this.searchQuery = {
-                'catalog.category0': params['category0']
-            };
+            console.log("section id parameter", params['category0'], '', params['category1']);
+            if (params.category1 === 'goBack') {
+                _this.searchQuery = {};
+                console.log('back');
+            }
+            else {
+                console.log('-params.category0', params.category0);
+                if (params.category0 === null) {
+                    console.log('--params.category0', params.category0);
+                    console.log('--params.category1', params.category1);
+                    _this.searchQuery = {
+                        'catalog.category0': params.category1,
+                    };
+                }
+                else {
+                    _this.searchQuery = {
+                        'catalog.category0': params.category0,
+                        'catalog.category1': params.category1
+                    };
+                }
+            }
             _this.onChangeRoute(_this.searchQuery);
         });
     };
@@ -1916,7 +1923,6 @@ var ProductsSideMenuComponent = (function () {
         this.menuList.parent = null; //this.mainMenuList.parent;
         this.menuList.items = this.mainMenuList.items;
         this.route.params.subscribe(function (params) {
-            console.log('menulist', _this.menuList);
             if (params.category1 === 'goBack') {
                 _this.menuList.parent = null;
                 _this.menuList.items = _this.mainMenuList.items;
@@ -1924,7 +1930,6 @@ var ProductsSideMenuComponent = (function () {
             }
             else {
                 if (params.category0 === null) {
-                    console.log('if', params.category0);
                     _this.catalog.forEach(function (value, index) {
                         if (value.category0 === params.category0) {
                             _this.menuList.items = value.category1;
@@ -1933,7 +1938,6 @@ var ProductsSideMenuComponent = (function () {
                     });
                 }
                 else {
-                    console.log('else');
                     _this.catalog.forEach(function (value, index) {
                         if (value.category0 === params.category1) {
                             _this.menuList.items = value.category1;

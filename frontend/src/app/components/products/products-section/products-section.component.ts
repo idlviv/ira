@@ -26,11 +26,28 @@ export class ProductsSectionComponent implements OnInit {
     this.onChangeRoute(this.searchQuery);
 
     this.route.params.subscribe(params => {
-      // console.log("products side menu id parameter",params['cat'],' ',params['subCat']);
-      // console.log("section id parameter",params['category0']);
-      this.searchQuery = {
-        'catalog.category0': params['category0']
-      };
+      console.log("section id parameter" ,params['category0'], '', params['category1']);
+
+      if(params.category1 === 'goBack') {
+        this.searchQuery = {};
+        console.log('back');
+      } else {
+        console.log('-params.category0', params.category0);
+        if(params.category0 === null) {
+          console.log('--params.category0', params.category0);
+          console.log('--params.category1', params.category1);
+          this.searchQuery = {
+            'catalog.category0': params.category1,
+          };
+        } else {
+          this.searchQuery = {
+            'catalog.category0': params.category0,
+            'catalog.category1': params.category1
+          };
+        }
+      }
+
+
       this.onChangeRoute(this.searchQuery)
     });
   }

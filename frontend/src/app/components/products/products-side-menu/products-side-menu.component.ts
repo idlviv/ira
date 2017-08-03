@@ -97,14 +97,12 @@ export class ProductsSideMenuComponent implements OnInit {
     this.menuList.items = this.mainMenuList.items;
 
     this.route.params.subscribe(params => {
-      console.log('menulist', this.menuList);
         if (params.category1 === 'goBack') {
           this.menuList.parent = null;
           this.menuList.items = this.mainMenuList.items;
           console.log('back menulist', this.mainMenuList);
         } else {
           if (params.category0 === null){
-            console.log('if', params.category0);
             this.catalog.forEach((value, index) => {
               if (value.category0 === params.category0) {
                 this.menuList.items = value.category1;
@@ -112,7 +110,6 @@ export class ProductsSideMenuComponent implements OnInit {
               }
             });
           } else {
-            console.log('else');
             this.catalog.forEach((value, index) => {
               if (value.category0 === params.category1) {
                 this.menuList.items = value.category1;

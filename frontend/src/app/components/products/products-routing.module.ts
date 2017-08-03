@@ -20,21 +20,12 @@ const productsRoutes: Routes = [
         component: ProductsSectionComponent
       },
       {
-        path: ':category0',
-        component: ProductsSectionComponent
-      },
-      {
         path: '',
         outlet: 'productsSideMenu',
         component: ProductsSideMenuComponent
       },
       {
         path: ':category0/:category1',
-        outlet: 'productsSideMenu',
-        component: ProductsSideMenuComponent
-      },
-      {
-        path: ':category0',
         outlet: 'productsSideMenu',
         component: ProductsSideMenuComponent
       },
