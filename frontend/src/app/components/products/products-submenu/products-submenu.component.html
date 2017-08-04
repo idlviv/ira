@@ -1,9 +1,27 @@
-<p>
-  products-submenu works!
-</p>
+<!--<ol class="breadcrumb">-->
+  <!--<li>{{category0}}</li>-->
+  <!--<li>{{category1}}</li>-->
+<!--</ol>-->
 
-<div *ngFor="let submenuItem of submenuList">
-  <ul>
-    <li (click)="navigate(submenuItem)">{{submenuItem}}</li>
-  </ul>
-</div>
+
+
+<!--<div class="btn-group btn-breadcrumb" role="group">-->
+
+  <!--<button [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"-->
+          <!--type="button" class="btn"-->
+          <!--[routerLink]="['']">Home</button>-->
+  <!--<button type="button" class="btn btn-primary"-->
+          <!--(click)="navigate(category0, null)">Back to {{category0}}</button>-->
+  <!--<button *ngFor="let submenuItem of submenuList; let i = index"-->
+          <!--type="button" class="btn btn-default"-->
+          <!--(click)="navigate(null ,submenuItem)">{{submenuItem}}</button>-->
+<!--</div>-->
+
+<ol class="breadcrumb">
+  <li> <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"
+          [routerLink]="['']">Home</a> <span class="divider">></span>  </li>
+  <li> <a  (click)="navigate(category0, null)">Back to {{category0}}</a> <span class="divider">></span>  </li>
+  <li *ngFor="let submenuItem of submenuList">
+    <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"
+          (click)="navigate(null ,submenuItem)">{{submenuItem}}</a> </li>
+</ol>

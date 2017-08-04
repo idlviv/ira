@@ -2016,7 +2016,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-submenu/products-submenu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-submenu works!\n</p>\n\n<div *ngFor=\"let submenuItem of submenuList\">\n  <ul>\n    <li (click)=\"navigate(submenuItem)\">{{submenuItem}}</li>\n  </ul>\n</div>\n"
+module.exports = "<!--<ol class=\"breadcrumb\">-->\n  <!--<li>{{category0}}</li>-->\n  <!--<li>{{category1}}</li>-->\n<!--</ol>-->\n\n\n\n<!--<div class=\"btn-group btn-breadcrumb\" role=\"group\">-->\n\n  <!--<button [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"-->\n          <!--type=\"button\" class=\"btn\"-->\n          <!--[routerLink]=\"['']\">Home</button>-->\n  <!--<button type=\"button\" class=\"btn btn-primary\"-->\n          <!--(click)=\"navigate(category0, null)\">Back to {{category0}}</button>-->\n  <!--<button *ngFor=\"let submenuItem of submenuList; let i = index\"-->\n          <!--type=\"button\" class=\"btn btn-default\"-->\n          <!--(click)=\"navigate(null ,submenuItem)\">{{submenuItem}}</button>-->\n<!--</div>-->\n\n<ol class=\"breadcrumb\">\n  <li> <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\n          [routerLink]=\"['']\">Home</a> <span class=\"divider\">></span>  </li>\n  <li> <a  (click)=\"navigate(category0, null)\">Back to {{category0}}</a> <span class=\"divider\">></span>  </li>\n  <li *ngFor=\"let submenuItem of submenuList\">\n    <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\n          (click)=\"navigate(null ,submenuItem)\">{{submenuItem}}</a> </li>\n</ol>"
 
 /***/ }),
 
@@ -2052,6 +2052,7 @@ var ProductsSubmenuComponent = (function () {
         this.route.params.subscribe(function (params) {
             console.log('params', params);
             _this.category0 = params.category0;
+            _this.category1 = params.category1;
             _this.catalog.forEach(function (value) {
                 if (params.category0 === value.category0) {
                     _this.submenuList = value.category1;
@@ -2059,12 +2060,17 @@ var ProductsSubmenuComponent = (function () {
             });
         });
     };
-    ProductsSubmenuComponent.prototype.navigate = function (category1) {
+    ProductsSubmenuComponent.prototype.navigate = function (category0, category1) {
         console.log('category0', this.category0);
         console.log('category1', category1);
-        console.log(this.category0 + '/' + category1);
-        this.router.navigate(['/products', { outlets: { primary: this.category0 + '/' + category1,
-                    productsSubmenu: this.category0 + '/' + category1 } }]);
+        if (category0) {
+            this.router.navigate(['/products', { outlets: { primary: category0,
+                        productsSubmenu: category0 } }]);
+        }
+        else {
+            this.router.navigate(['/products', { outlets: { primary: this.category0 + '/' + category1,
+                        productsSubmenu: this.category0 + '/' + category1 } }]);
+        }
     };
     return ProductsSubmenuComponent;
 }());
@@ -2103,7 +2109,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-sm-3\">\n    <h2>Side menu</h2>\n    <router-outlet name=\"productsSubmenu\"></router-outlet>\n  </div>\n  <div class=\"col-sm-9\">\n    <h2>Main</h2>\n    <router-outlet></router-outlet>\n\n  </div>\n</div>\n"
+module.exports = "<div class=\"row\">\n  <!--<div class=\"col-sm-3\">-->\n\n    <!--<h2>Side menu</h2>-->\n    <router-outlet name=\"productsSubmenu\"></router-outlet>\n</div>\n  <!--<div class=\"col-sm-9\">-->\n    <!--<h2>Main</h2>-->\n    <div class=\"row\">\n      <router-outlet></router-outlet>\n    </div>\n\n\n\n\n"
 
 /***/ }),
 
