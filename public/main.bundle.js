@@ -64,26 +64,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var appRoutes = [
     { path: 'home',
         loadChildren: './components/home/home-routing.module#HomeRoutingModule'
-        // children: [
-        //   {
-        //     path: '',
-        //     component: HomeSectionComponent
-        //   },
-        //   {
-        //     path: '',
-        //     outlet: 'sidemenu',
-        //     component: SideMenuComponent
-        //   },
-        //   {
-        //     path: 'solodko',
-        //     // outlet: 'sidemenu',
-        //     component: SolodkoComponent
-        //   }]
     },
     { path: 'products',
         loadChildren: './components/products/products.module#ProductsModule'
-        // component: ProductsComponent
     },
+    // {path: 'toys',
+    //   loadChildren: './components/products/products.module#ProductsModule'
+    // },
+    // {path: 'flowers',
+    //   loadChildren: './components/products/products.module#ProductsModule'
+    // },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_3__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_4__components_login_login_component__["a" /* LoginComponent */] },
     { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_5__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
@@ -189,22 +179,21 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_products_management_add_product_add_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_products_management_products_management_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_page404_page404_component__ = __webpack_require__("../../../../../src/app/components/page404/page404.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_products_management_edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_home_home_routing_module__ = __webpack_require__("../../../../../src/app/components/home/home-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_menu_side_menu_side_menu_component__ = __webpack_require__("../../../../../src/app/components/menu/side-menu/side-menu.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_categories_solodko_solodko_component__ = __webpack_require__("../../../../../src/app/components/categories/solodko/solodko.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_categories_toys_toys_component__ = __webpack_require__("../../../../../src/app/components/categories/toys/toys.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_home_home_section_home_section_component__ = __webpack_require__("../../../../../src/app/components/home/home-section/home-section.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_products_products_module__ = __webpack_require__("../../../../../src/app/components/products/products.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_home_home_module__ = __webpack_require__("../../../../../src/app/components/home/home.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_products_management_edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_home_home_routing_module__ = __webpack_require__("../../../../../src/app/components/home/home-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_menu_side_menu_side_menu_component__ = __webpack_require__("../../../../../src/app/components/menu/side-menu/side-menu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_categories_solodko_solodko_component__ = __webpack_require__("../../../../../src/app/components/categories/solodko/solodko.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_categories_toys_toys_component__ = __webpack_require__("../../../../../src/app/components/categories/toys/toys.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_home_home_section_home_section_component__ = __webpack_require__("../../../../../src/app/components/home/home-section/home-section.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_products_products_module__ = __webpack_require__("../../../../../src/app/components/products/products.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_home_home_module__ = __webpack_require__("../../../../../src/app/components/home/home.module.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -224,7 +213,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // import { ItemComponent } from './components/item/item.component';
-
 
 
 
@@ -261,31 +249,31 @@ AppModule = __decorate([
             // ItemComponent,
             __WEBPACK_IMPORTED_MODULE_11__components_products_management_add_product_add_product_component__["a" /* AddProductComponent */],
             __WEBPACK_IMPORTED_MODULE_12__components_products_management_products_management_component__["a" /* ProductsManagementComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_page404_page404_component__["a" /* Page404Component */],
-            __WEBPACK_IMPORTED_MODULE_14__components_products_management_edit_product_edit_product_component__["a" /* EditProductComponent */],
-            __WEBPACK_IMPORTED_MODULE_22__components_menu_side_menu_side_menu_component__["a" /* SideMenuComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__components_categories_solodko_solodko_component__["a" /* SolodkoComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__components_categories_toys_toys_component__["a" /* ToysComponent */],
-            __WEBPACK_IMPORTED_MODULE_25__components_home_home_section_home_section_component__["a" /* HomeSectionComponent */],
+            // Page404Component,
+            __WEBPACK_IMPORTED_MODULE_13__components_products_management_edit_product_edit_product_component__["a" /* EditProductComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__components_menu_side_menu_side_menu_component__["a" /* SideMenuComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__components_categories_solodko_solodko_component__["a" /* SolodkoComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__components_categories_toys_toys_component__["a" /* ToysComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__components_home_home_section_home_section_component__["a" /* HomeSectionComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
-            __WEBPACK_IMPORTED_MODULE_26__components_products_products_module__["ProductsModule"],
-            __WEBPACK_IMPORTED_MODULE_20__components_home_home_routing_module__["HomeRoutingModule"],
-            __WEBPACK_IMPORTED_MODULE_27__components_home_home_module__["a" /* HomeModule */],
-            __WEBPACK_IMPORTED_MODULE_19__app_routing_module__["a" /* AppRoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_21_angular2_flash_messages__["FlashMessagesModule"],
+            __WEBPACK_IMPORTED_MODULE_25__components_products_products_module__["ProductsModule"],
+            __WEBPACK_IMPORTED_MODULE_19__components_home_home_routing_module__["HomeRoutingModule"],
+            __WEBPACK_IMPORTED_MODULE_26__components_home_home_module__["a" /* HomeModule */],
+            __WEBPACK_IMPORTED_MODULE_18__app_routing_module__["a" /* AppRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_20_angular2_flash_messages__["FlashMessagesModule"],
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_27__components_home_home_module__["a" /* HomeModule */],
+            __WEBPACK_IMPORTED_MODULE_26__components_home_home_module__["a" /* HomeModule */],
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_15__services_validate_service__["a" /* ValidateService */],
-            __WEBPACK_IMPORTED_MODULE_16__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */],
-            __WEBPACK_IMPORTED_MODULE_17__services_product_service__["a" /* ProductService */]
+            __WEBPACK_IMPORTED_MODULE_14__services_validate_service__["a" /* ValidateService */],
+            __WEBPACK_IMPORTED_MODULE_15__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */],
+            __WEBPACK_IMPORTED_MODULE_16__services_product_service__["a" /* ProductService */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
     })
@@ -352,7 +340,7 @@ SolodkoComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/categories/solodko/solodko.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/categories/solodko/solodko.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object])
 ], SolodkoComponent);
 
 var _a;
@@ -720,6 +708,7 @@ HomeComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_item_component__ = __webpack_require__("../../../../../src/app/components/item/item.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__page404_page404_component__ = __webpack_require__("../../../../../src/app/components/page404/page404.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -727,6 +716,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -738,13 +728,15 @@ var HomeModule = (function () {
 HomeModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__item_item_component__["a" /* ItemComponent */]
+            __WEBPACK_IMPORTED_MODULE_2__item_item_component__["a" /* ItemComponent */],
+            __WEBPACK_IMPORTED_MODULE_3__page404_page404_component__["a" /* Page404Component */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__item_item_component__["a" /* ItemComponent */]
+            __WEBPACK_IMPORTED_MODULE_2__item_item_component__["a" /* ItemComponent */],
+            __WEBPACK_IMPORTED_MODULE_3__page404_page404_component__["a" /* Page404Component */]
         ]
     })
 ], HomeModule);
@@ -911,7 +903,7 @@ LoginComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/login/login.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/login/login.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
 ], LoginComponent);
 
 var _a, _b, _c;
@@ -984,7 +976,7 @@ SideMenuComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/menu/side-menu/side-menu.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/menu/side-menu/side-menu.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _b || Object])
 ], SideMenuComponent);
 
 var _a, _b;
@@ -1013,7 +1005,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\r\n<!--<nav class=\"navbar navbar-default navbar-fixed-top\">-->\r\n  <div class=\"container\">\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\"\r\n              aria-expanded=\"false\" aria-controls=\"navbar\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand\" href=\"#\">Brand</a>\r\n    </div>\r\n    <div id=\"navbar\" class=\"collapse navbar-collapse\">\r\n      <ul class=\"nav navbar-nav navbar-left\">\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/']\">Home</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/products']\">Products</a></li>\r\n      </ul>\r\n\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n\r\n\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/product-management']\">Product Management</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/profile']\">Profile</a></li>\r\n\r\n        <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/login']\">Login</a></li>\r\n        <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/register']\">Register</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\r\n      </ul>\r\n    </div><!--/.nav-collapse -->\r\n  </div>\r\n</nav>"
+module.exports = "<nav class=\"navbar navbar-default\">\r\n<!--<nav class=\"navbar navbar-default navbar-fixed-top\">-->\r\n  <div class=\"container\">\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\"\r\n              aria-expanded=\"false\" aria-controls=\"navbar\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand\" href=\"#\">Brand</a>\r\n    </div>\r\n    <div id=\"navbar\" class=\"collapse navbar-collapse\">\r\n      <ul class=\"nav navbar-nav navbar-left\">\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/']\">Home</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/products']\">Products</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/products', {outlets: {primary: 'toys', productsSubmenu: 'toys'}}]\">Toys</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/products', {outlets: {primary: 'flowers', productsSubmenu: 'flowers'}}]\">Flowers</a></li>\r\n      </ul>\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/product-management']\">Product Management</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/profile']\">Profile</a></li>\r\n\r\n        <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/login']\">Login</a></li>\r\n        <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/register']\">Register</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\r\n      </ul>\r\n    </div><!--/.nav-collapse -->\r\n  </div>\r\n</nav>"
 
 /***/ }),
 
@@ -1065,7 +1057,7 @@ NavbarComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/navbar/navbar.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/navbar/navbar.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
 ], NavbarComponent);
 
 var _a, _b, _c;
@@ -1253,7 +1245,7 @@ AddProductComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _e || Object])
 ], AddProductComponent);
 
 var _a, _b, _c, _d, _e;
@@ -1427,7 +1419,7 @@ EditProductComponent = __decorate([
         // providers: [ProductService],
         styles: [__webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _c || Object])
 ], EditProductComponent);
 
 var _a, _b, _c;
@@ -1625,7 +1617,7 @@ ProductsListComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/products/products-list/products-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/products/products-list/products-list.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object])
 ], ProductsListComponent);
 
 var _a;
@@ -1642,6 +1634,8 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__products_component__ = __webpack_require__("../../../../../src/app/components/products/products.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__products_section_products_section_component__ = __webpack_require__("../../../../../src/app/components/products/products-section/products-section.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__products_side_menu_products_side_menu_component__ = __webpack_require__("../../../../../src/app/components/products/products-side-menu/products-side-menu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__page404_page404_component__ = __webpack_require__("../../../../../src/app/components/page404/page404.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__products_submenu_products_submenu_component__ = __webpack_require__("../../../../../src/app/components/products/products-submenu/products-submenu.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1649,6 +1643,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -1664,21 +1660,34 @@ var productsRoutes = [
                 component: __WEBPACK_IMPORTED_MODULE_3__products_section_products_section_component__["a" /* ProductsSectionComponent */]
             },
             {
+                path: '',
+                outlet: 'productsSubmenu',
+                component: __WEBPACK_IMPORTED_MODULE_4__products_side_menu_products_side_menu_component__["a" /* ProductsSideMenuComponent */]
+            },
+            {
+                path: ':category0',
+                component: __WEBPACK_IMPORTED_MODULE_3__products_section_products_section_component__["a" /* ProductsSectionComponent */],
+            },
+            {
+                path: ':category0',
+                outlet: 'productsSubmenu',
+                component: __WEBPACK_IMPORTED_MODULE_6__products_submenu_products_submenu_component__["a" /* ProductsSubmenuComponent */],
+            },
+            {
                 path: ':category0/:category1',
                 component: __WEBPACK_IMPORTED_MODULE_3__products_section_products_section_component__["a" /* ProductsSectionComponent */]
             },
             {
-                path: '',
-                outlet: 'productsSideMenu',
-                component: __WEBPACK_IMPORTED_MODULE_4__products_side_menu_products_side_menu_component__["a" /* ProductsSideMenuComponent */]
+                path: ':category0/:category1',
+                outlet: 'productsSubmenu',
+                component: __WEBPACK_IMPORTED_MODULE_6__products_submenu_products_submenu_component__["a" /* ProductsSubmenuComponent */]
             },
             {
-                path: ':category0/:category1',
-                outlet: 'productsSideMenu',
-                component: __WEBPACK_IMPORTED_MODULE_4__products_side_menu_products_side_menu_component__["a" /* ProductsSideMenuComponent */]
+                path: '**',
+                component: __WEBPACK_IMPORTED_MODULE_5__page404_page404_component__["a" /* Page404Component */]
             },
-        ]
-    }
+        ],
+    },
 ];
 var ProductsRoutingModule = (function () {
     function ProductsRoutingModule() {
@@ -1754,32 +1763,11 @@ var ProductsSectionComponent = (function () {
     }
     ProductsSectionComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.searchQuery = {
-            'catalog.category0': 'toys'
-        };
-        this.onChangeRoute(this.searchQuery);
         this.route.params.subscribe(function (params) {
-            console.log("section id parameter", params['category0'], '', params['category1']);
-            if (params.category1 === 'goBack') {
-                _this.searchQuery = {};
-                console.log('back');
-            }
-            else {
-                console.log('-params.category0', params.category0);
-                if (params.category0 === null) {
-                    console.log('--params.category0', params.category0);
-                    console.log('--params.category1', params.category1);
-                    _this.searchQuery = {
-                        'catalog.category0': params.category1,
-                    };
-                }
-                else {
-                    _this.searchQuery = {
-                        'catalog.category0': params.category0,
-                        'catalog.category1': params.category1
-                    };
-                }
-            }
+            _this.searchQuery = {
+                'catalog.category0': params.category0,
+                'catalog.category1': params.category1,
+            };
             _this.onChangeRoute(_this.searchQuery);
         });
     };
@@ -1804,7 +1792,7 @@ ProductsSectionComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/products/products-section/products-section.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/products/products-section/products-section.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
 ], ProductsSectionComponent);
 
 var _a, _b, _c;
@@ -1999,7 +1987,7 @@ ProductsSideMenuComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/products/products-side-menu/products-side-menu.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/products/products-side-menu/products-side-menu.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object])
 ], ProductsSideMenuComponent);
 
 var _a, _b, _c, _d;
@@ -2007,7 +1995,7 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/products/products-side-sub-menu/products-side-sub-menu.component.css":
+/***/ "../../../../../src/app/components/products/products-submenu/products-submenu.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -2025,19 +2013,21 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/products/products-side-sub-menu/products-side-sub-menu.component.html":
+/***/ "../../../../../src/app/components/products/products-submenu/products-submenu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-side-sub-menu works!\n</p>\n"
+module.exports = "<p>\n  products-submenu works!\n</p>\n\n<div *ngFor=\"let submenuItem of submenuList\">\n  <ul>\n    <li (click)=\"navigate(submenuItem)\">{{submenuItem}}</li>\n  </ul>\n</div>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/products/products-side-sub-menu/products-side-sub-menu.component.ts":
+/***/ "../../../../../src/app/components/products/products-submenu/products-submenu.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsSideSubMenuComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__data_catalog__ = __webpack_require__("../../../../../src/app/data/catalog.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsSubmenuComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2048,23 +2038,47 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var ProductsSideSubMenuComponent = (function () {
-    function ProductsSideSubMenuComponent() {
-    }
-    ProductsSideSubMenuComponent.prototype.ngOnInit = function () {
-    };
-    return ProductsSideSubMenuComponent;
-}());
-ProductsSideSubMenuComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-products-side-sub-menu',
-        template: __webpack_require__("../../../../../src/app/components/products/products-side-sub-menu/products-side-sub-menu.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/products/products-side-sub-menu/products-side-sub-menu.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], ProductsSideSubMenuComponent);
 
-//# sourceMappingURL=products-side-sub-menu.component.js.map
+
+var ProductsSubmenuComponent = (function () {
+    function ProductsSubmenuComponent(router, route) {
+        this.router = router;
+        this.route = route;
+        this.submenuList = [];
+    }
+    ProductsSubmenuComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.catalog = __WEBPACK_IMPORTED_MODULE_2__data_catalog__["a" /* catalog */];
+        this.route.params.subscribe(function (params) {
+            console.log('params', params);
+            _this.category0 = params.category0;
+            _this.catalog.forEach(function (value) {
+                if (params.category0 === value.category0) {
+                    _this.submenuList = value.category1;
+                }
+            });
+        });
+    };
+    ProductsSubmenuComponent.prototype.navigate = function (category1) {
+        console.log('category0', this.category0);
+        console.log('category1', category1);
+        console.log(this.category0 + '/' + category1);
+        this.router.navigate(['/products', { outlets: { primary: this.category0 + '/' + category1,
+                    productsSubmenu: this.category0 + '/' + category1 } }]);
+    };
+    return ProductsSubmenuComponent;
+}());
+ProductsSubmenuComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-products-submenu',
+        template: __webpack_require__("../../../../../src/app/components/products/products-submenu/products-submenu.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/products/products-submenu/products-submenu.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _b || Object])
+], ProductsSubmenuComponent);
+
+var _a, _b;
+//# sourceMappingURL=products-submenu.component.js.map
 
 /***/ }),
 
@@ -2089,7 +2103,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-sm-3\">\n    <h2>Side menu</h2>\n    <router-outlet name=\"productsSideMenu\"></router-outlet>\n  </div>\n  <div class=\"col-sm-9\">\n    <h2>Main</h2>\n    <router-outlet></router-outlet>\n\n  </div>\n</div>\n"
+module.exports = "<div class=\"row\">\n  <div class=\"col-sm-3\">\n    <h2>Side menu</h2>\n    <router-outlet name=\"productsSubmenu\"></router-outlet>\n  </div>\n  <div class=\"col-sm-9\">\n    <h2>Main</h2>\n    <router-outlet></router-outlet>\n\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -2142,8 +2156,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__products_side_menu_products_side_menu_component__ = __webpack_require__("../../../../../src/app/components/products/products-side-menu/products-side-menu.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__products_list_products_list_component__ = __webpack_require__("../../../../../src/app/components/products/products-list/products-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__products_detail_products_detail_component__ = __webpack_require__("../../../../../src/app/components/products/products-detail/products-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__products_side_sub_menu_products_side_sub_menu_component__ = __webpack_require__("../../../../../src/app/components/products/products-side-sub-menu/products-side-sub-menu.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__home_home_module__ = __webpack_require__("../../../../../src/app/components/home/home.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__home_home_module__ = __webpack_require__("../../../../../src/app/components/home/home.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__products_submenu_products_submenu_component__ = __webpack_require__("../../../../../src/app/components/products/products-submenu/products-submenu.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductsModule", function() { return ProductsModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2171,7 +2185,7 @@ ProductsModule = __decorate([
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
             __WEBPACK_IMPORTED_MODULE_3__products_routing_module__["a" /* ProductsRoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_9__home_home_module__["a" /* HomeModule */]
+            __WEBPACK_IMPORTED_MODULE_8__home_home_module__["a" /* HomeModule */]
         ],
         declarations: [
             __WEBPACK_IMPORTED_MODULE_2__products_component__["a" /* ProductsComponent */],
@@ -2179,7 +2193,7 @@ ProductsModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5__products_side_menu_products_side_menu_component__["a" /* ProductsSideMenuComponent */],
             __WEBPACK_IMPORTED_MODULE_6__products_list_products_list_component__["a" /* ProductsListComponent */],
             __WEBPACK_IMPORTED_MODULE_7__products_detail_products_detail_component__["a" /* ProductsDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__products_side_sub_menu_products_side_sub_menu_component__["a" /* ProductsSideSubMenuComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__products_submenu_products_submenu_component__["a" /* ProductsSubmenuComponent */],
         ]
     })
 ], ProductsModule);
@@ -2264,7 +2278,7 @@ ProfileComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/profile/profile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/profile/profile.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
 ], ProfileComponent);
 
 var _a, _b, _c;
@@ -2381,7 +2395,7 @@ RegisterComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/register/register.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/register/register.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object])
 ], RegisterComponent);
 
 var _a, _b, _c, _d;
@@ -2446,7 +2460,7 @@ var AuthGuard = (function () {
 }());
 AuthGuard = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], AuthGuard);
 
 var _a, _b;

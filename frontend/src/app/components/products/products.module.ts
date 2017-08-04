@@ -7,8 +7,8 @@ import {ProductsSectionComponent} from "./products-section/products-section.comp
 import { ProductsSideMenuComponent } from './products-side-menu/products-side-menu.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductsDetailComponent } from './products-detail/products-detail.component';
-import { ProductsSideSubMenuComponent } from './products-side-sub-menu/products-side-sub-menu.component';
 import {HomeModule} from "../home/home.module";
+import { ProductsSubmenuComponent } from './products-submenu/products-submenu.component';
 
 @NgModule({
   imports: [
@@ -22,7 +22,7 @@ import {HomeModule} from "../home/home.module";
     ProductsSideMenuComponent,
     ProductsListComponent,
     ProductsDetailComponent,
-    ProductsSideSubMenuComponent,
+    ProductsSubmenuComponent,
   ]
 })
 export class ProductsModule { }

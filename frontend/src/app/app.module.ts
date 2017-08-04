@@ -45,7 +45,7 @@ import {HomeModule} from "./components/home/home.module";
     // ItemComponent,
     AddProductComponent,
     ProductsManagementComponent,
-    Page404Component,
+    // Page404Component,
     EditProductComponent,
     SideMenuComponent,
     SolodkoComponent,

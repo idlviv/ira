@@ -1,0 +1,9 @@
+<p>
+  products-submenu works!
+</p>
+
+<div *ngFor="let submenuItem of submenuList">
+  <ul>
+    <li (click)="navigate(submenuItem)">{{submenuItem}}</li>
+  </ul>
+</div>

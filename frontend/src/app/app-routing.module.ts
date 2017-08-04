@@ -20,27 +20,16 @@ import {AuthGuard} from './guards/auth.guard';
 const appRoutes: Routes = [
   {path: 'home',
     loadChildren: './components/home/home-routing.module#HomeRoutingModule'
-      // children: [
-      //   {
-      //     path: '',
-      //     component: HomeSectionComponent
-      //   },
-      //   {
-      //     path: '',
-      //     outlet: 'sidemenu',
-      //     component: SideMenuComponent
-      //   },
-      //   {
-      //     path: 'solodko',
-      //     // outlet: 'sidemenu',
-      //     component: SolodkoComponent
-      //   }]
-
   },
   {path: 'products',
     loadChildren: './components/products/products.module#ProductsModule'
-    // component: ProductsComponent
   },
+  // {path: 'toys',
+  //   loadChildren: './components/products/products.module#ProductsModule'
+  // },
+  // {path: 'flowers',
+  //   loadChildren: './components/products/products.module#ProductsModule'
+  // },
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
