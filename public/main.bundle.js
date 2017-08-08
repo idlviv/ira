@@ -1808,7 +1808,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "ul li {\r\n    cursor: pointer;\r\n}\r\n\r\n.active {\r\n    color: blue;\r\n}\r\n\r\n.active ul {\r\n    color: red;\r\n\r\n    display: block !important;\r\n}", ""]);
+exports.push([module.i, "/*ul li {*/\r\n    /*cursor: pointer;*/\r\n/*}*/\r\n\r\n.clicked {\r\n    color: blue;\r\n}\r\n\r\n/*.active ul {*/\r\n    /*color: red;*/\r\n\r\n    /*display: block !important;*/\r\n/*}*/", ""]);
 
 // exports
 
@@ -2016,7 +2016,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-submenu/products-submenu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<ol class=\"breadcrumb\">-->\n  <!--<li>{{category0}}</li>-->\n  <!--<li>{{category1}}</li>-->\n<!--</ol>-->\n\n\n\n<!--<div class=\"btn-group btn-breadcrumb\" role=\"group\">-->\n\n  <!--<button [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"-->\n          <!--type=\"button\" class=\"btn\"-->\n          <!--[routerLink]=\"['']\">Home</button>-->\n  <!--<button type=\"button\" class=\"btn btn-primary\"-->\n          <!--(click)=\"navigate(category0, null)\">Back to {{category0}}</button>-->\n  <!--<button *ngFor=\"let submenuItem of submenuList; let i = index\"-->\n          <!--type=\"button\" class=\"btn btn-default\"-->\n          <!--(click)=\"navigate(null ,submenuItem)\">{{submenuItem}}</button>-->\n<!--</div>-->\n\n<ol class=\"breadcrumb\">\n  <li> <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\n          [routerLink]=\"['']\">Home</a> <span class=\"divider\">></span>  </li>\n  <li> <a  (click)=\"navigate(category0, null)\">Back to {{category0}}</a> <span class=\"divider\">></span>  </li>\n  <li *ngFor=\"let submenuItem of submenuList\">\n    <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\n          (click)=\"navigate(null ,submenuItem)\">{{submenuItem}}</a> </li>\n</ol>"
+module.exports = "<!--<ol class=\"breadcrumb\">-->\n  <!--<li>{{category0}}</li>-->\n  <!--<li>{{category1}}</li>-->\n<!--</ol>-->\n\n\n\n<!--<div class=\"btn-group btn-breadcrumb\" role=\"group\">-->\n\n  <!--<button [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"-->\n          <!--type=\"button\" class=\"btn\"-->\n          <!--[routerLink]=\"['']\">Home</button>-->\n  <!--<button type=\"button\" class=\"btn btn-primary\"-->\n          <!--(click)=\"navigate(category0, null)\">Back to {{category0}}</button>-->\n  <!--<button *ngFor=\"let submenuItem of submenuList; let i = index\"-->\n          <!--type=\"button\" class=\"btn btn-default\"-->\n          <!--(click)=\"navigate(null ,submenuItem)\">{{submenuItem}}</button>-->\n<!--</div>-->\n\n<ol class=\"breadcrumb\">\n  <li> <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\n          [routerLink]=\"['']\">Home</a> <span class=\"divider\">></span>  </li>\n  <li> <a  (click)=\"navigate(category0, null)\">Back to {{category0}}</a> <span class=\"divider\">></span>  </li>\n  <li *ngFor=\"let submenuItem of submenuList\" >\n    <!--<a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"-->\n          <!--(click)=\"navigate(null ,submenuItem)\">{{submenuItem}}</a> </li> -->\n\n    <a class=\"breadcrumb-item active\" (click)=\"navigate(null ,submenuItem)\">{{submenuItem}}</a> </li>\n</ol>"
 
 /***/ }),
 

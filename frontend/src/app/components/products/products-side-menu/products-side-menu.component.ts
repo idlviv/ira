@@ -8,6 +8,8 @@ import {FlashMessagesService} from "angular2-flash-messages";
 import {catalog} from '../../../data/catalog';
 import {SubMenu} from "../../../interfaces/submenu";
 
+
+
 @Component({
   selector: 'app-products-side-menu',
   templateUrl: './products-side-menu.component.html',
@@ -39,6 +41,7 @@ export class ProductsSideMenuComponent implements OnInit {
     private route: ActivatedRoute,
     private productService: ProductService,
     private flashMessage: FlashMessagesService,
+
       ) {
   }
 

@@ -1,13 +1,13 @@
-ul li {
-    cursor: pointer;
-}
+/*ul li {*/
+    /*cursor: pointer;*/
+/*}*/
 
-.active {
+.clicked {
     color: blue;
 }
 
-.active ul {
-    color: red;
+/*.active ul {*/
+    /*color: red;*/
 
-    display: block !important;
-}
+    /*display: block !important;*/
+/*}*/
