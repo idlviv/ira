@@ -1,0 +1,8 @@
+.clicked {
+  color: brown;
+  font-weight: bold;
+}
+
+li {
+  cursor: pointer;
+}

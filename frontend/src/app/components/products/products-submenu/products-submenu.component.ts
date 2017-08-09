@@ -1,6 +1,6 @@
 import { Component, OnInit, Output} from '@angular/core';
-import {Router, ActivatedRoute} from "@angular/router";
-import {ICatalog} from "../../../interfaces/i-catalog";
+import {Router, ActivatedRoute} from '@angular/router';
+import {ICatalog} from '../../../interfaces/i-catalog';
 import {catalog} from '../../../data/catalog';
 
 @Component({
@@ -11,6 +11,10 @@ import {catalog} from '../../../data/catalog';
 export class ProductsSubmenuComponent implements OnInit {
   category0: string;
   category1: string;
+  currentCategory1: number;
+
+  prop1 = true;
+  prop2 = true;
   // clickedButton: boolean = false;
 
   catalog: ICatalog[];
@@ -34,20 +38,24 @@ export class ProductsSubmenuComponent implements OnInit {
           this.submenuList = value.category1;
         }
       })
-
     });
   }
 
-  navigate(category0, category1) {
-
+  navigate(category0, category1, i) {
+    this.currentCategory1 = i;
     console.log('category0', this.category0);
     console.log('category1', category1);
-    if(category0) {
+    if (category0) {
       this.router.navigate(['/products', {outlets: {primary: category0,
         productsSubmenu:  category0}}]);
     } else {
       this.router.navigate(['/products', {outlets: {primary: this.category0 + '/' + category1,
         productsSubmenu:  this.category0 + '/' + category1}}]);
     }
+  }
+
+  setClasses() {
+    const classes = {clicked: this.prop1, b: this.prop2};
+    return classes;
   }
 }

@@ -170,30 +170,31 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_products_management_add_product_add_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_products_management_products_management_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_products_management_edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_home_home_routing_module__ = __webpack_require__("../../../../../src/app/components/home/home-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_menu_side_menu_side_menu_component__ = __webpack_require__("../../../../../src/app/components/menu/side-menu/side-menu.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_categories_solodko_solodko_component__ = __webpack_require__("../../../../../src/app/components/categories/solodko/solodko.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_categories_toys_toys_component__ = __webpack_require__("../../../../../src/app/components/categories/toys/toys.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_home_home_section_home_section_component__ = __webpack_require__("../../../../../src/app/components/home/home-section/home-section.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_products_products_module__ = __webpack_require__("../../../../../src/app/components/products/products.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_home_home_module__ = __webpack_require__("../../../../../src/app/components/home/home.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_products_management_add_product_add_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_products_management_products_management_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_products_management_edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_home_home_routing_module__ = __webpack_require__("../../../../../src/app/components/home/home-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_menu_side_menu_side_menu_component__ = __webpack_require__("../../../../../src/app/components/menu/side-menu/side-menu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_categories_solodko_solodko_component__ = __webpack_require__("../../../../../src/app/components/categories/solodko/solodko.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_categories_toys_toys_component__ = __webpack_require__("../../../../../src/app/components/categories/toys/toys.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_home_home_section_home_section_component__ = __webpack_require__("../../../../../src/app/components/home/home-section/home-section.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_products_products_module__ = __webpack_require__("../../../../../src/app/components/products/products.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_home_home_module__ = __webpack_require__("../../../../../src/app/components/home/home.module.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -201,6 +202,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -239,43 +241,44 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__components_navbar_navbar_component__["a" /* NavbarComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__components_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__components_register_register_component__["a" /* RegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_profile_profile_component__["a" /* ProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__components_navbar_navbar_component__["a" /* NavbarComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */],
             // ItemComponent,
-            __WEBPACK_IMPORTED_MODULE_11__components_products_management_add_product_add_product_component__["a" /* AddProductComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__components_products_management_products_management_component__["a" /* ProductsManagementComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_products_management_add_product_add_product_component__["a" /* AddProductComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_products_management_products_management_component__["a" /* ProductsManagementComponent */],
             // Page404Component,
-            __WEBPACK_IMPORTED_MODULE_13__components_products_management_edit_product_edit_product_component__["a" /* EditProductComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__components_menu_side_menu_side_menu_component__["a" /* SideMenuComponent */],
-            __WEBPACK_IMPORTED_MODULE_22__components_categories_solodko_solodko_component__["a" /* SolodkoComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__components_categories_toys_toys_component__["a" /* ToysComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__components_home_home_section_home_section_component__["a" /* HomeSectionComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_products_management_edit_product_edit_product_component__["a" /* EditProductComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__components_menu_side_menu_side_menu_component__["a" /* SideMenuComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__components_categories_solodko_solodko_component__["a" /* SolodkoComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__components_categories_toys_toys_component__["a" /* ToysComponent */],
+            __WEBPACK_IMPORTED_MODULE_25__components_home_home_section_home_section_component__["a" /* HomeSectionComponent */],
         ],
         imports: [
+            __WEBPACK_IMPORTED_MODULE_4__angular_common__["CommonModule"],
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
-            __WEBPACK_IMPORTED_MODULE_25__components_products_products_module__["ProductsModule"],
-            __WEBPACK_IMPORTED_MODULE_19__components_home_home_routing_module__["HomeRoutingModule"],
-            __WEBPACK_IMPORTED_MODULE_26__components_home_home_module__["a" /* HomeModule */],
-            __WEBPACK_IMPORTED_MODULE_18__app_routing_module__["a" /* AppRoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_20_angular2_flash_messages__["FlashMessagesModule"],
+            __WEBPACK_IMPORTED_MODULE_26__components_products_products_module__["ProductsModule"],
+            __WEBPACK_IMPORTED_MODULE_20__components_home_home_routing_module__["HomeRoutingModule"],
+            __WEBPACK_IMPORTED_MODULE_27__components_home_home_module__["a" /* HomeModule */],
+            __WEBPACK_IMPORTED_MODULE_19__app_routing_module__["a" /* AppRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_21_angular2_flash_messages__["FlashMessagesModule"],
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_26__components_home_home_module__["a" /* HomeModule */],
+            __WEBPACK_IMPORTED_MODULE_27__components_home_home_module__["a" /* HomeModule */],
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_14__services_validate_service__["a" /* ValidateService */],
-            __WEBPACK_IMPORTED_MODULE_15__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */],
-            __WEBPACK_IMPORTED_MODULE_16__services_product_service__["a" /* ProductService */]
+            __WEBPACK_IMPORTED_MODULE_15__services_validate_service__["a" /* ValidateService */],
+            __WEBPACK_IMPORTED_MODULE_16__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */],
+            __WEBPACK_IMPORTED_MODULE_17__services_product_service__["a" /* ProductService */]
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -304,7 +307,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/categories/solodko/solodko.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  solodko works!\n</p>\n"
+module.exports = "<p>\r\n  solodko works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -369,7 +372,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/categories/toys/toys.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  toys works!\n</p>\n"
+module.exports = "<p>\r\n  toys works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -564,7 +567,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home-section/home-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<p>\n  home-section works!\n</p>\n\n<!--<router-outlet></router-outlet>-->\n<div *ngFor=\"let product of products\" class=\"col-sm-4 col-xs-6\">\n  <app-item [product]=\"product\"></app-item>\n</div>"
+module.exports = "\r\n<p>\r\n  home-section works!\r\n</p>\r\n\r\n<!--<router-outlet></router-outlet>-->\r\n<div *ngFor=\"let product of products\" class=\"col-sm-4 col-xs-6\">\r\n  <app-item [product]=\"product\"></app-item>\r\n</div>"
 
 /***/ }),
 
@@ -766,7 +769,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/item/item.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <h2>{{product.catalog.category0}} / {{product.catalog.category1}}</h2>\n  <h3>{{product.name}}</h3>\n  <p>{{product.itemNumber}}</p>\n  <!--<img src=\"http://via.placeholder.com/200x300\">-->\n  <img src={{product.mainImgSrc}} class=\"img-responsive img-thumbnail img200x300\">\n  <!--<img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">-->\n  <p>{{product.price}} грн</p>\n</div>\n"
+module.exports = "<div>\r\n  <h2>{{product.catalog.category0}} / {{product.catalog.category1}}</h2>\r\n  <h3>{{product.name}}</h3>\r\n  <p>{{product.itemNumber}}</p>\r\n  <!--<img src=\"http://via.placeholder.com/200x300\">-->\r\n  <img src={{product.mainImgSrc}} class=\"img-responsive img-thumbnail img200x300\">\r\n  <!--<img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">-->\r\n  <p>{{product.price}} грн</p>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -932,7 +935,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/menu/side-menu/side-menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  side-menu works!\n</p>\n\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n  <a [routerLink]=\"['']\">Home</a>\n\n<!--</li><li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\n  <!--<a (click)=\"navigate('solodko')\">Solodko</a></li>-->\n<p><a class=\"btn btn-primary\" (click)=\"navigate('solodko')\"  role=\"button\">Solodko</a></p>\n\n\n\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n  <a (click)=\"navigate('toys')\">Toys</a></li>"
+module.exports = "<p>\r\n  side-menu works!\r\n</p>\r\n\r\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n  <a [routerLink]=\"['']\">Home</a>\r\n\r\n<!--</li><li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n  <!--<a (click)=\"navigate('solodko')\">Solodko</a></li>-->\r\n<p><a class=\"btn btn-primary\" (click)=\"navigate('solodko')\"  role=\"button\">Solodko</a></p>\r\n\r\n\r\n\r\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n  <a (click)=\"navigate('toys')\">Toys</a></li>"
 
 /***/ }),
 
@@ -1147,7 +1150,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/add-product/add-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<h2 class=\"page-header\">Add product</h2>-->\n<!--<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"category\">Category</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"category\" name=\"category\" class=\"form-control\" id=\"category\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"subCategory\">Sub Category</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"subCategory\" name=\"subCategory\" class=\"form-control\" id=\"subCategory\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"itemNumber\">Item number</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"name\">Name</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"price\">Price</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"mainImgSrc\">Image source</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">-->\n  <!--</div>-->\n  <!--<input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">-->\n<!--</form>-->\n\n\n<h2 class=\"page-header\">Add product</h2>\n<form (ngSubmit)=\"onAddProductSubmit(addProductForm); addProductForm.reset()\" #addProductForm=\"ngForm\">\n\n  <div class=\"form-group\">\n    <label for=\"category0\">Category</label>\n    <input name=\"category0\" ngModel #category0=\"ngModel\" class=\"form-control\" id=\"category0\">\n  </div>\n    <div class=\"form-group\">\n    <label for=\"category1\">SubCategory</label>\n    <input name=\"category1\" ngModel #category1=\"ngModel\" class=\"form-control\" id=\"category1\">\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"itemNumber\">Item number</label>\n    <input type=\"text\" ngModel name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"name\">Name</label>\n    <input type=\"text\" ngModel name=\"name\" class=\"form-control\" id=\"name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"price\">Price</label>\n    <input type=\"text\" ngModel name=\"price\" class=\"form-control\" id=\"price\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"mainImgSrc\">Image source</label>\n    <input type=\"text\" ngModel name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\n</form>"
+module.exports = "<!--<h2 class=\"page-header\">Add product</h2>-->\r\n<!--<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"category\">Category</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"category\" name=\"category\" class=\"form-control\" id=\"category\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"subCategory\">Sub Category</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"subCategory\" name=\"subCategory\" class=\"form-control\" id=\"subCategory\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"itemNumber\">Item number</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"name\">Name</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"price\">Price</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"mainImgSrc\">Image source</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">-->\r\n  <!--</div>-->\r\n  <!--<input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">-->\r\n<!--</form>-->\r\n\r\n\r\n<h2 class=\"page-header\">Add product</h2>\r\n<form (ngSubmit)=\"onAddProductSubmit(addProductForm); addProductForm.reset()\" #addProductForm=\"ngForm\">\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"category0\">Category</label>\r\n    <input name=\"category0\" ngModel #category0=\"ngModel\" class=\"form-control\" id=\"category0\">\r\n  </div>\r\n    <div class=\"form-group\">\r\n    <label for=\"category1\">SubCategory</label>\r\n    <input name=\"category1\" ngModel #category1=\"ngModel\" class=\"form-control\" id=\"category1\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"itemNumber\">Item number</label>\r\n    <input type=\"text\" ngModel name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"name\">Name</label>\r\n    <input type=\"text\" ngModel name=\"name\" class=\"form-control\" id=\"name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"price\">Price</label>\r\n    <input type=\"text\" ngModel name=\"price\" class=\"form-control\" id=\"price\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mainImgSrc\">Image source</label>\r\n    <input type=\"text\" ngModel name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\r\n  </div>\r\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\r\n</form>"
 
 /***/ }),
 
@@ -1519,7 +1522,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-detail/products-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-detail works!\n</p>\n"
+module.exports = "<p>\r\n  products-detail works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1580,7 +1583,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-list/products-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-list works!\n</p>\n"
+module.exports = "<p>\r\n  products-list works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1728,7 +1731,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-section/products-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-section works!\n</p>\n<div *ngFor=\"let product of products\" class=\"col-sm-4 col-xs-6\">\n  <app-item [product]=\"product\"></app-item>\n</div>"
+module.exports = "<p>\r\n  products-section works!\r\n</p>\r\n<div *ngFor=\"let product of products\" class=\"col-sm-4 col-xs-6\">\r\n  <app-item [product]=\"product\"></app-item>\r\n</div>"
 
 /***/ }),
 
@@ -1821,7 +1824,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-side-menu/products-side-menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-side-menu works!\n</p>\n\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n  <a [routerLink]=\"['']\">Home</a>\n</li>\n\n<ul>\n  <!--<ul *ngIf=\"showMain\">-->\n  <li *ngFor=\"let categories of catalog; let i = index\">\n    <a *ngIf=\"sub === 0\"\n       class=\"btn btn-primary\" (click)=\"navigate(categories.category0, null, 1, i)\"  role=\"button\">\n      {{categories.category0}}</a>\n\n    <ul>{{main}}-{{categories.category0}}-{{selectedCat}}-{{i}}</ul>\n    <ul *ngIf=\"selectedCat === i && sub === 1\">\n      <li *ngFor=\"let category1 of categories.category1\">\n\n        <a class=\"btn btn-primary\" (click)=\"navigate(categories.category0, category1, 1, i)\"  role=\"button\">\n          {{categories.category0}}-{{category1}}</a>\n      </li>\n      <li>\n        <a class=\"btn btn-primary\" (click)=\"navigate(categories.category0, null, 0, i)\"  role=\"button\">\n          back</a>\n      </li>\n    </ul>\n\n</ul>\n\n\n  <div *ngFor=\"let menuItem of menuList.items\">\n    <ul>\n    <li>\n      <a class=\"btn btn-primary\"  (click)=\"navigateMenu(menuList.parent, menuItem)\" role=\"button\">\n        {{menuList.parent}}-{{menuItem}} </a>\n      <a class=\"btn btn-primary\" (click)=\"navigateMenu(menuList.parent, 'goBack')\"  role=\"button\">Back</a>\n    </li>\n    </ul>\n  </div>\n\n\n<!--<ul>-->\n  <!--<li *ngFor=\"let categories of catalog\" (click)=\"select(categories.category0, null);\"-->\n    <!--[ngClass]=\"{active: isActive(categories.category0)}\"><span>{{categories.category0}}</span>-->\n    <!--<ul style=\"display:none;\">-->\n      <!--<li *ngFor=\"let category1 of categories.category1\">{{category1}}</li>-->\n\n    <!--</ul>-->\n  <!--</li>-->\n<!--</ul>-->\n\n"
+module.exports = "<p>\r\n  products-side-menu works!\r\n</p>\r\n\r\n<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n  <a [routerLink]=\"['']\">Home</a>\r\n</li>\r\n\r\n<ul>\r\n  <!--<ul *ngIf=\"showMain\">-->\r\n  <li *ngFor=\"let categories of catalog; let i = index\">\r\n    <a *ngIf=\"sub === 0\"\r\n       class=\"btn btn-primary\" (click)=\"navigate(categories.category0, null, 1, i)\"  role=\"button\">\r\n      {{categories.category0}}</a>\r\n\r\n    <ul>{{main}}-{{categories.category0}}-{{selectedCat}}-{{i}}</ul>\r\n    <ul *ngIf=\"selectedCat === i && sub === 1\">\r\n      <li *ngFor=\"let category1 of categories.category1\">\r\n\r\n        <a class=\"btn btn-primary\" (click)=\"navigate(categories.category0, category1, 1, i)\"  role=\"button\">\r\n          {{categories.category0}}-{{category1}}</a>\r\n      </li>\r\n      <li>\r\n        <a class=\"btn btn-primary\" (click)=\"navigate(categories.category0, null, 0, i)\"  role=\"button\">\r\n          back</a>\r\n      </li>\r\n    </ul>\r\n\r\n</ul>\r\n\r\n\r\n  <div *ngFor=\"let menuItem of menuList.items\">\r\n    <ul>\r\n    <li>\r\n      <a class=\"btn btn-primary\"  (click)=\"navigateMenu(menuList.parent, menuItem)\" role=\"button\">\r\n        {{menuList.parent}}-{{menuItem}} </a>\r\n      <a class=\"btn btn-primary\" (click)=\"navigateMenu(menuList.parent, 'goBack')\"  role=\"button\">Back</a>\r\n    </li>\r\n    </ul>\r\n  </div>\r\n\r\n\r\n<!--<ul>-->\r\n  <!--<li *ngFor=\"let categories of catalog\" (click)=\"select(categories.category0, null);\"-->\r\n    <!--[ngClass]=\"{active: isActive(categories.category0)}\"><span>{{categories.category0}}</span>-->\r\n    <!--<ul style=\"display:none;\">-->\r\n      <!--<li *ngFor=\"let category1 of categories.category1\">{{category1}}</li>-->\r\n\r\n    <!--</ul>-->\r\n  <!--</li>-->\r\n<!--</ul>-->\r\n\r\n"
 
 /***/ }),
 
@@ -2003,7 +2006,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".clicked {\r\n  color: brown;\r\n  font-weight: bold;\r\n}\r\n\r\nli {\r\n  cursor: pointer;\r\n}\r\n", ""]);
 
 // exports
 
@@ -2016,7 +2019,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-submenu/products-submenu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<ol class=\"breadcrumb\">-->\n  <!--<li>{{category0}}</li>-->\n  <!--<li>{{category1}}</li>-->\n<!--</ol>-->\n\n\n\n<!--<div class=\"btn-group btn-breadcrumb\" role=\"group\">-->\n\n  <!--<button [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"-->\n          <!--type=\"button\" class=\"btn\"-->\n          <!--[routerLink]=\"['']\">Home</button>-->\n  <!--<button type=\"button\" class=\"btn btn-primary\"-->\n          <!--(click)=\"navigate(category0, null)\">Back to {{category0}}</button>-->\n  <!--<button *ngFor=\"let submenuItem of submenuList; let i = index\"-->\n          <!--type=\"button\" class=\"btn btn-default\"-->\n          <!--(click)=\"navigate(null ,submenuItem)\">{{submenuItem}}</button>-->\n<!--</div>-->\n\n<ol class=\"breadcrumb\">\n  <li> <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\n          [routerLink]=\"['']\">Home</a> <span class=\"divider\">></span>  </li>\n  <li> <a  (click)=\"navigate(category0, null)\">Back to {{category0}}</a> <span class=\"divider\">></span>  </li>\n  <li *ngFor=\"let submenuItem of submenuList\" >\n    <!--<a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"-->\n          <!--(click)=\"navigate(null ,submenuItem)\">{{submenuItem}}</a> </li> -->\n\n    <a class=\"breadcrumb-item active\" (click)=\"navigate(null ,submenuItem)\">{{submenuItem}}</a> </li>\n</ol>"
+module.exports = "<!--<ol class=\"breadcrumb\">-->\r\n  <!--<li>{{category0}}</li>-->\r\n  <!--<li>{{category1}}</li>-->\r\n<!--</ol>-->\r\n\r\n\r\n\r\n<!--<div class=\"btn-group btn-breadcrumb\" role=\"group\">-->\r\n\r\n  <!--<button [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"-->\r\n          <!--type=\"button\" class=\"btn\"-->\r\n          <!--[routerLink]=\"['']\">Home</button>-->\r\n  <!--<button type=\"button\" class=\"btn btn-primary\"-->\r\n          <!--(click)=\"navigate(category0, null)\">Back to {{category0}}</button>-->\r\n  <!--<button *ngFor=\"let submenuItem of submenuList; let i = index\"-->\r\n          <!--type=\"button\" class=\"btn btn-default\"-->\r\n          <!--(click)=\"navigate(null ,submenuItem)\">{{submenuItem}}</button>-->\r\n<!--</div>-->\r\n\r\n<ol class=\"breadcrumb\">\r\n  <li> <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\r\n          [routerLink]=\"['']\">Home</a> <span class=\"divider\">></span>  </li>\r\n  <li> <a  (click)=\"navigate(category0, null)\">Back to {{category0}}</a> <span class=\"divider\">></span>  </li>\r\n  <li *ngFor=\"let submenuItem of submenuList; let i = index\" >\r\n    <!--<a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"-->\r\n          <!--(click)=\"navigate(null ,submenuItem)\">{{submenuItem}}</a> </li> -->\r\n\r\n    <a [ngClass]=\"{clicked: currentCategory1 === i}\" (click)=\"navigate(null ,submenuItem, i)\">\r\n     </a> </li>\r\n\r\n</ol>\r\n"
 
 /***/ }),
 
@@ -2044,6 +2047,8 @@ var ProductsSubmenuComponent = (function () {
     function ProductsSubmenuComponent(router, route) {
         this.router = router;
         this.route = route;
+        this.prop1 = true;
+        this.prop2 = true;
         this.submenuList = [];
     }
     ProductsSubmenuComponent.prototype.ngOnInit = function () {
@@ -2060,7 +2065,8 @@ var ProductsSubmenuComponent = (function () {
             });
         });
     };
-    ProductsSubmenuComponent.prototype.navigate = function (category0, category1) {
+    ProductsSubmenuComponent.prototype.navigate = function (category0, category1, i) {
+        this.currentCategory1 = i;
         console.log('category0', this.category0);
         console.log('category1', category1);
         if (category0) {
@@ -2071,6 +2077,10 @@ var ProductsSubmenuComponent = (function () {
             this.router.navigate(['/products', { outlets: { primary: this.category0 + '/' + category1,
                         productsSubmenu: this.category0 + '/' + category1 } }]);
         }
+    };
+    ProductsSubmenuComponent.prototype.setClasses = function () {
+        var classes = { clicked: this.prop1, b: this.prop2 };
+        return classes;
     };
     return ProductsSubmenuComponent;
 }());
@@ -2109,7 +2119,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <!--<div class=\"col-sm-3\">-->\n\n    <!--<h2>Side menu</h2>-->\n    <router-outlet name=\"productsSubmenu\"></router-outlet>\n</div>\n  <!--<div class=\"col-sm-9\">-->\n    <!--<h2>Main</h2>-->\n    <div class=\"row\">\n      <router-outlet></router-outlet>\n    </div>\n\n\n\n\n"
+module.exports = "<div class=\"row\">\r\n  <!--<div class=\"col-sm-3\">-->\r\n\r\n    <!--<h2>Side menu</h2>-->\r\n    <router-outlet name=\"productsSubmenu\"></router-outlet>\r\n</div>\r\n  <!--<div class=\"col-sm-9\">-->\r\n    <!--<h2>Main</h2>-->\r\n    <div class=\"row\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
