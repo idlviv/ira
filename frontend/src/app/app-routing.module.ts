@@ -5,13 +5,13 @@ import { NgModule } from '@angular/core';
 import { ProductsManagementComponent } from './components/products-management/products-management.component';
 // import { SolodkoComponent } from '../components/categories/solodko/solodko.component';
 // import { ToysComponent } from '../components/categories/toys/toys.component';
-import { RegisterComponent } from './components/register/register.component';
-import { LoginComponent } from './components/login/login.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RegisterComponent } from './components/users-management/register/register.component';
+import { LoginComponent } from './components/users-management/login/login.component';
+import { DashboardComponent } from './components/users-management/dashboard/dashboard.component';
 // import { HomeComponent } from '../components/home/home.component';
 // import { HomeSectionComponent } from '../components/home/home-section/home-section.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { Page404Component } from './components/page404/page404.component';
+import { ProfileComponent } from './components/users-management/profile/profile.component';
+import { Page404Component } from './components/shared/page404/page404.component';
 // import { SideMenuComponent } from '../components/menu/side-menu/side-menu.component';
 import {ProductsComponent} from "./components/products/products.component";
 
@@ -21,9 +21,9 @@ const appRoutes: Routes = [
   {path: 'home',
     loadChildren: './components/home/home-routing.module#HomeRoutingModule'
   },
-  {path: 'products',
-    loadChildren: './components/products/products.module#ProductsModule'
-  },
+  // {path: 'products',
+  //   loadChildren: './components/products/products.module#ProductsModule'
+  // },
   // {path: 'toys',
   //   loadChildren: './components/products/products.module#ProductsModule'
   // },

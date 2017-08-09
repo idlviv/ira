@@ -3,10 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { NgModule } from '@angular/core';
 
-import { SolodkoComponent } from '../categories/solodko/solodko.component';
-import { ToysComponent } from '../categories/toys/toys.component';
 import { HomeSectionComponent } from './home-section/home-section.component';
-import {SideMenuComponent} from "../menu/side-menu/side-menu.component";
+import {SideMenuComponent} from "./side-menu/side-menu.component";
 import {HomeComponent} from "./home.component";
 
 const homeRoutes: Routes = [
@@ -18,11 +16,10 @@ const homeRoutes: Routes = [
         path: '',
         component: HomeSectionComponent
       },
-
-      {
-        path: ':id',
-        component: SolodkoComponent
-      },
+      // {
+      //   path: ':id',
+      //   component: SolodkoComponent
+      // },
       {
         path: '',
         outlet: 'sidemenu',

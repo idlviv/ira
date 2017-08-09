@@ -15,7 +15,7 @@ export class EditProductComponent implements OnInit {
 
   products: Object;
   isActive: Boolean = false;
-  selectedRow : Number;
+  selectedRow: Number;
   isEditBtnShow: Boolean = true;
   // showAddProduct: Boolean = false;
 

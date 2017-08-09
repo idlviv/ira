@@ -25,7 +25,7 @@
     <!--<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"-->
           <!--(click)="navigate(null ,submenuItem)">{{submenuItem}}</a> </li> -->
 
-    <a [ngClass]="{clicked: currentCategory1 === i}" (click)="navigate(null ,submenuItem, i)">
-     </a> </li>
+    <a [ngClass]="{clicked: currentCategory1 === i}" (click)="navigate(null ,submenuItem, i)"> {{submenuItem}}
+     </a>  </li>
 
 </ol>

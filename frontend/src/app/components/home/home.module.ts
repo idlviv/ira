@@ -1,21 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import {ItemComponent} from "../item/item.component";
-import {Page404Component} from "../page404/page404.component";
-import {ProductsModule} from "../products/products.module";
+import {HomeSectionComponent} from './home-section/home-section.component';
+import {SharedModule} from '../shared/shared.module';
+import {HomeComponent} from './home.component';
+import {SideMenuComponent} from './side-menu/side-menu.component';
+import {HomeRoutingModule} from './home-routing.module';
 
 @NgModule({
   declarations: [
-    ItemComponent,
-    Page404Component
+    HomeSectionComponent,
+    HomeComponent,
+    SideMenuComponent
   ],
   imports: [
+    HomeRoutingModule,
     CommonModule,
+    SharedModule
   ],
-  exports: [
-    ItemComponent,
-    Page404Component
-  ]
+  exports: []
+
 })
 export class HomeModule {}

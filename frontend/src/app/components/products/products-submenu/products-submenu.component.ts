@@ -34,10 +34,10 @@ export class ProductsSubmenuComponent implements OnInit {
       this.category1 = params.category1;
 
       this.catalog.forEach((value) => {
-        if(params.category0 === value.category0) {
+        if (params.category0 === value.category0) {
           this.submenuList = value.category1;
         }
-      })
+      });
     });
   }
 

@@ -7,14 +7,14 @@ import {ProductsSectionComponent} from "./products-section/products-section.comp
 import { ProductsSideMenuComponent } from './products-side-menu/products-side-menu.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductsDetailComponent } from './products-detail/products-detail.component';
-import {HomeModule} from "../home/home.module";
 import { ProductsSubmenuComponent } from './products-submenu/products-submenu.component';
+import {SharedModule} from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     ProductsRoutingModule,
-    HomeModule
+    SharedModule
   ],
   declarations: [
     ProductsComponent,
