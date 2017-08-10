@@ -22,7 +22,6 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-
 app.use(require('./server/middleware/sendHttpError'));
 
 app.use(passport.initialize());
@@ -32,11 +31,11 @@ require('./server/config/passport')(passport);
 app.use('/api', users);
 app.use('/api', products);
 
-app.get('/', (req,res) => {
+app.use('/', (req,res) => {
   res.sendFile(path.join(__dirname, '/public'));
 });
 
-app.get('*', function(req, res) {
+app.use('*', function(req, res) {
   res.redirect('/');
 });
 

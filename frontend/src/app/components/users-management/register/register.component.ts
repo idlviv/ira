@@ -74,7 +74,18 @@ export class RegisterComponent implements OnInit {
           });
         this.router.navigate(['/register']);
       }
-    })
+    },
+    error => {
+      if (error.status === 401) {
+        this.flashMessage.show(
+          'Please login',
+          {
+            cssClass: 'alert-danger',
+            timeout: 3000
+          });
+        this.router.navigate(['/login']);
+      }
+    });
   }
 
 }

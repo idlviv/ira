@@ -7,7 +7,9 @@ let UserModel = require('../models/userModel');
 const config = require('../config');
 
 // реєстрація і повернення результату в фронт
-router.post('/register', function(req, res, next) {
+router.post('/register',
+  passport.authenticate('jwt', {session: false}),
+  function(req, res, next) {
   let newUser = new UserModel({
     name: req.body.name,
     email: req.body.email,

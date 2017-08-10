@@ -15,30 +15,39 @@ const productsRoutes: Routes = [
     children: [
       {
         path: '',
-        component: ProductsSectionComponent
+        component: ProductsListComponent
       },
       {
         path: '',
         outlet: 'productsSubmenu',
-        component: ProductsSideMenuComponent
+        component: ProductsSubmenuComponent
       },
       {
-        path: ':category0',
-        component: ProductsSectionComponent,
+        path: 'category/:category0',
+        component: ProductsListComponent
       },
       {
-        path: ':category0',
-        outlet: 'productsSubmenu',
-        component: ProductsSubmenuComponent,
-      },
-      {
-        path: ':category0/:category1',
-        component: ProductsSectionComponent
-      },
-      {
-        path: ':category0/:category1',
+        path: 'category/:category0',
         outlet: 'productsSubmenu',
         component: ProductsSubmenuComponent
+      },
+      {
+        path: ':category0',
+        component: ProductsListComponent,
+      },
+      {
+        path: ':category0',
+        outlet: 'productsSubmenu',
+        component: ProductsSideMenuComponent,
+      },
+      {
+        path: ':category0/:category1',
+        component: ProductsListComponent
+      },
+      {
+        path: ':category0/:category1',
+        outlet: 'productsSubmenu',
+        component: ProductsSideMenuComponent
       },
       {
         path: '**',

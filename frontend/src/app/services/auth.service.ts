@@ -13,7 +13,9 @@ export class AuthService {
   // register.component підписується на registerUser
   // юзер з хедером передається на сервер
   registerUser(user) {
-    let headers = new Headers();
+    const headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
     return this.http.post(
       'api/register',
@@ -23,7 +25,7 @@ export class AuthService {
   }
 
   authUser(user) {
-    let headers = new Headers();
+    const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post(
       'api/authenticate',
@@ -42,7 +44,7 @@ export class AuthService {
     let headers = new Headers();
     this.loadToken();
     headers.append('Authorization', this.authToken);
-    // headers.append('Content-Type', 'application/json');
+    headers.append('Content-Type', 'application/json');
     return this.http.get(
       'api/profile',
       {headers: headers})

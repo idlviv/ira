@@ -1,11 +1,9 @@
-import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { NgModule } from '@angular/core';
 
 import { HomeSectionComponent } from './home-section/home-section.component';
-import {SideMenuComponent} from "./side-menu/side-menu.component";
-import {HomeComponent} from "./home.component";
+import {SideMenuComponent} from './side-menu/side-menu.component';
+import {HomeComponent} from './home.component';
 
 const homeRoutes: Routes = [
   {
@@ -16,22 +14,17 @@ const homeRoutes: Routes = [
         path: '',
         component: HomeSectionComponent
       },
-      // {
-      //   path: ':id',
-      //   component: SolodkoComponent
-      // },
       {
         path: '',
         outlet: 'sidemenu',
         component: SideMenuComponent
       },
       {
-        path: ':id',
-        outlet: 'sidemenu',
-        component: SideMenuComponent
+        path: '**',
+        component: HomeSectionComponent
       },
       {
-        path: ':**',
+        path: '**',
         outlet: 'sidemenu',
         component: SideMenuComponent
       }]

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {IProduct} from "../../../interfaces/i-product";
-import {ProductService} from "../../../services/product.service";
-import {FlashMessagesService} from "angular2-flash-messages";
+import {ActivatedRoute} from '@angular/router';
+import {IProduct} from '../../../interfaces/i-product';
+import {ProductService} from '../../../services/product.service';
+import {FlashMessagesService} from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-products-section',

@@ -2,6 +2,7 @@ import { Component, OnInit, Output} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import {ICatalog} from '../../../interfaces/i-catalog';
 import {catalog} from '../../../data/catalog';
+import {MyUrlSerializer} from '../../../services/url-serializer.service';
 
 @Component({
   selector: 'app-products-submenu',
@@ -15,7 +16,6 @@ export class ProductsSubmenuComponent implements OnInit {
 
   prop1 = true;
   prop2 = true;
-  // clickedButton: boolean = false;
 
   catalog: ICatalog[];
   submenuList: string[] = [];
@@ -23,13 +23,13 @@ export class ProductsSubmenuComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
+    private customUrlSerializer: MyUrlSerializer
   ) { }
 
   ngOnInit() {
     this.catalog = catalog;
-
+    console.log('url', this.router.url);
     this.route.params.subscribe(params => {
-      console.log('params', params);
       this.category0 = params.category0;
       this.category1 = params.category1;
 
@@ -46,8 +46,7 @@ export class ProductsSubmenuComponent implements OnInit {
     console.log('category0', this.category0);
     console.log('category1', category1);
     if (category0) {
-      this.router.navigate(['/products', {outlets: {primary: category0,
-        productsSubmenu:  category0}}]);
+      this.router.navigate(['/products', {outlets: {primary: category0, productsSubmenu:  category0}}]);
     } else {
       this.router.navigate(['/products', {outlets: {primary: this.category0 + '/' + category1,
         productsSubmenu:  this.category0 + '/' + category1}}]);
@@ -59,3 +58,4 @@ export class ProductsSubmenuComponent implements OnInit {
     return classes;
   }
 }
+

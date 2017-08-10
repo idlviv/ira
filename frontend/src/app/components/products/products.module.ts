@@ -23,6 +23,7 @@ import {SharedModule} from '../shared/shared.module';
     ProductsListComponent,
     ProductsDetailComponent,
     ProductsSubmenuComponent,
-  ]
+  ],
+
 })
 export class ProductsModule { }
