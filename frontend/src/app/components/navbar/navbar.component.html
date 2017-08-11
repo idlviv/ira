@@ -16,9 +16,11 @@
         <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
           <a [routerLink]="['/']">Home</a></li>
         <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-          <a [routerLink]="['/products', {outlets: {primary: 'category/toys', productsSubmenu: 'category/toys'}}]">Toys</a></li>
+          <a [routerLink]="['/products', {outlets: {primary: 'category/toys/main',
+           productsSubmenu: 'category/toys/main'}}]">Toys</a></li>
         <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-          <a [routerLink]="['/products', {outlets: {primary: 'category/flowers', productsSubmenu: 'category/flowers'}}]">Flowers</a></li>
+          <a [routerLink]="['/products', {outlets: {primary: 'category/flowers/main',
+           productsSubmenu: 'category/flowers/main'}}]">Flowers</a></li>
 
         <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
           <a [routerLink]="['/products', {outlets: {primary: 'toys', productsSubmenu: 'toys'}}]">TToys</a></li>

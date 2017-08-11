@@ -1,12 +1,17 @@
 <ol class="breadcrumb">
+  <!--<li> <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"-->
+          <!--[routerLink]="['']">Home</a><span class="divider">></span></li>-->
   <li> <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"
-          [routerLink]="['']">Home</a> <span class="divider">></span>  </li>
-  <li> <a  (click)="navigate(category0, null)">Back to {{category0}}</a> <span class="divider">></span>  </li>
+       [routerLink]="['/products', {outlets: {primary: 'category/' + category0 + '/main',
+        productsSubmenu:  'category/' + category0 + '/main'}}]">{{category0}}</a> <span class="divider">></span> </li>
   <li *ngFor="let submenuItem of submenuList; let i = index" >
-    <!--<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"-->
-          <!--(click)="navigate(null ,submenuItem)">{{submenuItem}}</a> </li> -->
+    <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"
+       [routerLink]="['/products', {outlets: {primary: 'category/' + category0 + '/' + submenuItem,
+        productsSubmenu:  'category/' + category0 + '/' + submenuItem}}]">{{submenuItem}}</a></li>
 
-    <a [ngClass]="{clicked: currentCategory1 === i}" (click)="navigate(null ,submenuItem, i)"> {{submenuItem}}
-     </a>  </li>
+  <!--<li> <a  (click)="navigate(category0, null)">Back to {{category0}}</a> <span class="divider">></span>  </li>-->
+  <!--<li *ngFor="let submenuItem of submenuList; let i = index" >-->
+    <!--<a [ngClass]="{clicked: currentCategory1 === i}" (click)="go(submenuItem, i)"> {{submenuItem}}-->
+     <!--</a>  </li>-->
 
 </ol>

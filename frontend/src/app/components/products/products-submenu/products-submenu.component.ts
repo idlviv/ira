@@ -10,8 +10,8 @@ import {MyUrlSerializer} from '../../../services/url-serializer.service';
   styleUrls: ['./products-submenu.component.css']
 })
 export class ProductsSubmenuComponent implements OnInit {
-  category0: string;
-  category1: string;
+category0: string;
+category1: string;
   currentCategory1: number;
 
   prop1 = true;
@@ -33,6 +33,7 @@ export class ProductsSubmenuComponent implements OnInit {
       this.category0 = params.category0;
       this.category1 = params.category1;
 
+      // this.category1 = params.category1;
       this.catalog.forEach((value) => {
         if (params.category0 === value.category0) {
           this.submenuList = value.category1;
@@ -41,21 +42,26 @@ export class ProductsSubmenuComponent implements OnInit {
     });
   }
 
-  navigate(category0, category1, i) {
+  go(category1, i) {
     this.currentCategory1 = i;
-    console.log('category0', this.category0);
-    console.log('category1', category1);
-    if (category0) {
-      this.router.navigate(['/products', {outlets: {primary: category0, productsSubmenu:  category0}}]);
-    } else {
-      this.router.navigate(['/products', {outlets: {primary: this.category0 + '/' + category1,
-        productsSubmenu:  this.category0 + '/' + category1}}]);
-    }
+    this.category1 = category1;
   }
 
-  setClasses() {
-    const classes = {clicked: this.prop1, b: this.prop2};
-    return classes;
-  }
+  // navigate(category0, category1, i) {
+  //   this.currentCategory1 = i;
+  //   console.log('category0', this.category0);
+  //   console.log('category1', category1);
+  //   if (category0) {
+  //     this.router.navigate(['/products', {outlets: {primary: category0, productsSubmenu:  category0}}]);
+  //   } else {
+  //     this.router.navigate(['/products', {outlets: {primary: this.category0 + '/' + category1,
+  //       productsSubmenu:  this.category0 + '/' + category1}}]);
+  //   }
+//   // }
+//
+//   setClasses() {
+//     const classes = {clicked: this.prop1, b: this.prop2};
+//     return classes;
+//   }
 }
 

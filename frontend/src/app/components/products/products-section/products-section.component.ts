@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {IProduct} from '../../../interfaces/i-product';
 import {ProductService} from '../../../services/product.service';
@@ -20,14 +20,16 @@ export class ProductsSectionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
     this.route.params.subscribe(params => {
       this.searchQuery = {
             'catalog.category0': params.category0,
-            'catalog.category1': params.category1,
+            'catalog.category1': params.category1 === 'main' ? {$exists: true} : params.category1,
           };
       this.onChangeRoute(this.searchQuery);
     });
   }
+
   onChangeRoute(searchQuery) {
     this.productService.getQueriedProducts(searchQuery)
         .subscribe(

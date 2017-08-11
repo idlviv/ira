@@ -15,7 +15,7 @@ const productsRoutes: Routes = [
     children: [
       {
         path: '',
-        component: ProductsListComponent
+        component: ProductsSectionComponent
       },
       {
         path: '',
@@ -23,11 +23,11 @@ const productsRoutes: Routes = [
         component: ProductsSubmenuComponent
       },
       {
-        path: 'category/:category0',
-        component: ProductsListComponent
+        path: 'category/:category0/:category1',
+        component: ProductsSectionComponent
       },
       {
-        path: 'category/:category0',
+        path: 'category/:category0/:category1',
         outlet: 'productsSubmenu',
         component: ProductsSubmenuComponent
       },
