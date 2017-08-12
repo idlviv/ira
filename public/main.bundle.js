@@ -317,7 +317,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home-section/home-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<p>\n  home-section works!\n</p>\n\n<!--<router-outlet></router-outlet>-->\n<div *ngFor=\"let product of products\" class=\"col-sm-4 col-xs-6\">\n  <app-item [product]=\"product\"></app-item>\n</div>"
+module.exports = "\r\n<p>\r\n  home-section works!\r\n</p>\r\n\r\n<!--<router-outlet></router-outlet>-->\r\n<div *ngFor=\"let product of products\" class=\"col-sm-4 col-xs-6\">\r\n  <app-item [product]=\"product\"></app-item>\r\n</div>"
 
 /***/ }),
 
@@ -598,7 +598,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<nav class=\"navbar navbar-light bg-faded navbar-toggleable-sm\">-->\r\n  <!--<div class=\"container\">-->\r\n    <!--<button type=\"button\" class=\"navbar-toggler collapsed navbar-toggler-right\"-->\r\n            <!--data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">&#x2630;</button> <a class=\"navbar-brand\" href=\"#\">Brand</a>-->\r\n    <!--<div id=\"navbar\"-->\r\n         <!--class=\"collapse navbar-collapse\">-->\r\n      <!--<ul class=\"nav navbar-nav \">-->\r\n        <!--<li [routerlinkactive]=\"[&apos;active&apos;]\" [routerlinkactiveoptions]=\"{exact: true}\"-->\r\n            <!--class=\"nav-item\"> <a [routerlink]=\"[&apos;/&apos;]\" class=\"nav-link\">Home</a>-->\r\n        <!--</li>-->\r\n        <!--<li [routerlinkactive]=\"[&apos;active&apos;]\" [routerlinkactiveoptions]=\"{exact: true}\"-->\r\n            <!--class=\"nav-item\"> <a [routerlink]=\"[&apos;/products&apos;, {outlets: {primary: &apos;category/toys/main&apos;,-->\r\n\r\n           <!--productsSubmenu: &apos;category/toys/main&apos;}}]\" class=\"nav-link\">Toys</a>-->\r\n        <!--</li>-->\r\n        <!--<li [routerlinkactive]=\"[&apos;active&apos;]\" [routerlinkactiveoptions]=\"{exact: true}\"-->\r\n            <!--class=\"nav-item\"> <a [routerlink]=\"[&apos;/products&apos;, {outlets: {primary: &apos;category/flowers/main&apos;,-->\r\n\r\n           <!--productsSubmenu: &apos;category/flowers/main&apos;}}]\" class=\"nav-link\">Flowers</a>-->\r\n        <!--</li>-->\r\n        <!--<li [routerlinkactive]=\"[&apos;active&apos;]\" [routerlinkactiveoptions]=\"{exact: true}\"-->\r\n            <!--class=\"nav-item\"> <a [routerlink]=\"[&apos;/products&apos;, {outlets: {primary: &apos;toys&apos;, productsSubmenu: &apos;toys&apos;}}]\"-->\r\n                                 <!--class=\"nav-link\">TToys</a>-->\r\n        <!--</li>-->\r\n        <!--<li [routerlinkactive]=\"[&apos;active&apos;]\" [routerlinkactiveoptions]=\"{exact: true}\"-->\r\n            <!--class=\"nav-item\"> <a [routerlink]=\"[&apos;/products&apos;, {outlets: {primary: &apos;flowers&apos;, productsSubmenu: &apos;flowers&apos;}}]\"-->\r\n                                 <!--class=\"nav-link\">FFlowers</a>-->\r\n        <!--</li>-->\r\n      <!--</ul>-->\r\n      <!--<ul class=\"nav navbar-nav ml-auto\">-->\r\n        <!--<li *ngif=\"authService.loggedIn()\" [routerlinkactive]=\"[&apos;active&apos;]\"-->\r\n            <!--[routerlinkactiveoptions]=\"{exact: true}\" class=\"nav-item\"> <a [routerlink]=\"[&apos;/dashboard&apos;]\" class=\"nav-link\">Dashboard</a>-->\r\n        <!--</li>-->\r\n        <!--<li *ngif=\"authService.loggedIn()\" [routerlinkactive]=\"[&apos;active&apos;]\"-->\r\n            <!--[routerlinkactiveoptions]=\"{exact: true}\" class=\"nav-item\"> <a [routerlink]=\"[&apos;/product-management&apos;]\" class=\"nav-link\">Product Management</a>-->\r\n        <!--</li>-->\r\n        <!--<li *ngif=\"authService.loggedIn()\" [routerlinkactive]=\"[&apos;active&apos;]\"-->\r\n            <!--[routerlinkactiveoptions]=\"{exact: true}\" class=\"nav-item\"> <a [routerlink]=\"[&apos;/profile&apos;]\" class=\"nav-link\">Profile</a>-->\r\n        <!--</li>-->\r\n        <!--<li *ngif=\"!authService.loggedIn()\" [routerlinkactive]=\"[&apos;active&apos;]\"-->\r\n            <!--[routerlinkactiveoptions]=\"{exact: true}\" class=\"nav-item\"> <a [routerlink]=\"[&apos;/login&apos;]\" class=\"nav-link\">Login</a>-->\r\n        <!--</li>-->\r\n        <!--<li *ngif=\"authService.loggedIn()\" [routerlinkactive]=\"[&apos;active&apos;]\"-->\r\n            <!--[routerlinkactiveoptions]=\"{exact: true}\" class=\"nav-item\"> <a [routerlink]=\"[&apos;/register&apos;]\" class=\"nav-link\">Register</a>-->\r\n        <!--</li>-->\r\n        <!--<li *ngif=\"authService.loggedIn()\" class=\"nav-item\"><a (click)=\"onLogoutClick()\" href=\"#\" class=\"nav-link\">Logout</a>-->\r\n        <!--</li>-->\r\n      <!--</ul>-->\r\n    <!--</div>-->\r\n    <!--&lt;!&ndash;/.nav-collapse &ndash;&gt;-->\r\n  <!--</div>-->\r\n<!--</nav>-->\r\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n  <a class=\"navbar-brand\" href=\"#\">Brand</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"\r\n          aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home</a></li>\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/products', {outlets: {primary: 'category/toys/main',\r\n           productsSubmenu: 'category/toys/main'}}]\">Toys</a></li>\r\n      <li class=\"nav-item active\">\r\n        <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">Link</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link disabled\" href=\"#\">Disabled</a>\r\n      </li>\r\n    </ul>\r\n    <form class=\"form-inline my-2 my-lg-0\">\r\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">\r\n      <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\r\n    </form>\r\n  </div>\r\n</nav>\r\n\r\n<nav class=\"navbar navbar-default\">\r\n  <div class=\"container\">\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\"\r\n              aria-expanded=\"false\" aria-controls=\"navbar\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand\" href=\"#\">Brand</a>\r\n    </div>\r\n    <div id=\"navbar\" class=\"collapse navbar-collapse\">\r\n      <ul class=\"nav navbar-nav navbar-left\">\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/']\">Home</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/products', {outlets: {primary: 'category/toys/main',\r\n           productsSubmenu: 'category/toys/main'}}]\">Toys</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/products', {outlets: {primary: 'category/flowers/main',\r\n           productsSubmenu: 'category/flowers/main'}}]\">Flowers</a></li>\r\n\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/products', {outlets: {primary: 'toys', productsSubmenu: 'toys'}}]\">TToys</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/products', {outlets: {primary: 'flowers', productsSubmenu: 'flowers'}}]\">FFlowers</a></li>\r\n      </ul>\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/product-management']\">Product Management</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/profile']\">Profile</a></li>\r\n        <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/login']\">Login</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/register']\">Register</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\r\n      </ul>\r\n    </div><!--/.nav-collapse -->\r\n  </div>\r\n</nav>\r\n"
+module.exports = "<!--<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">-->\r\n  <!--<a class=\"navbar-brand\" href=\"#\">Brand</a>-->\r\n  <!--<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"-->\r\n          <!--aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">-->\r\n    <!--<span class=\"navbar-toggler-icon\"></span>-->\r\n  <!--</button>-->\r\n\r\n  <!--<div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">-->\r\n    <!--<ul class=\"navbar-nav mr-auto\">-->\r\n      <!--<li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n        <!--<a class=\"nav-link\" [routerLink]=\"['/']\">Home</a></li>-->\r\n      <!--<li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n        <!--<a class=\"nav-link\" [routerLink]=\"['/products', {outlets: {primary: 'category/toys/main',-->\r\n           <!--productsSubmenu: 'category/toys/main'}}]\">Toys</a></li>-->\r\n      <!--<li class=\"nav-item active\">-->\r\n        <!--<a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>-->\r\n      <!--</li>-->\r\n      <!--<li class=\"nav-item\">-->\r\n        <!--<a class=\"nav-link\" href=\"#\">Link</a>-->\r\n      <!--</li>-->\r\n      <!--<li class=\"nav-item\">-->\r\n        <!--<a class=\"nav-link disabled\" href=\"#\">Disabled</a>-->\r\n      <!--</li>-->\r\n    <!--</ul>-->\r\n    <!--<form class=\"form-inline my-2 my-lg-0\">-->\r\n      <!--<input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">-->\r\n      <!--<button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>-->\r\n    <!--</form>-->\r\n  <!--</div>-->\r\n<!--</nav>-->\r\n\r\n<nav class=\"navbar navbar-default\">\r\n  <div class=\"container\">\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\"\r\n              aria-expanded=\"false\" aria-controls=\"navbar\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand\" href=\"#\">Brand</a>\r\n    </div>\r\n    <div id=\"navbar\" class=\"collapse navbar-collapse\">\r\n      <ul class=\"nav navbar-nav navbar-left\">\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/']\">Home</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/products', {outlets: {primary: 'category/toys/main',\r\n           productsSubmenu: 'category/toys/main'}}]\">Toys</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/products', {outlets: {primary: 'category/flowers/main',\r\n           productsSubmenu: 'category/flowers/main'}}]\">Flowers</a></li>\r\n\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/products', {outlets: {primary: 'toys', productsSubmenu: 'toys'}}]\">TToys</a></li>\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/products', {outlets: {primary: 'flowers', productsSubmenu: 'flowers'}}]\">FFlowers</a></li>\r\n      </ul>\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/product-management']\">Product Management</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/profile']\">Profile</a></li>\r\n        <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/login']\">Login</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n          <a [routerLink]=\"['/register']\">Register</a></li>\r\n        <li *ngIf=\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\r\n      </ul>\r\n    </div><!--/.nav-collapse -->\r\n  </div>\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -679,7 +679,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/add-product/add-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<h2 class=\"page-header\">Add product</h2>-->\n<!--<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"category\">Category</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"category\" name=\"category\" class=\"form-control\" id=\"category\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"subCategory\">Sub Category</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"subCategory\" name=\"subCategory\" class=\"form-control\" id=\"subCategory\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"itemNumber\">Item number</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"name\">Name</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"price\">Price</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"mainImgSrc\">Image source</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">-->\n  <!--</div>-->\n  <!--<input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">-->\n<!--</form>-->\n\n\n<h2 class=\"page-header\">Add product</h2>\n<form (ngSubmit)=\"onAddProductSubmit(addProductForm); addProductForm.reset()\" #addProductForm=\"ngForm\">\n\n  <div class=\"form-group\">\n    <label for=\"category0\">Category</label>\n    <input name=\"category0\" ngModel #category0=\"ngModel\" class=\"form-control\" id=\"category0\">\n  </div>\n    <div class=\"form-group\">\n    <label for=\"category1\">SubCategory</label>\n    <input name=\"category1\" ngModel #category1=\"ngModel\" class=\"form-control\" id=\"category1\">\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"itemNumber\">Item number</label>\n    <input type=\"text\" ngModel name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"name\">Name</label>\n    <input type=\"text\" ngModel name=\"name\" class=\"form-control\" id=\"name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"price\">Price</label>\n    <input type=\"text\" ngModel name=\"price\" class=\"form-control\" id=\"price\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"mainImgSrc\">Image source</label>\n    <input type=\"text\" ngModel name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\n</form>"
+module.exports = "<!--<h2 class=\"page-header\">Add product</h2>-->\r\n<!--<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"category\">Category</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"category\" name=\"category\" class=\"form-control\" id=\"category\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"subCategory\">Sub Category</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"subCategory\" name=\"subCategory\" class=\"form-control\" id=\"subCategory\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"itemNumber\">Item number</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"name\">Name</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"price\">Price</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"mainImgSrc\">Image source</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">-->\r\n  <!--</div>-->\r\n  <!--<input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">-->\r\n<!--</form>-->\r\n\r\n\r\n<h2 class=\"page-header\">Add product</h2>\r\n<form (ngSubmit)=\"onAddProductSubmit(addProductForm); addProductForm.reset()\" #addProductForm=\"ngForm\">\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"category0\">Category</label>\r\n    <input name=\"category0\" ngModel #category0=\"ngModel\" class=\"form-control\" id=\"category0\">\r\n  </div>\r\n    <div class=\"form-group\">\r\n    <label for=\"category1\">SubCategory</label>\r\n    <input name=\"category1\" ngModel #category1=\"ngModel\" class=\"form-control\" id=\"category1\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"itemNumber\">Item number</label>\r\n    <input type=\"text\" ngModel name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"name\">Name</label>\r\n    <input type=\"text\" ngModel name=\"name\" class=\"form-control\" id=\"name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"price\">Price</label>\r\n    <input type=\"text\" ngModel name=\"price\" class=\"form-control\" id=\"price\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mainImgSrc\">Image source</label>\r\n    <input type=\"text\" ngModel name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\r\n  </div>\r\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\r\n</form>"
 
 /***/ }),
 
@@ -1103,7 +1103,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-detail/products-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-detail works!\n</p>\n"
+module.exports = "<p>\r\n  products-detail works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1248,6 +1248,7 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__products_list_products_list_component__ = __webpack_require__("../../../../../src/app/components/products/products-list/products-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_page404_page404_component__ = __webpack_require__("../../../../../src/app/components/shared/page404/page404.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__products_submenu_products_submenu_component__ = __webpack_require__("../../../../../src/app/components/products/products-submenu/products-submenu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_product_resolver__ = __webpack_require__("../../../../../src/app/services/product.resolver.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1255,6 +1256,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1279,12 +1281,14 @@ var productsRoutes = [
             },
             {
                 path: 'category/:category0/:category1',
-                component: __WEBPACK_IMPORTED_MODULE_3__products_section_products_section_component__["a" /* ProductsSectionComponent */]
+                component: __WEBPACK_IMPORTED_MODULE_3__products_section_products_section_component__["a" /* ProductsSectionComponent */],
+                resolve: { products: __WEBPACK_IMPORTED_MODULE_8__services_product_resolver__["a" /* ResolverService */] }
             },
             {
                 path: 'category/:category0/:category1',
                 outlet: 'productsSubmenu',
-                component: __WEBPACK_IMPORTED_MODULE_7__products_submenu_products_submenu_component__["a" /* ProductsSubmenuComponent */]
+                component: __WEBPACK_IMPORTED_MODULE_7__products_submenu_products_submenu_component__["a" /* ProductsSubmenuComponent */],
+                resolve: { products: __WEBPACK_IMPORTED_MODULE_8__services_product_resolver__["a" /* ResolverService */] }
             },
             {
                 path: ':category0',
@@ -1350,7 +1354,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-section/products-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-section works!\n</p>\n<div *ngFor=\"let product of products\" class=\"col-sm-4 col-xs-6\">\n  <app-item [product]=\"product\"></app-item>\n</div>"
+module.exports = "<p>\r\n  products-section works!\r\n</p>\r\n<div *ngFor=\"let product of products\" class=\"col-sm-4 col-xs-6\">\r\n  <app-item [product]=\"product\"></app-item>\r\n</div>"
 
 /***/ }),
 
@@ -1692,6 +1696,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__products_detail_products_detail_component__ = __webpack_require__("../../../../../src/app/components/products/products-detail/products-detail.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__products_submenu_products_submenu_component__ = __webpack_require__("../../../../../src/app/components/products/products-submenu/products-submenu.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__shared_shared_module__ = __webpack_require__("../../../../../src/app/components/shared/shared.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_product_resolver__ = __webpack_require__("../../../../../src/app/services/product.resolver.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductsModule", function() { return ProductsModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1699,6 +1704,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1719,7 +1725,7 @@ ProductsModule = __decorate([
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
             __WEBPACK_IMPORTED_MODULE_3__products_routing_module__["a" /* ProductsRoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_9__shared_shared_module__["a" /* SharedModule */]
+            __WEBPACK_IMPORTED_MODULE_9__shared_shared_module__["a" /* SharedModule */],
         ],
         declarations: [
             __WEBPACK_IMPORTED_MODULE_2__products_component__["a" /* ProductsComponent */],
@@ -1729,6 +1735,9 @@ ProductsModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_7__products_detail_products_detail_component__["a" /* ProductsDetailComponent */],
             __WEBPACK_IMPORTED_MODULE_8__products_submenu_products_submenu_component__["a" /* ProductsSubmenuComponent */],
         ],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_10__services_product_resolver__["a" /* ResolverService */]
+        ]
     })
 ], ProductsModule);
 
@@ -2494,6 +2503,62 @@ AuthService = __decorate([
 
 var _a;
 //# sourceMappingURL=auth.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/product.resolver.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResolverService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ResolverService = (function () {
+    function ResolverService(productService) {
+        this.productService = productService;
+    }
+    ResolverService.prototype.resolve = function (route, state) {
+        var category0 = route.params.category0;
+        var category1 = route.params.category1;
+        this.searchQuery = {
+            'catalog.category0': category0,
+            'catalog.category1': category1 === 'main' ? { $exists: true } : category1,
+        };
+        return this.productService.getQueriedProducts(this.searchQuery);
+        // .subscribe(
+        //   (products) => {
+        //     this.products = products;
+        //   },
+        //   (error) => {
+        //     this.flashMessage.show(
+        //       error,
+        //       {
+        //         cssClass: 'alert-danger',
+        //         timeout: 3000
+        //       });
+        //     return false;
+        //   });
+    };
+    return ResolverService;
+}());
+ResolverService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__product_service__["a" /* ProductService */]) === "function" && _a || Object])
+], ResolverService);
+
+var _a;
+//# sourceMappingURL=product.resolver.js.map
 
 /***/ }),
 

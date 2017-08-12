@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ProductsComponent } from './products.component';
-import {ProductsRoutingModule} from "./products-routing.module";
-import {ProductsSectionComponent} from "./products-section/products-section.component";
-import { ProductsSideMenuComponent } from './products-side-menu/products-side-menu.component';
-import { ProductsListComponent } from './products-list/products-list.component';
-import { ProductsDetailComponent } from './products-detail/products-detail.component';
-import { ProductsSubmenuComponent } from './products-submenu/products-submenu.component';
+import {ProductsComponent} from './products.component';
+import {ProductsRoutingModule} from './products-routing.module';
+import {ProductsSectionComponent} from './products-section/products-section.component';
+import {ProductsSideMenuComponent} from './products-side-menu/products-side-menu.component';
+import {ProductsListComponent} from './products-list/products-list.component';
+import {ProductsDetailComponent} from './products-detail/products-detail.component';
+import {ProductsSubmenuComponent} from './products-submenu/products-submenu.component';
 import {SharedModule} from '../shared/shared.module';
+import {ResolverService} from '../../services/product.resolver';
 
 @NgModule({
   imports: [
     CommonModule,
     ProductsRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   declarations: [
     ProductsComponent,
@@ -24,6 +25,8 @@ import {SharedModule} from '../shared/shared.module';
     ProductsDetailComponent,
     ProductsSubmenuComponent,
   ],
-
+  providers: [
+    ResolverService
+  ]
 })
 export class ProductsModule { }

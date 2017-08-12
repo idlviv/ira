@@ -58,7 +58,6 @@ import {MyUrlSerializer} from './services/url-serializer.service';
   ],
   providers: [
     MyUrlSerializer,
-    // {provide: UrlSerializer, useClass: CustomUrlSerializer}
     // ValidateService,
     // AuthService,
     // AuthGuard,
