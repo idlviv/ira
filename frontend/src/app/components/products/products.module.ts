@@ -9,7 +9,6 @@ import {ProductsListComponent} from './products-list/products-list.component';
 import {ProductsDetailComponent} from './products-detail/products-detail.component';
 import {ProductsSubmenuComponent} from './products-submenu/products-submenu.component';
 import {SharedModule} from '../shared/shared.module';
-import {ResolverService} from '../../services/product.resolver';
 
 @NgModule({
   imports: [
@@ -26,7 +25,6 @@ import {ResolverService} from '../../services/product.resolver';
     ProductsSubmenuComponent,
   ],
   providers: [
-    ResolverService
   ]
 })
 export class ProductsModule { }
