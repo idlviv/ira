@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 
 import {AuthService} from './auth.service';
+import {config} from '../app.config';
 
 
 import {IProduct} from '../interfaces/i-product';
@@ -19,7 +20,7 @@ export class ProductService {
   getProducts() {
 
       return this.http.get(
-        'api/getProducts')
+        config.serverUrl + 'api/getProducts')
         .map(res => res.json());
   }
 
@@ -32,7 +33,7 @@ export class ProductService {
 
     let options = new RequestOptions({ headers: headers, params: params });
       return this.http.get(
-        'api/getDistinctCategories',
+        config.serverUrl + 'api/getDistinctCategories',
         options)
         .map(res => res.json());
   }
@@ -46,7 +47,7 @@ export class ProductService {
 
     let options = new RequestOptions({ headers: headers, params: params });
       return this.http.get(
-        'api/getDistinctProducts',
+        config.serverUrl + 'api/getDistinctProducts',
         options)
         .map(res => res.json());
   }
@@ -61,7 +62,7 @@ export class ProductService {
 
     let options = new RequestOptions({ headers: headers, params: params });
       return this.http.get(
-        'api/getQueriedProducts',
+        config.serverUrl + 'api/getQueriedProducts',
         options)
         .map(res => res.json());
   }
@@ -74,7 +75,7 @@ export class ProductService {
 
     headers.append('Content-Type', 'application/json');
     return this.http.post(
-      'api/addProduct',
+      config.serverUrl + 'api/addProduct',
       product,
       {headers: headers})
       .map(res => res.json())
@@ -88,7 +89,7 @@ export class ProductService {
 
     headers.append('Content-Type', 'application/json');
     return this.http.put(
-      'api/editProduct',
+      config.serverUrl + 'api/editProduct',
       product,
       {headers: headers})
       .map(res => res.json())
@@ -102,7 +103,7 @@ export class ProductService {
     headers.append('Content-Type', 'application/json');
     console.log('api/deleteProduct/'+ _id);
     return this.http.delete(
-      'api/deleteProduct/'+ _id,
+      config.serverUrl + 'api/deleteProduct/'+ _id,
       {headers: headers})
       .map(res => res.json())
   }

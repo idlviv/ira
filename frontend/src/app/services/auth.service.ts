@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {tokenNotExpired} from 'angular2-jwt';
+import {config} from '../app.config';
 
 @Injectable()
 export class AuthService {
@@ -18,7 +19,7 @@ export class AuthService {
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
     return this.http.post(
-      'api/register',
+      config.serverUrl + 'api/register',
       user,
       {headers: headers})
       .map(res => res.json());
@@ -28,7 +29,7 @@ export class AuthService {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post(
-      'api/authenticate',
+      config.serverUrl + 'api/authenticate',
       user,
       {headers: headers})
       .map(res => res.json());
@@ -46,7 +47,7 @@ export class AuthService {
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
     return this.http.get(
-      'api/profile',
+      config.serverUrl + 'api/profile',
       {headers: headers})
       .map(res => res.json());
   }

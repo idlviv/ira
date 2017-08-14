@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { HomeSectionComponent } from './home-section/home-section.component';
 import {SideMenuComponent} from './side-menu/side-menu.component';
 import {HomeComponent} from './home.component';
+import {ResolverService} from '../../services/product.resolver';
 
 const homeRoutes: Routes = [
   {
@@ -12,7 +13,8 @@ const homeRoutes: Routes = [
     children: [
       {
         path: '',
-        component: HomeSectionComponent
+        component: HomeSectionComponent,
+        resolve: {products: ResolverService}
       },
       {
         path: '',
