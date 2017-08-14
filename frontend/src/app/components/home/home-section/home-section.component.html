@@ -3,7 +3,9 @@
   home-section works!
 </p>
 
-<!--<router-outlet></router-outlet>-->
-<div *ngFor="let product of products" class="col-sm-4 col-xs-6">
-  <app-item [product]="product"></app-item>
+<div class="row">
+  <div *ngFor="let product of products" class="col-md-4 col-6">
+    <app-item [product]="product"></app-item>
+  </div>
 </div>
+
