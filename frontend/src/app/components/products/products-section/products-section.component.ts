@@ -11,41 +11,56 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 })
 export class ProductsSectionComponent implements OnInit {
   products: IProduct[];
-  searchQuery: object;
+  // searchQuery: object;
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService,
+    // private productService: ProductService,
     private flashMessage: FlashMessagesService
   ) { }
 
   ngOnInit() {
 
-    this.route.params.subscribe(params => {
-      this.searchQuery = {
-            'catalog.category0': params.category0,
-            'catalog.category1': params.category1 === 'main' ? {$exists: true} : params.category1,
-          };
-      this.onChangeRoute(this.searchQuery);
-    });
+    // this.route.params.subscribe(params => {
+    //   this.searchQuery = {
+    //         'catalog.category0': params.category0,
+    //         'catalog.category1': params.category1 === 'main' ? {$exists: true} : params.category1,
+    //       };
+    //   this.onChangeRoute(this.searchQuery);
+    // });
+
+    this.route.data
+      .subscribe(
+        data => {
+          this.products = data.products;
+        },
+        (error) => {
+          this.flashMessage.show(
+            error,
+            {
+              cssClass: 'alert-danger',
+              timeout: 3000
+            });
+          return false;
+        });
   }
 
-  onChangeRoute(searchQuery) {
-    this.productService.getQueriedProducts(searchQuery)
-        .subscribe(
-          (products) => {
-            this.products = products;
-          },
-          (error) => {
-            this.flashMessage.show(
-              error,
-              {
-                cssClass: 'alert-danger',
-                timeout: 3000
-              });
-            return false;
-          });
-  }
+  // onChangeRoute(searchQuery) {
+  //   this.productService.getQueriedProducts(searchQuery)
+  //       .subscribe(
+  //         (products) => {
+  //           this.products = products;
+  //         },
+  //         (error) => {
+  //           this.flashMessage.show(
+  //             error,
+  //             {
+  //               cssClass: 'alert-danger',
+  //               timeout: 3000
+  //             });
+  //           return false;
+  //         });
+  // }
 
 
   // ngOnInit() {

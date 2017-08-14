@@ -18,7 +18,6 @@ export class ProductService {
               private authService: AuthService) { }
 
   getProducts() {
-
       return this.http.get(
         config.serverUrl + 'api/getProducts')
         .map(res => res.json());

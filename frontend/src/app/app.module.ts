@@ -16,7 +16,7 @@ import {SharedModule} from './components/shared/shared.module';
 import {UsersManagementModule} from './components/users-management/users-management.module';
 import {ProductsManagementModule} from './components/products-management/products-management.module';
 import {MyUrlSerializer} from './services/url-serializer.service';
-import {ResolverService} from './services/product.resolver';
+import {ResolverService} from './services/product-resolver.service';
 
 @NgModule({
   declarations: [

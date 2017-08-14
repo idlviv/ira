@@ -1,5 +1,5 @@
 <h2 class="page-header">Edit product</h2>
-<table *ngIf="products"  class="table table-hover">
+<table *ngIf="products"  class="table table-sm">
   <form *ngFor="let product of products; let i = index" (submit)="onEditProductSubmit(product, i)"
         #editProductForm="ngForm">
     <thead *ngIf="product === products[0]">
@@ -19,50 +19,50 @@
       <tr [class.active]="i === selectedRow" >
           <td class="edit-product-table-first-cell">
 
-            <button type="button" (click)="onClickEditBtn(i, product._id)" class="btn btn-default btn-xs"
-                    [class.hidden]="!isEditBtnShow">
-               <span  class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+            <button type="button" (click)="onClickEditBtn(i, product._id)" class="btn btn-secondary btn-sm"
+                    [class.hide]="!isEditBtnShow">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
             </button>
+            <div class="btn-group" role="group" aria-label="Edit">
+              <button type="submit" class="btn btn-secondary btn-sm" [class.hide]="!(i === selectedRow)">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </button>
 
-            <button type="submit" class="btn btn-default btn-xs" [class.hidden]="!(i === selectedRow)">
-              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-            </button>
-
-            <button type="button" class="btn btn-default btn-xs" (click)="onClickCancelEditBtn(i, product._id)"
-                    [class.hidden]="!(i === selectedRow)">
-              <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
-            </button>
-
+              <button type="button" class="btn btn-secondary btn-sm" (click)="onClickCancelEditBtn(i, product._id)"
+                      [class.hide]="!(i === selectedRow)">
+                <i class="fa fa-ban" aria-hidden="true"></i>
+              </button>
+            </div>
           </td>
           <td class="edit-product-table-cells">
             <input type="text" [(ngModel)]="product.catalog.category0" [disabled]="!(i===selectedRow)"
-                   name="category0" #category0="ngModel" class="form-control input-sm">
+                   name="category0" #category0="ngModel" class="form-control form-control-sm">
           </td>
           <td class="edit-product-table-cells">
             <input type="text" [(ngModel)]="product.catalog.category1" [disabled]="!(i===selectedRow)"
-                   name="category1" #category1="ngModel" class="form-control input-sm">
+                   name="category1" #category1="ngModel" class="form-control form-control-sm">
           </td>
           <td class="edit-product-table-cells">
             <input type="text" [(ngModel)]="product.itemNumber" [disabled]="!(i===selectedRow)"
-                   name="itemNumber" #itemNumber="ngModel" class="form-control input-sm">
+                   name="itemNumber" #itemNumber="ngModel" class="form-control form-control-sm">
           </td>
           <td class="edit-product-table-cells">
             <input type="text" [(ngModel)]="product.name" [disabled]="!(i===selectedRow)"
-                   name="name" #name="ngModel" class="form-control input-sm">
+                   name="name" #name="ngModel" class="form-control form-control-sm">
           </td>
           <td class="edit-product-table-cells">
             <input type="text" [(ngModel)]="product.price" [disabled]="!(i===selectedRow)"
-                   name="price" #price="ngModel" class="form-control input-sm">
+                   name="price" #price="ngModel" class="form-control form-control-sm">
           </td>
           <td class="edit-product-table-cells">
             <input type="text" [(ngModel)]="product.mainImgSrc" [disabled]="!(i===selectedRow)"
-                   name="mainImgSrc" #mainImgSrc="ngModel" class="form-control input-sm">
+                   name="mainImgSrc" #mainImgSrc="ngModel" class="form-control form-control-sm">
           </td>
           <td class="edit-product-table-last-cell">
 
-            <button type="button" class="btn btn-default btn-xs" (click)="onClickDelBtn(i, product._id)"
+            <button type="button" class="btn btn-secondary btn-sm" (click)="onClickDelBtn(i, product._id)"
                     [class.hidden]="!(i === selectedRow)">
-              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
             </button>
 
           </td>
