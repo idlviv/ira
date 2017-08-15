@@ -15,13 +15,9 @@ const productsRoutes: Routes = [
     component: ProductsComponent,
     children: [
       {
-        path: '',
-        component: ProductsSectionComponent
-      },
-      {
-        path: '',
-        outlet: 'productsSubmenu',
-        component: ProductsSubmenuComponent
+        path: 'start/:category0/:category1',
+        component: ProductsListComponent,
+        resolve: {products: ResolverService}
       },
       {
         path: 'category/:category0/:category1',

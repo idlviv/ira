@@ -12,7 +12,7 @@
   <!--<span class="divider">></span>-->
 
   <a class="breadcrumb-item active"[routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"
-     [routerLink]="['/products', {outlets: {primary: 'category/' + category0 + '/main',
+     [routerLink]="['/products', {outlets: {primary: 'start/' + category0 + '/main',
     productsSubmenu:  'category/' + category0 + '/main'}}]">Show all {{category0}}></a>
 
   <a class="breadcrumb-item" *ngFor="let submenuItem of submenuList; let i = index"

@@ -1,6 +1,9 @@
 <p>
   products-list works!
 </p>
-<div *ngFor="let product of products" class="col-sm-4 col-xs-6">
-  <app-item [product]="product"></app-item>
+<div *ngFor="let submenuItem of submenuList">
+  <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"
+     [routerLink]="['/products', {outlets: {primary: 'category/' + category0 + '/' + submenuItem,
+    productsSubmenu:  'category/' + category0 + '/' + submenuItem}}]">Show {{submenuItem}}</a>
 </div>
+
