@@ -1,6 +1,6 @@
 import {ICatalog} from '../interfaces/i-catalog';
 
-export const catalog: ICatalog[] = [
+export const localCatalog: ICatalog[] = [
   {
     _id: 'x',
     category0: 'toys',
@@ -11,6 +11,12 @@ export const catalog: ICatalog[] = [
     _id: 'x',
     category0: 'flowers',
     category1: ['first', 'second'],
+    description: 'sdfsdfsdfsdfsdfsdf'
+  },
+  {
+    _id: 'x',
+    category0: 'Букети',
+    category1: ['Букети з цукерок', 'Букети з квітів', 'Букети з фруктів'],
     description: 'sdfsdfsdfsdfsdfsdf'
   },
 ];

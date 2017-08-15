@@ -1,7 +1,7 @@
 import { Component, OnInit, Output} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import {ICatalog} from '../../../interfaces/i-catalog';
-import {catalog} from '../../../data/catalog';
+import {localCatalog} from '../../../data/catalog';
 import {MyUrlSerializer} from '../../../services/url-serializer.service';
 
 @Component({
@@ -28,7 +28,7 @@ export class ProductsSideMenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.catalog = catalog;
+    this.catalog = localCatalog;
     console.log('url', this.router.url);
     this.route.params.subscribe(params => {
       this.category0 = params.category0;

@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {IProduct} from '../../../interfaces/i-product';
 import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
-import {catalog} from '../../../data/catalog';
+import {localCatalog} from '../../../data/catalog';
 import {ICatalog} from '../../../interfaces/i-catalog';
 
 
@@ -23,15 +23,14 @@ export class ProductsListComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private productService: ProductService,
-              private flashMessage: FlashMessagesService) {
-  }
+              private flashMessage: FlashMessagesService) {}
 
   ngOnInit() {
-    this.catalog = catalog;
+    this.catalog = localCatalog;
     this.route.params.subscribe(params => {
       this.category0 = params.category0;
       this.category1 = params.category1;
-
+    console.log('product list params', params);
       // this.category1 = params.category1;
       this.catalog.forEach((value) => {
         if (params.category0 === value.category0) {

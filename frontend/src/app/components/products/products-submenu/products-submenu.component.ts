@@ -1,7 +1,7 @@
 import { Component, OnInit, Output} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import {ICatalog} from '../../../interfaces/i-catalog';
-import {catalog} from '../../../data/catalog';
+import {localCatalog} from '../../../data/catalog';
 import {MyUrlSerializer} from '../../../services/url-serializer.service';
 import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
@@ -33,33 +33,34 @@ export class ProductsSubmenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.productService.getCatalog()
-      .subscribe(
-        catalog => {
-          this.catalog = catalog;
-
-          console.log('catalog', this.catalog);
-        },
-        (error) => {
-          this.flashMessage.show(
-            error,
-            {
-              cssClass: 'alert-danger',
-              timeout: 3000
-            });
-          return false;
-        });
+    this.catalog = localCatalog;
+    // this.productService.getCatalog()
+    //   .subscribe(
+    //     catalog => {
+    //       this.catalog = catalog;
+    //
+    //       console.log('catalog', this.catalog);
+    //     },
+    //     (error) => {
+    //       this.flashMessage.show(
+    //         error,
+    //         {
+    //           cssClass: 'alert-danger',
+    //           timeout: 3000
+    //         });
+    //       return false;
+    //     });
 
     this.route.params
       .subscribe(params => {
       this.category0 = params.category0;
       this.category1 = params.category1;
 
-      // this.catalog.forEach((value) => {
-      //   if (params.category0 === value.category0) {
-      //     this.submenuList = value.category1;
-      //   }
-      // });
+      this.catalog.forEach((value) => {
+        if (params.category0 === value.category0) {
+          this.submenuList = value.category1;
+        }
+      });
     });
 
     // this.productService.getCatalog()

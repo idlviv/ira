@@ -19,6 +19,6 @@
   <a class="breadcrumb-item" *ngFor="let submenuItem of submenuList; let i = index"
     [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"
     [routerLink]="['/products', {outlets: {primary: 'category/' + category0 + '/' + submenuItem,
-    productsSubmenu:  'category/' + category0 + '/' + submenuItem}}]">Show {{submenuItem}}</a>
+    productsSubmenu:  'category/' + category0 + '/' + submenuItem}}]">{{submenuItem}}</a>
 
 </nav>
