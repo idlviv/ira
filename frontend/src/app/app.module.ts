@@ -17,6 +17,7 @@ import {UsersManagementModule} from './components/users-management/users-managem
 import {ProductsManagementModule} from './components/products-management/products-management.module';
 import {MyUrlSerializer} from './services/url-serializer.service';
 import {ResolverService} from './services/product-resolver.service';
+import {ProductService} from './services/product.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import {ResolverService} from './services/product-resolver.service';
   ],
   providers: [
     MyUrlSerializer,
-    ResolverService
+    ResolverService,
+    ProductService
     // ValidateService,
     // AuthService,
     // AuthGuard,

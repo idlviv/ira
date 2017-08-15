@@ -47,7 +47,7 @@ export class EditProductComponent implements OnInit {
               timeout: 3000
             });
           return false;
-        })
+        });
   }
 
   // addProductBtn() {

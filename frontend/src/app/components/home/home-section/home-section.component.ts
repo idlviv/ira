@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
-import {IProduct} from "../../../interfaces/i-product";
+import {IProduct} from '../../../interfaces/i-product';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({

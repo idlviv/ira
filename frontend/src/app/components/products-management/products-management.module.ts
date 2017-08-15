@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import {ProductService} from '../../services/product.service';
+// import {ProductService} from '../../services/product.service';
 import {ProductsManagementComponent} from './products-management.component';
 import {AddProductComponent} from './add-product/add-product.component';
 import {EditProductComponent} from './edit-product/edit-product.component';
@@ -20,7 +20,7 @@ import {EditProductComponent} from './edit-product/edit-product.component';
   exports: [
   ],
   providers: [
-    ProductService,
+    // ProductService,
   ]
 })
 export class ProductsManagementModule {}

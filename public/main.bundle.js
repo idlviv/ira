@@ -183,6 +183,7 @@ var config = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_products_management_products_management_module__ = __webpack_require__("../../../../../src/app/components/products-management/products-management.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_url_serializer_service__ = __webpack_require__("../../../../../src/app/services/url-serializer.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_product_resolver_service__ = __webpack_require__("../../../../../src/app/services/product-resolver.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -190,6 +191,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -235,7 +237,8 @@ AppModule = __decorate([
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_13__services_url_serializer_service__["a" /* MyUrlSerializer */],
-            __WEBPACK_IMPORTED_MODULE_14__services_product_resolver_service__["a" /* ResolverService */]
+            __WEBPACK_IMPORTED_MODULE_14__services_product_resolver_service__["a" /* ResolverService */],
+            __WEBPACK_IMPORTED_MODULE_15__services_product_service__["a" /* ProductService */]
             // ValidateService,
             // AuthService,
             // AuthGuard,
@@ -1076,10 +1079,9 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__products_management_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__add_product_add_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__products_management_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__add_product_add_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsManagementModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1090,7 +1092,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
+// import {ProductService} from '../../services/product.service';
 
 
 
@@ -1102,18 +1104,16 @@ var ProductsManagementModule = (function () {
 ProductsManagementModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_4__products_management_component__["a" /* ProductsManagementComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__add_product_add_product_component__["a" /* AddProductComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__edit_product_edit_product_component__["a" /* EditProductComponent */]
+            __WEBPACK_IMPORTED_MODULE_3__products_management_component__["a" /* ProductsManagementComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__add_product_add_product_component__["a" /* AddProductComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__edit_product_edit_product_component__["a" /* EditProductComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */]
         ],
         exports: [],
-        providers: [
-            __WEBPACK_IMPORTED_MODULE_3__services_product_service__["a" /* ProductService */],
-        ]
+        providers: []
     })
 ], ProductsManagementModule);
 
@@ -1203,7 +1203,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-list/products-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  products-list works!\r\n</p>\r\n<div *ngFor=\"let submenuItem of submenuList\">\r\n  <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\r\n     [routerLink]=\"['/products', {outlets: {primary: 'category/' + category0 + '/' + submenuItem,\r\n    productsSubmenu:  'category/' + category0 + '/' + submenuItem}}]\">Show {{submenuItem}}</a>\r\n</div>\r\n\r\n"
+module.exports = "<p>\r\n  products-list works!\r\n</p>\r\n<div class=\"row\">\r\n  <div  class=\"col-lg-3 col-md-4 col-6\" *ngFor=\"let submenuItem of submenuList\">\r\n    <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\r\n       [routerLink]=\"['/products', {outlets: {primary: 'category/' + category0 + '/' + submenuItem,\r\n      productsSubmenu:  'category/' + category0 + '/' + submenuItem}}]\">Show {{submenuItem}}</a>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -1573,7 +1573,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-submenu/products-submenu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<nav class=\"breadcrumb\">\r\n\r\n  <!--<li class=\"breadcrumb-item\"> <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"-->\r\n       <!--[routerLink]=\"['/products', {outlets: {primary: 'category/' + category0 + '/main',-->\r\n        <!--productsSubmenu:  'category/' + category0 + '/main'}}]\">{{category0}}</a> <span class=\"divider\">></span> </li>-->\r\n  <!--<li class=\"breadcrumb-item\" *ngFor=\"let submenuItem of submenuList; let i = index\" >-->\r\n    <!--<a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"-->\r\n       <!--[routerLink]=\"['/products', {outlets: {primary: 'category/' + category0 + '/' + submenuItem,-->\r\n        <!--productsSubmenu:  'category/' + category0 + '/' + submenuItem}}]\">{{submenuItem}}</a></li>-->\r\n\r\n  <!--<span class=\"divider\">></span>-->\r\n\r\n  <a class=\"breadcrumb-item active\"[routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\r\n     [routerLink]=\"['/products', {outlets: {primary: 'start/' + category0 + '/main',\r\n    productsSubmenu:  'category/' + category0 + '/main'}}]\">Show all {{category0}}></a>\r\n\r\n  <a class=\"breadcrumb-item\" *ngFor=\"let submenuItem of submenuList; let i = index\"\r\n    [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\r\n    [routerLink]=\"['/products', {outlets: {primary: 'category/' + category0 + '/' + submenuItem,\r\n    productsSubmenu:  'category/' + category0 + '/' + submenuItem}}]\">Show {{submenuItem}}</a>\r\n\r\n</nav>\r\n"
+module.exports = "\r\n<nav class=\"breadcrumb\">\r\n\r\n  <!--<li class=\"breadcrumb-item\"> <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"-->\r\n       <!--[routerLink]=\"['/products', {outlets: {primary: 'category/' + category0 + '/main',-->\r\n        <!--productsSubmenu:  'category/' + category0 + '/main'}}]\">{{category0}}</a> <span class=\"divider\">></span> </li>-->\r\n  <!--<li class=\"breadcrumb-item\" *ngFor=\"let submenuItem of submenuList; let i = index\" >-->\r\n    <!--<a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"-->\r\n       <!--[routerLink]=\"['/products', {outlets: {primary: 'category/' + category0 + '/' + submenuItem,-->\r\n        <!--productsSubmenu:  'category/' + category0 + '/' + submenuItem}}]\">{{submenuItem}}</a></li>-->\r\n\r\n  <!--<span class=\"divider\">></span>-->\r\n\r\n  <a class=\"breadcrumb-item active\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\r\n     [routerLink]=\"['/products', {outlets: {primary: 'start/' + category0 + '/main',\r\n    productsSubmenu:  'category/' + category0 + '/main'}}]\">{{category0}}></a>\r\n\r\n\r\n  <a class=\"breadcrumb-item\" *ngFor=\"let submenuItem of submenuList; let i = index\"\r\n    [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\r\n    [routerLink]=\"['/products', {outlets: {primary: 'category/' + category0 + '/' + submenuItem,\r\n    productsSubmenu:  'category/' + category0 + '/' + submenuItem}}]\">Show {{submenuItem}}</a>\r\n\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -1583,8 +1583,10 @@ module.exports = "\r\n<nav class=\"breadcrumb\">\r\n\r\n  <!--<li class=\"breadc
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__data_catalog__ = __webpack_require__("../../../../../src/app/data/catalog.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_url_serializer_service__ = __webpack_require__("../../../../../src/app/services/url-serializer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_url_serializer_service__ = __webpack_require__("../../../../../src/app/services/url-serializer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsSubmenuComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1599,28 +1601,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ProductsSubmenuComponent = (function () {
-    function ProductsSubmenuComponent(router, route, customUrlSerializer) {
+    function ProductsSubmenuComponent(productService, router, route, customUrlSerializer, flashMessage) {
+        this.productService = productService;
         this.router = router;
         this.route = route;
         this.customUrlSerializer = customUrlSerializer;
+        this.flashMessage = flashMessage;
         this.prop1 = true;
         this.prop2 = true;
         this.submenuList = [];
     }
     ProductsSubmenuComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.catalog = __WEBPACK_IMPORTED_MODULE_2__data_catalog__["a" /* catalog */];
+        this.productService.getCatalog()
+            .subscribe(function (catal) {
+            _this.catalog = catal;
+            console.log('catalog', _this.catalog);
+        }, function (error) {
+            _this.flashMessage.show(error, {
+                cssClass: 'alert-danger',
+                timeout: 3000
+            });
+            return false;
+        });
         console.log('url', this.router.url);
         this.route.params.subscribe(function (params) {
             _this.category0 = params.category0;
             _this.category1 = params.category1;
             // this.category1 = params.category1;
-            _this.catalog.forEach(function (value) {
-                if (params.category0 === value.category0) {
-                    _this.submenuList = value.category1;
-                }
-            });
+            // this.catalog.forEach((value) => {
+            //   if (params.category0 === value.category0) {
+            //     this.submenuList = value.category1;
+            //   }
+            // });
         });
     };
     ProductsSubmenuComponent.prototype.go = function (category1, i) {
@@ -1635,10 +1650,10 @@ ProductsSubmenuComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/products/products-submenu/products-submenu.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/products/products-submenu/products-submenu.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_url_serializer_service__["a" /* MyUrlSerializer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_url_serializer_service__["a" /* MyUrlSerializer */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_url_serializer_service__["a" /* MyUrlSerializer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_url_serializer_service__["a" /* MyUrlSerializer */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"]) === "function" && _e || Object])
 ], ProductsSubmenuComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=products-submenu.component.js.map
 
 /***/ }),
@@ -1686,7 +1701,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ProductsComponent = (function () {
     function ProductsComponent() {
-        this.catt = 'sdfsdfsdfsdfsdf';
     }
     ProductsComponent.prototype.ngOnInit = function () {
     };
@@ -2374,12 +2388,16 @@ UsersManagementModule = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return catalog; });
 var catalog = [
     {
+        _id: 'x',
         category0: 'toys',
-        category1: ['one', 'two']
+        category1: ['one', 'two'],
+        description: 'sdfsdfsdfsdfsdfsdf'
     },
     {
+        _id: 'x',
         category0: 'flowers',
-        category1: ['first', 'second']
+        category1: ['first', 'second'],
+        description: 'sdfsdfsdfsdfsdfsdf'
     },
 ];
 //# sourceMappingURL=catalog.js.map
@@ -2615,6 +2633,13 @@ var ProductService = (function () {
         this.http = http;
         this.authService = authService;
     }
+    ProductService.prototype.getCatalog = function () {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_4__app_config__["a" /* config */].serverUrl + 'api/getCatalog')
+            .map(function (res) {
+            res.json();
+            console.log('res', res.json());
+        });
+    };
     ProductService.prototype.getProducts = function () {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_4__app_config__["a" /* config */].serverUrl + 'api/getProducts')
             .map(function (res) { return res.json(); });

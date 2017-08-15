@@ -4,7 +4,20 @@ let passport = require('passport');
 let jwt = require('jsonwebtoken');
 
 let ProductModel = require('../models/productModel');
+let CatalogModel = require('../models/catalogModel');
 const config = require('../config');
+
+router.get(
+  '/getCatalog/', (req, res, next) => {
+    CatalogModel.getCatalog()
+      .then((catalog) => {
+        console.log('cat-router', catalog);
+        res.json(catalog);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
 
 router.get(
   '/getProducts/', (req, res, next) => {

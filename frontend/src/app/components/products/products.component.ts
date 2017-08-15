@@ -8,10 +8,8 @@ import {ProductsSubmenuComponent} from "./products-submenu/products-submenu.comp
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  catt: string = 'sdfsdfsdfsdfsdf';
-  constructor(
 
-  ) { }
+  constructor() { }
 
   ngOnInit() {
 

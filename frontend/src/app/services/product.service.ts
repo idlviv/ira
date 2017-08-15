@@ -17,6 +17,16 @@ export class ProductService {
   constructor(private http: Http,
               private authService: AuthService) { }
 
+  getCatalog() {
+      return this.http.get(
+        config.serverUrl + 'api/getCatalog')
+        .map((res) => {
+            res.json();
+            console.log('res', res.json());
+          }
+        );
+  }
+
   getProducts() {
       return this.http.get(
         config.serverUrl + 'api/getProducts')
