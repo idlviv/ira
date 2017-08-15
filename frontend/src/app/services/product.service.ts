@@ -20,11 +20,7 @@ export class ProductService {
   getCatalog() {
       return this.http.get(
         config.serverUrl + 'api/getCatalog')
-        .map((res) => {
-            res.json();
-            console.log('res', res.json());
-          }
-        );
+        .map(res => res.json());
   }
 
   getProducts() {

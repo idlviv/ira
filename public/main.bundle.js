@@ -1616,8 +1616,8 @@ var ProductsSubmenuComponent = (function () {
     ProductsSubmenuComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.productService.getCatalog()
-            .subscribe(function (catal) {
-            _this.catalog = catal;
+            .subscribe(function (catalog) {
+            _this.catalog = catalog;
             console.log('catalog', _this.catalog);
         }, function (error) {
             _this.flashMessage.show(error, {
@@ -1626,17 +1626,45 @@ var ProductsSubmenuComponent = (function () {
             });
             return false;
         });
-        console.log('url', this.router.url);
-        this.route.params.subscribe(function (params) {
+        this.route.params
+            .subscribe(function (params) {
             _this.category0 = params.category0;
             _this.category1 = params.category1;
-            // this.category1 = params.category1;
             // this.catalog.forEach((value) => {
             //   if (params.category0 === value.category0) {
             //     this.submenuList = value.category1;
             //   }
             // });
         });
+        // this.productService.getCatalog()
+        //   .subscribe(
+        //     catalog => {
+        //       this.catalog = catalog;
+        //
+        //       console.log('catalog', this.catalog);
+        //     },
+        //     (error) => {
+        //       this.flashMessage.show(
+        //         error,
+        //         {
+        //           cssClass: 'alert-danger',
+        //           timeout: 3000
+        //         });
+        //       return false;
+        //     });
+        //
+        // console.log('url', this.router.url);
+        // this.route.params.subscribe(
+        //   params => {
+        //   this.category0 = params.category0;
+        //   this.category1 = params.category1;
+        //
+        //   this.catalog.forEach((value) => {
+        //     if (params.category0 === value.category0) {
+        //       this.submenuList = value.category1;
+        //     }
+        //   });
+        // });
     };
     ProductsSubmenuComponent.prototype.go = function (category1, i) {
         this.currentCategory1 = i;
@@ -2635,10 +2663,7 @@ var ProductService = (function () {
     }
     ProductService.prototype.getCatalog = function () {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_4__app_config__["a" /* config */].serverUrl + 'api/getCatalog')
-            .map(function (res) {
-            res.json();
-            console.log('res', res.json());
-        });
+            .map(function (res) { return res.json(); });
     };
     ProductService.prototype.getProducts = function () {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_4__app_config__["a" /* config */].serverUrl + 'api/getProducts')

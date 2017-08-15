@@ -35,8 +35,8 @@ export class ProductsSubmenuComponent implements OnInit {
   ngOnInit() {
     this.productService.getCatalog()
       .subscribe(
-        catal => {
-          this.catalog = catal;
+        catalog => {
+          this.catalog = catalog;
 
           console.log('catalog', this.catalog);
         },
@@ -50,13 +50,10 @@ export class ProductsSubmenuComponent implements OnInit {
           return false;
         });
 
-    console.log('url', this.router.url);
-    this.route.params.subscribe(
-      params => {
+    this.route.params
+      .subscribe(params => {
       this.category0 = params.category0;
       this.category1 = params.category1;
-
-      // this.category1 = params.category1;
 
       // this.catalog.forEach((value) => {
       //   if (params.category0 === value.category0) {
@@ -64,6 +61,36 @@ export class ProductsSubmenuComponent implements OnInit {
       //   }
       // });
     });
+
+    // this.productService.getCatalog()
+    //   .subscribe(
+    //     catalog => {
+    //       this.catalog = catalog;
+    //
+    //       console.log('catalog', this.catalog);
+    //     },
+    //     (error) => {
+    //       this.flashMessage.show(
+    //         error,
+    //         {
+    //           cssClass: 'alert-danger',
+    //           timeout: 3000
+    //         });
+    //       return false;
+    //     });
+    //
+    // console.log('url', this.router.url);
+    // this.route.params.subscribe(
+    //   params => {
+    //   this.category0 = params.category0;
+    //   this.category1 = params.category1;
+    //
+    //   this.catalog.forEach((value) => {
+    //     if (params.category0 === value.category0) {
+    //       this.submenuList = value.category1;
+    //     }
+    //   });
+    // });
   }
 
   go(category1, i) {
