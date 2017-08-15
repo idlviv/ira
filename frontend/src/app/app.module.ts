@@ -18,6 +18,7 @@ import {ProductsManagementModule} from './components/products-management/product
 import {MyUrlSerializer} from './services/url-serializer.service';
 import {ResolverService} from './services/product-resolver.service';
 import {ProductService} from './services/product.service';
+import {CatalogResolverService} from './services/catalog-resolver.service';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import {ProductService} from './services/product.service';
   providers: [
     MyUrlSerializer,
     ResolverService,
+    CatalogResolverService,
     ProductService
     // ValidateService,
     // AuthService,

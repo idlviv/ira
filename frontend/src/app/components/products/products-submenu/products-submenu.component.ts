@@ -33,65 +33,84 @@ export class ProductsSubmenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.catalog = localCatalog;
-    // this.productService.getCatalog()
-    //   .subscribe(
-    //     catalog => {
-    //       this.catalog = catalog;
-    //
-    //       console.log('catalog', this.catalog);
-    //     },
-    //     (error) => {
-    //       this.flashMessage.show(
-    //         error,
-    //         {
-    //           cssClass: 'alert-danger',
-    //           timeout: 3000
-    //         });
-    //       return false;
-    //     });
 
+    console.log('url', this.router.url);
     this.route.params
-      .subscribe(params => {
-      this.category0 = params.category0;
-      this.category1 = params.category1;
+      .subscribe(
+      params => {
 
-      this.catalog.forEach((value) => {
-        if (params.category0 === value.category0) {
-          this.submenuList = value.category1;
-        }
+        this.route.data
+          .subscribe(
+            catalog => {
+              console.log('submenu catalog', catalog);
+              this.catalog = catalog;
+
+              this.category0 = params.category0;
+              this.category1 = params.category1;
+
+              this.catalog.forEach((value) => {
+                  if (params.category0 === value.category0) {
+                    this.submenuList = value.category1;
+                  }
+            },
+            (error) => {
+              this.flashMessage.show(
+                error,
+                {
+                  cssClass: 'alert-danger',
+                  timeout: 3000
+                });
+              return false;
+            });
       });
     });
 
-    // this.productService.getCatalog()
-    //   .subscribe(
-    //     catalog => {
-    //       this.catalog = catalog;
-    //
-    //       console.log('catalog', this.catalog);
-    //     },
-    //     (error) => {
-    //       this.flashMessage.show(
-    //         error,
-    //         {
-    //           cssClass: 'alert-danger',
-    //           timeout: 3000
-    //         });
-    //       return false;
-    //     });
-    //
-    // console.log('url', this.router.url);
-    // this.route.params.subscribe(
-    //   params => {
-    //   this.category0 = params.category0;
-    //   this.category1 = params.category1;
-    //
-    //   this.catalog.forEach((value) => {
-    //     if (params.category0 === value.category0) {
-    //       this.submenuList = value.category1;
-    //     }
-    //   });
-    // });
+//Local
+//    this.catalog = localCatalog;
+//
+//    this.route.params
+//     .subscribe(params => {
+//     this.category0 = params.category0;
+//     this.category1 = params.category1;
+//
+//     this.catalog.forEach((value) => {
+//       if (params.category0 === value.category0) {
+//         this.submenuList = value.category1;
+//       }
+//     });
+//   });
+
+   //DB
+   //  console.log('url', this.router.url);
+   //  this.route.params
+   //    .subscribe(
+   //      params => {
+   //
+   //        this.productService.getCatalog()
+   //          .subscribe(
+   //            catalog => {
+   //              this.catalog = catalog;
+   //
+   //              this.category0 = params.category0;
+   //              this.category1 = params.category1;
+   //
+   //              this.catalog.forEach((value) => {
+   //                  if (params.category0 === value.category0) {
+   //                    this.submenuList = value.category1;
+   //                  }
+   //                },
+   //                (error) => {
+   //                  this.flashMessage.show(
+   //                    error,
+   //                    {
+   //                      cssClass: 'alert-danger',
+   //                      timeout: 3000
+   //                    });
+   //                  return false;
+   //                });
+   //            });
+   //      });
+
   }
 
   go(category1, i) {

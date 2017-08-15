@@ -184,6 +184,7 @@ var config = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_url_serializer_service__ = __webpack_require__("../../../../../src/app/services/url-serializer.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_product_resolver_service__ = __webpack_require__("../../../../../src/app/services/product-resolver.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_catalog_resolver_service__ = __webpack_require__("../../../../../src/app/services/catalog-resolver.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -191,6 +192,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -238,6 +240,7 @@ AppModule = __decorate([
         providers: [
             __WEBPACK_IMPORTED_MODULE_13__services_url_serializer_service__["a" /* MyUrlSerializer */],
             __WEBPACK_IMPORTED_MODULE_14__services_product_resolver_service__["a" /* ResolverService */],
+            __WEBPACK_IMPORTED_MODULE_16__services_catalog_resolver_service__["a" /* CatalogResolverService */],
             __WEBPACK_IMPORTED_MODULE_15__services_product_service__["a" /* ProductService */]
             // ValidateService,
             // AuthService,
@@ -1283,6 +1286,7 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_page404_page404_component__ = __webpack_require__("../../../../../src/app/components/shared/page404/page404.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__products_submenu_products_submenu_component__ = __webpack_require__("../../../../../src/app/components/products/products-submenu/products-submenu.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_product_resolver_service__ = __webpack_require__("../../../../../src/app/services/product-resolver.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_catalog_resolver_service__ = __webpack_require__("../../../../../src/app/services/catalog-resolver.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1290,6 +1294,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1317,6 +1322,7 @@ var productsRoutes = [
                 path: 'category/:category0/:category1',
                 outlet: 'productsSubmenu',
                 component: __WEBPACK_IMPORTED_MODULE_6__products_submenu_products_submenu_component__["a" /* ProductsSubmenuComponent */],
+                resolve: { catalog: __WEBPACK_IMPORTED_MODULE_8__services_catalog_resolver_service__["a" /* CatalogResolverService */] }
             },
             // {
             //   path: ':category0',
@@ -1584,11 +1590,10 @@ module.exports = "\r\n<nav class=\"breadcrumb\">\r\n\r\n  <!--<li class=\"breadc
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__data_catalog__ = __webpack_require__("../../../../../src/app/data/catalog.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_url_serializer_service__ = __webpack_require__("../../../../../src/app/services/url-serializer.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_url_serializer_service__ = __webpack_require__("../../../../../src/app/services/url-serializer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsSubmenuComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1599,7 +1604,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -1618,62 +1622,72 @@ var ProductsSubmenuComponent = (function () {
     }
     ProductsSubmenuComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.catalog = __WEBPACK_IMPORTED_MODULE_2__data_catalog__["a" /* localCatalog */];
-        // this.productService.getCatalog()
-        //   .subscribe(
-        //     catalog => {
-        //       this.catalog = catalog;
-        //
-        //       console.log('catalog', this.catalog);
-        //     },
-        //     (error) => {
-        //       this.flashMessage.show(
-        //         error,
-        //         {
-        //           cssClass: 'alert-danger',
-        //           timeout: 3000
-        //         });
-        //       return false;
-        //     });
+        console.log('url', this.router.url);
         this.route.params
             .subscribe(function (params) {
-            _this.category0 = params.category0;
-            _this.category1 = params.category1;
-            _this.catalog.forEach(function (value) {
-                if (params.category0 === value.category0) {
-                    _this.submenuList = value.category1;
-                }
+            _this.route.data
+                .subscribe(function (catalog) {
+                console.log('submenu catalog', catalog);
+                _this.catalog = catalog;
+                _this.category0 = params.category0;
+                _this.category1 = params.category1;
+                _this.catalog.forEach(function (value) {
+                    if (params.category0 === value.category0) {
+                        _this.submenuList = value.category1;
+                    }
+                }, function (error) {
+                    _this.flashMessage.show(error, {
+                        cssClass: 'alert-danger',
+                        timeout: 3000
+                    });
+                    return false;
+                });
             });
         });
-        // this.productService.getCatalog()
-        //   .subscribe(
-        //     catalog => {
-        //       this.catalog = catalog;
+        //Local
+        //    this.catalog = localCatalog;
         //
-        //       console.log('catalog', this.catalog);
-        //     },
-        //     (error) => {
-        //       this.flashMessage.show(
-        //         error,
-        //         {
-        //           cssClass: 'alert-danger',
-        //           timeout: 3000
-        //         });
-        //       return false;
+        //    this.route.params
+        //     .subscribe(params => {
+        //     this.category0 = params.category0;
+        //     this.category1 = params.category1;
+        //
+        //     this.catalog.forEach((value) => {
+        //       if (params.category0 === value.category0) {
+        //         this.submenuList = value.category1;
+        //       }
         //     });
-        //
-        // console.log('url', this.router.url);
-        // this.route.params.subscribe(
-        //   params => {
-        //   this.category0 = params.category0;
-        //   this.category1 = params.category1;
-        //
-        //   this.catalog.forEach((value) => {
-        //     if (params.category0 === value.category0) {
-        //       this.submenuList = value.category1;
-        //     }
         //   });
-        // });
+        //DB
+        //  console.log('url', this.router.url);
+        //  this.route.params
+        //    .subscribe(
+        //      params => {
+        //
+        //        this.productService.getCatalog()
+        //          .subscribe(
+        //            catalog => {
+        //              this.catalog = catalog;
+        //
+        //              this.category0 = params.category0;
+        //              this.category1 = params.category1;
+        //
+        //              this.catalog.forEach((value) => {
+        //                  if (params.category0 === value.category0) {
+        //                    this.submenuList = value.category1;
+        //                  }
+        //                },
+        //                (error) => {
+        //                  this.flashMessage.show(
+        //                    error,
+        //                    {
+        //                      cssClass: 'alert-danger',
+        //                      timeout: 3000
+        //                    });
+        //                  return false;
+        //                });
+        //            });
+        //      });
     };
     ProductsSubmenuComponent.prototype.go = function (category1, i) {
         this.currentCategory1 = i;
@@ -1687,7 +1701,7 @@ ProductsSubmenuComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/products/products-submenu/products-submenu.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/products/products-submenu/products-submenu.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_url_serializer_service__["a" /* MyUrlSerializer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_url_serializer_service__["a" /* MyUrlSerializer */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesService"]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_url_serializer_service__["a" /* MyUrlSerializer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_url_serializer_service__["a" /* MyUrlSerializer */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"]) === "function" && _e || Object])
 ], ProductsSubmenuComponent);
 
 var _a, _b, _c, _d, _e;
@@ -2586,6 +2600,56 @@ AuthService = __decorate([
 
 var _a;
 //# sourceMappingURL=auth.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/catalog-resolver.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CatalogResolverService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var CatalogResolverService = (function () {
+    function CatalogResolverService(productService) {
+        this.productService = productService;
+    }
+    CatalogResolverService.prototype.resolve = function (route, state) {
+        return this.productService.getCatalog();
+        // .subscribe(
+        //   (products) => {
+        //     this.products = products;
+        //   },
+        //   (error) => {
+        //     this.flashMessage.show(
+        //       error,
+        //       {
+        //         cssClass: 'alert-danger',
+        //         timeout: 3000
+        //       });
+        //     return false;
+        //   });
+    };
+    return CatalogResolverService;
+}());
+CatalogResolverService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__product_service__["a" /* ProductService */]) === "function" && _a || Object])
+], CatalogResolverService);
+
+var _a;
+//# sourceMappingURL=catalog-resolver.service.js.map
 
 /***/ }),
 
