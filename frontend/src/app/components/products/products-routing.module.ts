@@ -29,7 +29,6 @@ const productsRoutes: Routes = [
         path: 'category/:category0/:category1',
         outlet: 'productsSubmenu',
         component: ProductsSubmenuComponent,
-        resolve: {catalog: CatalogResolverService}
       },
       // {
       //   path: ':category0',

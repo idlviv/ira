@@ -1,13 +1,33 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CatalogService} from './services/catalog.service';
+import {FlashMessagesService} from 'angular2-flash-messages';
+import {ICatalog} from './interfaces/i-catalog';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  public catalog: ICatalog[];
 
-  title = 'app works!';
-  constructor() { }
+  constructor(private catalogService: CatalogService,
+              private flashMessage: FlashMessagesService) { }
 
+  ngOnInit() {
+    this.catalogService.getCatalog()
+      .subscribe(
+          (catalog) => {
+            this.catalog = catalog;
+          },
+          (error) => {
+            this.flashMessage.show(
+              error,
+              {
+                cssClass: 'alert-danger',
+                timeout: 3000
+              });
+            return false;
+          });
+  }
 }

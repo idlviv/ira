@@ -1,13 +1,13 @@
 const mongoose = require('../libs/mongoose');
 
 const ProductSchema = mongoose.Schema({
-  catalog: {
-    category0: {
-      type: String
+  category0: {
+      type: String,
+      required: true
     },
-    category1: {
-      type: String
-    }
+  category1: {
+    type: String,
+    required: true
   },
   itemNumber: {
     type: String,
@@ -20,10 +20,22 @@ const ProductSchema = mongoose.Schema({
   },
   price: {
     type: Number,
+    required: true,
   },
   mainImgSrc: {
-    type: String
+    type: []
   },
+  itemDescription: {
+    type: String,
+    unique: true,
+    required: true
+  },
+  showOnMainPage: {
+    type: Boolean
+  },
+  discount: {
+    type: Number
+  }
 });
 
 let ProductModel = mongoose.model('products', ProductSchema);

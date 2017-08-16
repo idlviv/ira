@@ -8,20 +8,11 @@ import 'rxjs/add/operator/map';
 import {AuthService} from './auth.service';
 import {config} from '../app.config';
 
-
-import {IProduct} from '../interfaces/i-product';
-
 @Injectable()
 export class ProductService {
 
   constructor(private http: Http,
               private authService: AuthService) { }
-
-  getCatalog() {
-      return this.http.get(
-        config.serverUrl + 'api/getCatalog')
-        .map(res => res.json());
-  }
 
   getProducts() {
       return this.http.get(

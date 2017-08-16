@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {Router} from '@angular/router';
+import {IProduct} from '../../../interfaces/i-product';
 
 @Component({
   moduleId: module.id,
@@ -13,7 +14,7 @@ import {Router} from '@angular/router';
 
 export class EditProductComponent implements OnInit {
 
-  products: Object;
+  products: IProduct[];
   isActive: Boolean = false;
   selectedRow: Number;
   isEditBtnShow: Boolean = true;
@@ -151,5 +152,6 @@ export class EditProductComponent implements OnInit {
           }
         }
       );
+
   }
 }

@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import {EditProductComponent} from './edit-product/edit-product.component';
 
 @Component({

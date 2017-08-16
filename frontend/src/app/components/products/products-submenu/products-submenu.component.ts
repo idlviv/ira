@@ -1,10 +1,11 @@
 import { Component, OnInit, Output} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import {ICatalog} from '../../../interfaces/i-catalog';
-import {localCatalog} from '../../../data/catalog';
+// import {localCatalog} from '../../../data/catalog';
 import {MyUrlSerializer} from '../../../services/url-serializer.service';
 import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
+import {AppComponent} from '../../../app.component';
 
 @Component({
   selector: 'app-products-submenu',
@@ -20,7 +21,7 @@ export class ProductsSubmenuComponent implements OnInit {
   prop1 = true;
   prop2 = true;
 
-  catalog: any;
+  catalog: ICatalog[];
 
   submenuList: string[] = [];
 
@@ -30,14 +31,53 @@ export class ProductsSubmenuComponent implements OnInit {
     private route: ActivatedRoute,
     private customUrlSerializer: MyUrlSerializer,
     private flashMessage: FlashMessagesService,
-  ) { }
+    private appComponent: AppComponent
+) { }
 
   ngOnInit() {
-    this.route.params
-      .subscribe(params => console.log('params', params));
-    this.route.data
-      .subscribe(params => console.log('data', params));
 
+    this.route.params
+      .subscribe(
+      params => {
+
+              console.log('submenu catalog', this.appComponent.catalog);
+              this.catalog = this.appComponent.catalog;
+
+              this.category0 = params.category0;
+              this.category1 = params.category1;
+
+              this.catalog.forEach((value) => {
+                  if (params.category0 === value.category0) {
+                    this.submenuList = value.category1;
+                  }
+                });
+              },
+      (error) => {
+        this.flashMessage.show(
+          error,
+          {
+            cssClass: 'alert-danger',
+            timeout: 3000
+          });
+        return false;
+      });
+
+// Local
+//    this.catalog = localCatalog;
+//
+//    this.route.params
+//     .subscribe(params => {
+//     this.category0 = params.category0;
+//     this.category1 = params.category1;
+//
+//     this.catalog.forEach((value) => {
+//       if (params.category0 === value.category0) {
+//         this.submenuList = value.category1;
+//       }
+//     });
+//   });
+
+   //DB
     // this.route.params
     //   .subscribe(
     //   params => {
@@ -67,53 +107,6 @@ export class ProductsSubmenuComponent implements OnInit {
     //         });
     //   });
     // });
-
-//Local
-//    this.catalog = localCatalog;
-//
-//    this.route.params
-//     .subscribe(params => {
-//     this.category0 = params.category0;
-//     this.category1 = params.category1;
-//
-//     this.catalog.forEach((value) => {
-//       if (params.category0 === value.category0) {
-//         this.submenuList = value.category1;
-//       }
-//     });
-//   });
-
-   //DB
-   //  console.log('url', this.router.url);
-   //  this.route.params
-   //    .subscribe(
-   //      params => {
-   //
-   //        this.productService.getCatalog()
-   //          .subscribe(
-   //            catalog => {
-   //              this.catalog = catalog;
-   //
-   //              this.category0 = params.category0;
-   //              this.category1 = params.category1;
-   //
-   //              this.catalog.forEach((value) => {
-   //                  if (params.category0 === value.category0) {
-   //                    this.submenuList = value.category1;
-   //                  }
-   //                },
-   //                (error) => {
-   //                  this.flashMessage.show(
-   //                    error,
-   //                    {
-   //                      cssClass: 'alert-danger',
-   //                      timeout: 3000
-   //                    });
-   //                  return false;
-   //                });
-   //            });
-   //      });
-
   }
 
   go(category1, i) {

@@ -35,21 +35,6 @@ export class HomeSectionComponent implements OnInit {
             });
           return false;
         });
-
-    // this.productService.getProducts()
-    //   .subscribe(
-    //     (products) => {
-    //       this.products = products;
-    //     },
-    //     (error) => {
-    //       this.flashMessage.show(
-    //         error,
-    //         {
-    //           cssClass: 'alert-danger',
-    //           timeout: 3000
-    //         });
-    //       return false;
-    //     })
-  }
+    }
 
 }

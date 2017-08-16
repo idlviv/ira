@@ -4,7 +4,7 @@ import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../services/auth.service';
-import {IProduct} from "../../../interfaces/i-product";
+import {IProduct} from '../../../interfaces/i-product';
 import {NgForm} from '@angular/forms';
 
 @Component({
@@ -16,10 +16,7 @@ import {NgForm} from '@angular/forms';
 
 export class AddProductComponent implements OnInit {
   product: IProduct;
-  // itemNumber: String;
-  // name: String;
-  // price: Number;
-  // mainImgSrc: String;
+
   @Output() updateProducts = new EventEmitter();
 
   constructor(
@@ -35,18 +32,18 @@ export class AddProductComponent implements OnInit {
 
   onAddProductSubmit(form: NgForm) {
 
-    const product = {
-      catalog: {
-          category0: form.value.category0,
-          category1: form.value.category1
-        },
+    const product: IProduct = {
+      category0: form.value.category0,
+      category1: form.value.category1,
       itemNumber: form.value.itemNumber,
       name: form.value.name,
       price: form.value.price,
       mainImgSrc: form.value.mainImgSrc,
+      itemDescription: form.value.itemDescription,
+      showOnMainPage: form.value.showOnMainPage,
+      discount: form.value.discount
     };
 
-    console.log(product);
     this.productService.addProduct(product)
       .subscribe(
         data => {
@@ -58,7 +55,6 @@ export class AddProductComponent implements OnInit {
                 timeout: 3000
               });
             this.updateProducts.emit();
-            // this.router.navigate(['/profile']);
           } else {
             this.flashMessage.show(
               'Adding failed',
@@ -66,7 +62,6 @@ export class AddProductComponent implements OnInit {
                 cssClass: 'alert-danger',
                 timeout: 3000
               });
-            // this.router.navigate(['/profile']);
           }
         },
         error => {
@@ -77,7 +72,8 @@ export class AddProductComponent implements OnInit {
                 cssClass: 'alert-danger',
                 timeout: 3000
               });
-            this.router.navigate(['/login']);
+            this.router.navigate(['/login'])
+            ;
           }
         }
       );
