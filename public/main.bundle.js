@@ -1811,7 +1811,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/*.item-div {*/\r\n    /*display: inline;*/\r\n    /*!*height: 450px;*!*/\r\n/*}*/\r\n", ""]);
+exports.push([module.i, ".item {\r\n    max-width: 250px;\r\n    max-height: 600px;\r\n    text-align: center;\r\n    margin: 0 auto;\r\n    /*border-bottom: 2px solid #8c8c8c;*/\r\n    background: white;\r\n    font-family: 'PT Sans', sans-serif;\r\n}\r\n\r\n.item-image {\r\n    width: 100%;\r\n    display: block;\r\n}\r\n\r\n.item-title {\r\n    color: darkred;\r\n}\r\n\r\n.item-price {\r\n    font-size: 16px;\r\n    color: #fc5a5a;\r\n    display: block;\r\n    margin-bottom: 12px;\r\n}\r\n\r\n.item-description {\r\n    font-size: 16px;\r\n\r\n}\r\n", ""]);
 
 // exports
 
@@ -1824,7 +1824,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/shared/item/item.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <h2>{{product.category0}} / {{product.category1}}</h2>\r\n  <h3>{{product.name}}</h3>\r\n  <p>{{product.itemNumber}}</p>\r\n  <!--<img src=\"http://via.placeholder.com/200x300\">-->\r\n  <img src={{product.mainImgSrc[0]}} class=\"img-fluid img-thumbnail\">\r\n  <!--<img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">-->\r\n  <p>{{product.price}} грн</p>\r\n  <p>{{product.itemDescription}}</p>\r\n  <p>{{product.showOnMainPage}}</p>\r\n  <p>{{product.discount}}</p>\r\n</div>\r\n"
+module.exports = "<div class=\"item\">\r\n  <div class=\"item-image mx-auto\">\r\n    <img src=\"http://placehold.it/240x180\" class=\"img-fluid\">\r\n  </div>\r\n  <hr>\r\n  <div class=\"item-title\">\r\n    <h3>{{product.name}}</h3>\r\n    <span class=\"item-price\">{{product.price}} грн</span>\r\n  </div>\r\n  <div class=\"item-description\">\r\n    <p>{{product.itemDescription}}</p>\r\n  </div>\r\n\r\n</div>\r\n\r\n\r\n\r\n<!--<div>-->\r\n  <!--<h2>{{product.category0}} / {{product.category1}}</h2>-->\r\n  <!--<h3>{{product.name}}</h3>-->\r\n  <!--<p>{{product.itemNumber}}</p>-->\r\n  <!--&lt;!&ndash;<img src=\"http://via.placeholder.com/200x300\">&ndash;&gt;-->\r\n  <!--<img src={{product.mainImgSrc[0]}} class=\"img-fluid img-thumbnail\">-->\r\n  <!--&lt;!&ndash;<img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">&ndash;&gt;-->\r\n  <!--<p>{{product.price}} грн</p>-->\r\n  <!--<p>{{product.itemDescription}}</p>-->\r\n  <!--<p>{{product.showOnMainPage}}</p>-->\r\n  <!--<p>{{product.discount}}</p>-->\r\n<!--</div>-->\r\n"
 
 /***/ }),
 
