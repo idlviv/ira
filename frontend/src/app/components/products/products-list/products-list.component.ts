@@ -3,10 +3,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {IProduct} from '../../../interfaces/i-product';
 import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
-import {localCatalog} from '../../../data/catalog';
-import {ICatalog} from '../../../interfaces/i-catalog';
+import {ICatalog, ISubmenuList} from '../../../interfaces/i-catalog';
 import {AppComponent} from '../../../app.component';
-
 
 @Component({
   selector: 'app-products-list',
@@ -19,7 +17,7 @@ export class ProductsListComponent implements OnInit {
   catalog: ICatalog[];
   category0: string;
   category1: string;
-  submenuList: string[] = [];
+  submenuList: ISubmenuList[];
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -36,8 +34,8 @@ export class ProductsListComponent implements OnInit {
       this.category1 = params.category1;
 
       this.catalog.forEach((value) => {
-        if (params.category0 === value.category0) {
-          this.submenuList = value.category1;
+        if (params.category0 === value.category0.name) {
+          this.submenuList = value.category0.category1;
         }
       });
     });

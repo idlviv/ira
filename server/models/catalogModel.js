@@ -2,17 +2,23 @@ const mongoose = require('../libs/mongoose');
 
 const CatalogSchema = mongoose.Schema({
     category0: {
-      type: String,
-      unique: true,
-      required: true
+      name: {
+        type: String,
+        required: true
+      },
+      category1: [{
+        name: {
+          type: String,
+          required: true
+        },
+        description: {
+          type: String,
+        },
+        mainImgSrc: {
+          type: [],
+        },
+      }],
     },
-    category1: {
-      type: [],
-      required: true
-    },
-    description: {
-      type: String
-    }
   });
 
 let CatalogModel = mongoose.model('catalogs', CatalogSchema);

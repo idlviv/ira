@@ -15,7 +15,7 @@ import {SharedModule} from './components/shared/shared.module';
 import {UsersManagementModule} from './components/users-management/users-management.module';
 import {ProductsManagementModule} from './components/products-management/products-management.module';
 import {MyUrlSerializer} from './services/url-serializer.service';
-import {ResolverService} from './services/product-resolver.service';
+import {ProductResolverService} from './services/product-resolver.service';
 import {ProductService} from './services/product.service';
 import {CatalogResolverService} from './services/catalog-resolver.service';
 import {CatalogService} from './services/catalog.service';
@@ -45,7 +45,7 @@ import {CatalogService} from './services/catalog.service';
     CatalogService,
     CatalogResolverService,
     ProductService,
-    ResolverService,
+    ProductResolverService,
   ],
   bootstrap: [AppComponent]
 })

@@ -17,9 +17,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.catalogService.getCatalog()
       .subscribe(
-          (catalog) => {
-            this.catalog = catalog;
-          },
+          catalog => {
+            console.log('app catalog ', catalog);
+            return this.catalog = catalog
+              ;},
           (error) => {
             this.flashMessage.show(
               error,

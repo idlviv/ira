@@ -31,32 +31,6 @@ router.get(
   });
 
 router.get(
-  '/getDistinctCategories/', (req, res, next) => {
-    let searchQuery = req.query.str;
-    ProductModel.getDistinctCategories(searchQuery)
-      .then((products) => {
-        console.log('router products', products);
-        res.json(products);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
-
-router.get(
-  '/getDistinctProducts/', (req, res, next) => {
-    let searchQuery = req.query.str;
-    ProductModel.getDistinctProducts(searchQuery)
-      .then((products) => {
-        console.log('router products', products);
-        res.json(products);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
-
-router.get(
   '/getQueriedProducts/', (req, res, next) => {
     console.log('searchQuery router', req.query);
     let searchQuery = JSON.parse(req.query.obj);

@@ -8,7 +8,7 @@ import {config} from '../app.config';
 
 @Injectable()
 export class CatalogService {
-  public globalVar = '';
+  // public globalVar = '';
   constructor(private http: Http) {}
 
   getCatalog() {

@@ -12,6 +12,14 @@ export interface ICatalog {
     category1: [{
       name: string,
       description: string,
+      mainImgSrc: string[],
       }];
   };
+}
+
+export interface ISubmenuList {
+
+ name: string;
+ description: string;
+ mainImgSrc: string[];
 }

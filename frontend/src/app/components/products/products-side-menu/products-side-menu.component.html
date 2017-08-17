@@ -1,7 +1,9 @@
 <ol class="breadcrumb">
   <li> <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"
           [routerLink]="['']">Home</a> <span class="divider">></span>  </li>
-  <li> <a  (click)="navigate(category0, null)">Back to {{category0}}</a> <span class="divider">></span></li>
+  <li> <a  (click)="navigate(category0, null)">Back to {{category0}}
+  </a> <span class="divider">></span></li>
   <li *ngFor="let submenuItem of submenuList; let i = index" >
-    <a [ngClass]="{clicked: currentCategory1 === i}" (click)="navigate(null ,submenuItem, i)">{{submenuItem}}</a></li>
+    <a [ngClass]="{clicked: currentCategory1 === i}" (click)="navigate(null ,submenuItem, i)">
+      {{submenuItem}}</a></li>
 </ol>

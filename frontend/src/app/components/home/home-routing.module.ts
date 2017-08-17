@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { HomeSectionComponent } from './home-section/home-section.component';
 import {SideMenuComponent} from './side-menu/side-menu.component';
 import {HomeComponent} from './home.component';
-import {ResolverService} from '../../services/product-resolver.service';
+import {ProductResolverService} from '../../services/product-resolver.service';
 
 const homeRoutes: Routes = [
   {
@@ -14,7 +14,7 @@ const homeRoutes: Routes = [
       {
         path: '',
         component: HomeSectionComponent,
-        resolve: {products: ResolverService}
+        resolve: {products: ProductResolverService}
       },
       {
         path: '',

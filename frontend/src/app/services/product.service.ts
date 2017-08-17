@@ -20,43 +20,15 @@ export class ProductService {
         .map(res => res.json());
   }
 
-  getDistinctCategories(searchQuery) {
-    let headers = new Headers();
-    headers.set('Content-Type', 'application/json');
-
-    let params = new URLSearchParams();
-    params.set('str', searchQuery);
-
-    let options = new RequestOptions({ headers: headers, params: params });
-      return this.http.get(
-        config.serverUrl + 'api/getDistinctCategories',
-        options)
-        .map(res => res.json());
-  }
-
-  getDistinctProducts(searchQuery) {
-    let headers = new Headers();
-    headers.set('Content-Type', 'application/json');
-
-    let params = new URLSearchParams();
-    params.set('str', searchQuery);
-
-    let options = new RequestOptions({ headers: headers, params: params });
-      return this.http.get(
-        config.serverUrl + 'api/getDistinctProducts',
-        options)
-        .map(res => res.json());
-  }
-
   getQueriedProducts(searchQuery) {
-    let headers = new Headers();
+    const headers = new Headers();
     headers.set('Content-Type', 'application/json');
 
-    let params = new URLSearchParams();
+    const params = new URLSearchParams();
     // params.set('category', 'Toys');
     params.set('obj', JSON.stringify(searchQuery));
 
-    let options = new RequestOptions({ headers: headers, params: params });
+    const options = new RequestOptions({ headers: headers, params: params });
       return this.http.get(
         config.serverUrl + 'api/getQueriedProducts',
         options)

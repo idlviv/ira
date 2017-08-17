@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {ProductService} from './product.service';
 
 @Injectable()
-export class ResolverService implements Resolve<IProduct> {
+export class ProductResolverService implements Resolve<IProduct> {
 searchQuery: object;
 products: IProduct[];
 
@@ -17,8 +17,8 @@ constructor(private productService: ProductService) {}
     const category1 = route.params.category1;
 
     this.searchQuery = {
-      'catalog.category0': category0,
-      'catalog.category1': category1 === 'main' ? {$exists: true} : category1,
+      'category0': category0,
+      'category1': category1 === 'main' ? {$exists: true} : category1,
     };
     return this.productService.getQueriedProducts(this.searchQuery);
       // .subscribe(

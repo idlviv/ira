@@ -23,7 +23,7 @@ export class ProductsSubmenuComponent implements OnInit {
 
   catalog: ICatalog[];
 
-  submenuList: string[] = [];
+  submenuList: object[];
 
   constructor(
     private productService: ProductService,
@@ -40,18 +40,18 @@ export class ProductsSubmenuComponent implements OnInit {
       .subscribe(
       params => {
 
-              console.log('submenu catalog', this.appComponent.catalog);
               this.catalog = this.appComponent.catalog;
 
               this.category0 = params.category0;
               this.category1 = params.category1;
 
               this.catalog.forEach((value) => {
-                  if (params.category0 === value.category0) {
-                    this.submenuList = value.category1;
+                  if (params.category0 === value.category0.name) {
+                    this.submenuList = value.category0.category1;
                   }
                 });
-              },
+
+      },
       (error) => {
         this.flashMessage.show(
           error,

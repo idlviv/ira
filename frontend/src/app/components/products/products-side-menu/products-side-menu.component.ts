@@ -1,7 +1,6 @@
 import { Component, OnInit, Output} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-import {ICatalog} from '../../../interfaces/i-catalog';
-import {localCatalog} from '../../../data/catalog';
+import {ICatalog, ISubmenuList} from '../../../interfaces/i-catalog';
 import {MyUrlSerializer} from '../../../services/url-serializer.service';
 import {AppComponent} from '../../../app.component';
 
@@ -16,11 +15,8 @@ export class ProductsSideMenuComponent implements OnInit {
   category1: string;
   currentCategory1: number;
 
-  prop1 = true;
-  prop2 = true;
-
   catalog: ICatalog[];
-  submenuList: string[] = [];
+  submenuList: ISubmenuList[];
 
   constructor(
     private router: Router,
@@ -38,7 +34,7 @@ export class ProductsSideMenuComponent implements OnInit {
 
       this.catalog.forEach((value) => {
         if (params.category0 === value.category0) {
-          this.submenuList = value.category1;
+          this.submenuList = value.category0.category1;
         }
       });
     });

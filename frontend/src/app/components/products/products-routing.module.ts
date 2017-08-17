@@ -7,7 +7,7 @@ import {ProductsSideMenuComponent} from './products-side-menu/products-side-menu
 import {ProductsListComponent} from './products-list/products-list.component';
 import {Page404Component} from '../shared/page404/page404.component';
 import {ProductsSubmenuComponent} from './products-submenu/products-submenu.component';
-import {ResolverService} from '../../services/product-resolver.service';
+import {ProductResolverService} from '../../services/product-resolver.service';
 import {CatalogResolverService} from '../../services/catalog-resolver.service';
 
 const productsRoutes: Routes = [
@@ -18,12 +18,12 @@ const productsRoutes: Routes = [
       {
         path: 'start/:category0/:category1',
         component: ProductsListComponent,
-        resolve: {products: ResolverService}
+        // resolve: {products: ProductResolverService}
       },
       {
         path: 'category/:category0/:category1',
         component: ProductsSectionComponent,
-        resolve: {products: ResolverService}
+        resolve: {products: ProductResolverService}
       },
       {
         path: 'category/:category0/:category1',

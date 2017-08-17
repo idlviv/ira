@@ -146,7 +146,8 @@ var AppComponent = (function () {
         var _this = this;
         this.catalogService.getCatalog()
             .subscribe(function (catalog) {
-            _this.catalog = catalog;
+            console.log('app catalog ', catalog);
+            return _this.catalog = catalog;
         }, function (error) {
             _this.flashMessage.show(error, {
                 cssClass: 'alert-danger',
@@ -262,7 +263,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_17__services_catalog_service__["a" /* CatalogService */],
             __WEBPACK_IMPORTED_MODULE_16__services_catalog_resolver_service__["a" /* CatalogResolverService */],
             __WEBPACK_IMPORTED_MODULE_15__services_product_service__["a" /* ProductService */],
-            __WEBPACK_IMPORTED_MODULE_14__services_product_resolver_service__["a" /* ResolverService */],
+            __WEBPACK_IMPORTED_MODULE_14__services_product_resolver_service__["a" /* ProductResolverService */],
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
     })
@@ -304,7 +305,7 @@ var homeRoutes = [
             {
                 path: '',
                 component: __WEBPACK_IMPORTED_MODULE_2__home_section_home_section_component__["a" /* HomeSectionComponent */],
-                resolve: { products: __WEBPACK_IMPORTED_MODULE_5__services_product_resolver_service__["a" /* ResolverService */] }
+                resolve: { products: __WEBPACK_IMPORTED_MODULE_5__services_product_resolver_service__["a" /* ProductResolverService */] }
             },
             {
                 path: '',
@@ -647,7 +648,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n  <a class=\"navbar-brand\" href=\"#\">Brand</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"\r\n          aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home</a></li>\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/products', {outlets: {primary: 'start/toys/main',\r\n           productsSubmenu: 'category/toys/main'}}]\">Toys</a></li>\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/products', {outlets: {primary: 'start/flowers/main',\r\n           productsSubmenu: 'category/flowers/main'}}]\">Flowers</a></li>\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/products', {outlets: {primary: 'start/Букети/main',\r\n           productsSubmenu: 'category/Букети/main'}}]\">Букети</a></li>\r\n\r\n    </ul>\r\n    <ul class=\"nav navbar-nav navbar-right\">\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/product-management']\">Product Management</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/login']\">Login</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\">\r\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\r\n\r\n      <!--<li class=\"nav-item active\">-->\r\n        <!--<a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>-->\r\n      <!--</li>-->\r\n      <!--<li class=\"nav-item\">-->\r\n        <!--<a class=\"nav-link\" href=\"#\">Link</a>-->\r\n      <!--</li>-->\r\n      <!--<li class=\"nav-item\">-->\r\n        <!--<a class=\"nav-link disabled\" href=\"#\">Disabled</a>-->\r\n      <!--</li>-->\r\n    </ul>\r\n    <!--<form class=\"form-inline my-2 my-lg-0\">-->\r\n      <!--<input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">-->\r\n      <!--<button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>-->\r\n    <!--</form>-->\r\n  </div>\r\n</nav>\r\n\r\n<!--<nav class=\"navbar navbar-default\">-->\r\n  <!--<div class=\"container\">-->\r\n    <!--<div class=\"navbar-header\">-->\r\n      <!--<button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\"-->\r\n              <!--aria-expanded=\"false\" aria-controls=\"navbar\">-->\r\n        <!--<span class=\"sr-only\">Toggle navigation</span>-->\r\n        <!--<span class=\"icon-bar\"></span>-->\r\n        <!--<span class=\"icon-bar\"></span>-->\r\n        <!--<span class=\"icon-bar\"></span>-->\r\n      <!--</button>-->\r\n      <!--<a class=\"navbar-brand\" href=\"#\">Brand</a>-->\r\n    <!--</div>-->\r\n    <!--<div id=\"navbar\" class=\"collapse navbar-collapse\">-->\r\n      <!--<ul class=\"nav navbar-nav navbar-left\">-->\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/']\">Home</a></li>-->\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/products', {outlets: {primary: 'category/toys/main',-->\r\n           <!--productsSubmenu: 'category/toys/main'}}]\">Toys</a></li>-->\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/products', {outlets: {primary: 'category/flowers/main',-->\r\n           <!--productsSubmenu: 'category/flowers/main'}}]\">Flowers</a></li>-->\r\n\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/products', {outlets: {primary: 'toys', productsSubmenu: 'toys'}}]\">TToys</a></li>-->\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/products', {outlets: {primary: 'flowers', productsSubmenu: 'flowers'}}]\">FFlowers</a></li>-->\r\n      <!--</ul>-->\r\n      <!--<ul class=\"nav navbar-nav navbar-right\">-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/dashboard']\">Dashboard</a></li>-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/product-management']\">Product Management</a></li>-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/profile']\">Profile</a></li>-->\r\n        <!--<li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/login']\">Login</a></li>-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/register']\">Register</a></li>-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>-->\r\n      <!--</ul>-->\r\n    <!--</div>&lt;!&ndash;/.nav-collapse &ndash;&gt;-->\r\n  <!--</div>-->\r\n<!--</nav>-->\r\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n  <a class=\"navbar-brand\" href=\"#\">Brand</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"\r\n          aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home</a></li>\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/products', {outlets: {primary: 'start/toys/main',\r\n           productsSubmenu: 'category/toys/main'}}]\">Toys</a></li>\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/products', {outlets: {primary: 'start/flowers/main',\r\n           productsSubmenu: 'category/flowers/main'}}]\">Flowers</a></li>\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/products', {outlets: {primary: 'start/букети/main',\r\n           productsSubmenu: 'category/букети/main'}}]\">Букети</a></li>\r\n\r\n    </ul>\r\n    <ul class=\"nav navbar-nav navbar-right\">\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/product-management']\">Product Management</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/login']\">Login</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\">\r\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\r\n\r\n      <!--<li class=\"nav-item active\">-->\r\n        <!--<a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>-->\r\n      <!--</li>-->\r\n      <!--<li class=\"nav-item\">-->\r\n        <!--<a class=\"nav-link\" href=\"#\">Link</a>-->\r\n      <!--</li>-->\r\n      <!--<li class=\"nav-item\">-->\r\n        <!--<a class=\"nav-link disabled\" href=\"#\">Disabled</a>-->\r\n      <!--</li>-->\r\n    </ul>\r\n    <!--<form class=\"form-inline my-2 my-lg-0\">-->\r\n      <!--<input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">-->\r\n      <!--<button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>-->\r\n    <!--</form>-->\r\n  </div>\r\n</nav>\r\n\r\n<!--<nav class=\"navbar navbar-default\">-->\r\n  <!--<div class=\"container\">-->\r\n    <!--<div class=\"navbar-header\">-->\r\n      <!--<button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\"-->\r\n              <!--aria-expanded=\"false\" aria-controls=\"navbar\">-->\r\n        <!--<span class=\"sr-only\">Toggle navigation</span>-->\r\n        <!--<span class=\"icon-bar\"></span>-->\r\n        <!--<span class=\"icon-bar\"></span>-->\r\n        <!--<span class=\"icon-bar\"></span>-->\r\n      <!--</button>-->\r\n      <!--<a class=\"navbar-brand\" href=\"#\">Brand</a>-->\r\n    <!--</div>-->\r\n    <!--<div id=\"navbar\" class=\"collapse navbar-collapse\">-->\r\n      <!--<ul class=\"nav navbar-nav navbar-left\">-->\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/']\">Home</a></li>-->\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/products', {outlets: {primary: 'category/toys/main',-->\r\n           <!--productsSubmenu: 'category/toys/main'}}]\">Toys</a></li>-->\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/products', {outlets: {primary: 'category/flowers/main',-->\r\n           <!--productsSubmenu: 'category/flowers/main'}}]\">Flowers</a></li>-->\r\n\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/products', {outlets: {primary: 'toys', productsSubmenu: 'toys'}}]\">TToys</a></li>-->\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/products', {outlets: {primary: 'flowers', productsSubmenu: 'flowers'}}]\">FFlowers</a></li>-->\r\n      <!--</ul>-->\r\n      <!--<ul class=\"nav navbar-nav navbar-right\">-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/dashboard']\">Dashboard</a></li>-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/product-management']\">Product Management</a></li>-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/profile']\">Profile</a></li>-->\r\n        <!--<li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/login']\">Login</a></li>-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/register']\">Register</a></li>-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>-->\r\n      <!--</ul>-->\r\n    <!--</div>&lt;!&ndash;/.nav-collapse &ndash;&gt;-->\r\n  <!--</div>-->\r\n<!--</nav>-->\r\n"
 
 /***/ }),
 
@@ -1204,7 +1205,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-list/products-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  products-list works!\r\n</p>\r\n<div class=\"row\">\r\n  <div  class=\"col-lg-3 col-md-4 col-6\" *ngFor=\"let submenuItem of submenuList\">\r\n    <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\r\n       [routerLink]=\"['/products', {outlets: {primary: 'category/' + category0 + '/' + submenuItem,\r\n      productsSubmenu:  'category/' + category0 + '/' + submenuItem}}]\">{{submenuItem}}</a>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<p>\r\n  products-list works!\r\n</p>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-lg-3 col-md-4 col-6\" *ngFor=\"let submenuItem of submenuList\">\r\n    <div>{{submenuItem.description}}</div>\r\n    <hr>\r\n    <img src={{submenuItem.mainImgSrc[0]}} class=\"img-fluid img-thumbnail\">\r\n    <hr>\r\n    <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\r\n       [routerLink]=\"['/products', {outlets: {primary: 'category/' + category0 + '/' + submenuItem.name,\r\n      productsSubmenu:  'category/' + category0 + '/' + submenuItem.name}}]\">{{submenuItem.name}}</a>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1240,7 +1241,6 @@ var ProductsListComponent = (function () {
         this.productService = productService;
         this.flashMessage = flashMessage;
         this.appComponent = appComponent;
-        this.submenuList = [];
     }
     ProductsListComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1249,8 +1249,8 @@ var ProductsListComponent = (function () {
             _this.category0 = params.category0;
             _this.category1 = params.category1;
             _this.catalog.forEach(function (value) {
-                if (params.category0 === value.category0) {
-                    _this.submenuList = value.category1;
+                if (params.category0 === value.category0.name) {
+                    _this.submenuList = value.category0.category1;
                 }
             });
         });
@@ -1306,12 +1306,11 @@ var productsRoutes = [
             {
                 path: 'start/:category0/:category1',
                 component: __WEBPACK_IMPORTED_MODULE_4__products_list_products_list_component__["a" /* ProductsListComponent */],
-                resolve: { products: __WEBPACK_IMPORTED_MODULE_7__services_product_resolver_service__["a" /* ResolverService */] }
             },
             {
                 path: 'category/:category0/:category1',
                 component: __WEBPACK_IMPORTED_MODULE_3__products_section_products_section_component__["a" /* ProductsSectionComponent */],
-                resolve: { products: __WEBPACK_IMPORTED_MODULE_7__services_product_resolver_service__["a" /* ResolverService */] }
+                resolve: { products: __WEBPACK_IMPORTED_MODULE_7__services_product_resolver_service__["a" /* ProductResolverService */] }
             },
             {
                 path: 'category/:category0/:category1',
@@ -1472,7 +1471,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-side-menu/products-side-menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ol class=\"breadcrumb\">\r\n  <li> <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\r\n          [routerLink]=\"['']\">Home</a> <span class=\"divider\">></span>  </li>\r\n  <li> <a  (click)=\"navigate(category0, null)\">Back to {{category0}}</a> <span class=\"divider\">></span></li>\r\n  <li *ngFor=\"let submenuItem of submenuList; let i = index\" >\r\n    <a [ngClass]=\"{clicked: currentCategory1 === i}\" (click)=\"navigate(null ,submenuItem, i)\">{{submenuItem}}</a></li>\r\n</ol>\r\n"
+module.exports = "<ol class=\"breadcrumb\">\r\n  <li> <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\r\n          [routerLink]=\"['']\">Home</a> <span class=\"divider\">></span>  </li>\r\n  <li> <a  (click)=\"navigate(category0, null)\">Back to {{category0}}\r\n  </a> <span class=\"divider\">></span></li>\r\n  <li *ngFor=\"let submenuItem of submenuList; let i = index\" >\r\n    <a [ngClass]=\"{clicked: currentCategory1 === i}\" (click)=\"navigate(null ,submenuItem, i)\">\r\n      {{submenuItem}}</a></li>\r\n</ol>\r\n"
 
 /***/ }),
 
@@ -1504,9 +1503,6 @@ var ProductsSideMenuComponent = (function () {
         this.route = route;
         this.customUrlSerializer = customUrlSerializer;
         this.appComponent = appComponent;
-        this.prop1 = true;
-        this.prop2 = true;
-        this.submenuList = [];
     }
     ProductsSideMenuComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1517,7 +1513,7 @@ var ProductsSideMenuComponent = (function () {
             _this.category1 = params.category1;
             _this.catalog.forEach(function (value) {
                 if (params.category0 === value.category0) {
-                    _this.submenuList = value.category1;
+                    _this.submenuList = value.category0.category1;
                 }
             });
         });
@@ -1559,7 +1555,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-submenu/products-submenu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<nav class=\"breadcrumb\">\r\n\r\n  <!--<li class=\"breadcrumb-item\"> <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"-->\r\n       <!--[routerLink]=\"['/products', {outlets: {primary: 'category/' + category0 + '/main',-->\r\n        <!--productsSubmenu:  'category/' + category0 + '/main'}}]\">{{category0}}</a> <span class=\"divider\">></span> </li>-->\r\n  <!--<li class=\"breadcrumb-item\" *ngFor=\"let submenuItem of submenuList; let i = index\" >-->\r\n    <!--<a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"-->\r\n       <!--[routerLink]=\"['/products', {outlets: {primary: 'category/' + category0 + '/' + submenuItem,-->\r\n        <!--productsSubmenu:  'category/' + category0 + '/' + submenuItem}}]\">{{submenuItem}}</a></li>-->\r\n\r\n  <!--<span class=\"divider\">></span>-->\r\n\r\n  <a class=\"breadcrumb-item active\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\r\n     [routerLink]=\"['/products', {outlets: {primary: 'start/' + category0 + '/main',\r\n    productsSubmenu:  'category/' + category0 + '/main'}}]\">{{category0}}></a>\r\n\r\n\r\n  <a class=\"breadcrumb-item\" *ngFor=\"let submenuItem of submenuList; let i = index\"\r\n    [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\r\n    [routerLink]=\"['/products', {outlets: {primary: 'category/' + category0 + '/' + submenuItem,\r\n    productsSubmenu:  'category/' + category0 + '/' + submenuItem}}]\">{{submenuItem}}</a>\r\n\r\n</nav>\r\n"
+module.exports = "\r\n<nav class=\"breadcrumb\">\r\n\r\n  <!--<li class=\"breadcrumb-item\"> <a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"-->\r\n       <!--[routerLink]=\"['/products', {outlets: {primary: 'category/' + category0 + '/main',-->\r\n        <!--productsSubmenu:  'category/' + category0 + '/main'}}]\">{{category0}}</a> <span class=\"divider\">></span> </li>-->\r\n  <!--<li class=\"breadcrumb-item\" *ngFor=\"let submenuItem of submenuList; let i = index\" >-->\r\n    <!--<a [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"-->\r\n       <!--[routerLink]=\"['/products', {outlets: {primary: 'category/' + category0 + '/' + submenuItem,-->\r\n        <!--productsSubmenu:  'category/' + category0 + '/' + submenuItem}}]\">{{submenuItem}}</a></li>-->\r\n\r\n  <!--<span class=\"divider\">></span>-->\r\n\r\n  <a class=\"breadcrumb-item active\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\r\n     [routerLink]=\"['/products', {outlets: {primary: 'start/' + category0 + '/main',\r\n    productsSubmenu:  'category/' + category0 + '/main'}}]\">{{category0}}></a>\r\n\r\n\r\n  <a class=\"breadcrumb-item\" *ngFor=\"let submenuItem of submenuList; let i = index\"\r\n    [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\r\n    [routerLink]=\"['/products', {outlets: {primary: 'category/' + category0 + '/' + submenuItem.name,\r\n    productsSubmenu:  'category/' + category0 + '/' + submenuItem.name}}]\">{{submenuItem.name}}</a>\r\n\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -1601,19 +1597,17 @@ var ProductsSubmenuComponent = (function () {
         this.appComponent = appComponent;
         this.prop1 = true;
         this.prop2 = true;
-        this.submenuList = [];
     }
     ProductsSubmenuComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params
             .subscribe(function (params) {
-            console.log('submenu catalog', _this.appComponent.catalog);
             _this.catalog = _this.appComponent.catalog;
             _this.category0 = params.category0;
             _this.category1 = params.category1;
             _this.catalog.forEach(function (value) {
-                if (params.category0 === value.category0) {
-                    _this.submenuList = value.category1;
+                if (params.category0 === value.category0.name) {
+                    _this.submenuList = value.category0.category1;
                 }
             });
         }, function (error) {
@@ -2627,9 +2621,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var CatalogService = (function () {
+    // public globalVar = '';
     function CatalogService(http) {
         this.http = http;
-        this.globalVar = '';
     }
     CatalogService.prototype.getCatalog = function () {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_3__app_config__["a" /* config */].serverUrl + 'api/getCatalog')
@@ -2653,7 +2647,7 @@ var _a;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResolverService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductResolverService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2665,16 +2659,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var ResolverService = (function () {
-    function ResolverService(productService) {
+var ProductResolverService = (function () {
+    function ProductResolverService(productService) {
         this.productService = productService;
     }
-    ResolverService.prototype.resolve = function (route, state) {
+    ProductResolverService.prototype.resolve = function (route, state) {
         var category0 = route.params.category0;
         var category1 = route.params.category1;
         this.searchQuery = {
-            'catalog.category0': category0,
-            'catalog.category1': category1 === 'main' ? { $exists: true } : category1,
+            'category0': category0,
+            'category1': category1 === 'main' ? { $exists: true } : category1,
         };
         return this.productService.getQueriedProducts(this.searchQuery);
         // .subscribe(
@@ -2691,12 +2685,12 @@ var ResolverService = (function () {
         //     return false;
         //   });
     };
-    return ResolverService;
+    return ProductResolverService;
 }());
-ResolverService = __decorate([
+ProductResolverService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__product_service__["a" /* ProductService */]) === "function" && _a || Object])
-], ResolverService);
+], ProductResolverService);
 
 var _a;
 //# sourceMappingURL=product-resolver.service.js.map
@@ -2736,24 +2730,6 @@ var ProductService = (function () {
     }
     ProductService.prototype.getProducts = function () {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_4__app_config__["a" /* config */].serverUrl + 'api/getProducts')
-            .map(function (res) { return res.json(); });
-    };
-    ProductService.prototype.getDistinctCategories = function (searchQuery) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
-        headers.set('Content-Type', 'application/json');
-        var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["URLSearchParams"]();
-        params.set('str', searchQuery);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["RequestOptions"]({ headers: headers, params: params });
-        return this.http.get(__WEBPACK_IMPORTED_MODULE_4__app_config__["a" /* config */].serverUrl + 'api/getDistinctCategories', options)
-            .map(function (res) { return res.json(); });
-    };
-    ProductService.prototype.getDistinctProducts = function (searchQuery) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
-        headers.set('Content-Type', 'application/json');
-        var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["URLSearchParams"]();
-        params.set('str', searchQuery);
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["RequestOptions"]({ headers: headers, params: params });
-        return this.http.get(__WEBPACK_IMPORTED_MODULE_4__app_config__["a" /* config */].serverUrl + 'api/getDistinctProducts', options)
             .map(function (res) { return res.json(); });
     };
     ProductService.prototype.getQueriedProducts = function (searchQuery) {
