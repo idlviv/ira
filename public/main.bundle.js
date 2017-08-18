@@ -1811,7 +1811,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".item {\r\n    max-width: 250px;\r\n    max-height: 600px;\r\n    text-align: center;\r\n    margin: 0 auto;\r\n    /*border-bottom: 2px solid #8c8c8c;*/\r\n    background: white;\r\n    font-family: 'PT Sans', sans-serif;\r\n}\r\n\r\n.item-image {\r\n    width: 100%;\r\n    display: block;\r\n}\r\n\r\n.item-title {\r\n    color: darkred;\r\n}\r\n\r\n.item-price {\r\n    font-size: 16px;\r\n    color: #fc5a5a;\r\n    display: block;\r\n    margin-bottom: 12px;\r\n}\r\n\r\n.item-description {\r\n    font-size: 16px;\r\n\r\n}\r\n", ""]);
+exports.push([module.i, ".item {\r\n    max-width: 250px;\r\n    max-height: 600px;\r\n    text-align: center;\r\n    margin: 0 auto;\r\n    /*border-bottom: 2px solid #8c8c8c;*/\r\n    background: white;\r\n    font-family: 'PT Sans', sans-serif;\r\n}\r\n\r\n.item-image {\r\n    width: 100%;\r\n    display: block;\r\n}\r\n\r\n.item-title {\r\n    color: darkred;\r\n}\r\n\r\n.item-price {\r\n    font-size: 16px;\r\n    color: #fc5a5a;\r\n    display: block;\r\n    margin-bottom: 12px;\r\n}\r\n\r\n.item-description {\r\n    font-size: 16px;\r\n}\r\n", ""]);
 
 // exports
 
