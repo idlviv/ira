@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import {ProductsComponent} from './products.component';
 import {ProductsSectionComponent} from './products-section/products-section.component';
-import {ProductsSideMenuComponent} from './products-side-menu/products-side-menu.component';
 import {ProductsListComponent} from './products-list/products-list.component';
 import {Page404Component} from '../shared/page404/page404.component';
 import {ProductsSubmenuComponent} from './products-submenu/products-submenu.component';

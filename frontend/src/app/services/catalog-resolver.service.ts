@@ -14,19 +14,6 @@ export class CatalogResolverService implements Resolve<ICatalog> {
           state: RouterStateSnapshot): Observable<ICatalog> {
 
     return this.catalogService.getCatalog();
-    // .subscribe(
-    //   (products) => {
-    //     this.products = products;
-    //   },
-    //   (error) => {
-    //     this.flashMessage.show(
-    //       error,
-    //       {
-    //         cssClass: 'alert-danger',
-    //         timeout: 3000
-    //       });
-    //     return false;
-    //   });
   }
 }
 

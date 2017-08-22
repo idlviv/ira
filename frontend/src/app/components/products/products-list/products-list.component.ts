@@ -19,7 +19,8 @@ export class ProductsListComponent implements OnInit {
   category1: string;
   submenuList: ISubmenuList[];
 
-  constructor(private route: ActivatedRoute,
+  constructor(
+    private route: ActivatedRoute,
               private router: Router,
               private productService: ProductService,
               private flashMessage: FlashMessagesService,
