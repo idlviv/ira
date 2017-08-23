@@ -37,13 +37,10 @@ export class ProductsSubmenuComponent implements OnInit {
 ) { }
 
   ngOnInit() {
-    // this.catalog = this.appComponent.catalog;
-    // console.log('url', this.router.url);
     this.route.params
       .switchMap(params => {
         this.category0 = params.category0;
         this.category1 = params.category1;
-        console.log('params', params);
         return this.catalogService.getQueriedCatalog(params);
       })
       .subscribe(submenuList => this.submenuList = submenuList,
@@ -56,35 +53,6 @@ export class ProductsSubmenuComponent implements OnInit {
             });
           return false;
         });
-    console.log(this.submenuList);
-
-    //
-    // this.route.params
-    //   .subscribe(
-    //     params => {
-    //
-    //       this.catalog = this.appComponent.catalog;
-    //
-    //       this.category0 = params.category0;
-    //       this.category1 = params.category1;
-    //
-    //       this.catalog.forEach((value) => {
-    //         if (params.category0 === value.category0.name) {
-    //           this.submenuList = value.category0.category1;
-    //         }
-    //       });
-    //
-    //     },
-    //     (error) => {
-    //       this.flashMessage.show(
-    //         error,
-    //         {
-    //           cssClass: 'alert-danger',
-    //           timeout: 3000
-    //         });
-    //       return false;
-    //     });
-
   }
 }
 

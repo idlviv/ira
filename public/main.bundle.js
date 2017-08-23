@@ -1219,6 +1219,7 @@ module.exports = "<p>\r\n  products-list works!\r\n</p>\r\n\r\n<div class=\"row\
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_catalog_service__ = __webpack_require__("../../../../../src/app/services/catalog.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1234,26 +1235,43 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ProductsListComponent = (function () {
-    function ProductsListComponent(route, router, productService, flashMessage, appComponent) {
+    function ProductsListComponent(route, router, productService, flashMessage, appComponent, catalogService) {
         this.route = route;
         this.router = router;
         this.productService = productService;
         this.flashMessage = flashMessage;
         this.appComponent = appComponent;
+        this.catalogService = catalogService;
     }
     ProductsListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.catalog = this.appComponent.catalog;
-        this.route.params.subscribe(function (params) {
+        this.route.params
+            .switchMap(function (params) {
             _this.category0 = params.category0;
             _this.category1 = params.category1;
-            _this.catalog.forEach(function (value) {
-                if (params.category0 === value.category0.name) {
-                    _this.submenuList = value.category0.category1;
-                }
+            return _this.catalogService.getQueriedCatalog(params);
+        })
+            .subscribe(function (submenuList) { return _this.submenuList = submenuList; }, function (error) {
+            _this.flashMessage.show(error, {
+                cssClass: 'alert-danger',
+                timeout: 3000
             });
+            return false;
         });
+        // this.catalog = this.appComponent.catalog;
+        // this.route.params.subscribe(params => {
+        //
+        //   this.category0 = params.category0;
+        //   this.category1 = params.category1;
+        //
+        //   this.catalog.forEach((value) => {
+        //     if (params.category0 === value.category0.name) {
+        //       this.submenuList = value.category0.category1;
+        //     }
+        //   });
+        // });
     };
     return ProductsListComponent;
 }());
@@ -1263,10 +1281,10 @@ ProductsListComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/products/products-list/products-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/products/products-list/products-list.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__services_catalog_service__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_catalog_service__["a" /* CatalogService */]) === "function" && _f || Object])
 ], ProductsListComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=products-list.component.js.map
 
 /***/ }),
@@ -1524,13 +1542,10 @@ var ProductsSubmenuComponent = (function () {
     }
     ProductsSubmenuComponent.prototype.ngOnInit = function () {
         var _this = this;
-        // this.catalog = this.appComponent.catalog;
-        // console.log('url', this.router.url);
         this.route.params
             .switchMap(function (params) {
             _this.category0 = params.category0;
             _this.category1 = params.category1;
-            console.log('params', params);
             return _this.catalogService.getQueriedCatalog(params);
         })
             .subscribe(function (submenuList) { return _this.submenuList = submenuList; }, function (error) {
@@ -1540,33 +1555,6 @@ var ProductsSubmenuComponent = (function () {
             });
             return false;
         });
-        console.log(this.submenuList);
-        //
-        // this.route.params
-        //   .subscribe(
-        //     params => {
-        //
-        //       this.catalog = this.appComponent.catalog;
-        //
-        //       this.category0 = params.category0;
-        //       this.category1 = params.category1;
-        //
-        //       this.catalog.forEach((value) => {
-        //         if (params.category0 === value.category0.name) {
-        //           this.submenuList = value.category0.category1;
-        //         }
-        //       });
-        //
-        //     },
-        //     (error) => {
-        //       this.flashMessage.show(
-        //         error,
-        //         {
-        //           cssClass: 'alert-danger',
-        //           timeout: 3000
-        //         });
-        //       return false;
-        //     });
     };
     return ProductsSubmenuComponent;
 }());
@@ -2519,21 +2507,7 @@ var CatalogService = (function () {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_3__app_config__["a" /* config */].serverUrl + 'api/getCatalog')
             .map(function (res) { return res.json(); })
             .map(function (data) {
-            return data.find(function (value) {
-                console.log('cat serv - value', value);
-                console.log('params.category0', params.category0);
-                console.log('value.category0.name', value.category0.name);
-                if (params.category0 === value.category0.name) {
-                    console.log('if');
-                    return value;
-                }
-            }).category0.category1;
-            // for (let i = 0; i < data.category0.length; i++) {
-            //   if (params.category0 === data[i].category0.name) {
-            //     console.log('if');
-            //     return data[i].category0.category1;
-            //   }
-            // }
+            return data.find(function (value) { return params.category0 === value.category0.name; }).category0.category1;
         });
     };
     return CatalogService;

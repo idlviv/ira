@@ -5,6 +5,7 @@ import {ProductService} from '../../../services/product.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {ICatalog, ISubmenuList} from '../../../interfaces/i-catalog';
 import {AppComponent} from '../../../app.component';
+import {CatalogService} from '../../../services/catalog.service';
 
 @Component({
   selector: 'app-products-list',
@@ -21,25 +22,44 @@ export class ProductsListComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-              private router: Router,
-              private productService: ProductService,
-              private flashMessage: FlashMessagesService,
-              private appComponent: AppComponent,
+      private router: Router,
+      private productService: ProductService,
+      private flashMessage: FlashMessagesService,
+      private appComponent: AppComponent,
+      private catalogService: CatalogService,
+
   ) {}
 
   ngOnInit() {
-    this.catalog = this.appComponent.catalog;
-    this.route.params.subscribe(params => {
 
-      this.category0 = params.category0;
-      this.category1 = params.category1;
-
-      this.catalog.forEach((value) => {
-        if (params.category0 === value.category0.name) {
-          this.submenuList = value.category0.category1;
-        }
-      });
-    });
+    this.route.params
+      .switchMap(params => {
+        this.category0 = params.category0;
+        this.category1 = params.category1;
+        return this.catalogService.getQueriedCatalog(params);
+      })
+      .subscribe(submenuList => this.submenuList = submenuList,
+        (error) => {
+          this.flashMessage.show(
+            error,
+            {
+              cssClass: 'alert-danger',
+              timeout: 3000
+            });
+          return false;
+        });
+    // this.catalog = this.appComponent.catalog;
+    // this.route.params.subscribe(params => {
+    //
+    //   this.category0 = params.category0;
+    //   this.category1 = params.category1;
+    //
+    //   this.catalog.forEach((value) => {
+    //     if (params.category0 === value.category0.name) {
+    //       this.submenuList = value.category0.category1;
+    //     }
+    //   });
+    // });
   }
 
 }
