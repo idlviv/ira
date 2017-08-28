@@ -5,15 +5,18 @@
 }
 
 .item-description {
-  background: #3e3e3e;
+  background: #878787;
+  margin: 5px auto;
 }
 
-.item-headeer {
+.item-img {
   background: #929292;
+  margin: 5px auto;
+
 }
 
 .item-price {
-  background: #92223e;
+  background: #eb2959;
 }
 
 /*.item {*/
