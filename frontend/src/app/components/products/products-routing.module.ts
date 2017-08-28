@@ -29,24 +29,6 @@ const productsRoutes: Routes = [
         outlet: 'productsSubmenu',
         component: ProductsSubmenuComponent,
       },
-      // {
-      //   path: ':category0',
-      //   component: ProductsListComponent,
-      // },
-      // {
-      //   path: ':category0',
-      //   outlet: 'productsSubmenu',
-      //   component: ProductsSideMenuComponent,
-      // },
-      // {
-      //   path: ':category0/:category1',
-      //   component: ProductsListComponent
-      // },
-      // {
-      //   path: ':category0/:category1',
-      //   outlet: 'productsSubmenu',
-      //   component: ProductsSideMenuComponent
-      // },
       {
         path: '**',
         component: Page404Component

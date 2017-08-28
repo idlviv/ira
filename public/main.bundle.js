@@ -363,7 +363,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home-section/home-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<p>\n  home-section works!\n</p>\n\n<div class=\"row\">\n  <div *ngFor=\"let product of products\" class=\"col-md-4 col-6\">\n    <app-item [product]=\"product\"></app-item>\n  </div>\n</div>\n\n"
+module.exports = "\r\n<p>\r\n  home-section works!\r\n</p>\r\n\r\n<div class=\"row\">\r\n  <div *ngFor=\"let product of products\" class=\"col-md-4 col-6\">\r\n    <app-item [product]=\"product\"></app-item>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -729,7 +729,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/add-product/add-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<h2 class=\"page-header\">Add product</h2>-->\n<!--<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"category\">Category</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"category\" name=\"category\" class=\"form-control\" id=\"category\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"subCategory\">Sub Category</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"subCategory\" name=\"subCategory\" class=\"form-control\" id=\"subCategory\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"itemNumber\">Item number</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"name\">Name</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"price\">Price</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">-->\n  <!--</div>-->\n  <!--<div class=\"form-group\">-->\n    <!--<label for=\"mainImgSrc\">Image source</label>-->\n    <!--<input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">-->\n  <!--</div>-->\n  <!--<input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">-->\n<!--</form>-->\n\n\n<h2 class=\"page-header\">Add product</h2>\n<form (ngSubmit)=\"onAddProductSubmit(addProductForm); addProductForm.reset()\" #addProductForm=\"ngForm\">\n\n  <div class=\"form-group\">\n    <label for=\"category0\">Category</label>\n    <input name=\"category0\" ngModel #category0=\"ngModel\" class=\"form-control\" id=\"category0\">\n  </div>\n    <div class=\"form-group\">\n    <label for=\"category1\">SubCategory</label>\n    <input name=\"category1\" ngModel #category1=\"ngModel\" class=\"form-control\" id=\"category1\">\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"itemNumber\">Item number</label>\n    <input type=\"text\" ngModel name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"name\">Name</label>\n    <input type=\"text\" ngModel name=\"name\" class=\"form-control\" id=\"name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"price\">Price</label>\n    <input type=\"text\" ngModel name=\"price\" class=\"form-control\" id=\"price\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"mainImgSrc\">Image source</label>\n    <input type=\"text\" ngModel name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"itemDescription\">Description</label>\n    <input type=\"text\" ngModel name=\"itemDescription\" class=\"form-control\" id=\"itemDescription\">\n  </div>\n    <div class=\"form-group\">\n    <label for=\"showOnMainPage\">Show on main page 0/1</label>\n    <input type=\"text\" ngModel name=\"showOnMainPage\" class=\"form-control\" id=\"showOnMainPage\">\n  </div>\n    <div class=\"form-group\">\n    <label for=\"discount\">Discount %</label>\n    <input type=\"text\" ngModel name=\"discount\" class=\"form-control\" id=\"discount\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\n</form>"
+module.exports = "<!--<h2 class=\"page-header\">Add product</h2>-->\r\n<!--<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"category\">Category</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"category\" name=\"category\" class=\"form-control\" id=\"category\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"subCategory\">Sub Category</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"subCategory\" name=\"subCategory\" class=\"form-control\" id=\"subCategory\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"itemNumber\">Item number</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"name\">Name</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"price\">Price</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"mainImgSrc\">Image source</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">-->\r\n  <!--</div>-->\r\n  <!--<input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">-->\r\n<!--</form>-->\r\n\r\n\r\n<h2 class=\"page-header\">Add product</h2>\r\n<form (ngSubmit)=\"onAddProductSubmit(addProductForm); addProductForm.reset()\" #addProductForm=\"ngForm\">\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"category0\">Category</label>\r\n    <input name=\"category0\" ngModel #category0=\"ngModel\" class=\"form-control\" id=\"category0\">\r\n  </div>\r\n    <div class=\"form-group\">\r\n    <label for=\"category1\">SubCategory</label>\r\n    <input name=\"category1\" ngModel #category1=\"ngModel\" class=\"form-control\" id=\"category1\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"itemNumber\">Item number</label>\r\n    <input type=\"text\" ngModel name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"name\">Name</label>\r\n    <input type=\"text\" ngModel name=\"name\" class=\"form-control\" id=\"name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"price\">Price</label>\r\n    <input type=\"text\" ngModel name=\"price\" class=\"form-control\" id=\"price\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mainImgSrc\">Image source</label>\r\n    <input type=\"text\" ngModel name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"itemDescription\">Description</label>\r\n    <input type=\"text\" ngModel name=\"itemDescription\" class=\"form-control\" id=\"itemDescription\">\r\n  </div>\r\n    <div class=\"form-group\">\r\n    <label for=\"showOnMainPage\">Show on main page 0/1</label>\r\n    <input type=\"text\" ngModel name=\"showOnMainPage\" class=\"form-control\" id=\"showOnMainPage\">\r\n  </div>\r\n    <div class=\"form-group\">\r\n    <label for=\"discount\">Discount %</label>\r\n    <input type=\"text\" ngModel name=\"discount\" class=\"form-control\" id=\"discount\">\r\n  </div>\r\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\r\n</form>"
 
 /***/ }),
 
@@ -1144,7 +1144,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-detail/products-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-detail works!\n</p>\n"
+module.exports = "<p>\r\n  products-detail works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1335,24 +1335,6 @@ var productsRoutes = [
                 outlet: 'productsSubmenu',
                 component: __WEBPACK_IMPORTED_MODULE_6__products_submenu_products_submenu_component__["a" /* ProductsSubmenuComponent */],
             },
-            // {
-            //   path: ':category0',
-            //   component: ProductsListComponent,
-            // },
-            // {
-            //   path: ':category0',
-            //   outlet: 'productsSubmenu',
-            //   component: ProductsSideMenuComponent,
-            // },
-            // {
-            //   path: ':category0/:category1',
-            //   component: ProductsListComponent
-            // },
-            // {
-            //   path: ':category0/:category1',
-            //   outlet: 'productsSubmenu',
-            //   component: ProductsSideMenuComponent
-            // },
             {
                 path: '**',
                 component: __WEBPACK_IMPORTED_MODULE_5__shared_page404_page404_component__["a" /* Page404Component */]
@@ -1399,7 +1381,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-section/products-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-section works!\n</p>\n<div class=\"row\">\n  <div *ngFor=\"let product of products\" class=\"col-lg-3 col-md-4 col-6\">\n    <app-item [product]=\"product\"></app-item>\n  </div>\n</div>\n"
+module.exports = "<p>\r\n  products-section works!\r\n</p>\r\n<div class=\"row\">\r\n  <div *ngFor=\"let product of products\" class=\"col-lg-3 col-md-4 col-6\">\r\n    <app-item [product]=\"product\"></app-item>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1698,7 +1680,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".item {\r\n    max-width: 250px;\r\n    max-height: 600px;\r\n    text-align: center;\r\n    margin: 0 auto;\r\n    /*border-bottom: 2px solid #8c8c8c;*/\r\n    background: white;\r\n    font-family: 'PT Sans', sans-serif;\r\n}\r\n\r\n.item-image {\r\n    width: 100%;\r\n    display: block;\r\n}\r\n\r\n.item-title {\r\n    color: darkred;\r\n}\r\n\r\n.item-price {\r\n    font-size: 16px;\r\n    color: #fc5a5a;\r\n    display: block;\r\n    margin-bottom: 12px;\r\n}\r\n\r\n.item-description {\r\n    font-size: 16px;\r\n}\r\n", ""]);
+exports.push([module.i, ".item-headeer {\r\n  background: #ccc;\r\n  margin: 5px auto;\r\n  text-align: center;\r\n}\r\n\r\n.item-description {\r\n  background: #3e3e3e;\r\n}\r\n\r\n.item-headeer {\r\n  background: #929292;\r\n}\r\n\r\n.item-price {\r\n  background: #92223e;\r\n}\r\n\r\n/*.item {*/\r\n    /*max-width: 250px;*/\r\n    /*max-height: 600px;*/\r\n    /*text-align: center;*/\r\n    /*margin: 0 auto;*/\r\n    /*!*border-bottom: 2px solid #8c8c8c;*!*/\r\n    /*background: white;*/\r\n    /*font-family: 'PT Sans', sans-serif;*/\r\n/*}*/\r\n\r\n/*.item-image {*/\r\n    /*width: 100%;*/\r\n    /*display: block;*/\r\n/*}*/\r\n\r\n/*.item-title {*/\r\n    /*color: darkred;*/\r\n/*}*/\r\n\r\n/*.item-price {*/\r\n    /*font-size: 16px;*/\r\n    /*color: #fc5a5a;*/\r\n    /*display: block;*/\r\n    /*margin-bottom: 12px;*/\r\n/*}*/\r\n\r\n/*.item-description {*/\r\n    /*font-size: 16px;*/\r\n/*}*/\r\n", ""]);
 
 // exports
 
@@ -1711,7 +1693,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/shared/item/item.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"item\">\r\n  <div class=\"item-image mx-auto\">\r\n    <img src=\"http://placehold.it/240x180\" class=\"img-fluid\">\r\n  </div>\r\n  <hr>\r\n  <div class=\"item-title\">\r\n    <h3>{{product.name}}</h3>\r\n    <span class=\"item-price\">{{product.price}} грн</span>\r\n  </div>\r\n  <div class=\"item-description\">\r\n    <p>{{product.itemDescription}}</p>\r\n  </div>\r\n\r\n</div>\r\n\r\n\r\n\r\n<!--<div>-->\r\n  <!--<h2>{{product.category0}} / {{product.category1}}</h2>-->\r\n  <!--<h3>{{product.name}}</h3>-->\r\n  <!--<p>{{product.itemNumber}}</p>-->\r\n  <!--&lt;!&ndash;<img src=\"http://via.placeholder.com/200x300\">&ndash;&gt;-->\r\n  <!--<img src={{product.mainImgSrc[0]}} class=\"img-fluid img-thumbnail\">-->\r\n  <!--&lt;!&ndash;<img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">&ndash;&gt;-->\r\n  <!--<p>{{product.price}} грн</p>-->\r\n  <!--<p>{{product.itemDescription}}</p>-->\r\n  <!--<p>{{product.showOnMainPage}}</p>-->\r\n  <!--<p>{{product.discount}}</p>-->\r\n<!--</div>-->\r\n"
+module.exports = "<div class=\"item\">\r\n  <div class=\"item-headeer\">\r\n    {{product.name}}\r\n  </div>\r\n  <div class=\"item-img\">\r\n    <img src=\"http://placehold.it/240x180\" class=\"img-fluid\">\r\n  </div>\r\n  <div class=\"item-description\">\r\n    {{product.itemDescription}}\r\n  </div>\r\n  <div class=\"item-price\">\r\n    {{product.price}} грн\r\n  </div>\r\n</div>\r\n\r\n<!--<div class=\"item\">-->\r\n  <!--<div class=\"item-image mx-auto\">-->\r\n    <!--<img src=\"http://placehold.it/240x180\" class=\"img-fluid\">-->\r\n  <!--</div>-->\r\n  <!--<hr>-->\r\n  <!--<div class=\"item-title\">-->\r\n    <!--<h3>{{product.name}}</h3>-->\r\n    <!--<span class=\"item-price\">{{product.price}} грн</span>-->\r\n  <!--</div>-->\r\n  <!--<div class=\"item-description\">-->\r\n    <!--<p>{{product.itemDescription}}</p>-->\r\n  <!--</div>-->\r\n\r\n<!--</div>-->\r\n\r\n\r\n\r\n<!--<div>-->\r\n  <!--<h2>{{product.category0}} / {{product.category1}}</h2>-->\r\n  <!--<h3>{{product.name}}</h3>-->\r\n  <!--<p>{{product.itemNumber}}</p>-->\r\n  <!--&lt;!&ndash;<img src=\"http://via.placeholder.com/200x300\">&ndash;&gt;-->\r\n  <!--<img src={{product.mainImgSrc[0]}} class=\"img-fluid img-thumbnail\">-->\r\n  <!--&lt;!&ndash;<img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">&ndash;&gt;-->\r\n  <!--<p>{{product.price}} грн</p>-->\r\n  <!--<p>{{product.itemDescription}}</p>-->\r\n  <!--<p>{{product.showOnMainPage}}</p>-->\r\n  <!--<p>{{product.discount}}</p>-->\r\n<!--</div>-->\r\n"
 
 /***/ }),
 
