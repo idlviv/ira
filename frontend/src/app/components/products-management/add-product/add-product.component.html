@@ -1,37 +1,25 @@
-<!--<h2 class="page-header">Add product</h2>-->
-<!--<form (submit)="onAddProductSubmit(); addProductForm.reset()" #addProductForm>-->
-  <!--<div class="form-group">-->
-    <!--<label for="category">Category</label>-->
-    <!--<input type="text" [(ngModel)]="category" name="category" class="form-control" id="category">-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-    <!--<label for="subCategory">Sub Category</label>-->
-    <!--<input type="text" [(ngModel)]="subCategory" name="subCategory" class="form-control" id="subCategory">-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-    <!--<label for="itemNumber">Item number</label>-->
-    <!--<input type="text" [(ngModel)]="itemNumber" name="itemNumber" class="form-control" id="itemNumber">-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-    <!--<label for="name">Name</label>-->
-    <!--<input type="text" [(ngModel)]="name" name="name" class="form-control" id="name">-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-    <!--<label for="price">Price</label>-->
-    <!--<input type="text" [(ngModel)]="price" name="price" class="form-control" id="price">-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-    <!--<label for="mainImgSrc">Image source</label>-->
-    <!--<input type="text" [(ngModel)]="mainImgSrc" name="mainImgSrc" class="form-control" id="mainImgSrc">-->
-  <!--</div>-->
-  <!--<input type="submit" class="btn btn-primary" value="Add">-->
-<!--</form>-->
-
-
 <h2 class="page-header">Add product</h2>
 <form (ngSubmit)="onAddProductSubmit(addProductForm); addProductForm.reset()" #addProductForm="ngForm">
 
   <div class="form-group">
+
+    <div class="input-group">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+          Categories
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <div role="separator" class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </div>
+      <input type="text" class="form-control" aria-label="Text input with dropdown button">
+    </div>
+
     <label for="category0">Category</label>
     <input name="category0" ngModel #category0="ngModel" class="form-control" id="category0">
   </div>

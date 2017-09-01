@@ -7,6 +7,9 @@ var map = {
 	"./components/home/home-routing.module": [
 		"../../../../../src/app/components/home/home-routing.module.ts"
 	],
+	"./components/products-management/products-management.module": [
+		"../../../../../src/app/components/products-management/products-management.module.ts"
+	],
 	"./components/products/products.module": [
 		"../../../../../src/app/components/products/products.module.ts"
 	]
@@ -33,13 +36,12 @@ webpackAsyncContext.id = "../../../../../src async recursive";
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_products_management_products_management_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_users_management_register_register_component__ = __webpack_require__("../../../../../src/app/components/users-management/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_users_management_login_login_component__ = __webpack_require__("../../../../../src/app/components/users-management/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_users_management_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/users-management/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_users_management_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/users-management/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_shared_page404_page404_component__ = __webpack_require__("../../../../../src/app/components/shared/page404/page404.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_users_management_register_register_component__ = __webpack_require__("../../../../../src/app/components/users-management/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_users_management_login_login_component__ = __webpack_require__("../../../../../src/app/components/users-management/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_users_management_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/users-management/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_users_management_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/users-management/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_shared_page404_page404_component__ = __webpack_require__("../../../../../src/app/components/shared/page404/page404.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -55,7 +57,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
 var appRoutes = [
     { path: 'home',
         loadChildren: './components/home/home-routing.module#HomeRoutingModule'
@@ -63,13 +64,16 @@ var appRoutes = [
     { path: 'products',
         loadChildren: './components/products/products.module#ProductsModule'
     },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_3__components_users_management_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_4__components_users_management_login_login_component__["a" /* LoginComponent */] },
-    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_5__components_users_management_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'product-management', component: __WEBPACK_IMPORTED_MODULE_2__components_products_management_products_management_component__["a" /* ProductsManagementComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_6__components_users_management_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_8__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_2__components_users_management_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_3__components_users_management_login_login_component__["a" /* LoginComponent */] },
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_4__components_users_management_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'products-management',
+        loadChildren: './components/products-management/products-management.module#ProductsManagementModule',
+        canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
+    // {path: 'product-management', component:  ProductsManagementComponent, canActivate: [AuthGuard]},
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_5__components_users_management_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: '**', component: __WEBPACK_IMPORTED_MODULE_7__components_shared_page404_page404_component__["a" /* Page404Component */] },
+    { path: '**', component: __WEBPACK_IMPORTED_MODULE_6__components_shared_page404_page404_component__["a" /* Page404Component */] },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -79,10 +83,10 @@ var AppRoutingModule = (function () {
 AppRoutingModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* RouterModule */].forRoot(appRoutes)
+            __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forRoot(appRoutes)
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* RouterModule */]
+            __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */]
         ]
     })
 ], AppRoutingModule);
@@ -248,7 +252,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_http__["HttpModule"],
             __WEBPACK_IMPORTED_MODULE_8__components_products_products_module__["ProductsModule"],
-            __WEBPACK_IMPORTED_MODULE_12__components_products_management_products_management_module__["a" /* ProductsManagementModule */],
+            __WEBPACK_IMPORTED_MODULE_12__components_products_management_products_management_module__["ProductsManagementModule"],
             __WEBPACK_IMPORTED_MODULE_9__components_home_home_module__["a" /* HomeModule */],
             __WEBPACK_IMPORTED_MODULE_10__components_shared_shared_module__["a" /* SharedModule */],
             __WEBPACK_IMPORTED_MODULE_11__components_users_management_users_management_module__["a" /* UsersManagementModule */],
@@ -332,9 +336,9 @@ var HomeRoutingModule = (function () {
 HomeRoutingModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* RouterModule */].forChild(homeRoutes)
+            __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forChild(homeRoutes)
         ],
-        exports: [__WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* RouterModule */]]
+        exports: [__WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */]]
     })
 ], HomeRoutingModule);
 
@@ -363,7 +367,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home-section/home-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<p>\r\n  home-section works!\r\n</p>\r\n\r\n<div class=\"row\">\r\n  <div *ngFor=\"let product of products\" class=\"col-md-4 col-6\">\r\n    <app-item [product]=\"product\"></app-item>\r\n  </div>\r\n</div>\r\n\r\n"
+module.exports = "\n<p>\n  home-section works!\n</p>\n\n<div class=\"row\">\n  <div *ngFor=\"let product of products\" class=\"col-md-4 col-6\">\n    <app-item [product]=\"product\"></app-item>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -417,7 +421,7 @@ HomeSectionComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/home/home-section/home-section.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/home/home-section/home-section.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* ActivatedRoute */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */]) === "function" && _c || Object])
 ], HomeSectionComponent);
 
 var _a, _b, _c;
@@ -619,7 +623,7 @@ SideMenuComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/home/side-menu/side-menu.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/home/side-menu/side-menu.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object])
 ], SideMenuComponent);
 
 var _a, _b;
@@ -648,7 +652,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n  <a class=\"navbar-brand\" href=\"#\">Brand</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"\r\n          aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home</a></li>\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/products', {outlets: {primary: 'start/toys/main',\r\n           productsSubmenu: 'category/toys/main'}}]\">Toys</a></li>\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/products', {outlets: {primary: 'start/flowers/main',\r\n           productsSubmenu: 'category/flowers/main'}}]\">Flowers</a></li>\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/products', {outlets: {primary: 'start/букети/main',\r\n           productsSubmenu: 'category/букети/main'}}]\">Букети</a></li>\r\n\r\n    </ul>\r\n    <ul class=\"nav navbar-nav navbar-right\">\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/product-management']\">Product Management</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/login']\">Login</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\">\r\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\r\n\r\n      <!--<li class=\"nav-item active\">-->\r\n        <!--<a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>-->\r\n      <!--</li>-->\r\n      <!--<li class=\"nav-item\">-->\r\n        <!--<a class=\"nav-link\" href=\"#\">Link</a>-->\r\n      <!--</li>-->\r\n      <!--<li class=\"nav-item\">-->\r\n        <!--<a class=\"nav-link disabled\" href=\"#\">Disabled</a>-->\r\n      <!--</li>-->\r\n    </ul>\r\n    <!--<form class=\"form-inline my-2 my-lg-0\">-->\r\n      <!--<input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">-->\r\n      <!--<button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>-->\r\n    <!--</form>-->\r\n  </div>\r\n</nav>\r\n\r\n<!--<nav class=\"navbar navbar-default\">-->\r\n  <!--<div class=\"container\">-->\r\n    <!--<div class=\"navbar-header\">-->\r\n      <!--<button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\"-->\r\n              <!--aria-expanded=\"false\" aria-controls=\"navbar\">-->\r\n        <!--<span class=\"sr-only\">Toggle navigation</span>-->\r\n        <!--<span class=\"icon-bar\"></span>-->\r\n        <!--<span class=\"icon-bar\"></span>-->\r\n        <!--<span class=\"icon-bar\"></span>-->\r\n      <!--</button>-->\r\n      <!--<a class=\"navbar-brand\" href=\"#\">Brand</a>-->\r\n    <!--</div>-->\r\n    <!--<div id=\"navbar\" class=\"collapse navbar-collapse\">-->\r\n      <!--<ul class=\"nav navbar-nav navbar-left\">-->\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/']\">Home</a></li>-->\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/products', {outlets: {primary: 'category/toys/main',-->\r\n           <!--productsSubmenu: 'category/toys/main'}}]\">Toys</a></li>-->\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/products', {outlets: {primary: 'category/flowers/main',-->\r\n           <!--productsSubmenu: 'category/flowers/main'}}]\">Flowers</a></li>-->\r\n\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/products', {outlets: {primary: 'toys', productsSubmenu: 'toys'}}]\">TToys</a></li>-->\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/products', {outlets: {primary: 'flowers', productsSubmenu: 'flowers'}}]\">FFlowers</a></li>-->\r\n      <!--</ul>-->\r\n      <!--<ul class=\"nav navbar-nav navbar-right\">-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/dashboard']\">Dashboard</a></li>-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/product-management']\">Product Management</a></li>-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/profile']\">Profile</a></li>-->\r\n        <!--<li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/login']\">Login</a></li>-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/register']\">Register</a></li>-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>-->\r\n      <!--</ul>-->\r\n    <!--</div>&lt;!&ndash;/.nav-collapse &ndash;&gt;-->\r\n  <!--</div>-->\r\n<!--</nav>-->\r\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n  <a class=\"navbar-brand\" href=\"#\">Brand</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"\r\n          aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home</a></li>\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/products', {outlets: {primary: 'start/toys/main',\r\n           productsSubmenu: 'category/toys/main'}}]\">Toys</a></li>\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/products', {outlets: {primary: 'start/flowers/main',\r\n           productsSubmenu: 'category/flowers/main'}}]\">Flowers</a></li>\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/products', {outlets: {primary: 'start/букети/main',\r\n           productsSubmenu: 'category/букети/main'}}]\">Букети</a></li>\r\n\r\n    </ul>\r\n    <ul class=\"nav navbar-nav navbar-right\">\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard</a></li>\r\n\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\"\r\n          [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/products-management',\r\n        {outlets: {primary: 'start', productsManagementSubmenu: 'start'}}]\">\r\n          Products Management</a></li>\r\n\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/login']\">Login</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a></li>\r\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\">\r\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\r\n\r\n      <!--<li class=\"nav-item active\">-->\r\n        <!--<a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>-->\r\n      <!--</li>-->\r\n      <!--<li class=\"nav-item\">-->\r\n        <!--<a class=\"nav-link\" href=\"#\">Link</a>-->\r\n      <!--</li>-->\r\n      <!--<li class=\"nav-item\">-->\r\n        <!--<a class=\"nav-link disabled\" href=\"#\">Disabled</a>-->\r\n      <!--</li>-->\r\n    </ul>\r\n    <!--<form class=\"form-inline my-2 my-lg-0\">-->\r\n      <!--<input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">-->\r\n      <!--<button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>-->\r\n    <!--</form>-->\r\n  </div>\r\n</nav>\r\n\r\n<!--<nav class=\"navbar navbar-default\">-->\r\n  <!--<div class=\"container\">-->\r\n    <!--<div class=\"navbar-header\">-->\r\n      <!--<button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\"-->\r\n              <!--aria-expanded=\"false\" aria-controls=\"navbar\">-->\r\n        <!--<span class=\"sr-only\">Toggle navigation</span>-->\r\n        <!--<span class=\"icon-bar\"></span>-->\r\n        <!--<span class=\"icon-bar\"></span>-->\r\n        <!--<span class=\"icon-bar\"></span>-->\r\n      <!--</button>-->\r\n      <!--<a class=\"navbar-brand\" href=\"#\">Brand</a>-->\r\n    <!--</div>-->\r\n    <!--<div id=\"navbar\" class=\"collapse navbar-collapse\">-->\r\n      <!--<ul class=\"nav navbar-nav navbar-left\">-->\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/']\">Home</a></li>-->\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/products', {outlets: {primary: 'category/toys/main',-->\r\n           <!--productsSubmenu: 'category/toys/main'}}]\">Toys</a></li>-->\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/products', {outlets: {primary: 'category/flowers/main',-->\r\n           <!--productsSubmenu: 'category/flowers/main'}}]\">Flowers</a></li>-->\r\n\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/products', {outlets: {primary: 'toys', productsSubmenu: 'toys'}}]\">TToys</a></li>-->\r\n        <!--<li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/products', {outlets: {primary: 'flowers', productsSubmenu: 'flowers'}}]\">FFlowers</a></li>-->\r\n      <!--</ul>-->\r\n      <!--<ul class=\"nav navbar-nav navbar-right\">-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/dashboard']\">Dashboard</a></li>-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/product-management']\">Product Management</a></li>-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/profile']\">Profile</a></li>-->\r\n        <!--<li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/login']\">Login</a></li>-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">-->\r\n          <!--<a [routerLink]=\"['/register']\">Register</a></li>-->\r\n        <!--<li *ngIf=\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>-->\r\n      <!--</ul>-->\r\n    <!--</div>&lt;!&ndash;/.nav-collapse &ndash;&gt;-->\r\n  <!--</div>-->\r\n<!--</nav>-->\r\n"
 
 /***/ }),
 
@@ -700,7 +704,7 @@ NavbarComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/navbar/navbar.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/navbar/navbar.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
 ], NavbarComponent);
 
 var _a, _b, _c;
@@ -729,7 +733,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/add-product/add-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<h2 class=\"page-header\">Add product</h2>-->\r\n<!--<form (submit)=\"onAddProductSubmit(); addProductForm.reset()\" #addProductForm>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"category\">Category</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"category\" name=\"category\" class=\"form-control\" id=\"category\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"subCategory\">Sub Category</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"subCategory\" name=\"subCategory\" class=\"form-control\" id=\"subCategory\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"itemNumber\">Item number</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"itemNumber\" name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"name\">Name</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"price\">Price</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\" id=\"price\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"mainImgSrc\">Image source</label>-->\r\n    <!--<input type=\"text\" [(ngModel)]=\"mainImgSrc\" name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">-->\r\n  <!--</div>-->\r\n  <!--<input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">-->\r\n<!--</form>-->\r\n\r\n\r\n<h2 class=\"page-header\">Add product</h2>\r\n<form (ngSubmit)=\"onAddProductSubmit(addProductForm); addProductForm.reset()\" #addProductForm=\"ngForm\">\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"category0\">Category</label>\r\n    <input name=\"category0\" ngModel #category0=\"ngModel\" class=\"form-control\" id=\"category0\">\r\n  </div>\r\n    <div class=\"form-group\">\r\n    <label for=\"category1\">SubCategory</label>\r\n    <input name=\"category1\" ngModel #category1=\"ngModel\" class=\"form-control\" id=\"category1\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"itemNumber\">Item number</label>\r\n    <input type=\"text\" ngModel name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"name\">Name</label>\r\n    <input type=\"text\" ngModel name=\"name\" class=\"form-control\" id=\"name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"price\">Price</label>\r\n    <input type=\"text\" ngModel name=\"price\" class=\"form-control\" id=\"price\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mainImgSrc\">Image source</label>\r\n    <input type=\"text\" ngModel name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"itemDescription\">Description</label>\r\n    <input type=\"text\" ngModel name=\"itemDescription\" class=\"form-control\" id=\"itemDescription\">\r\n  </div>\r\n    <div class=\"form-group\">\r\n    <label for=\"showOnMainPage\">Show on main page 0/1</label>\r\n    <input type=\"text\" ngModel name=\"showOnMainPage\" class=\"form-control\" id=\"showOnMainPage\">\r\n  </div>\r\n    <div class=\"form-group\">\r\n    <label for=\"discount\">Discount %</label>\r\n    <input type=\"text\" ngModel name=\"discount\" class=\"form-control\" id=\"discount\">\r\n  </div>\r\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\r\n</form>"
+module.exports = "<h2 class=\"page-header\">Add product</h2>\n<form (ngSubmit)=\"onAddProductSubmit(addProductForm); addProductForm.reset()\" #addProductForm=\"ngForm\">\n\n  <div class=\"form-group\">\n\n    <div class=\"input-group\">\n      <div class=\"input-group-btn\">\n        <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\"\n                aria-haspopup=\"true\" aria-expanded=\"false\">\n          Categories\n        </button>\n        <div class=\"dropdown-menu\">\n          <a class=\"dropdown-item\" href=\"#\">Action</a>\n          <a class=\"dropdown-item\" href=\"#\">Another action</a>\n          <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n          <div role=\"separator\" class=\"dropdown-divider\"></div>\n          <a class=\"dropdown-item\" href=\"#\">Separated link</a>\n        </div>\n      </div>\n      <input type=\"text\" class=\"form-control\" aria-label=\"Text input with dropdown button\">\n    </div>\n\n    <label for=\"category0\">Category</label>\n    <input name=\"category0\" ngModel #category0=\"ngModel\" class=\"form-control\" id=\"category0\">\n  </div>\n    <div class=\"form-group\">\n    <label for=\"category1\">SubCategory</label>\n    <input name=\"category1\" ngModel #category1=\"ngModel\" class=\"form-control\" id=\"category1\">\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"itemNumber\">Item number</label>\n    <input type=\"text\" ngModel name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"name\">Name</label>\n    <input type=\"text\" ngModel name=\"name\" class=\"form-control\" id=\"name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"price\">Price</label>\n    <input type=\"text\" ngModel name=\"price\" class=\"form-control\" id=\"price\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"mainImgSrc\">Image source</label>\n    <input type=\"text\" ngModel name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"itemDescription\">Description</label>\n    <input type=\"text\" ngModel name=\"itemDescription\" class=\"form-control\" id=\"itemDescription\">\n  </div>\n    <div class=\"form-group\">\n    <label for=\"showOnMainPage\">Show on main page 0/1</label>\n    <input type=\"text\" ngModel name=\"showOnMainPage\" class=\"form-control\" id=\"showOnMainPage\">\n  </div>\n    <div class=\"form-group\">\n    <label for=\"discount\">Discount %</label>\n    <input type=\"text\" ngModel name=\"discount\" class=\"form-control\" id=\"discount\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\n</form>"
 
 /***/ }),
 
@@ -821,7 +825,7 @@ AddProductComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _e || Object])
 ], AddProductComponent);
 
 var _a, _b, _c, _d, _e;
@@ -995,11 +999,134 @@ EditProductComponent = __decorate([
         // providers: [ProductService],
         styles: [__webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object])
 ], EditProductComponent);
 
 var _a, _b, _c;
 //# sourceMappingURL=edit-product.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products-management/products-management-routing.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_page404_page404_component__ = __webpack_require__("../../../../../src/app/components/shared/page404/page404.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__products_management_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__products_management_submenu_products_management_submenu_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management-submenu/products-management-submenu.component.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsManagementRoutingModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var productsRoutes = [
+    {
+        path: 'products-management',
+        component: __WEBPACK_IMPORTED_MODULE_3__products_management_component__["a" /* ProductsManagementComponent */],
+        children: [
+            {
+                path: 'start',
+                component: __WEBPACK_IMPORTED_MODULE_4__edit_product_edit_product_component__["a" /* EditProductComponent */],
+            },
+            {
+                path: 'start',
+                outlet: 'productsManagementSubmenu',
+                component: __WEBPACK_IMPORTED_MODULE_5__products_management_submenu_products_management_submenu_component__["a" /* ProductsManagementSubmenuComponent */],
+            },
+            {
+                path: '**',
+                component: __WEBPACK_IMPORTED_MODULE_2__shared_page404_page404_component__["a" /* Page404Component */]
+            },
+        ],
+    },
+];
+var ProductsManagementRoutingModule = (function () {
+    function ProductsManagementRoutingModule() {
+    }
+    return ProductsManagementRoutingModule;
+}());
+ProductsManagementRoutingModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forChild(productsRoutes)
+        ],
+        exports: [__WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */]]
+    })
+], ProductsManagementRoutingModule);
+
+//# sourceMappingURL=products-management-routing.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products-management/products-management-submenu/products-management-submenu.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products-management/products-management-submenu/products-management-submenu.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  products-management-submenu works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/products-management/products-management-submenu/products-management-submenu.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsManagementSubmenuComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ProductsManagementSubmenuComponent = (function () {
+    function ProductsManagementSubmenuComponent() {
+    }
+    ProductsManagementSubmenuComponent.prototype.ngOnInit = function () {
+    };
+    return ProductsManagementSubmenuComponent;
+}());
+ProductsManagementSubmenuComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-products-management-submenu',
+        template: __webpack_require__("../../../../../src/app/components/products-management/products-management-submenu/products-management-submenu.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/products-management/products-management-submenu/products-management-submenu.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ProductsManagementSubmenuComponent);
+
+//# sourceMappingURL=products-management-submenu.component.js.map
 
 /***/ }),
 
@@ -1024,7 +1151,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/products-management.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-edit-product></app-edit-product>\r\n<!--<app-edit-product (updateProducts)=\"onUpdateProducts()\"></app-edit-product>-->\r\n<app-add-product (updateProducts)=\"onUpdateProducts()\"></app-add-product>\r\n"
+module.exports = "<div class=\"row\">\r\n  <div class=\"col-md-2\">\r\n    <h2>Side menu</h2>\r\n    <router-outlet name=\"productsManagementSubmenu\"></router-outlet>\r\n  </div>\r\n  <div class=\"col-md-8\">\r\n    <h1>Product Management</h1>\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n</div>\r\n\r\n<!--<app-edit-product></app-edit-product>-->\r\n<!--<app-add-product (updateProducts)=\"onUpdateProducts()\"></app-add-product>-->\r\n"
 
 /***/ }),
 
@@ -1078,13 +1205,17 @@ var _a;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__products_management_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__add_product_add_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsManagementModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_shared_module__ = __webpack_require__("../../../../../src/app/components/shared/shared.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__products_management_routing_module__ = __webpack_require__("../../../../../src/app/components/products-management/products-management-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__products_management_submenu_products_management_submenu_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management-submenu/products-management-submenu.component.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductsManagementModule", function() { return ProductsManagementModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1094,7 +1225,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-// import {ProductService} from '../../services/product.service';
+
+
+
 
 
 
@@ -1108,10 +1241,13 @@ ProductsManagementModule = __decorate([
         declarations: [
             __WEBPACK_IMPORTED_MODULE_3__products_management_component__["a" /* ProductsManagementComponent */],
             __WEBPACK_IMPORTED_MODULE_4__add_product_add_product_component__["a" /* AddProductComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__edit_product_edit_product_component__["a" /* EditProductComponent */]
+            __WEBPACK_IMPORTED_MODULE_5__edit_product_edit_product_component__["a" /* EditProductComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__products_management_submenu_products_management_submenu_component__["a" /* ProductsManagementSubmenuComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
+            __WEBPACK_IMPORTED_MODULE_6__shared_shared_module__["a" /* SharedModule */],
+            __WEBPACK_IMPORTED_MODULE_7__products_management_routing_module__["a" /* ProductsManagementRoutingModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */]
         ],
         exports: [],
@@ -1144,7 +1280,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-detail/products-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  products-detail works!\r\n</p>\r\n"
+module.exports = "<p>\n  products-detail works!\n</p>\n"
 
 /***/ }),
 
@@ -1281,7 +1417,7 @@ ProductsListComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/products/products-list/products-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/products/products-list/products-list.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__services_catalog_service__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_catalog_service__["a" /* CatalogService */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__services_catalog_service__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_catalog_service__["a" /* CatalogService */]) === "function" && _f || Object])
 ], ProductsListComponent);
 
 var _a, _b, _c, _d, _e, _f;
@@ -1350,9 +1486,9 @@ var ProductsRoutingModule = (function () {
 ProductsRoutingModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* RouterModule */].forChild(productsRoutes)
+            __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forChild(productsRoutes)
         ],
-        exports: [__WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* RouterModule */]]
+        exports: [__WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */]]
     })
 ], ProductsRoutingModule);
 
@@ -1381,7 +1517,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-section/products-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  products-section works!\r\n</p>\r\n<div class=\"row\">\r\n  <div *ngFor=\"let product of products\" class=\"col-lg-3 col-md-4 col-6\">\r\n    <app-item [product]=\"product\"></app-item>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<p>\n  products-section works!\n</p>\n<div class=\"row\">\n  <div *ngFor=\"let product of products\" class=\"col-lg-3 col-md-4 col-6\">\n    <app-item [product]=\"product\"></app-item>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1442,7 +1578,7 @@ ProductsSectionComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/products/products-section/products-section.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/products/products-section/products-section.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object])
 ], ProductsSectionComponent);
 
 var _a, _b;
@@ -1546,7 +1682,7 @@ ProductsSubmenuComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/products/products-submenu/products-submenu.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/products/products-submenu/products-submenu.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_url_serializer_service__["a" /* MyUrlSerializer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_url_serializer_service__["a" /* MyUrlSerializer */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_6__services_catalog_service__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_catalog_service__["a" /* CatalogService */]) === "function" && _g || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_url_serializer_service__["a" /* MyUrlSerializer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_url_serializer_service__["a" /* MyUrlSerializer */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_6__services_catalog_service__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_catalog_service__["a" /* CatalogService */]) === "function" && _g || Object])
 ], ProductsSubmenuComponent);
 
 var _a, _b, _c, _d, _e, _f, _g;
@@ -1996,7 +2132,7 @@ LoginComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/users-management/login/login.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/users-management/login/login.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
 ], LoginComponent);
 
 var _a, _b, _c;
@@ -2080,7 +2216,7 @@ ProfileComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/users-management/profile/profile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/users-management/profile/profile.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
 ], ProfileComponent);
 
 var _a, _b, _c;
@@ -2205,7 +2341,7 @@ RegisterComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/users-management/register/register.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/users-management/register/register.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object])
 ], RegisterComponent);
 
 var _a, _b, _c, _d;
@@ -2312,7 +2448,7 @@ var AuthGuard = (function () {
 }());
 AuthGuard = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], AuthGuard);
 
 var _a, _b;

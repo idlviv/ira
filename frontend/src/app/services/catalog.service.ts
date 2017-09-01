@@ -11,6 +11,8 @@ export class CatalogService {
 
   constructor(private http: Http) {}
 
+
+
   getCatalog() {
     return this.http.get(
       config.serverUrl + 'api/getCatalog')
