@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {productsManagementSubmenuList} from '../../../data/products-mamagement-submenu-list';
 
 @Component({
   selector: 'app-products-management-submenu',
@@ -9,18 +8,16 @@ import {productsManagementSubmenuList} from '../../../data/products-mamagement-s
 })
 export class ProductsManagementSubmenuComponent implements OnInit {
 
-  list: string[] = productsManagementSubmenuList;
+  menuList: string[];
 
   constructor(
     private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    console.log(this.list);
-    this.route.params
-        .subscribe(params => {
-
-        });
+     this.menuList = [
+      'edit-product',
+      'add-product'
+    ];
   }
-
 }

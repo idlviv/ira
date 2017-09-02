@@ -367,7 +367,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home-section/home-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<p>\n  home-section works!\n</p>\n\n<div class=\"row\">\n  <div *ngFor=\"let product of products\" class=\"col-md-4 col-6\">\n    <app-item [product]=\"product\"></app-item>\n  </div>\n</div>\n\n"
+module.exports = "\r\n<p>\r\n  home-section works!\r\n</p>\r\n\r\n<div class=\"row\">\r\n  <div *ngFor=\"let product of products\" class=\"col-md-4 col-6\">\r\n    <app-item [product]=\"product\"></app-item>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -720,7 +720,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".ng-valid[required], .ng-valid.required  {\r\n  border-left: 5px solid #42A948; /* green */\r\n}\r\n\r\n.ng-invalid:not(form)  {\r\n  border-left: 5px solid #a94442; /* red */\r\n}\r\n", ""]);
 
 // exports
 
@@ -733,7 +733,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/add-product/add-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Add product</h2>\n<form (ngSubmit)=\"onAddProductSubmit(addProductForm); addProductForm.reset()\" #addProductForm=\"ngForm\">\n\n  <div class=\"form-group\">\n\n    <div class=\"input-group\">\n      <div class=\"input-group-btn\">\n        <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\"\n                aria-haspopup=\"true\" aria-expanded=\"false\">\n          Categories\n        </button>\n        <div class=\"dropdown-menu\">\n          <a class=\"dropdown-item\" href=\"#\">Action</a>\n          <a class=\"dropdown-item\" href=\"#\">Another action</a>\n          <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n          <div role=\"separator\" class=\"dropdown-divider\"></div>\n          <a class=\"dropdown-item\" href=\"#\">Separated link</a>\n        </div>\n      </div>\n      <input type=\"text\" class=\"form-control\" aria-label=\"Text input with dropdown button\">\n    </div>\n\n    <label for=\"category0\">Category</label>\n    <input name=\"category0\" ngModel #category0=\"ngModel\" class=\"form-control\" id=\"category0\">\n  </div>\n    <div class=\"form-group\">\n    <label for=\"category1\">SubCategory</label>\n    <input name=\"category1\" ngModel #category1=\"ngModel\" class=\"form-control\" id=\"category1\">\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"itemNumber\">Item number</label>\n    <input type=\"text\" ngModel name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"name\">Name</label>\n    <input type=\"text\" ngModel name=\"name\" class=\"form-control\" id=\"name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"price\">Price</label>\n    <input type=\"text\" ngModel name=\"price\" class=\"form-control\" id=\"price\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"mainImgSrc\">Image source</label>\n    <input type=\"text\" ngModel name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"itemDescription\">Description</label>\n    <input type=\"text\" ngModel name=\"itemDescription\" class=\"form-control\" id=\"itemDescription\">\n  </div>\n    <div class=\"form-group\">\n    <label for=\"showOnMainPage\">Show on main page 0/1</label>\n    <input type=\"text\" ngModel name=\"showOnMainPage\" class=\"form-control\" id=\"showOnMainPage\">\n  </div>\n    <div class=\"form-group\">\n    <label for=\"discount\">Discount %</label>\n    <input type=\"text\" ngModel name=\"discount\" class=\"form-control\" id=\"discount\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Add\">\n</form>"
+module.exports = "<h2 class=\"page-header\">Add product</h2>\r\n<form (ngSubmit)=\"onAddProductSubmit(addProductForm); addProductForm.reset()\" #addProductForm=\"ngForm\">\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"category0\">Category</label>\r\n    <select class=\"form-control custom-select\"  id=\"category0\"\r\n            required (change)=\"onSelectCategory0($event)\"\r\n            [(ngModel)]=\"category0\" name=\"category0\">\r\n      <option *ngFor=\"let catalogItem of catalog; let i = index\" [value]=\"catalogItem.category0.name\">\r\n        {{catalogItem.category0.name}}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"category1\">SubCategory</label>\r\n    <select class=\"form-control custom-select\"  id=\"category1\"\r\n            required [disabled]=\"!category0\"\r\n            [(ngModel)]=\"category1\" name=\"category1\">\r\n      <option *ngFor=\"let catalogItem of catalogCategory1\" [value]=\"catalogItem.name\">\r\n        {{catalogItem.name}}</option>\r\n    </select>\r\n  </div>\r\n\r\n\r\n  <!--<div class=\"form-group\">-->\r\n    <!--<label for=\"category1\">SubCategory</label>-->\r\n    <!--<input name=\"category1\" ngModel #category1=\"ngModel\" class=\"form-control\" id=\"category1\">-->\r\n  <!--</div>-->\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"itemNumber\">Item number</label>\r\n    <input type=\"text\" ngModel name=\"itemNumber\" class=\"form-control\" id=\"itemNumber\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"name\">Name</label>\r\n    <input type=\"text\" ngModel name=\"name\" class=\"form-control\" id=\"name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"price\">Price</label>\r\n    <input type=\"text\" ngModel name=\"price\" class=\"form-control\" id=\"price\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mainImgSrc\">Image source</label>\r\n    <input type=\"text\" ngModel name=\"mainImgSrc\" class=\"form-control\" id=\"mainImgSrc\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"itemDescription\">Description</label>\r\n    <input type=\"text\" ngModel name=\"itemDescription\" class=\"form-control\" id=\"itemDescription\">\r\n  </div>\r\n    <div class=\"form-group\">\r\n    <label for=\"showOnMainPage\">Show on main page 0/1</label>\r\n    <input type=\"text\" ngModel name=\"showOnMainPage\" class=\"form-control\" id=\"showOnMainPage\">\r\n  </div>\r\n    <div class=\"form-group\">\r\n    <label for=\"discount\">Discount %</label>\r\n    <input type=\"text\" ngModel name=\"discount\" class=\"form-control\" id=\"discount\">\r\n  </div>\r\n  <input type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!addProductForm.form.valid\" value=\"Add\">\r\n</form>\r\n"
 
 /***/ }),
 
@@ -748,6 +748,7 @@ module.exports = "<h2 class=\"page-header\">Add product</h2>\n<form (ngSubmit)=\
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_catalog_service__ = __webpack_require__("../../../../../src/app/services/catalog.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddProductComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -764,16 +765,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AddProductComponent = (function () {
-    function AddProductComponent(authService, validateService, productService, flashMessage, router) {
+    function AddProductComponent(authService, validateService, productService, flashMessage, router, catalogService) {
         this.authService = authService;
         this.validateService = validateService;
         this.productService = productService;
         this.flashMessage = flashMessage;
         this.router = router;
+        this.catalogService = catalogService;
         this.updateProducts = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
     }
     AddProductComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.catalogService.getCatalog()
+            .subscribe(function (catalog) { return _this.catalog = catalog; });
+    };
+    AddProductComponent.prototype.onSelectCategory0 = function (event) {
+        console.log(event.srcElement.value);
+        for (var i = 0; i < this.catalog.length; i++) {
+            if (this.catalog[i].category0.name === event.srcElement.value) {
+                this.catalogCategory1 = this.catalog[i].category0.category1;
+            }
+        }
     };
     AddProductComponent.prototype.onAddProductSubmit = function (form) {
         var _this = this;
@@ -788,6 +802,7 @@ var AddProductComponent = (function () {
             showOnMainPage: form.value.showOnMainPage,
             discount: form.value.discount
         };
+        console.log(product);
         this.productService.addProduct(product)
             .subscribe(function (data) {
             if (data.success) {
@@ -825,10 +840,10 @@ AddProductComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__services_catalog_service__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_catalog_service__["a" /* CatalogService */]) === "function" && _f || Object])
 ], AddProductComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=add-product.component.js.map
 
 /***/ }),
@@ -1017,6 +1032,7 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__products_management_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/edit-product/edit-product.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__products_management_submenu_products_management_submenu_component__ = __webpack_require__("../../../../../src/app/components/products-management/products-management-submenu/products-management-submenu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__add_product_add_product_component__ = __webpack_require__("../../../../../src/app/components/products-management/add-product/add-product.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsManagementRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1030,6 +1046,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var productsRoutes = [
     {
         path: 'products-management',
@@ -1037,12 +1054,20 @@ var productsRoutes = [
         children: [
             {
                 path: 'start',
-                component: __WEBPACK_IMPORTED_MODULE_4__edit_product_edit_product_component__["a" /* EditProductComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_6__add_product_add_product_component__["a" /* AddProductComponent */],
             },
             {
                 path: 'start',
                 outlet: 'productsManagementSubmenu',
                 component: __WEBPACK_IMPORTED_MODULE_5__products_management_submenu_products_management_submenu_component__["a" /* ProductsManagementSubmenuComponent */],
+            },
+            {
+                path: 'edit-product',
+                component: __WEBPACK_IMPORTED_MODULE_4__edit_product_edit_product_component__["a" /* EditProductComponent */],
+            },
+            {
+                path: 'add-product',
+                component: __WEBPACK_IMPORTED_MODULE_6__add_product_add_product_component__["a" /* AddProductComponent */],
             },
             {
                 path: '**',
@@ -1090,7 +1115,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products-management/products-management-submenu/products-management-submenu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-management-submenu works!\n</p>\n\n<div>\n  <ul>\n    <li *ngFor=\"let item of list\">{{item}}</li>\n  </ul>\n</div>\n"
+module.exports = "<p>\r\n  products-management-submenu works!\r\n</p>\r\n\r\n<div>\r\n  <ul class=\"list-group\">\r\n    <li class=\"list-group-item\" *ngFor=\"let item of menuList\">\r\n      <a class=\"active\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\"\r\n         [routerLink]=\"['/products-management', {outlets: {primary: item}}]\">{{item}}></a>\r\n    </li>\r\n  </ul>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1100,7 +1125,6 @@ module.exports = "<p>\n  products-management-submenu works!\n</p>\n\n<div>\n  <u
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__data_products_mamagement_submenu_list__ = __webpack_require__("../../../../../src/app/data/products-mamagement-submenu-list.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsManagementSubmenuComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1113,17 +1137,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 var ProductsManagementSubmenuComponent = (function () {
     function ProductsManagementSubmenuComponent(route) {
         this.route = route;
-        this.list = __WEBPACK_IMPORTED_MODULE_2__data_products_mamagement_submenu_list__["a" /* productsManagementSubmenuList */];
     }
     ProductsManagementSubmenuComponent.prototype.ngOnInit = function () {
-        console.log(this.list);
-        this.route.params
-            .subscribe(function (params) {
-        });
+        this.menuList = [
+            'edit-product',
+            'add-product'
+        ];
     };
     return ProductsManagementSubmenuComponent;
 }());
@@ -1291,7 +1313,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-detail/products-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-detail works!\n</p>\n"
+module.exports = "<p>\r\n  products-detail works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1528,7 +1550,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-section/products-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-section works!\n</p>\n<div class=\"row\">\n  <div *ngFor=\"let product of products\" class=\"col-lg-3 col-md-4 col-6\">\n    <app-item [product]=\"product\"></app-item>\n  </div>\n</div>\n"
+module.exports = "<p>\r\n  products-section works!\r\n</p>\r\n<div class=\"row\">\r\n  <div *ngFor=\"let product of products\" class=\"col-lg-3 col-md-4 col-6\">\r\n    <app-item [product]=\"product\"></app-item>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2418,19 +2440,6 @@ UsersManagementModule = __decorate([
 ], UsersManagementModule);
 
 //# sourceMappingURL=users-management.module.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/data/products-mamagement-submenu-list.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return productsManagementSubmenuList; });
-var productsManagementSubmenuList = [
-    'productEdit',
-    'productAdd'
-];
-//# sourceMappingURL=products-mamagement-submenu-list.js.map
 
 /***/ }),
 

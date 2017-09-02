@@ -2,31 +2,30 @@
 <form (ngSubmit)="onAddProductSubmit(addProductForm); addProductForm.reset()" #addProductForm="ngForm">
 
   <div class="form-group">
-
-    <div class="input-group">
-      <div class="input-group-btn">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-          Categories
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <div role="separator" class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
-        </div>
-      </div>
-      <input type="text" class="form-control" aria-label="Text input with dropdown button">
-    </div>
-
     <label for="category0">Category</label>
-    <input name="category0" ngModel #category0="ngModel" class="form-control" id="category0">
+    <select class="form-control custom-select"  id="category0"
+            required (change)="onSelectCategory0($event)"
+            [(ngModel)]="category0" name="category0">
+      <option *ngFor="let catalogItem of catalog; let i = index" [value]="catalogItem.category0.name">
+        {{catalogItem.category0.name}}</option>
+    </select>
   </div>
-    <div class="form-group">
+
+  <div class="form-group">
     <label for="category1">SubCategory</label>
-    <input name="category1" ngModel #category1="ngModel" class="form-control" id="category1">
+    <select class="form-control custom-select"  id="category1"
+            required [disabled]="!category0"
+            [(ngModel)]="category1" name="category1">
+      <option *ngFor="let catalogItem of catalogCategory1" [value]="catalogItem.name">
+        {{catalogItem.name}}</option>
+    </select>
   </div>
+
+
+  <!--<div class="form-group">-->
+    <!--<label for="category1">SubCategory</label>-->
+    <!--<input name="category1" ngModel #category1="ngModel" class="form-control" id="category1">-->
+  <!--</div>-->
 
   <div class="form-group">
     <label for="itemNumber">Item number</label>
@@ -56,5 +55,5 @@
     <label for="discount">Discount %</label>
     <input type="text" ngModel name="discount" class="form-control" id="discount">
   </div>
-  <input type="submit" class="btn btn-primary" value="Add">
+  <input type="submit" class="btn btn-primary" [disabled]="!addProductForm.form.valid" value="Add">
 </form>

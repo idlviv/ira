@@ -3,7 +3,10 @@
 </p>
 
 <div>
-  <ul>
-    <li *ngFor="let item of list">{{item}}</li>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let item of menuList">
+      <a class="active" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"
+         [routerLink]="['/products-management', {outlets: {primary: item}}]">{{item}}></a>
+    </li>
   </ul>
 </div>

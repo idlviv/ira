@@ -5,6 +5,7 @@ import {Page404Component} from '../shared/page404/page404.component';
 import {ProductsManagementComponent} from './products-management.component';
 import {EditProductComponent} from './edit-product/edit-product.component';
 import {ProductsManagementSubmenuComponent} from './products-management-submenu/products-management-submenu.component';
+import {AddProductComponent} from './add-product/add-product.component';
 
 const productsRoutes: Routes = [
   {
@@ -13,12 +14,20 @@ const productsRoutes: Routes = [
     children: [
       {
         path: 'start',
-        component: EditProductComponent,
+        component: AddProductComponent,
       },
       {
         path: 'start',
         outlet: 'productsManagementSubmenu',
         component: ProductsManagementSubmenuComponent,
+      },
+      {
+        path: 'edit-product',
+        component: EditProductComponent,
+      },
+      {
+        path: 'add-product',
+        component: AddProductComponent,
       },
       {
         path: '**',
