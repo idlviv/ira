@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import {AuthService} from '../../services/auth.service';
-import {ValidateService} from '../../services/validate.service';
 import {AuthGuard} from '../../guards/auth.guard';
 
 import {DashboardComponent} from './dashboard/dashboard.component';
@@ -26,7 +25,6 @@ import {RegisterComponent} from './register/register.component';
   exports: [
   ],
   providers: [
-    ValidateService,
     AuthService,
     AuthGuard,
   ]

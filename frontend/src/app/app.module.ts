@@ -19,6 +19,7 @@ import {ProductResolverService} from './services/product-resolver.service';
 import {ProductService} from './services/product.service';
 import {CatalogResolverService} from './services/catalog-resolver.service';
 import {CatalogService} from './services/catalog.service';
+import {ValidateService} from './services/validate.service';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import {CatalogService} from './services/catalog.service';
     CatalogResolverService,
     ProductService,
     ProductResolverService,
+    ValidateService,
   ],
   bootstrap: [AppComponent]
 })

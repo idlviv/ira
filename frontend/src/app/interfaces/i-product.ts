@@ -8,4 +8,8 @@ export interface IProduct {
   itemDescription: string;
   showOnMainPage: boolean;
   discount: number;
+  size: {
+    width: number,
+    height: number,
+  };
 }

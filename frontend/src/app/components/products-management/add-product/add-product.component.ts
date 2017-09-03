@@ -29,7 +29,7 @@ export class AddProductComponent implements OnInit {
     private productService: ProductService,
     private flashMessage: FlashMessagesService,
     private router: Router,
-    private catalogService: CatalogService
+    private catalogService: CatalogService,
   ) { }
 
   ngOnInit() {
@@ -54,12 +54,27 @@ export class AddProductComponent implements OnInit {
       itemNumber: form.value.itemNumber,
       name: form.value.name,
       price: form.value.price,
-      mainImgSrc: form.value.mainImgSrc,
+      mainImgSrc: form.value.mainImgSrc || './assets/samples/200x300.png',
       itemDescription: form.value.itemDescription,
       showOnMainPage: form.value.showOnMainPage,
-      discount: form.value.discount
+      discount: form.value.discount,
+      size: {
+        width: form.value.width,
+        height: form.value.height
+      },
     };
     console.log(product);
+
+    if (!this.validateService.validateProduct(product)) {
+      this.flashMessage.show(
+        'fill all fields',
+        {
+          cssClass: 'alert-danger',
+          timeout: 3000
+        });
+      return false;
+    }
+
     this.productService.addProduct(product)
       .subscribe(
         data => {

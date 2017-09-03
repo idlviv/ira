@@ -2,9 +2,9 @@ const mongoose = require('../libs/mongoose');
 
 const ProductSchema = mongoose.Schema({
   category0: {
-      type: String,
-      required: true
-    },
+    type: String,
+    required: true
+  },
   category1: {
     type: String,
     required: true
@@ -20,14 +20,13 @@ const ProductSchema = mongoose.Schema({
   },
   price: {
     type: Number,
-    required: true,
   },
   mainImgSrc: {
-    type: []
+    type: [],
+    required: true,
   },
   itemDescription: {
     type: String,
-    unique: true,
     required: true
   },
   showOnMainPage: {
@@ -35,6 +34,14 @@ const ProductSchema = mongoose.Schema({
   },
   discount: {
     type: Number
+  },
+  size: {
+    width: {
+      type: Number
+    },
+    height: {
+      type: Number
+    },
   }
 });
 
