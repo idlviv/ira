@@ -8,7 +8,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ProductsManagementSubmenuComponent implements OnInit {
 
-  menuList: string[];
+  menuList: object[];
 
   constructor(
     private route: ActivatedRoute,
@@ -16,8 +16,14 @@ export class ProductsManagementSubmenuComponent implements OnInit {
 
   ngOnInit() {
      this.menuList = [
-      'edit-product',
-      'add-product'
+     {
+       name: 'Редагувати товар',
+       route: 'edit-product',
+     },
+     {
+       name: 'Додати товар',
+       route: 'add-product',
+     },
     ];
   }
 }
