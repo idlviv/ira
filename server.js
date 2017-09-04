@@ -21,6 +21,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+// console.log(config.get('process.env.MONGOOSE_URI'));
+// console.log(config.get('NODE_ENV'));
 
 app.use(require('./server/middleware/sendHttpError'));
 
