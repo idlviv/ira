@@ -370,7 +370,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home-section/home-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<p>\n  home-section works!\n</p>\n\n<div class=\"row\">\n  <div *ngFor=\"let product of products\" class=\"col-md-4 col-6\">\n    <app-item [product]=\"product\"></app-item>\n  </div>\n</div>\n\n"
+module.exports = "\r\n<p>\r\n  home-section works!\r\n</p>\r\n\r\n<div class=\"row\">\r\n  <div *ngFor=\"let product of products\" class=\"col-md-4 col-6\">\r\n    <app-item [product]=\"product\"></app-item>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -1334,7 +1334,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-detail/products-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-detail works!\n</p>\n"
+module.exports = "<p>\r\n  products-detail works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1571,7 +1571,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-section/products-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products-section works!\n</p>\n<div class=\"row\">\n  <div *ngFor=\"let product of products\" class=\"col-lg-3 col-md-4 col-6\">\n    <app-item [product]=\"product\"></app-item>\n  </div>\n</div>\n"
+module.exports = "<p>\r\n  products-section works!\r\n</p>\r\n<div class=\"row\">\r\n  <div *ngFor=\"let product of products\" class=\"col-lg-3 col-md-4 col-6\">\r\n    <app-item [product]=\"product\"></app-item>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1883,7 +1883,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/shared/item/item.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<div class=\"item\">-->\r\n  <!--<div class=\"item-headeer\">-->\r\n   <!--<p class=\"h3\">{{product.name}}</p>-->\r\n  <!--</div>-->\r\n  <!--<div class=\"item-img\">-->\r\n    <!--<img src=\"http://placehold.it/240x180\" class=\"img-fluid\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"item-description\">-->\r\n    <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.-->\r\n    <!--{{product.itemDescription}}-->\r\n  <!--</div>-->\r\n  <!--<div class=\"item-price\">-->\r\n    <!--<span>{{product.price}} грн</span>-->\r\n  <!--</div>-->\r\n<!--</div>-->\r\n\r\n<div class=\"card\" style=\"width: 20rem;\">\r\n  <img class=\"card-img-top\" src=\"http://placehold.it/240x180\" alt=\"Card image cap\">\r\n  <div class=\"card-body\">\r\n    <h4 class=\"card-title\">{{product.name}}</h4>\r\n    <p class=\"card-text\">{{product.itemDescription}}</p>\r\n    <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\r\n  </div>\r\n</div>\r\n<!--<div class=\"item\">-->\r\n  <!--<div class=\"item-image mx-auto\">-->\r\n    <!--<img src=\"http://placehold.it/240x180\" class=\"img-fluid\">-->\r\n  <!--</div>-->\r\n  <!--<hr>-->\r\n  <!--<div class=\"item-title\">-->\r\n    <!--<h3>{{product.name}}</h3>-->\r\n    <!--<span class=\"item-price\">{{product.price}} грн</span>-->\r\n  <!--</div>-->\r\n  <!--<div class=\"item-description\">-->\r\n    <!--<p>{{product.itemDescription}}</p>-->\r\n  <!--</div>-->\r\n\r\n<!--</div>-->\r\n\r\n\r\n\r\n<!--<div>-->\r\n  <!--<h2>{{product.category0}} / {{product.category1}}</h2>-->\r\n  <!--<h3>{{product.name}}</h3>-->\r\n  <!--<p>{{product.itemNumber}}</p>-->\r\n  <!--&lt;!&ndash;<img src=\"http://via.placeholder.com/200x300\">&ndash;&gt;-->\r\n  <!--<img src={{product.mainImgSrc[0]}} class=\"img-fluid img-thumbnail\">-->\r\n  <!--&lt;!&ndash;<img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">&ndash;&gt;-->\r\n  <!--<p>{{product.price}} грн</p>-->\r\n  <!--<p>{{product.itemDescription}}</p>-->\r\n  <!--<p>{{product.showOnMainPage}}</p>-->\r\n  <!--<p>{{product.discount}}</p>-->\r\n<!--</div>-->\r\n"
+module.exports = "<!--<div class=\"item\">-->\r\n  <!--<div class=\"item-headeer\">-->\r\n   <!--<p class=\"h3\">{{product.name}}</p>-->\r\n  <!--</div>-->\r\n  <!--<div class=\"item-img\">-->\r\n    <!--<img src=\"http://placehold.it/240x180\" class=\"img-fluid\">-->\r\n  <!--</div>-->\r\n  <!--<div class=\"item-description\">-->\r\n    <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.-->\r\n    <!--{{product.itemDescription}}-->\r\n  <!--</div>-->\r\n  <!--<div class=\"item-price\">-->\r\n    <!--<span>{{product.price}} грн</span>-->\r\n  <!--</div>-->\r\n<!--</div>-->\r\n\r\n<div class=\"card\" style=\"width: 20rem;\">\r\n  <img class=\"card-img-top\" src=\"https://placehold.it/240x180\" alt=\"Card image cap\">\r\n  <div class=\"card-body\">\r\n    <h4 class=\"card-title\">{{product.name}}</h4>\r\n    <p class=\"card-text\">{{product.itemDescription}}</p>\r\n    <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\r\n  </div>\r\n</div>\r\n<!--<div class=\"item\">-->\r\n  <!--<div class=\"item-image mx-auto\">-->\r\n    <!--<img src=\"http://placehold.it/240x180\" class=\"img-fluid\">-->\r\n  <!--</div>-->\r\n  <!--<hr>-->\r\n  <!--<div class=\"item-title\">-->\r\n    <!--<h3>{{product.name}}</h3>-->\r\n    <!--<span class=\"item-price\">{{product.price}} грн</span>-->\r\n  <!--</div>-->\r\n  <!--<div class=\"item-description\">-->\r\n    <!--<p>{{product.itemDescription}}</p>-->\r\n  <!--</div>-->\r\n\r\n<!--</div>-->\r\n\r\n\r\n\r\n<!--<div>-->\r\n  <!--<h2>{{product.category0}} / {{product.category1}}</h2>-->\r\n  <!--<h3>{{product.name}}</h3>-->\r\n  <!--<p>{{product.itemNumber}}</p>-->\r\n  <!--&lt;!&ndash;<img src=\"http://via.placeholder.com/200x300\">&ndash;&gt;-->\r\n  <!--<img src={{product.mainImgSrc[0]}} class=\"img-fluid img-thumbnail\">-->\r\n  <!--&lt;!&ndash;<img src=\"./assets/samples/200x300.png\" class=\"img-responsive img-thumbnail img200x300\">&ndash;&gt;-->\r\n  <!--<p>{{product.price}} грн</p>-->\r\n  <!--<p>{{product.itemDescription}}</p>-->\r\n  <!--<p>{{product.showOnMainPage}}</p>-->\r\n  <!--<p>{{product.discount}}</p>-->\r\n<!--</div>-->\r\n"
 
 /***/ }),
 
