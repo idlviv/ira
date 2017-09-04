@@ -370,7 +370,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home-section/home-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<p>\r\n  home-section works!\r\n</p>\r\n\r\n<div class=\"row\">\r\n  <div *ngFor=\"let product of products\" class=\"col-md-4 col-6\">\r\n    <app-item [product]=\"product\"></app-item>\r\n  </div>\r\n</div>\r\n\r\n"
+module.exports = "\n<p>\n  home-section works!\n</p>\n\n<div class=\"row\">\n  <div *ngFor=\"let product of products\" class=\"col-md-4 col-6\">\n    <app-item [product]=\"product\"></app-item>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -1334,7 +1334,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-detail/products-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  products-detail works!\r\n</p>\r\n"
+module.exports = "<p>\n  products-detail works!\n</p>\n"
 
 /***/ }),
 
@@ -1571,7 +1571,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/products/products-section/products-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  products-section works!\r\n</p>\r\n<div class=\"row\">\r\n  <div *ngFor=\"let product of products\" class=\"col-lg-3 col-md-4 col-6\">\r\n    <app-item [product]=\"product\"></app-item>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<p>\n  products-section works!\n</p>\n<div class=\"row\">\n  <div *ngFor=\"let product of products\" class=\"col-lg-3 col-md-4 col-6\">\n    <app-item [product]=\"product\"></app-item>\n  </div>\n</div>\n"
 
 /***/ }),
 

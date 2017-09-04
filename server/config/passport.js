@@ -4,7 +4,7 @@ const ExtractJwt = require('passport-jwt').ExtractJwt;
 const UserModel = require('../models/userModel');
 const config = require('./');
 
-  //Виконується при ініціалізації паспорта
+//Виконується при ініціалізації паспорта
 module.exports = function(passport) {
   console.log('config/passport - initialization');
   let opts = {};
